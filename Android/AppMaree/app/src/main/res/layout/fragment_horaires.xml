@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HorrairesFragment">
+    tools:context=".HorairesFragment">
 
     <ScrollView
         android:id="@+id/scroll"
@@ -13,7 +13,7 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
         <TableLayout
-            android:id="@+id/tableLayoutHorraires"
+            android:id="@+id/tableLayoutHoraires"
             android:layout_width="409dp"
             android:layout_height="729dp"
             app:layout_constraintBottom_toBottomOf="parent"

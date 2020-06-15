@@ -17,9 +17,9 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.appmaree.HorrairesFragment"
+        android:name="com.example.appmaree.HorairesFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_horraires">
+        tools:layout="@layout/fragment_horaires">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
