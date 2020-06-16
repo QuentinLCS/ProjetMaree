@@ -1,66 +1,44 @@
 package com.example.appmaree
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
+import android.app.Application
+import android.content.res.XmlResourceParser
+import android.graphics.Color
+import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TableLayout
+import android.widget.TableRow
 import android.widget.TextView
-import androidx.lifecycle.ViewModelProviders
-import kotlinx.android.synthetic.main.fragment_horaires.*
-import java.text.SimpleDateFormat
-import java.util.*
-import kotlin.collections.ArrayList
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
+import org.xmlpull.v1.XmlPullParser
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
-class HorairesFragment : Fragment() {
+class TableauHoraireViewModel(application: Application) : AndroidViewModel(application) {
     data class Maree(val etat:String,val heure:String,val hauteur:String,val coef:String=" ")
     data class Porte(val etat:String,val heure:String)
-    var listeId:ArrayList<Int> = ArrayList<Int>()
-    private lateinit var viewModel:TableauHoraireViewModel
+    var tableLayoutStocke : TableLayout= TableLayout(getApplication())
+    var listeIdStocke:ArrayList<Int> = ArrayList<Int>()
 
-
-    override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_horaires, container, false)
+    fun getTableLayout(): TableLayout? {
+        val parentViewGroup=tableLayoutStocke?.parent as ViewGroup?
+        parentViewGroup?.removeAllViews()
+      return tableLayoutStocke
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        viewModel=activity.run {ViewModelProviders.of(this!!).get(TableauHoraireViewModel::class.java)  }
-        scroll.addView(viewModel.getTableLayout())
-        listeId=viewModel.getListId()
-        scrollToDate(getTodayDate())
-
+    fun setTableLayout(newTableLayout: TableLayout){
+        tableLayoutStocke=newTableLayout
     }
 
-
-    fun getTodayDate():String{
-        val sdf = SimpleDateFormat("dd/MM/yyyy")
-        val currentDate = sdf.format(Date())
-        return currentDate
+    fun setListeId(newlist :ArrayList<Int>){
+        listeIdStocke=newlist
     }
 
-
-    fun scrollToDate(date:String){
-        var i =0
-        var textViewScroll: TextView? = view?.findViewById<TextView>(listeId.get(i))
-        while((textViewScroll?.text?.replace("\\s".toRegex(),""))!=date && i<(listeId.size-1)){
-            i++
-            textViewScroll = view?.findViewById<TextView>(listeId.get(i))
-        }
-            textViewScroll?.requestFocus()
-
+    fun getListId(): ArrayList<Int> {
+        return listeIdStocke
     }
 
-/*
     fun xmlToTable(){
-        var xmlResourceParser: XmlResourceParser = resources.getXml(R.xml.maree)
+        var xmlResourceParser: XmlResourceParser = getApplication<Application>().resources.getXml(R.xml.maree)
         var eventType: Int = xmlResourceParser.getEventType()
         while (eventType != XmlPullParser.END_DOCUMENT) {
             if(eventType== XmlPullParser.START_TAG && xmlResourceParser.name =="jour"){
@@ -73,6 +51,7 @@ class HorairesFragment : Fragment() {
         }
     }
 
+
     fun newRow(xmlRP: XmlResourceParser){
         xmlRP.next()
         var jour:String =xmlRP.getAttributeValue(0)
@@ -82,20 +61,25 @@ class HorairesFragment : Fragment() {
         xmlRP.next()
         var portes = getXmlAttributePorte(xmlRP,"porte")
         var marees=sortMaree(getXmlAttributeMaree(xmlRP,"maree"))
-        val row1 = TableRow(activity)
-        row1.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+        val row1 = TableRow(getApplication())
+        row1.layoutParams = ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
             ViewGroup.LayoutParams.WRAP_CONTENT)
-        val row2 = TableRow(activity)
-        row2.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+        val row2 = TableRow(getApplication())
+        row2.layoutParams = ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
             ViewGroup.LayoutParams.WRAP_CONTENT)
-        val row3 = TableRow(activity)
-        row3.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+        val row3 = TableRow(getApplication())
+        row3.layoutParams = ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
             ViewGroup.LayoutParams.WRAP_CONTENT)
-        val row4 = TableRow(activity)
-        row4.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+        val row4 = TableRow(getApplication())
+        row4.layoutParams = ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
             ViewGroup.LayoutParams.WRAP_CONTENT)
-        val row5 = TableRow(activity)
-        row5.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+        val row5 = TableRow(getApplication())
+        row5.layoutParams = ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
             ViewGroup.LayoutParams.WRAP_CONTENT)
 
         row1.addView(addTextView(" "))
@@ -126,24 +110,24 @@ class HorairesFragment : Fragment() {
 
         }
 
-        tableLayoutHoraires.addView(row1)
-        tableLayoutHoraires.addView(row2)
-        tableLayoutHoraires.addView(row3)
-        tableLayoutHoraires.addView(row4)
-        tableLayoutHoraires.addView(row5)
+        tableLayoutStocke.addView(row1)
+        tableLayoutStocke.addView(row2)
+        tableLayoutStocke.addView(row3)
+        tableLayoutStocke.addView(row4)
+        tableLayoutStocke.addView(row5)
     }
 
-    fun getXmlAttributeMaree(xmlRP: XmlResourceParser, tagName:String):ArrayList<Maree>{
-        var mareeList = ArrayList<Maree>()
+    fun getXmlAttributeMaree(xmlRP: XmlResourceParser, tagName:String):ArrayList<HorairesFragment.Maree>{
+        var mareeList = ArrayList<HorairesFragment.Maree>()
         while(xmlRP.name==tagName){
             val list=ArrayList<String>()
             for(i:Int in 0..(xmlRP.attributeCount-1)){
                 list.add(xmlRP.getAttributeValue(i))
             }
-            if(xmlRP.eventType==XmlPullParser.START_TAG) {
+            if(xmlRP.eventType== XmlPullParser.START_TAG) {
                 if (xmlRP.attributeCount == 3) {
                     mareeList.add(
-                        Maree(
+                        HorairesFragment.Maree(
                             etat = list.get(0),
                             heure = list.get(2),
                             hauteur = list.get(1)
@@ -151,7 +135,7 @@ class HorairesFragment : Fragment() {
                     )
                 } else {
                     mareeList.add(
-                        Maree(
+                        HorairesFragment.Maree(
                             etat = list.get(1),
                             heure = list.get(3),
                             hauteur = list.get(2),
@@ -165,15 +149,15 @@ class HorairesFragment : Fragment() {
         return mareeList
     }
 
-    fun getXmlAttributePorte(xmlRP:XmlResourceParser,tagName:String):ArrayList<Porte>{
-        var porteList=ArrayList<Porte>()
+    fun getXmlAttributePorte(xmlRP: XmlResourceParser, tagName:String):ArrayList<HorairesFragment.Porte>{
+        var porteList=ArrayList<HorairesFragment.Porte>()
         while(xmlRP.name==tagName) {
             val list = ArrayList<String>()
-            if(xmlRP.eventType==XmlPullParser.START_TAG) {
+            if(xmlRP.eventType== XmlPullParser.START_TAG) {
                 for (i: Int in 0..(xmlRP.attributeCount - 1)) {
                     list.add(xmlRP.getAttributeValue(i))
                 }
-                porteList.add(Porte(etat=list.get(0),heure=list.get(1)))
+                porteList.add(HorairesFragment.Porte(etat = list.get(0), heure = list.get(1)))
             }
 
             xmlRP.next()
@@ -181,8 +165,8 @@ class HorairesFragment : Fragment() {
         return porteList
     }
 
-    fun sortMaree(marees:ArrayList<Maree>): ArrayList<Maree> {
-        var newList = ArrayList<Maree>()
+    fun sortMaree(marees:ArrayList<HorairesFragment.Maree>): ArrayList<HorairesFragment.Maree> {
+        var newList = ArrayList<HorairesFragment.Maree>()
         while(marees.size>0){
             var min =0
             for(i in 1..marees.size-1){
@@ -206,8 +190,8 @@ class HorairesFragment : Fragment() {
         }
     }
 
-    fun addTextView(textToAdd:String,color:Int=Color.WHITE,id:Boolean=false): TextView {
-        val textview = TextView(activity)
+    fun addTextView(textToAdd:String, color:Int= Color.WHITE, id:Boolean=false): TextView {
+        val textview = TextView(getApplication())
         var addText=textToAdd
         when(textToAdd){"--:--","---","--.--"->addText=""}
         textview.apply {
@@ -217,26 +201,26 @@ class HorairesFragment : Fragment() {
             gravity= Gravity.CENTER
         }
         if(id){
-            textview.id=View.generateViewId()
+            textview.id= View.generateViewId()
             textview.setFocusableInTouchMode(true)
-            listeId.add(textview.id)
+            listeIdStocke.add(textview.id)
         }
         textview.setBackgroundColor(color)
         return textview
     }
 
     fun getColor(value:String):Int{
-        var color:Int=Color.WHITE
+        var color:Int= Color.WHITE
         when(value){
-            "PM"->color=Color.BLUE
-            "BM"->color=Color.YELLOW
-            "ouverture"->color=Color.GREEN
-            "fermeture"->color=Color.RED
+            "PM"->color= Color.BLUE
+            "BM"->color= Color.YELLOW
+            "ouverture"->color= Color.GREEN
+            "fermeture"->color= Color.RED
         }
         return color
     }
 
-    fun getColorMaree(maree:Maree):Int{
+    fun getColorMaree(maree: HorairesFragment.Maree):Int{
         if(maree.heure=="--:--"){
             return Color.WHITE
         }
@@ -245,7 +229,7 @@ class HorairesFragment : Fragment() {
         }
     }
 
-    fun getColorPorte(porte:Porte):Int{
+    fun getColorPorte(porte: HorairesFragment.Porte):Int{
         if(porte.heure==""||porte.heure=="-------"){
             return Color.WHITE
         }
@@ -253,6 +237,4 @@ class HorairesFragment : Fragment() {
             return getColor(porte.etat)
         }
     }
-    */
-
 }
