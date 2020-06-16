@@ -9,15 +9,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.DatePicker
 import android.widget.TableRow
 import android.widget.TextView
-import androidx.annotation.RequiresApi
+import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.fragment_horaires.*
 import org.xmlpull.v1.XmlPullParser
 import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -28,19 +26,22 @@ class HorairesFragment : Fragment() {
     data class Maree(val etat:String,val heure:String,val hauteur:String,val coef:String=" ")
     data class Porte(val etat:String,val heure:String)
     var listeId:ArrayList<Int> = ArrayList<Int>()
+    private lateinit var viewModel:AppViewModel
+
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-
         return inflater.inflate(R.layout.fragment_horaires, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        xmlToTable()
+        viewModel=activity.run {ViewModelProviders.of(this!!).get(AppViewModel::class.java)  }
+        scroll.addView(viewModel.getTableLayout())
+        listeId=viewModel.getListId()
         scrollToDate(getTodayDate())
 
     }
@@ -64,7 +65,7 @@ class HorairesFragment : Fragment() {
 
     }
 
-
+/*
     fun xmlToTable(){
         var xmlResourceParser: XmlResourceParser = resources.getXml(R.xml.maree)
         var eventType: Int = xmlResourceParser.getEventType()
@@ -259,4 +260,6 @@ class HorairesFragment : Fragment() {
             return getColor(porte.etat)
         }
     }
+    */
+
 }
