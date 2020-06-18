@@ -10,14 +10,16 @@ import android.widget.TableLayout
 import android.widget.TableRow
 import android.widget.TextView
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
 import org.xmlpull.v1.XmlPullParser
 
+private const val HAUTEUR_PORTE =1.5
+
 class TableauHoraireViewModel(application: Application) : AndroidViewModel(application) {
-    data class Maree(val etat:String,val heure:String,val hauteur:String,val coef:String=" ")
-    data class Porte(val etat:String,val heure:String)
     var tableLayoutStocke : TableLayout= TableLayout(getApplication())
     var listeIdStocke:ArrayList<Int> = ArrayList<Int>()
+    var tirantDEau:Double =0.0
+    lateinit var listeHorairesTirantDEau:ArrayList<String>
+
 
     fun getTableLayout(): TableLayout? {
         val parentViewGroup=tableLayoutStocke?.parent as ViewGroup?
@@ -37,7 +39,85 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
         return listeIdStocke
     }
 
+    /****************Fonctions pour le calculs des horaires avec le tirant d'eau****************/
+    fun actualiserTirantDEau(newVar : Double){
+        if(tirantDEau!=newVar){
+            tirantDEau=newVar
+            tableLayoutStocke.removeAllViews()
+            xmlToTable()
+        }
+    }
+
+    fun calculHeureSelonTiranDEau(porte: HorairesFragment.Porte, mareeMin: HorairesFragment.Maree,mareeMax: HorairesFragment.Maree): String {
+        var heureMareeMax : Double =convertHeureDouble(mareeMax.heure,":")
+        var heureMareeMin : Double =convertHeureDouble(mareeMin.heure,":")
+        var heurePorte : Double =convertHeureDouble(porte.heure,"h")
+        val hauteurMareeMax : Double=mareeMax.hauteur.replace(",",".").toDouble()
+        val hauteurMareeMin : Double =mareeMin.hauteur.replace(",",".").toDouble()
+        var hauteurMax : Double = 0.0
+        if(heureMareeMin>heureMareeMax)heureMareeMax+=24
+        if(heureMareeMax<heurePorte)heurePorte-=24
+        if(heureMareeMin>heurePorte)heurePorte+=24
+        val dureeMaree : Double=heureMareeMax-heureMareeMin
+        val marnage : Double = hauteurMareeMax-hauteurMareeMin
+        var sinus=Math.sin(Math.PI/2*((heurePorte-heureMareeMin)/dureeMaree))
+        var hauteurCalculeePorte=sinus*sinus*marnage+hauteurMareeMin
+        var hauteurCalculeePlusTirantDEau=hauteurCalculeePorte+ tirantDEau - HAUTEUR_PORTE
+        if(marnage>0) { hauteurMax = hauteurMareeMax}
+        else{hauteurMax=hauteurMareeMin}
+
+        if(hauteurCalculeePlusTirantDEau>hauteurMax || hauteurCalculeePlusTirantDEau+0.1>hauteurMax){
+            return "-----"
+        }
+        var heure :Double = dureeMaree/Math.PI*2.0*Math.asin(Math.sqrt((hauteurCalculeePlusTirantDEau-hauteurMareeMin)/marnage))+heureMareeMin
+        if(heure>24){heure-=24}
+        var retour : String =""+Math.floor(heure).toInt()+"h"
+        if(Math.floor(heure%1*60)<10){retour+="0"}
+        retour+=Math.floor(heure%1*60).toInt()
+        return retour
+    }
+
+    fun convertHeureDouble(heure:String, separator: String):Double{
+        var heureInt : Double=heure.split(separator)[0].toDouble()
+        heureInt += heure.split(separator)[1].toDouble()/60
+        return heureInt
+    }
+
+    fun getHoraireCalculTirantDeau():ArrayList<String>{
+        var newlisteHorairesTirantDEau = ArrayList<String>()
+        var listePorte =ArrayList<HorairesFragment.Porte>()
+        var listeMaree =ArrayList<HorairesFragment.Maree>()
+        var xmlResourceParser: XmlResourceParser = getApplication<Application>().resources.getXml(R.xml.maree)
+        var eventType: Int = xmlResourceParser.getEventType()
+        while (eventType != XmlPullParser.END_DOCUMENT) {
+            when{
+                eventType== XmlPullParser.START_TAG && xmlResourceParser.name =="porte"-> {
+                    listePorte.addAll(getXmlAttributePorte(xmlResourceParser,"porte",false))
+                }
+                eventType== XmlPullParser.START_TAG && xmlResourceParser.name =="maree"-> {
+                    listeMaree.addAll(sortMaree(getXmlAttributeMaree(xmlResourceParser,"maree",false)))
+                }
+                else ->eventType=xmlResourceParser.next()
+            }
+        }
+        for(i in 0..listeMaree.size-2){
+            newlisteHorairesTirantDEau.add(calculHeureSelonTiranDEau(listePorte.get(i),listeMaree.get(i),listeMaree.get(i+1)))
+        }
+
+        return newlisteHorairesTirantDEau
+    }
+    /********************************************************************************/
+
+
+
+    /****************Fonctions pour la creation du tableau des horaires****************/
     fun xmlToTable(){
+    if(tirantDEau> HAUTEUR_PORTE+0.1){
+        listeHorairesTirantDEau= ArrayList<String>()
+        listeHorairesTirantDEau = getHoraireCalculTirantDeau()
+    }
+
+
         var xmlResourceParser: XmlResourceParser = getApplication<Application>().resources.getXml(R.xml.maree)
         var eventType: Int = xmlResourceParser.getEventType()
         while (eventType != XmlPullParser.END_DOCUMENT) {
@@ -50,7 +130,6 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
             }
         }
     }
-
 
     fun newRow(xmlRP: XmlResourceParser){
         xmlRP.next()
@@ -104,9 +183,20 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
 
             row1.addView(addTextView(coef))
             row2.addView(addTextView(heureM,colorM))
-            row3.addView(addTextView(heureP,colorP))
-            row4.addView(addTextView(hauteur))
-            row5.addView(addTextView(" "))
+            if(tirantDEau< HAUTEUR_PORTE || heureP==""){
+                row3.addView(addTextView(heureP,colorP))
+                row4.addView(addTextView(hauteur))
+                row5.addView(addTextView(" "))}
+            else{
+                if(listeHorairesTirantDEau.size>0){
+                row3.addView(addTextView(listeHorairesTirantDEau!!.removeAt(0),colorP))}
+                else{
+                    row3.addView(addTextView("-----"))
+                }
+                row4.addView(addTextView(heureP))
+                row5.addView(addTextView(hauteur))
+            }
+
 
         }
 
@@ -117,7 +207,7 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
         tableLayoutStocke.addView(row5)
     }
 
-    fun getXmlAttributeMaree(xmlRP: XmlResourceParser, tagName:String):ArrayList<HorairesFragment.Maree>{
+    fun getXmlAttributeMaree(xmlRP: XmlResourceParser, tagName:String,withBlank:Boolean=true):ArrayList<HorairesFragment.Maree>{
         var mareeList = ArrayList<HorairesFragment.Maree>()
         while(xmlRP.name==tagName){
             val list=ArrayList<String>()
@@ -125,23 +215,25 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
                 list.add(xmlRP.getAttributeValue(i))
             }
             if(xmlRP.eventType== XmlPullParser.START_TAG) {
-                if (xmlRP.attributeCount == 3) {
+                if (xmlRP.attributeCount == 3 ) {
+                    if (withBlank || list.get(2)!="--:--"){
                     mareeList.add(
                         HorairesFragment.Maree(
                             etat = list.get(0),
                             heure = list.get(2),
                             hauteur = list.get(1)
                         )
-                    )
+                    )}
                 } else {
-                    mareeList.add(
+                    if(withBlank || list.get(3)!="--:--") {
+                        mareeList.add(
                         HorairesFragment.Maree(
                             etat = list.get(1),
                             heure = list.get(3),
                             hauteur = list.get(2),
                             coef = list.get(0)
                         )
-                    )
+                    )}
                 }
             }
             xmlRP.next()
@@ -149,7 +241,7 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
         return mareeList
     }
 
-    fun getXmlAttributePorte(xmlRP: XmlResourceParser, tagName:String):ArrayList<HorairesFragment.Porte>{
+    fun getXmlAttributePorte(xmlRP: XmlResourceParser, tagName:String,withBlank: Boolean=true):ArrayList<HorairesFragment.Porte>{
         var porteList=ArrayList<HorairesFragment.Porte>()
         while(xmlRP.name==tagName) {
             val list = ArrayList<String>()
@@ -157,7 +249,8 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
                 for (i: Int in 0..(xmlRP.attributeCount - 1)) {
                     list.add(xmlRP.getAttributeValue(i))
                 }
-                porteList.add(HorairesFragment.Porte(etat = list.get(0), heure = list.get(1)))
+                if(withBlank || !withBlank && (list.get(1)!="" && list.get(1)!="-------")){
+                porteList.add(HorairesFragment.Porte(etat = list.get(0), heure = list.get(1)))}
             }
 
             xmlRP.next()
@@ -237,4 +330,6 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
             return getColor(porte.etat)
         }
     }
+
+    /*****************************************************************************/
 }
