@@ -12,8 +12,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel= ViewModelProviders.of(this).get(TableauHoraireViewModel::class.java)
-        viewModel.xmlToTable()
+        viewModel = ViewModelProviders.of(this).get(TableauHoraireViewModel::class.java)
+        viewModel.tableLayoutStocke=SplashScreenActivity.splashViewModel.tableLayoutStocke
+        viewModel.listeIdStocke=SplashScreenActivity.splashViewModel.listeIdStocke
         setContentView(R.layout.activity_main)
     }
 
