@@ -299,6 +299,7 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
             listeIdStocke.add(textview.id)
         }
         textview.setBackgroundColor(color)
+        if(color==Color.BLUE){textview.setTextColor(Color.WHITE)}
         return textview
     }
 
