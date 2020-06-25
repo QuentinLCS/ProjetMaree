@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 
+
 class MainActivity : AppCompatActivity() {
 
     lateinit var viewModel : TableauHoraireViewModel
@@ -16,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.tableLayoutStocke=SplashScreenActivity.splashViewModel.tableLayoutStocke
         viewModel.listeIdStocke=SplashScreenActivity.splashViewModel.listeIdStocke
         setContentView(R.layout.activity_main)
-    }
 
+    }
 
 }

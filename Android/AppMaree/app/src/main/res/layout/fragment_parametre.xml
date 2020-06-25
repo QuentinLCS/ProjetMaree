@@ -12,11 +12,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Quel est votre tirant d'eau ?"
+        android:textColor="@android:color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/parametreTextView" />
 
     <EditText
         android:id="@+id/tirantDEauEditText"
@@ -37,11 +38,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Valider"
+        android:textColor="@android:color/white"
+        android:background="@drawable/button_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tirantDEauEditText"
         app:layout_constraintVertical_bias="0.047" />
+
+    <TextView
+        android:id="@+id/parametreTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PARAMÈTRE"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textColor="@color/colorTitre"
+        app:layout_constraintBottom_toTopOf="@+id/tirantDEauTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
