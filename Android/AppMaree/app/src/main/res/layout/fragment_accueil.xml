@@ -4,26 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/accueil_background"
     tools:context=".AccueilFragment">
 
     <TextView
-        android:id="@+id/textview_first"
-        android:layout_width="wrap_content"
+        android:id="@+id/nom_port"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/nom_port"
+        android:textAlignment="center"
+        android:textColor="@color/colorNomPort"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/textview_texte_accueil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textview_texte_accueil"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/text_accueil"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@id/button_first"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/nom_port" />
 
     <Button
         android:id="@+id/button_first"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/accueil_button_background"
         android:text="@string/bouton_accueil"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_first" />
+        app:layout_constraintTop_toBottomOf="@id/textview_texte_accueil" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
