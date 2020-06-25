@@ -10,9 +10,18 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_parametre.*
 
+/**
+ * Fragment de la page des paramètres
+ * Possibilité de rentrer les tirant d'eau
+ *
+ */
 class ParametreFragment : Fragment() {
     private lateinit var viewModel:TableauHoraireViewModel
 
+    /**
+     * Fonction automatique lors de la création du fragment
+     * Initialise le fragment et affiche la vue des paramètres
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -21,6 +30,11 @@ class ParametreFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_parametre, container, false)
     }
 
+    /**
+     *  Fonction automatique lors de la création de la vue
+     *  Recupére le ViewModel crée par le MainActivity
+     *  Lie le bouton a la fonction pour actualiser le tirant d'eau
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel=activity.run { ViewModelProviders.of(this!!).get(TableauHoraireViewModel::class.java)  }

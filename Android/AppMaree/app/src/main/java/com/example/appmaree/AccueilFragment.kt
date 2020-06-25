@@ -9,10 +9,14 @@ import android.widget.Button
 import androidx.navigation.fragment.findNavController
 
 /**
- * A simple [Fragment] subclass as the default destination in the navigation.
+ * Fragment de la page d'accueil comportant le texte de prévention et le bouton pour accepter
  */
 class AccueilFragment : Fragment() {
 
+    /**
+     * Fonction automatique lors de la création du fragment
+     * Initialise le fragment et affiche la vue de l'accueil
+     */
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
@@ -21,6 +25,10 @@ class AccueilFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_accueil, container, false)
     }
 
+    /**
+     * Fonction automatique lors de la création de la vue
+     * Lie le bouton à la navigation de la page d'accueil vers la page des horaires
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
