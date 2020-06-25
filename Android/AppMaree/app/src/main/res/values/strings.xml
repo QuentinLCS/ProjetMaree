@@ -16,4 +16,6 @@
         Autorisation SHOM 2019-2021"
     </string>
     <string name="bouton_accueil">Valider</string>
+
+    <string name="popup_fermer_label">Fermer</string>
 </resources>

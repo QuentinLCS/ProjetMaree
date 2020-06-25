@@ -1,6 +1,8 @@
 package com.example.appmaree
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -52,7 +54,16 @@ class HorairesFragment : Fragment() {
         view.findViewById<Button>(R.id.buttontmp).setOnClickListener {
             findNavController().navigate(R.id.action_HorairesFragment_to_ParametreFragment)
         }
+        var popup = PopUp(activity,view.width)
+        val mainHandler = Handler(Looper.getMainLooper())
+        mainHandler.post(object : Runnable {
+            override fun run() {
+                popup.show()
+                mainHandler.postDelayed(this, 45000)
+            }
+        })
     }
+
 
     /**
      * Fonction pour obtenir la date du jour

@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 
+
 /**
  *Activité principale de l'application
  * Affiche par défaut la page d'accueil
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.tableLayoutStocke=SplashScreenActivity.splashViewModel.tableLayoutStocke
         viewModel.listeIdStocke=SplashScreenActivity.splashViewModel.listeIdStocke
         setContentView(R.layout.activity_main)
-    }
 
+    }
 
 }
