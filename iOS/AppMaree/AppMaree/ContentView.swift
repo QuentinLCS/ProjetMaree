@@ -10,50 +10,41 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             ZStack {
                 Rectangle()
                     .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/).edgesIgnoringSafeArea(.all)
                 
                 Text("PORT-DIELETTE")
-                    .font(.largeTitle)
+                    .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(Color("Primaire 1"))
                 
             }
+            .frame(height: 50.0)
             ZStack {
                 LinearGradient(gradient: Gradient(colors: [Color("Primaire 1"),Color("Primaire 2"), Color("Primaire 3")]), startPoint: /*@START_MENU_TOKEN@*/.top/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.bottom/*@END_MENU_TOKEN@*/).edgesIgnoringSafeArea(.all)
-                VStack {
+                VStack(alignment: .center, spacing: 80, content: {
+                    Spacer()
                     HStack {
-                        VStack {
-                            Image("clock")
-                            Text("DATE")
-                        }
-                        VStack {
-                            Image("fishing")
-                            Text("PECHE")
-                        }
+                        Spacer()
+                        ButtonMenuView(label: "Date", image: "clock")
+                        Spacer()
+                        ButtonMenuView(label: "Pêche", image: "fishing")
+                        Spacer()
                     }
                     HStack {
-                        VStack {
-                            Image("documentation")
-                            Text("DOCUMENTATION")
-                        }
-                        VStack {
-                            Image("settings")
-                            Text(/*@START_MENU_TOKEN@*/"SETTINGS"/*@END_MENU_TOKEN@*/)
-                        }
+                        Spacer()
+                        ButtonMenuView(label: "Manuel d'utilisation", image: "documentation")
+                        Spacer()
+                        ButtonMenuView(label: "Paramètres", image: "settings")
+                        Spacer()
                     }
-                    ZStack {
-                        Circle().foregroundColor(.white)
-                        Image("colored_back")
-                    }.frame(width: 100, height: 100)
-                }
+                    Spacer()
+                    ButtonMainView(colored: false)
+                })
             }
         }
-        
-        
-        
     }
 }
 
