@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 
+
 class MainActivity : AppCompatActivity() {
 
     lateinit var viewModel : TableauHoraireViewModel
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         viewModel= ViewModelProviders.of(this).get(TableauHoraireViewModel::class.java)
         viewModel.xmlToTable()
         setContentView(R.layout.activity_main)
-    }
 
+    }
 
 }

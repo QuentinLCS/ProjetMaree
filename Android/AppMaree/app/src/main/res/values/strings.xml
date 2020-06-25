@@ -10,4 +10,6 @@
 
     <string name="text_accueil">Texte a rajouter</string>
     <string name="bouton_accueil">Valider</string>
+
+    <string name="popup_fermer_label">Fermer</string>
 </resources>
