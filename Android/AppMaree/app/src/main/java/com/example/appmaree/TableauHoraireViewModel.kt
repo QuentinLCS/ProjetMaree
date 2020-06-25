@@ -19,6 +19,7 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
     var listeIdStocke:ArrayList<Int> = ArrayList<Int>()
     var tirantDEau:Double =0.0
     lateinit var listeHorairesTirantDEau:ArrayList<String>
+    var pair = true
 
 
     fun getTableLayout(): TableLayout? {
@@ -129,6 +130,7 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
                 eventType=xmlResourceParser.next()
             }
         }
+        tableLayoutStocke.setBackgroundResource(R.drawable.horaires_gradient_background)
     }
 
     fun newRow(xmlRP: XmlResourceParser){
@@ -163,7 +165,7 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
 
         row1.addView(addTextView(" "))
         row2.addView(addTextView(jour))
-        row3.addView(addTextView(date+"  ",id=true))
+        row3.addView(addTextView(date+" ",id=true))
         row4.addView(addTextView(" "))
         row5.addView(addTextView(" "))
         for(i in 0..3){
@@ -199,7 +201,15 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
 
 
         }
-
+        if(pair){
+            row1.setBackgroundColor(Color.WHITE)
+            row2.setBackgroundColor(Color.WHITE)
+            row3.setBackgroundColor(Color.WHITE)
+            row4.setBackgroundColor(Color.WHITE)
+            row5.setBackgroundColor(Color.WHITE)
+            pair=false
+        }
+        else{pair=true}
         tableLayoutStocke.addView(row1)
         tableLayoutStocke.addView(row2)
         tableLayoutStocke.addView(row3)
@@ -298,7 +308,8 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
             textview.setFocusableInTouchMode(true)
             listeIdStocke.add(textview.id)
         }
-        textview.setBackgroundColor(color)
+        if(color!=Color.WHITE){textview.setBackgroundColor(color)}
+        if(color==Color.BLUE){textview.setTextColor(Color.WHITE)}
         return textview
     }
 
