@@ -9,25 +9,35 @@
 /* Begin PBXBuildFile section */
 		DF02A78B24A360C3009582BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02A78A24A360C3009582BC /* AppDelegate.swift */; };
 		DF02A78D24A360C3009582BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02A78C24A360C3009582BC /* SceneDelegate.swift */; };
-		DF02A78F24A360C3009582BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02A78E24A360C3009582BC /* ContentView.swift */; };
+		DF02A78F24A360C3009582BC /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02A78E24A360C3009582BC /* MenuView.swift */; };
 		DF02A79124A360C5009582BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF02A79024A360C5009582BC /* Assets.xcassets */; };
 		DF02A79424A360C5009582BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF02A79324A360C5009582BC /* Preview Assets.xcassets */; };
 		DF02A79724A360C5009582BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF02A79524A360C5009582BC /* LaunchScreen.storyboard */; };
 		DF02A79F24A527DC009582BC /* ButtonMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02A79E24A527DC009582BC /* ButtonMenuView.swift */; };
 		DF02A7A124A53541009582BC /* ButtonMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02A7A024A53541009582BC /* ButtonMainView.swift */; };
+		DF02A7A424A54723009582BC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02A7A324A54723009582BC /* SettingsView.swift */; };
+		DF45A1C824A60A5100C4C050 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1C724A60A5100C4C050 /* MainView.swift */; };
+		DF45A1CA24A60FBF00C4C050 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1C924A60FBF00C4C050 /* ErrorView.swift */; };
+		DF45A1CD24A6138300C4C050 /* MenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1CC24A6138300C4C050 /* MenuButtonView.swift */; };
+		DF45A1CF24A6139600C4C050 /* HomeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1CE24A6139600C4C050 /* HomeButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DF02A78724A360C3009582BC /* AppMaree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppMaree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF02A78A24A360C3009582BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF02A78C24A360C3009582BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DF02A78E24A360C3009582BC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DF02A78E24A360C3009582BC /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		DF02A79024A360C5009582BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF02A79324A360C5009582BC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DF02A79624A360C5009582BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF02A79824A360C5009582BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF02A79E24A527DC009582BC /* ButtonMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMenuView.swift; sourceTree = "<group>"; };
 		DF02A7A024A53541009582BC /* ButtonMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMainView.swift; sourceTree = "<group>"; };
+		DF02A7A324A54723009582BC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		DF45A1C724A60A5100C4C050 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		DF45A1C924A60FBF00C4C050 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		DF45A1CC24A6138300C4C050 /* MenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonView.swift; sourceTree = "<group>"; };
+		DF45A1CE24A6139600C4C050 /* HomeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +72,15 @@
 			children = (
 				DF02A78A24A360C3009582BC /* AppDelegate.swift */,
 				DF02A78C24A360C3009582BC /* SceneDelegate.swift */,
-				DF02A78E24A360C3009582BC /* ContentView.swift */,
-				DF02A79E24A527DC009582BC /* ButtonMenuView.swift */,
-				DF02A7A024A53541009582BC /* ButtonMainView.swift */,
+				DF45A1C724A60A5100C4C050 /* MainView.swift */,
+				DF45A1CB24A6134B00C4C050 /* MainButton */,
+				DF02A7A224A544F8009582BC /* Menu */,
+				DF45A1C924A60FBF00C4C050 /* ErrorView.swift */,
 				DF02A79024A360C5009582BC /* Assets.xcassets */,
 				DF02A79524A360C5009582BC /* LaunchScreen.storyboard */,
 				DF02A79824A360C5009582BC /* Info.plist */,
 				DF02A79224A360C5009582BC /* Preview Content */,
+				DF02A7A324A54723009582BC /* SettingsView.swift */,
 			);
 			path = AppMaree;
 			sourceTree = "<group>";
@@ -79,6 +91,25 @@
 				DF02A79324A360C5009582BC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DF02A7A224A544F8009582BC /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				DF02A78E24A360C3009582BC /* MenuView.swift */,
+				DF02A79E24A527DC009582BC /* ButtonMenuView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		DF45A1CB24A6134B00C4C050 /* MainButton */ = {
+			isa = PBXGroup;
+			children = (
+				DF02A7A024A53541009582BC /* ButtonMainView.swift */,
+				DF45A1CC24A6138300C4C050 /* MenuButtonView.swift */,
+				DF45A1CE24A6139600C4C050 /* HomeButtonView.swift */,
+			);
+			path = MainButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,11 +183,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF45A1CD24A6138300C4C050 /* MenuButtonView.swift in Sources */,
 				DF02A78B24A360C3009582BC /* AppDelegate.swift in Sources */,
+				DF45A1C824A60A5100C4C050 /* MainView.swift in Sources */,
 				DF02A78D24A360C3009582BC /* SceneDelegate.swift in Sources */,
-				DF02A78F24A360C3009582BC /* ContentView.swift in Sources */,
+				DF02A78F24A360C3009582BC /* MenuView.swift in Sources */,
+				DF02A7A424A54723009582BC /* SettingsView.swift in Sources */,
 				DF02A7A124A53541009582BC /* ButtonMainView.swift in Sources */,
+				DF45A1CF24A6139600C4C050 /* HomeButtonView.swift in Sources */,
 				DF02A79F24A527DC009582BC /* ButtonMenuView.swift in Sources */,
+				DF45A1CA24A60FBF00C4C050 /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
