@@ -16,13 +16,19 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-
+/**
+ * Fragment de la page des horaires
+ * @property <listeId> Liste des Id des cases du tableau avec une date
+ * @property <viewModel> ViewModel qui contient les données partager entre les fragments
+ */
 class HorairesFragment : Fragment() {
     var listeId:ArrayList<Int> = ArrayList<Int>()
     private lateinit var viewModel:TableauHoraireViewModel
-    data class Maree(val etat:String,val heure:String,val hauteur:String,val coef:String=" ")
-    data class Porte(val etat:String,val heure:String)
 
+    /**
+     * Fonction automatique lors de la création du fragment
+     * Initialise le fragment et affiche la vue du tableau des horaires
+     */
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
@@ -31,6 +37,13 @@ class HorairesFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_horaires, container, false)
     }
 
+    /**
+     *  Fonction automatique lors de la création de la vue
+     *  Recupére le ViewModel crée par le MainActivity
+     *  Ajoute le tableau des horaires dans le scroll de l'affichage
+     *  Récupére la liste des Id stockée dans le ViewModel
+     *  Lance le scoll du tableau a la date du jour
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel=activity.run {ViewModelProviders.of(this!!).get(TableauHoraireViewModel::class.java)  }
@@ -41,24 +54,34 @@ class HorairesFragment : Fragment() {
         view.findViewById<Button>(R.id.buttontmp).setOnClickListener {
             findNavController().navigate(R.id.action_HorairesFragment_to_ParametreFragment)
         }
-        var popup = PopUp(activity,view.width)
+        var popup = PopUp(activity)
         val mainHandler = Handler(Looper.getMainLooper())
-        mainHandler.post(object : Runnable {
+
+        mainHandler.postDelayed(object : Runnable {
             override fun run() {
-                popup.show()
                 mainHandler.postDelayed(this, 45000)
+                popup.show()
             }
-        })
+        },45000)
     }
 
 
-
+    /**
+     * Fonction pour obtenir la date du jour
+     * @return Date du jour en String au format dd/mm/yyyy
+     */
     fun getTodayDate():String{
         val sdf = SimpleDateFormat("dd/MM/yyyy")
         val currentDate = sdf.format(Date())
         return currentDate
     }
 
+    /**
+     * Fonction pour scroll le tableau jusqu'a la date indiqué
+     * @param date au format dd/mm/yyyy
+     * Parcours le tableau grâce a la liste des id jusqu'a trouver un date identique au paramètre
+     * Puis focus la vue sur la case trouvée
+     */
     fun scrollToDate(date:String){
         var i =0
         var textViewScroll: TextView? = view?.findViewById<TextView>(listeId.get(i))
