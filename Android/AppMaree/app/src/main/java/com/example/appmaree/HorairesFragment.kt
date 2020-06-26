@@ -56,12 +56,13 @@ class HorairesFragment : Fragment() {
         }
         var popup = PopUp(activity,view.width)
         val mainHandler = Handler(Looper.getMainLooper())
-        mainHandler.post(object : Runnable {
+
+        mainHandler.postDelayed(object : Runnable {
             override fun run() {
-                popup.show()
                 mainHandler.postDelayed(this, 45000)
+                popup.show()
             }
-        })
+        },45000)
     }
 
 
