@@ -10,7 +10,12 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        MenuButtonView(home: true)
+        NavigationView {
+            MenuButtonView(home: true)
+        }
+        .navigationBarHidden(true)
+        .navigationBarTitle("titre")
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

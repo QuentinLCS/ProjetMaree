@@ -20,6 +20,12 @@
 		DF45A1CA24A60FBF00C4C050 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1C924A60FBF00C4C050 /* ErrorView.swift */; };
 		DF45A1CD24A6138300C4C050 /* MenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1CC24A6138300C4C050 /* MenuButtonView.swift */; };
 		DF45A1CF24A6139600C4C050 /* HomeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1CE24A6139600C4C050 /* HomeButtonView.swift */; };
+		DF45A1E324A64E2E00C4C050 /* FishingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1E224A64E2E00C4C050 /* FishingView.swift */; };
+		DF45A1E524A64E7F00C4C050 /* data.xml in Resources */ = {isa = PBXBuildFile; fileRef = DF45A1E424A64E7F00C4C050 /* data.xml */; };
+		DF45A1E724A64EB500C4C050 /* DocumentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1E624A64EB500C4C050 /* DocumentationView.swift */; };
+		DF45A1E924A64EF400C4C050 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1E824A64EF400C4C050 /* LaunchView.swift */; };
+		DF45A1EC24A64FB100C4C050 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1EB24A64FB100C4C050 /* SliderView.swift */; };
+		DF45A1EE24A64FDE00C4C050 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1ED24A64FDE00C4C050 /* TitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +44,12 @@
 		DF45A1C924A60FBF00C4C050 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		DF45A1CC24A6138300C4C050 /* MenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonView.swift; sourceTree = "<group>"; };
 		DF45A1CE24A6139600C4C050 /* HomeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonView.swift; sourceTree = "<group>"; };
+		DF45A1E224A64E2E00C4C050 /* FishingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishingView.swift; sourceTree = "<group>"; };
+		DF45A1E424A64E7F00C4C050 /* data.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = data.xml; sourceTree = "<group>"; };
+		DF45A1E624A64EB500C4C050 /* DocumentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentationView.swift; sourceTree = "<group>"; };
+		DF45A1E824A64EF400C4C050 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		DF45A1EB24A64FB100C4C050 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
+		DF45A1ED24A64FDE00C4C050 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,17 +82,21 @@
 		DF02A78924A360C3009582BC /* AppMaree */ = {
 			isa = PBXGroup;
 			children = (
-				DF02A78A24A360C3009582BC /* AppDelegate.swift */,
-				DF02A78C24A360C3009582BC /* SceneDelegate.swift */,
+				DF45A1E824A64EF400C4C050 /* LaunchView.swift */,
 				DF45A1C724A60A5100C4C050 /* MainView.swift */,
 				DF45A1CB24A6134B00C4C050 /* MainButton */,
 				DF02A7A224A544F8009582BC /* Menu */,
 				DF45A1C924A60FBF00C4C050 /* ErrorView.swift */,
-				DF02A79024A360C5009582BC /* Assets.xcassets */,
-				DF02A79524A360C5009582BC /* LaunchScreen.storyboard */,
-				DF02A79824A360C5009582BC /* Info.plist */,
-				DF02A79224A360C5009582BC /* Preview Content */,
+				DF45A1ED24A64FDE00C4C050 /* TitleView.swift */,
+				DF45A1E224A64E2E00C4C050 /* FishingView.swift */,
 				DF02A7A324A54723009582BC /* SettingsView.swift */,
+				DF45A1E624A64EB500C4C050 /* DocumentationView.swift */,
+				DF45A1EB24A64FB100C4C050 /* SliderView.swift */,
+				DF02A79224A360C5009582BC /* Preview Content */,
+				DF45A1EA24A64F0C00C4C050 /* Other */,
+				DF02A79024A360C5009582BC /* Assets.xcassets */,
+				DF02A79824A360C5009582BC /* Info.plist */,
+				DF45A1E424A64E7F00C4C050 /* data.xml */,
 			);
 			path = AppMaree;
 			sourceTree = "<group>";
@@ -110,6 +126,16 @@
 				DF45A1CE24A6139600C4C050 /* HomeButtonView.swift */,
 			);
 			path = MainButton;
+			sourceTree = "<group>";
+		};
+		DF45A1EA24A64F0C00C4C050 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				DF02A78A24A360C3009582BC /* AppDelegate.swift */,
+				DF02A78C24A360C3009582BC /* SceneDelegate.swift */,
+				DF02A79524A360C5009582BC /* LaunchScreen.storyboard */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF02A79724A360C5009582BC /* LaunchScreen.storyboard in Resources */,
+				DF45A1E524A64E7F00C4C050 /* data.xml in Resources */,
 				DF02A79424A360C5009582BC /* Preview Assets.xcassets in Resources */,
 				DF02A79124A360C5009582BC /* Assets.xcassets in Resources */,
 			);
@@ -183,8 +210,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF45A1E324A64E2E00C4C050 /* FishingView.swift in Sources */,
 				DF45A1CD24A6138300C4C050 /* MenuButtonView.swift in Sources */,
 				DF02A78B24A360C3009582BC /* AppDelegate.swift in Sources */,
+				DF45A1E924A64EF400C4C050 /* LaunchView.swift in Sources */,
 				DF45A1C824A60A5100C4C050 /* MainView.swift in Sources */,
 				DF02A78D24A360C3009582BC /* SceneDelegate.swift in Sources */,
 				DF02A78F24A360C3009582BC /* MenuView.swift in Sources */,
@@ -193,6 +222,9 @@
 				DF45A1CF24A6139600C4C050 /* HomeButtonView.swift in Sources */,
 				DF02A79F24A527DC009582BC /* ButtonMenuView.swift in Sources */,
 				DF45A1CA24A60FBF00C4C050 /* ErrorView.swift in Sources */,
+				DF45A1E724A64EB500C4C050 /* DocumentationView.swift in Sources */,
+				DF45A1EC24A64FB100C4C050 /* SliderView.swift in Sources */,
+				DF45A1EE24A64FDE00C4C050 /* TitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

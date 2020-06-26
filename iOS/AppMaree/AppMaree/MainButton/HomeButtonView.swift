@@ -10,15 +10,20 @@ import SwiftUI
 
 struct HomeButtonView: View {
     
-    private var colored:Bool
+    private let colored:Bool
+    private let isBack:Bool
 
-    init(colored: Bool = true) {
+    init(colored: Bool = true, isBack:Bool = true) {
         self.colored = colored
+        self.isBack = isBack
     }
       
     var body: some View {
-        NavigationLink(destination: MainView()) {
-            ButtonMainView(colored: colored)
+        VStack {
+            Spacer()
+            NavigationLink(destination: MainView()) {
+                ButtonMainView(colored: colored)
+            }
         }
     }
 }

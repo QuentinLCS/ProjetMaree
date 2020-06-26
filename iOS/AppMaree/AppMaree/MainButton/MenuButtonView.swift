@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MenuButtonView: View {
     
-    private var colored:Bool
+    private let colored:Bool
     private let home:Bool
 
     init(home: Bool = false, colored: Bool = true) {
@@ -19,8 +19,17 @@ struct MenuButtonView: View {
     }
     
     var body: some View {
-        NavigationLink(destination: MenuView()) {
-            ButtonMainView(home: home, colored: colored)
+        VStack {
+            Spacer()
+            NavigationLink(destination: MenuView()) {
+                ButtonMainView(home: home, colored: colored)
+            }
+        }
+    }
+    
+    struct MainView_Previews: PreviewProvider {
+        static var previews: some View {
+            MenuButtonView()
         }
     }
 }

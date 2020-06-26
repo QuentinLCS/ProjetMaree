@@ -20,18 +20,23 @@ struct ButtonMainView: View {
     }
     
     var body: some View {
-        VStack {
-            Spacer()
-            Image(home ? "home" : colored ? "back" : "colored_back")
-                .renderingMode(.original)
-            .resizable()
-            .aspectRatio(1, contentMode: .fit)
-            .padding(25)
-            .background(
-                 LinearGradient(gradient: Gradient(colors: [colored ? Color("Primaire 1") : Color.white, colored ? Color("Primaire 2") : Color.white]), startPoint: .top, endPoint: .bottom)
-            )
-            .cornerRadius(100)
-            .frame(width: 100, height: 100)
-        }.padding(50)
+        Image(home ? "home" : colored ? "back" : "colored_back")
+            .renderingMode(.original)
+        .resizable()
+        .aspectRatio(1, contentMode: .fit)
+        .padding(25)
+        .background(
+             LinearGradient(gradient: Gradient(colors: [colored ? Color("Primaire 1") : Color.white, colored ? Color("Primaire 2") : Color.white]), startPoint: .top, endPoint: .bottom)
+        )
+        .cornerRadius(100)
+        .frame(width: 100, height: 100)
+        .padding(.bottom, 50)
+        
+    }
+    
+    struct MainView_Previews: PreviewProvider {
+        static var previews: some View {
+            ButtonMainView(colored: true)
+        }
     }
 }
