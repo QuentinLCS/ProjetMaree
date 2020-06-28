@@ -16,7 +16,7 @@ struct LaunchView: View {
                 ZStack {
                     Text("Les données affichées sur cette application sont issues du GUIDE IMPRIMÉ et distribué gratuitement. Elles ne sont qu'indicatives. Certaines ont été fournies par le SHOM, d'autres sont calculées. Les horaires sont en HEURE LEGALE et ne prennent pas en compte les variations liées à la météorologie ou à des effets locaux particuliers. En aucun cas, elles ne peuvent être utilisées pour la navigation maritime. ETC")
                 }
-                HomeButtonView()
+                HomeButtonView(isBack: false)
             }
         }
         .navigationBarHidden(true)

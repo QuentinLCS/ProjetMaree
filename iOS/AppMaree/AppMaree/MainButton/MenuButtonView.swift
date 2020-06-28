@@ -12,17 +12,30 @@ struct MenuButtonView: View {
     
     private let colored:Bool
     private let home:Bool
+    private let isBack:Bool
+    private let presentation:Binding<PresentationMode>?
 
-    init(home: Bool = false, colored: Bool = true) {
+    init(home: Bool = false, colored: Bool = true, isBack: Bool = true,  presentation:Binding<PresentationMode>? = nil) {
         self.home = home
         self.colored = colored
+        self.isBack = isBack
+        self.presentation = presentation
     }
     
     var body: some View {
+        
         VStack {
             Spacer()
-            NavigationLink(destination: MenuView()) {
-                ButtonMainView(home: home, colored: colored)
+            if !isBack {
+                NavigationLink(destination: MenuView()) {
+                    ButtonMainView(home: home, colored: colored)
+                }
+            } else {
+                Button(action: {
+                    self.presentation?.wrappedValue.dismiss()
+                }) {
+                    ButtonMainView(home: home, colored: colored)
+                }
             }
         }
     }

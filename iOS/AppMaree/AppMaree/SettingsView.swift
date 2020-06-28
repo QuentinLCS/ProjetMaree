@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -16,7 +18,10 @@ struct SettingsView: View {
                 ZStack {
                     Text("...")
                 }
-                MenuButtonView()
+                SliderView()
+                SliderView()
+                SliderView()
+                MenuButtonView(presentation: presentationMode)
             }
         }
         .navigationBarHidden(true)

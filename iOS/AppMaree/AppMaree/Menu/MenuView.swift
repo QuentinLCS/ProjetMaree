@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct MenuView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
@@ -19,22 +21,22 @@ struct MenuView: View {
                         Spacer()
                         HStack {
                             Spacer()
-                            ButtonMenuView(label: "Date", image: "clock")
+                            ButtonMenuView(destination: .date)
                             Spacer()
-                            ButtonMenuView(label: "Pêche", image: "fishing")
+                            ButtonMenuView(destination: .fishing)
                             Spacer()
                         }
                         HStack {
                             Spacer()
-                            ButtonMenuView(label: "Manuel d'utilisation", image: "documentation")
+                            ButtonMenuView(destination: .documentation)
                             Spacer()
-                            ButtonMenuView(label: "Paramètres", image: "settings")
+                            ButtonMenuView(destination: .settings)
                             Spacer()
                         }
                         Spacer()
                         Spacer()
                     })
-                    HomeButtonView(colored: false)
+                    HomeButtonView(colored: false, presentation: presentationMode)
                 }
             }
         }

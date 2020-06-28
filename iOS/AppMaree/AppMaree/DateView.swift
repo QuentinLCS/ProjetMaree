@@ -1,14 +1,14 @@
 //
-//  DocumentationView.swift
+//  DateView.swift
 //  AppMaree
 //
-//  Created by unicaen on 26/06/2020.
+//  Created by unicaen on 28/06/2020.
 //  Copyright © 2020 unicaen. All rights reserved.
 //
 
 import SwiftUI
 
-struct DocumentationView: View {
+struct DateView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
@@ -16,8 +16,8 @@ struct DocumentationView: View {
     }
 }
 
-struct DocumentationView_Previews: PreviewProvider {
+struct DateView_Previews: PreviewProvider {
     static var previews: some View {
-        DocumentationView()
+        DateView()
     }
 }
