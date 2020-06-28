@@ -12,12 +12,14 @@ struct FishingView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     let fishes: [Animal] = Animal.getFishes()
+    //let fishesCount: Int = fishesCount()
     let shellFishes: [Animal] = Animal.getShellFishes()
-    let shellFishesCount: Int = shellFishes.count()
+    //let shellFishesCount: Int = shellFishes.count()
     
     var body: some View {
-        ZStack {
-            VStack(alignment: .leading, spacing: 20) {
+        NavigationView {
+            ZStack {
+                VStack(alignment: .leading, spacing: 20) {
                 TitleView(title: "PÊCHE EN BATEAU : LIMITES")
                 
                 Group {
@@ -28,26 +30,30 @@ struct FishingView: View {
                         .fontWeight(.bold)
                         .multilineTextAlignment(.leading)
                 }.padding(.horizontal)
-                
-                ZStack {
-                    DiagonalBackgroundView(color: .gradient)
                     
-                    ForEach(0..<fishesCount) { number in
-                        VStack {
-                            HStack {
-                                Spacer()
-                                ButtonFishDetailsView(backgroundColor: .white, name: "BAR", image: "bar", size: 42.0)
-                                Spacer()
-                                ButtonFishDetailsView(backgroundColor: .white, name: "BAR", image: "bar", size: 42.0)
-                                Spacer()
+                    ZStack {
+                        DiagonalBackgroundView(color: .gradient)
+                        
+                        /*ForEach(0..<fishesCount) { number in*/
+                            VStack {
+                                HStack {
+                                    Spacer()
+                                    ButtonFishDetailsView(backgroundColor: .white, name: "BAR", image: "bar", size: 42.0)
+                                    Spacer()
+                                    ButtonFishDetailsView(backgroundColor: .white, name: "BAR", image: "bar", size: 42.0)
+                                    Spacer()
+                                }
                             }
-                        }
+                        //}
                     }
+                    Spacer()
                 }
-                Spacer()
+                MenuButtonView(presentation: presentationMode)
             }
-            MenuButtonView(presentation: presentationMode)
         }
+        .navigationBarHidden(true)
+        .navigationBarTitle("titre")
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

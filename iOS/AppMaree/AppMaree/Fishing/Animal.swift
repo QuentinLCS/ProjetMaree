@@ -54,12 +54,12 @@ struct Animal {
         ]
     }
     
-    static func countFishes() -> Int {
+    /*static func countFishes() -> Int {
         return getFishes().count()
     }
     
     static func countShellFishes() -> Int {
         return getShellFishes().count()
-    }
+    }*/
 }
 
