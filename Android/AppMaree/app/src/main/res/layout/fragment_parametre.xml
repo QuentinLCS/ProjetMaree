@@ -5,25 +5,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="10"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
     <TextView
         android:id="@+id/tirantDEauTextView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_height="0dp"
         android:text="Quel est votre tirant d'eau ?"
         android:textColor="@android:color/black"
-        android:textSize="24sp"
+        android:textSize="@dimen/taillepoliceparam"
+        android:layout_weight="1"
+        android:layout_gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/parametreTextView" />
+        app:layout_constraintTop_toBottomOf="@id/parametreTextView"
+        />
 
     <EditText
         android:id="@+id/tirantDEauEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_height="0dp"
         android:hint="Saississez votre tirant d'eau : (à partir de 1.6)"
         android:inputType="number|numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -31,13 +39,25 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tirantDEauTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_weight="1"/>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        >
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"/>
     <Button
         android:id="@+id/tirantDEauButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:text="Valider"
+        android:layout_weight="1"
         android:textColor="@android:color/white"
         android:background="@drawable/button_background"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,7 +66,102 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tirantDEauEditText"
         app:layout_constraintVertical_bias="0.047" />
+    </LinearLayout>
 
+        <ProgressBar
+            android:layout_width="fill_parent"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_margin="2dp"
+            >
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:text="Taille Texte :"
+                android:textSize="@dimen/taillepoliceparam"
+                />
+            <Button
+                android:id="@+id/bTailleTextMoins"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:textColor="@android:color/white"
+                android:background="@drawable/button_background"
+                android:text="MOINS"/>
+            <Button
+                android:id="@+id/bTailleTextPlus"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/button_background"
+                android:layout_weight="1"
+                android:text="PLUS"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:weightSum="2"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/changercouleurtext"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:text="changer les couleurs :"
+                android:textSize="@dimen/taillepoliceparam"/>
+            <SeekBar
+                android:id="@+id/progressBarColor"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:max="100"/>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <!-- Placer exemple ligne à faire manuellement -->
+        </Button>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:weightSum="5"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <Button
+                android:id="@+id/bParamReset"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:layout_margin="5dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/button_background"
+                android:text="RESET"/>
+        </LinearLayout>
+    </LinearLayout>
     <TextView
         android:id="@+id/parametreTextView"
         android:layout_width="match_parent"
@@ -55,7 +170,6 @@
         android:textAlignment="center"
         android:textSize="30sp"
         android:textColor="@color/colorTitre"
-        app:layout_constraintBottom_toTopOf="@+id/tirantDEauTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

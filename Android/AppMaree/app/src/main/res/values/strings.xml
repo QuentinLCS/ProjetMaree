@@ -18,4 +18,44 @@
     <string name="bouton_accueil">Valider</string>
 
     <string name="popup_fermer_label">Fermer</string>
+
+    <!-- texte de la navbar -->
+    <string name="horaires">Horaires</string>
+    <string name="parametres">Paramètres</string>
+    <string name="documentation">Documentations</string>
+    <string name="services">Services</string>
+    <string name="a_propos">"À propos"</string>
+    <string name="tailles_autorisées">"Tailles autorisées</string>
+    <string name="tirantdeau">"Tirant d'eau :"</string>
+
+
+    <!-- texte documentation -->
+    <string name="DocuParagraphe1">
+        La forme de base de visualisation des marées est :\n
+    </string>
+    <string name="DocuParagraphe2">
+        \nLa première ligne avec 79 et 77 indiquent les coefficients de marée des pleines mers. \n\nLa couleur bleu indique les horaires de pleine mer et la couleur jaune ceux de basse mer.\n
+    </string>
+    <string name="DocuParagraphe3">
+       "\nLes horaires suivant nous sont fournit par le SHOM, celui en vert indique l'horaire d'ouverture et en rouge la fermeture.\n"
+    </string>
+    <string name="DocuParagraphe4">
+        "\nPrenons maintenant le cas ou l'on veut : \n
+        • 2 mètres d'eau sans pied de pilote au dessus de la porte ouverte (la saisie se fait dans les paramètres)
+        • l'affichage des hauteurs d'eau à basse et pleine mer \n\nOn a alors l'affichage suivant : "
+    </string>
+    <string name="DocuParagraphe5">
+        \nla ligne suivante :
+    </string>
+    <string name="DocuParagraphe6">
+        "indiquent les hauteurs d'eau correspondant à la pleine mer ou à la basse mer. \n\nLa ligne suivante : "
+    </string>
+    <string name="DocuParagraphe7">
+        "indique l'heure à partir de laquelle la hauteur de l'eau est égale ou supérieure à 2 metres (en vert) et inférieure à 2 metres (en rouge). Ces horaires sont approximés et ne sont pas des données en provenance du SHOM. \n\nLa ligne :"
+    </string>
+    <string name="DocuParagraphe8">
+        "indique l'heure donnée par le SHOM à partir de laquelle la porte ouvre (avec la parenthèse ouvrante) et ferme (avec la parenthèse fermante).\n"
+    </string>
+
+
 </resources>
