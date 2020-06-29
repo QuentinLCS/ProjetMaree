@@ -54,14 +54,15 @@ class HorairesFragment : Fragment() {
         view.findViewById<Button>(R.id.buttontmp).setOnClickListener {
             findNavController().navigate(R.id.action_HorairesFragment_to_ParametreFragment)
         }
-        var popup = PopUp(activity,view.width)
+        var popup = PopUp(activity)
         val mainHandler = Handler(Looper.getMainLooper())
-        mainHandler.post(object : Runnable {
+
+        mainHandler.postDelayed(object : Runnable {
             override fun run() {
-                popup.show()
                 mainHandler.postDelayed(this, 45000)
+                popup.show()
             }
-        })
+        },45000)
     }
 
 

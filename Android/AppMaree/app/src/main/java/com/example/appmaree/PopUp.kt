@@ -1,17 +1,15 @@
 package com.example.appmaree
 
-import android.app.Activity
-import android.app.Dialog
+
 import android.view.Gravity.*
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.PopupWindow
-import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentActivity
 import kotlin.random.Random
 
-class PopUp (var activity: FragmentActivity?,var nwidth : Int) : PopupWindow(activity){
+class PopUp (var activity: FragmentActivity?) : PopupWindow(activity){
     private var image : ImageView?
     private var imageArray : Array<Int>
     init {
