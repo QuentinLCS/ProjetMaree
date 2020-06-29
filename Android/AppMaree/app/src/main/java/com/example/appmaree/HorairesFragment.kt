@@ -24,6 +24,7 @@ import kotlin.collections.ArrayList
 class HorairesFragment : Fragment() {
     var listeId:ArrayList<Int> = ArrayList<Int>()
     private lateinit var viewModel:TableauHoraireViewModel
+    private val tempsEntrePub = 40000
 
     /**
      * Fonction automatique lors de la création du fragment
@@ -59,10 +60,10 @@ class HorairesFragment : Fragment() {
 
         mainHandler.postDelayed(object : Runnable {
             override fun run() {
-                mainHandler.postDelayed(this, 45000)
+                mainHandler.postDelayed(this, tempsEntrePub.toLong())
                 popup.show()
             }
-        },45000)
+        }, tempsEntrePub.toLong())
     }
 
 

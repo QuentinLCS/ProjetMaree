@@ -69,7 +69,6 @@ class PopUp (var activity: FragmentActivity?) : PopupWindow(activity){
     }
 
     fun show() {
-
         image?.setImageResource(imageArray.get(Random.nextInt(imageArray.size)))
         showAtLocation(activity?.currentFocus, BOTTOM,0,0)
     }
