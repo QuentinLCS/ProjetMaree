@@ -71,7 +71,7 @@ class HorairesFragment : Fragment() {
         mainHandler.postDelayed(object : Runnable {
             override fun run() {
                 mainHandler.postDelayed(this, tempsEntrePub.toLong())
-                popup.show()
+                popup.show(view)
             }
         }, tempsEntrePub.toLong())
     }

@@ -2,6 +2,7 @@ package com.example.appmaree
 
 
 import android.view.Gravity.*
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -68,9 +69,9 @@ class PopUp (var activity: FragmentActivity?) : PopupWindow(activity){
             R.drawable.weldom_2)
     }
 
-    fun show() {
+    fun show(view: View) {
         image?.setImageResource(imageArray.get(Random.nextInt(imageArray.size)))
-        showAtLocation(activity?.currentFocus, BOTTOM,0,0)
+        showAtLocation(view, BOTTOM,0,0)
     }
 
 }
