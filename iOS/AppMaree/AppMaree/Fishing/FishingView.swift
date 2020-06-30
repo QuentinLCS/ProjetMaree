@@ -32,7 +32,8 @@ struct FishingView: View {
                 }.padding(.horizontal)
                     
                     ZStack {
-                        DiagonalBackgroundView(color: .gradient)
+                        DiagonalBackgroundView()
+                            .padding()
                         
                         /*ForEach(0..<fishesCount) { number in*/
                             VStack {
