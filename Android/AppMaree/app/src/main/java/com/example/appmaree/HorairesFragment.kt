@@ -28,7 +28,7 @@ class HorairesFragment : Fragment() {
     var IdToday:Int =0
     private lateinit var viewModel:TableauHoraireViewModel
     lateinit var listeJours:ArrayList<TableauHoraireViewModel.Jour>
-
+    private val tempsEntrePub = 40000
 
     /**
      * Fonction automatique lors de la création du fragment
@@ -70,10 +70,10 @@ class HorairesFragment : Fragment() {
 
         mainHandler.postDelayed(object : Runnable {
             override fun run() {
-                mainHandler.postDelayed(this, 45000)
+                mainHandler.postDelayed(this, tempsEntrePub.toLong())
                 popup.show()
             }
-        },45000)
+        }, tempsEntrePub.toLong())
     }
 
     /**
