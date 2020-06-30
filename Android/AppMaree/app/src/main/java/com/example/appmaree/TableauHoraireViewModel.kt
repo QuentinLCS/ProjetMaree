@@ -46,7 +46,7 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
      */
     data class Porte(val etat:String,val heure:String)
 
-    data class Ligne(val col1:String,val col2:String,val col3:String,val col4:String,val col5:String,val background : ArrayList<Int>?=null)
+    data class Ligne(val col1:String,var col2:String,var col3:String,var col4:String,var col5:String,val background : ArrayList<Int?>?=null)
     data class Jour(val ligne1:Ligne,val ligne2:Ligne,val ligne3:Ligne,val ligne4:Ligne,val ligne5:Ligne,val background : Int?=null){}
 
 
@@ -56,6 +56,8 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
     lateinit var listeHorairesTirantDEau:ArrayList<String>
     var pair = true
     lateinit var listJour :ArrayList<Jour>
+    var listePorte =ArrayList<Porte>()
+    var listeMaree =ArrayList<Maree>()
 
 
     /**
@@ -108,10 +110,45 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
         if(tirantDEau!=newVar){
             tirantDEau=newVar
             tableLayoutStocke.removeAllViews()
-            xmlToTable()
+            changerHoraireTirantDeau()
         }
     }
 
+    fun changerHoraireTirantDeau(){
+        val listeHoraire=getHoraireCalculTirantDeau()
+        val size=listeHoraire.size
+        var i=0
+        var tmp=""
+
+        for(jour:Jour in listJour){
+            jour.ligne5.col2=jour.ligne4.col2
+            jour.ligne4.col2=jour.ligne3.col2
+            if(jour.ligne3.col2!=""){
+                jour.ligne3.col2=listeHoraire.get(i)
+                i++
+            }
+
+            jour.ligne5.col3=jour.ligne4.col3
+            jour.ligne4.col3=jour.ligne3.col3
+            if(jour.ligne3.col3!=""){
+                jour.ligne3.col3=listeHoraire.get(i)
+                i++
+            }
+
+            jour.ligne5.col4=jour.ligne4.col4
+            jour.ligne4.col4=jour.ligne3.col4
+            if(jour.ligne3.col4!=""){
+                jour.ligne3.col4=listeHoraire.get(i)
+                i++
+            }
+            jour.ligne5.col5=jour.ligne4.col5
+            jour.ligne4.col5=jour.ligne3.col5
+            if(jour.ligne3.col5!="" && i<size){
+                jour.ligne3.col5=listeHoraire.get(i)
+                i++
+            }
+        }
+    }
     /**
      * Fonction pour calculer l'horaire d'entrée ou de sortie en fonction du tirant d'eau
      *
@@ -169,25 +206,9 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
      */
     fun getHoraireCalculTirantDeau():ArrayList<String>{
         var newlisteHorairesTirantDEau = ArrayList<String>()
-        var listePorte =ArrayList<Porte>()
-        var listeMaree =ArrayList<Maree>()
-        var xmlResourceParser: XmlResourceParser = getApplication<Application>().resources.getXml(R.xml.maree)
-        var eventType: Int = xmlResourceParser.getEventType()
-        while (eventType != XmlPullParser.END_DOCUMENT) {
-            when{
-                eventType== XmlPullParser.START_TAG && xmlResourceParser.name =="porte"-> {
-                    listePorte.addAll(getXmlAttributePorte(xmlResourceParser,"porte",false))
-                }
-                eventType== XmlPullParser.START_TAG && xmlResourceParser.name =="maree"-> {
-                    listeMaree.addAll(sortMaree(getXmlAttributeMaree(xmlResourceParser,"maree",false)))
-                }
-                else ->eventType=xmlResourceParser.next()
-            }
-        }
         for(i in 0..listeMaree.size-2){
             newlisteHorairesTirantDEau.add(calculHeureSelonTiranDEau(listePorte.get(i),listeMaree.get(i),listeMaree.get(i+1)))
         }
-
         return newlisteHorairesTirantDEau
     }
     /********************************************************************************/
@@ -238,8 +259,8 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
         var ligne3:ArrayList<String> =ArrayList<String>()
         var ligne4:ArrayList<String> =ArrayList<String>()
         var ligne5:ArrayList<String> =ArrayList<String>()
-        var backgroundPorte:ArrayList<Int> =ArrayList<Int>()
-        var backgroundMaree:ArrayList<Int> =ArrayList<Int>()
+        var backgroundPorte:ArrayList<Int?> =ArrayList<Int?>()
+        var backgroundMaree:ArrayList<Int?> =ArrayList<Int?>()
         var backgroundLine:Int? =null
 
         xmlRP.next()
@@ -253,7 +274,18 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
         xmlRP.next()
         var portes = getXmlAttributePorte(xmlRP,"porte")
         var marees=sortMaree(getXmlAttributeMaree(xmlRP,"maree"))
-        val row1 = TableRow(getApplication())
+
+        for(porte:Porte in portes){
+            if(porte.heure!="" && porte.heure!="-------"){
+                listePorte.add(porte)
+            }
+        }
+        for(maree:Maree in marees){
+            if(maree.heure!="--:--"){
+                listeMaree.add(maree)
+            }
+        }
+       /* val row1 = TableRow(getApplication())
         row1.layoutParams = ViewGroup.LayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT,
             ViewGroup.LayoutParams.WRAP_CONTENT)
@@ -272,7 +304,7 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
         val row5 = TableRow(getApplication())
         row5.layoutParams = ViewGroup.LayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT)
+            ViewGroup.LayoutParams.WRAP_CONTENT)*/
 
         /*row1.addView(addTextView(" "))
         row2.addView(addTextView(jour))
@@ -319,8 +351,12 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
             ligne3.add(heureP)
             ligne4.add(hauteur)
             ligne5.add(" ")
-            backgroundMaree.add(colorM)
-            backgroundPorte.add(colorP)
+            if(colorM!=Color.WHITE){backgroundMaree.add(colorM)}
+            else{backgroundMaree.add(null)}
+            if(colorP!=Color.WHITE){backgroundPorte.add(colorP)}
+            else{
+                backgroundPorte.add(null)
+            }
 
         }
         if(pair){
