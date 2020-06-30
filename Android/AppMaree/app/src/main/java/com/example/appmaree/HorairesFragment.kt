@@ -22,8 +22,9 @@ import kotlin.collections.ArrayList
  * @property <viewModel> ViewModel qui contient les données partager entre les fragments
  */
 class HorairesFragment : Fragment() {
-    var listeId:ArrayList<Int> = ArrayList<Int>()
+    var IdToday:Int =0
     private lateinit var viewModel:TableauHoraireViewModel
+    private val tempsEntrePub = 40000
 
     /**
      * Fonction automatique lors de la création du fragment
@@ -48,8 +49,8 @@ class HorairesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel=activity.run {ViewModelProviders.of(this!!).get(TableauHoraireViewModel::class.java)  }
         scroll.addView(viewModel.getTableLayout())
-        listeId=viewModel.getListId()
-        scrollToDate(getTodayDate())
+        IdToday=viewModel.getIdToday()
+        scrollToDate()
 
         view.findViewById<Button>(R.id.buttontmp).setOnClickListener {
             findNavController().navigate(R.id.action_HorairesFragment_to_ParametreFragment)
@@ -59,38 +60,19 @@ class HorairesFragment : Fragment() {
 
         mainHandler.postDelayed(object : Runnable {
             override fun run() {
-                mainHandler.postDelayed(this, 45000)
+                mainHandler.postDelayed(this, tempsEntrePub.toLong())
                 popup.show()
             }
-        },45000)
-    }
-
-
-    /**
-     * Fonction pour obtenir la date du jour
-     * @return Date du jour en String au format dd/mm/yyyy
-     */
-    fun getTodayDate():String{
-        val sdf = SimpleDateFormat("dd/MM/yyyy")
-        val currentDate = sdf.format(Date())
-        return currentDate
+        }, tempsEntrePub.toLong())
     }
 
     /**
-     * Fonction pour scroll le tableau jusqu'a la date indiqué
-     * @param date au format dd/mm/yyyy
-     * Parcours le tableau grâce a la liste des id jusqu'a trouver un date identique au paramètre
-     * Puis focus la vue sur la case trouvée
+     * Fonction pour scroll le tableau jusqu'a la date du jour
+     * Focus la vue sur la case trouvée
      */
-    fun scrollToDate(date:String){
-        var i =0
-        var textViewScroll: TextView? = view?.findViewById<TextView>(listeId.get(i))
-        while((textViewScroll?.text?.replace("\\s".toRegex(),""))!=date && i<(listeId.size-1)){
-            i++
-            textViewScroll = view?.findViewById<TextView>(listeId.get(i))
-        }
+    fun scrollToDate(){
+        var textViewScroll: TextView? = view?.findViewById<TextView>(IdToday)
             textViewScroll?.requestFocus()
-
     }
 
 

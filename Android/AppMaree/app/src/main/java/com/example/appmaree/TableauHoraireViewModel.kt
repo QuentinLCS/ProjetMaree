@@ -11,6 +11,9 @@ import android.widget.TableRow
 import android.widget.TextView
 import androidx.lifecycle.AndroidViewModel
 import org.xmlpull.v1.XmlPullParser
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 private const val HAUTEUR_PORTE =1.5
 
@@ -45,7 +48,7 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
 
 
     var tableLayoutStocke : TableLayout= TableLayout(getApplication())
-    var listeIdStocke:ArrayList<Int> = ArrayList<Int>()
+    var IdTodayDate:Int = 0
     var tirantDEau:Double =0.0
     lateinit var listeHorairesTirantDEau:ArrayList<String>
     var pair = true
@@ -75,8 +78,8 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
      *
      * @param newlist liste d'ID à stocké
      */
-    fun setListeId(newlist :ArrayList<Int>){
-        listeIdStocke=newlist
+    fun setIdTpdayDate(newId :Int){
+        IdTodayDate=newId
     }
 
     /**
@@ -84,8 +87,8 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
      *
      * @return Liste des ID
      */
-    fun getListId(): ArrayList<Int> {
-        return listeIdStocke
+    fun getIdToday(): Int {
+        return IdTodayDate
     }
 
     /****************Fonctions pour le calculs des horaires avec le tirant d'eau****************/
@@ -226,7 +229,10 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
         xmlRP.next()
         var jour:String =xmlRP.getAttributeValue(0)
         xmlRP.next()
-        var date:String =xmlRP.text
+        var id=false
+        if(xmlRP.text==getTodayDate()){id=true}
+        var date:String =xmlRP.text.split("/")[0]
+        var mois :String=moisIntToString(xmlRP.text.split("/")[1].toInt())
         xmlRP.next()
         xmlRP.next()
         var portes = getXmlAttributePorte(xmlRP,"porte")
@@ -254,8 +260,8 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
 
         row1.addView(addTextView(" "))
         row2.addView(addTextView(jour))
-        row3.addView(addTextView(date+" ",id=true))
-        row4.addView(addTextView(" "))
+        row3.addView(addTextView(date+" ",id=id))
+        row4.addView(addTextView(mois))
         row5.addView(addTextView(" "))
         for(i in 0..3){
 
@@ -435,7 +441,7 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
         if(id){
             textview.id= View.generateViewId()
             textview.setFocusableInTouchMode(true)
-            listeIdStocke.add(textview.id)
+            IdTodayDate=textview.id
         }
         if(color!=Color.WHITE){textview.setBackgroundColor(color)}
         if(color==Color.BLUE){textview.setTextColor(Color.WHITE)}
@@ -492,5 +498,32 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
         }
     }
 
+   fun moisIntToString(mois:Int): String {
+       when(mois){
+           1->return "Janvier"
+           2->return "Février"
+           3->return "Mars"
+           4->return "Avril"
+           5->return "Mai"
+           6->return "Juin"
+           7->return "Juillet"
+           8->return "Août"
+           9->return "Septemnre"
+           10->return "Octobre"
+           11->return "Novembre"
+           12->return "Décembre"
+           else-> return ""
+       }
+   }
+
+    /**
+     * Fonction pour obtenir la date du jour
+     * @return Date du jour en String au format dd/mm/yyyy
+     */
+    fun getTodayDate():String{
+        val sdf = SimpleDateFormat("dd/MM/yyyy")
+        val currentDate = sdf.format(Date())
+        return currentDate
+    }
     /*****************************************************************************/
 }
