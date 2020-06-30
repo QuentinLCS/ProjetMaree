@@ -30,6 +30,7 @@
 		DF45A1EC24A64FB100C4C050 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1EB24A64FB100C4C050 /* SliderView.swift */; };
 		DF45A1EE24A64FDE00C4C050 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1ED24A64FDE00C4C050 /* TitleView.swift */; };
 		DFBF4F8724AB658300E2DA4B /* StyledText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4F8624AB658300E2DA4B /* StyledText.swift */; };
+		DFBF4F8B24ABB89700E2DA4B /* ButtonWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4F8A24ABB89700E2DA4B /* ButtonWindowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		DF45A1EB24A64FB100C4C050 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		DF45A1ED24A64FDE00C4C050 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		DFBF4F8624AB658300E2DA4B /* StyledText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledText.swift; sourceTree = "<group>"; };
+		DFBF4F8A24ABB89700E2DA4B /* ButtonWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWindowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				DF02A7A024A53541009582BC /* ButtonMainView.swift */,
 				DF45A1CC24A6138300C4C050 /* MenuButtonView.swift */,
 				DF45A1CE24A6139600C4C050 /* HomeButtonView.swift */,
+				DFBF4F8A24ABB89700E2DA4B /* ButtonWindowView.swift */,
 			);
 			path = MainButton;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFBF4F8B24ABB89700E2DA4B /* ButtonWindowView.swift in Sources */,
 				DF45A1E324A64E2E00C4C050 /* FishingView.swift in Sources */,
 				DFBF4F8724AB658300E2DA4B /* StyledText.swift in Sources */,
 				DF45A1CD24A6138300C4C050 /* MenuButtonView.swift in Sources */,

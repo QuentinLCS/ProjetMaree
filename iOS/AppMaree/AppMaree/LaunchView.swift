@@ -30,11 +30,12 @@ Les données affichées sur cette application sont issues du GUIDE IMPRIMÉ et d
                 .padding(.top)
                 ZStack {
                     DiagonalBackgroundView(a: .primaryColor)
-                    HomeButtonView(isBack: false)
-                    VStack(spacing: 5.0) {
+
+                    VStack {
                         
                         Text("L'association et les auteurs de cette application ne peuvent être tenus responsables d'incidents ou d'accidents engendrés par la lecture des informations de cette application.")
                             .font(.system(size: 18))
+                            .padding(10.0)
                         
                         HStack{
                             Text("En cliquant sur ")
@@ -53,6 +54,7 @@ Les données affichées sur cette application sont issues du GUIDE IMPRIMÉ et d
                             .padding(.top, 50.0)
                             .font(.system(size: 20))
                         }
+                        
                         Text("pris connaissance de cet avertissement.")
                         .bold()
                         .multilineTextAlignment(.center)
@@ -62,9 +64,10 @@ Les données affichées sur cette application sont issues du GUIDE IMPRIMÉ et d
                             .fontWeight(.semibold)
                             .foregroundColor(Color.white)
                             .padding(.top, 30.0)
-                        Spacer()
+                        
+                        ButtonWindowView(isBack: false)
                     }
-                    .padding(10.0)
+                    
                 }
                 .padding(.top, 25.0)
             }
