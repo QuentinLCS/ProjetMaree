@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProviders.of(this).get(TableauHoraireViewModel::class.java)
         viewModel.tableLayoutStocke=SplashScreenActivity.splashViewModel.tableLayoutStocke
         viewModel.IdTodayDate=SplashScreenActivity.splashViewModel.IdTodayDate
+        viewModel.listJour=SplashScreenActivity.splashViewModel.listJour
         setContentView(R.layout.activity_main)
 
     }

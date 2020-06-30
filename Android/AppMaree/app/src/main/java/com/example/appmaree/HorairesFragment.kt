@@ -8,9 +8,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.LinearLayout
+import android.widget.ListAdapter
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_horaires.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -24,6 +27,8 @@ import kotlin.collections.ArrayList
 class HorairesFragment : Fragment() {
     var IdToday:Int =0
     private lateinit var viewModel:TableauHoraireViewModel
+    lateinit var listeJours:ArrayList<TableauHoraireViewModel.Jour>
+
 
     /**
      * Fonction automatique lors de la création du fragment
@@ -47,11 +52,17 @@ class HorairesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel=activity.run {ViewModelProviders.of(this!!).get(TableauHoraireViewModel::class.java)  }
-        scroll.addView(viewModel.getTableLayout())
+        listeJours=viewModel.listJour
+       /*scroll.addView(viewModel.getTableLayout())
         IdToday=viewModel.getIdToday()
-        scrollToDate()
+        scrollToDate()*/
+        list_recycler_view.apply {
+            layoutManager=LinearLayoutManager(activity)
+            adapter=ListAdapter(listeJours)
+        }
 
-        view.findViewById<Button>(R.id.buttontmp).setOnClickListener {
+
+       view.findViewById<Button>(R.id.buttontmp).setOnClickListener {
             findNavController().navigate(R.id.action_HorairesFragment_to_ParametreFragment)
         }
         var popup = PopUp(activity)
