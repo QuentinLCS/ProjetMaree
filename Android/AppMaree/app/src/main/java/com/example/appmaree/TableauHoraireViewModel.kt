@@ -70,7 +70,7 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
      * @param newVar Nouveau tirant d'eau
      */
     fun actualiserTirantDEau(newVar : Double){
-        if(tirantDEau!=newVar && tirantDEau> HAUTEUR_PORTE+0.1){
+        if(tirantDEau!=newVar && newVar> HAUTEUR_PORTE+0.1){
             tirantDEau=newVar
             changerHoraireTirantDeau()
         }
