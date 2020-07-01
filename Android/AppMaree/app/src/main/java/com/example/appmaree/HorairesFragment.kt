@@ -45,17 +45,12 @@ class HorairesFragment : Fragment() {
     /**
      *  Fonction automatique lors de la création de la vue
      *  Recupére le ViewModel crée par le MainActivity
-     *  Ajoute le tableau des horaires dans le scroll de l'affichage
-     *  Récupére la liste des Id stockée dans le ViewModel
-     *  Lance le scoll du tableau a la date du jour
+     *  Passe la liste des jours au recycler view
      */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel=activity.run {ViewModelProviders.of(this!!).get(TableauHoraireViewModel::class.java)  }
         listeJours=viewModel.listJour
-       /*scroll.addView(viewModel.getTableLayout())
-        IdToday=viewModel.getIdToday()
-        scrollToDate()*/
         list_recycler_view.apply {
             layoutManager=LinearLayoutManager(activity)
             adapter=ListAdapter(listeJours)
@@ -68,7 +63,6 @@ class HorairesFragment : Fragment() {
         }
         var popup = PopUp(activity)
         val mainHandler = Handler(Looper.getMainLooper())
-
         mainHandler.postDelayed(object : Runnable {
             override fun run() {
                 mainHandler.postDelayed(this, tempsEntrePub.toLong())
@@ -76,15 +70,4 @@ class HorairesFragment : Fragment() {
             }
         }, tempsEntrePub.toLong())
     }
-
-    /**
-     * Fonction pour scroll le tableau jusqu'a la date du jour
-     * Focus la vue sur la case trouvée
-     */
-    fun scrollToDate(){
-        var textViewScroll: TextView? = view?.findViewById<TextView>(IdToday)
-            textViewScroll?.requestFocus()
-    }
-
-
 }
