@@ -1,31 +1,63 @@
 package com.example.appmaree
 
 
-import android.view.Gravity.*
+import android.os.Handler
+import android.view.Gravity.BOTTOM
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.PopupWindow
 import androidx.fragment.app.FragmentActivity
+import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.random.Random
 
-class PopUp (var activity: FragmentActivity?) : PopupWindow(activity){
+class PopUp (var activity: FragmentActivity?, var view: View) : PopupWindow(activity){
     private var image : ImageView?
-    private var imageArray : Array<Int>
+    private var imageArray : ArrayList<Int>
+    private val tempsEntrePub : Long = 45000
+
     init {
+
         val view = activity?.layoutInflater?.inflate(R.layout.activity_popup,null)
         contentView=view
         val button = view?.findViewById<Button>(R.id.popupFermer)
         if (button != null) {
             button.setOnClickListener {
                 dismiss()
+                Handler().postDelayed({
+                    show()
+                }, tempsEntrePub)
             }
         }
         setWidth(LinearLayout.LayoutParams.MATCH_PARENT);
         image = view?.findViewById<ImageView>(R.id.popupImage)
 
-        imageArray = arrayOf(
+        imageArray = ArrayList()
+
+        var mapPoids : HashMap<Int, Int>
+                = HashMap<Int, Int> ()
+
+        mapPoids.put(R.drawable.atelier_mobile_bateau_2 , 2)
+        mapPoids.put(R.drawable.axe_sail_2 , 1)
+        mapPoids.put(R.drawable.boulangerie2_1 , 5)
+        mapPoids.put(R.drawable.bouteille_a_la_mer_2 , 4)
+        mapPoids.put(R.drawable.ca , 1)
+        mapPoids.put(R.drawable.cafe_paix_1 , 1)
+        mapPoids.put(R.drawable.cambuse_2 , 3)
+
+        for(key in mapPoids.keys){
+            for(i in 0..mapPoids[key]!!)
+                imageArray.add(key)
+        }
+
+        Handler().postDelayed({
+            show()
+        }, tempsEntrePub)
+        
+        /*
+        imageArray = intArrayOf(
             R.drawable.appd,
             R.drawable.atelier_mobile_bateau_2,
             R.drawable.axe_sail_2,
@@ -67,9 +99,11 @@ class PopUp (var activity: FragmentActivity?) : PopupWindow(activity){
             R.drawable.ti_pou_bar_1,
             R.drawable.voilerie_des_isles,
             R.drawable.weldom_2)
+        */
+        
     }
 
-    fun show(view: View) {
+    fun show() {
         image?.setImageResource(imageArray.get(Random.nextInt(imageArray.size)))
         showAtLocation(view, BOTTOM,0,0)
     }
