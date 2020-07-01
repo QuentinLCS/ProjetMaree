@@ -11,50 +11,60 @@ import SwiftUI
 struct FishingView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    let fishes: [Animal] = Animal.getFishes()
-    //let fishesCount: Int = fishesCount()
+    let fishes: [(String, String, Double)] = Animal.getFishes()
     let shellFishes: [Animal] = Animal.getShellFishes()
-    //let shellFishesCount: Int = shellFishes.count()
     
     var body: some View {
         NavigationView {
             ZStack {
-                VStack(alignment: .leading, spacing: 20) {
-                TitleView(title: "PÊCHE EN BATEAU : LIMITES")
-                
-                Group {
-                    Text("La pêche en bateau dispose de règles. Seules certaines tailles par espèces sont autorisées.\n\nPour obtenir davantage d'informations sur une espèce, cliquez dessus ! Certaines sont interdites à la pêche selon la période.")
-                    
-                    Text("POISSONS")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.leading)
-                }.padding(.horizontal)
-                    
+                //Fenetre principale défilable
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 20) {
+                        TitleView(title: "PÊCHE EN BATEAU : LIMITES")
+                            
+                        Group {
+                            Text("La pêche en bateau dispose de règles. Seules certaines tailles par espèces sont autorisées.\n\nPour obtenir davantage d'informations sur une espèce, cliquez dessus ! ")
+                            + Text("Certaines sont interdites à la pêche selon la période.")
+                                .bold()
+                            
+                        }
+                        .padding(.horizontal)
+                    }
+                    HStack {
+                        Text("POISSONS")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .multilineTextAlignment(.leading)
+                            .padding()
+                        Spacer()
+                    }
                     ZStack {
                         DiagonalBackgroundView()
-                            .padding()
                         
-                        /*ForEach(0..<fishesCount) { number in*/
-                            VStack {
-                                HStack {
-                                    Spacer()
-                                    ButtonFishDetailsView(backgroundColor: .white, name: "BAR", image: "bar", size: 42.0)
-                                    Spacer()
-                                    ButtonFishDetailsView(backgroundColor: .white, name: "BAR", image: "bar", size: 42.0)
-                                    Spacer()
-                                }
+                        VStack(spacing: 20) {
+                            
+                            ForEach(0..<10) {
+                                Text("Item \($0)")
+                                    .foregroundColor(.white)
+                                    .font(.largeTitle)
+                                    .frame(width: 200, height: 200)
+                                    .background(Color.red)
                             }
-                        //}
+                        }
                     }
-                    Spacer()
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                    
                 }
-                MenuButtonView(presentation: presentationMode)
+                //Fenetre navigation
+                
+                ButtonWindowView(presentation: presentationMode)
+                
             }
         }
         .navigationBarHidden(true)
-        .navigationBarTitle("titre")
+        .navigationBarTitle("Limites")
         .edgesIgnoringSafeArea(.all)
+        
     }
 }
 
@@ -63,3 +73,45 @@ struct FishingView_Previews: PreviewProvider {
         FishingView()
     }
 }
+
+/*
+ NavigationView {
+     ZStack {
+         VStack(alignment: .leading, spacing: 20) {
+         TitleView(title: "PÊCHE EN BATEAU : LIMITES")
+         
+         Group {
+             Text("La pêche en bateau dispose de règles. Seules certaines tailles par espèces sont autorisées.\n\nPour obtenir davantage d'informations sur une espèce, cliquez dessus ! ")
+             + Text("Certaines sont interdites à la pêche selon la période.")
+                 .bold()
+             
+             Text("POISSONS")
+                 .font(.title)
+                 .fontWeight(.bold)
+                 .multilineTextAlignment(.leading)
+         }.padding(.horizontal)
+             
+             ZStack {
+                 DiagonalBackgroundView()
+                     .padding()
+                 
+                 /*ForEach(0..<fishesCount) { number in*/
+                     VStack {
+                         HStack {
+                             Spacer()
+                             ButtonFishDetailsView(backgroundColor: .white, name: "BAR", image: "bar", size: 42.0)
+                             Spacer()
+                             ButtonFishDetailsView(backgroundColor: .white, name: "BAR", image: "bar", size: 42.0)
+                             Spacer()
+                         }
+                     }
+                 //}
+             }
+             Spacer()
+         }
+     }
+ }
+ .navigationBarHidden(true)
+ .navigationBarTitle("titre")
+ .edgesIgnoringSafeArea(.all)
+ */
