@@ -33,6 +33,7 @@
 		DFBF4F9524ADF8AC00E2DA4B /* Fish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DFBF4F9424ADF8AC00E2DA4B /* Fish.bundle */; };
 		DFBF4F9924AE09B200E2DA4B /* Shellfish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DFBF4F9824AE09B200E2DA4B /* Shellfish.bundle */; };
 		DFBF4F9B24AE371600E2DA4B /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4F9A24AE371600E2DA4B /* XMLParser.swift */; };
+		DFBF4F9F24AE859F00E2DA4B /* adView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4F9E24AE859F00E2DA4B /* adView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		DFBF4F9424ADF8AC00E2DA4B /* Fish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Fish.bundle; sourceTree = "<group>"; };
 		DFBF4F9824AE09B200E2DA4B /* Shellfish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Shellfish.bundle; sourceTree = "<group>"; };
 		DFBF4F9A24AE371600E2DA4B /* XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
+		DFBF4F9E24AE859F00E2DA4B /* adView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				DF02A79024A360C5009582BC /* Assets.xcassets */,
 				DF02A79824A360C5009582BC /* Info.plist */,
 				DF45A1E424A64E7F00C4C050 /* data.xml */,
+				DFBF4F9E24AE859F00E2DA4B /* adView.swift */,
 			);
 			path = AppMaree;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				DF45A1E924A64EF400C4C050 /* LaunchView.swift in Sources */,
 				DF45A1C824A60A5100C4C050 /* MainView.swift in Sources */,
 				DF02A78D24A360C3009582BC /* SceneDelegate.swift in Sources */,
+				DFBF4F9F24AE859F00E2DA4B /* adView.swift in Sources */,
 				DF44C0F824A8FB67001D6BDD /* DiagonalBackgroundView.swift in Sources */,
 				DF02A78F24A360C3009582BC /* MenuView.swift in Sources */,
 				DF02A7A424A54723009582BC /* SettingsView.swift in Sources */,
