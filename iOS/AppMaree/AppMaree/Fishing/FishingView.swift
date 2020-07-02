@@ -11,7 +11,7 @@ import SwiftUI
 struct FishingView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    let fishes: [(String, String, Double)] = Animal.getFishes()
+    let fishes: [Animal] = Animal.getFishes()
     let shellFishes: [Animal] = Animal.getShellFishes()
     
     var body: some View {
@@ -42,13 +42,9 @@ struct FishingView: View {
                         DiagonalBackgroundView()
                         
                         VStack(spacing: 20) {
-                            
-                            ForEach(0..<10) {
-                                Text("Item \($0)")
-                                    .foregroundColor(.white)
-                                    .font(.largeTitle)
-                                    .frame(width: 200, height: 200)
-                                    .background(Color.red)
+                            //Affichage de tous les éléments
+                            ForEach(fishes) { fish in
+                                ButtonFishDetailsView(backgroundColor: .white, name: fish.name, image: fish.imageName, size: fish.allowedSize, bundleName: "Poisson")
                             }
                         }
                     }
