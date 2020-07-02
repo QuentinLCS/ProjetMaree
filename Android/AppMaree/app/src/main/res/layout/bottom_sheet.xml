@@ -44,9 +44,9 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_weight="0.5"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                android:id="@+id/service">
             <ImageView
-                android:id="@+id/securite"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/clock"
@@ -69,9 +69,9 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_weight="0.5"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                android:id="@+id/peche">
             <ImageView
-                android:id="@+id/Peche"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/fishing"
@@ -102,9 +102,9 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_weight="0.5"
-                    android:layout_gravity="center">
+                    android:layout_gravity="center"
+                    android:id="@+id/documentation">
                     <ImageView
-                        android:id="@+id/documentation"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:src="@drawable/documentation"
@@ -130,7 +130,6 @@
                     android:layout_gravity="center"
                     android:id="@+id/settings">
                     <ImageView
-                        android:id="@+id/parametre"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:src="@drawable/settings"
@@ -159,9 +158,9 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_weight="0.5"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                android:id="@+id/aPropos">
                 <ImageView
-                    android:id="@+id/aPropos"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/documentation"
@@ -184,9 +183,9 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_weight="0.5"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                android:id="@+id/urgence">
                 <ImageView
-                    android:id="@+id/urgence"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/phone"
@@ -211,9 +210,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
+            android:id="@+id/back"
             >
             <ImageView
-                android:id="@+id/close"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/back"

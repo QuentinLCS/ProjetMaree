@@ -85,10 +85,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onBackPressed() {
-       finish()
-    }
-
     @SuppressLint("MissingPermission")
     private fun getLastLocation() {
         if (checkPermissions()) {
