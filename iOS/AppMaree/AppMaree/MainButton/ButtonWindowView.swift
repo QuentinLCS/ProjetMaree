@@ -21,15 +21,18 @@ struct ButtonWindowView: View {
     }
 
     var body: some View {
-        ZStack {
-            Rectangle()
-            .fill(LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0),Color.white]), startPoint: .top, endPoint: .bottom))
-            HomeButtonView(colored: colored, isBack: isBack, presentation: presentation)
-                .padding(.bottom, 70.0)
-                
+        VStack {
+            Spacer()
+            ZStack {
+                Rectangle()
+                .fill(LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0),Color.white]), startPoint: .top, endPoint: .bottom))
+                HomeButtonView(colored: colored, isBack: isBack, presentation: presentation)
+                    .padding(.bottom, 100.0)
+                    
+            }
+            .frame(height: 200.0)
         }
-        .frame(height: 200.0)
-        
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
     }
     
     struct MainView_Previews: PreviewProvider {

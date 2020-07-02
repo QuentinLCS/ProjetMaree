@@ -1,23 +1,16 @@
 package com.example.appmaree
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.ListAdapter
-import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_horaires.*
-import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 /**
  * Fragment de la page des horaires
@@ -28,7 +21,7 @@ class HorairesFragment : Fragment() {
     var IdToday:Int =0
     private lateinit var viewModel:TableauHoraireViewModel
     lateinit var listeJours:ArrayList<TableauHoraireViewModel.Jour>
-    private val tempsEntrePub = 40000
+
 
     /**
      * Fonction automatique lors de la création du fragment
@@ -61,13 +54,7 @@ class HorairesFragment : Fragment() {
        view.findViewById<Button>(R.id.buttontmp).setOnClickListener {
             findNavController().navigate(R.id.action_HorairesFragment_to_securiteFragment)
         }
-        var popup = PopUp(activity)
-        val mainHandler = Handler(Looper.getMainLooper())
-        mainHandler.postDelayed(object : Runnable {
-            override fun run() {
-                mainHandler.postDelayed(this, tempsEntrePub.toLong())
-                popup.show(view)
-            }
-        }, tempsEntrePub.toLong())
+
+        PopUp(activity,view)
     }
 }
