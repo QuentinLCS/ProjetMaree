@@ -21,7 +21,7 @@ struct SettingsView: View {
                 SliderView()
                 SliderView()
                 SliderView()
-                MenuButtonView(presentation: presentationMode)
+                ButtonWindowView(presentation: presentationMode)
             }
         }
         .navigationBarHidden(true)

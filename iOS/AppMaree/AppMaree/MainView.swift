@@ -11,7 +11,9 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         NavigationView {
-            MenuButtonView(home: true, isBack: false)
+            ZStack {
+                ButtonWindowView(isBack: false, home: true)
+            }
         }
         .navigationBarHidden(true)
         .navigationBarTitle("titre")
