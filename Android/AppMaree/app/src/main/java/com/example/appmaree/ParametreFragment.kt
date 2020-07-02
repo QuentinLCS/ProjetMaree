@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.fragment_parametre.*
 
 /**
@@ -42,6 +44,13 @@ class ParametreFragment : Fragment() {
         view.findViewById<Button>(R.id.tirantDEauButton).setOnClickListener {
             viewModel.actualiserTirantDEau(tirantDEauEditText.text.toString().toDouble())
             findNavController().navigate(R.id.action_ParametreFragment_to_HorairesFragment)
+        }
+
+        var bottomSheet:View=activity!!.findViewById(R.id.bottom_sheet)
+        bottomSheet.findViewById<LinearLayout>(R.id.settings).setOnClickListener {
+            bottomSheet.post{
+                BottomSheetBehavior.from(bottomSheet).state=BottomSheetBehavior.STATE_COLLAPSED
+            }
         }
     }
 }

@@ -28,6 +28,5 @@ class SecuriteFragment: Fragment() {
         longitude.text=viewModel.longitude
     }
 
-    override fun onBack
 
 }

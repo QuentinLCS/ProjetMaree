@@ -5,10 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.appmaree.R.id
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import kotlinx.android.synthetic.main.bottom_sheet.*
+import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.fragment_horaires.*
 import java.util.*
 
@@ -48,13 +54,26 @@ class HorairesFragment : Fragment() {
             layoutManager=LinearLayoutManager(activity)
             adapter=ListAdapter(listeJours)
             scrollToPosition(Calendar.getInstance().get(Calendar.DAY_OF_YEAR)-1)
+           // view.findViewById<Button>(R.id.buttontmp2).visibility=View.VISIBLE
+
         }
 
 
-       view.findViewById<Button>(R.id.buttontmp).setOnClickListener {
-            findNavController().navigate(R.id.action_HorairesFragment_to_securiteFragment)
+        var bottomSheet:View=activity!!.findViewById(R.id.bottom_sheet)
+        bottomSheet.visibility=View.VISIBLE
+        val behavior =BottomSheetBehavior.from(bottomSheet)
+        bottomSheet.post {
+            behavior.state = BottomSheetBehavior.STATE_COLLAPSED
+        }
+
+
+
+        bottomSheet.findViewById<LinearLayout>(R.id.settings).setOnClickListener {
+            findNavController().navigate(R.id.action_HorairesFragment_to_ParametreFragment)
+            bottomSheet.post { behavior.state = BottomSheetBehavior.STATE_COLLAPSED }
         }
 
         PopUp(activity,view)
     }
+
 }
