@@ -9,31 +9,20 @@
 import SwiftUI
 
 struct AdView: View {
-    let presentation: Binding<PresentationMode>?
-    private let image: String
-    
-    init(image: String, presentation: Binding<PresentationMode>? = nil ) {
-        self.image = image
-        self.presentation = presentation
-    }
+    @Binding var showAd: Bool
+    let image: String
     
     var body: some View {
         VStack {
             Image(image).resizable().scaledToFit()
             .gesture(DragGesture().onEnded { value in
-                self.presentation?.wrappedValue.dismiss()
+                self.showAd = false
             })
             Button("Close") {
-                self.presentation?.wrappedValue.dismiss()
+                self.showAd = false
             }
             Spacer()
         }
         
-    }
-    
-    struct MainView_Previews: PreviewProvider {
-        static var previews: some View {
-            AdView(image: "APPD")
-        }
     }
 }

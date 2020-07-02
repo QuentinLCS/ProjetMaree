@@ -10,16 +10,16 @@ import SwiftUI
 
 
 struct MainView: View {
-    @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
-    @State private var showModal = false
+    
+    @State private var showAd = false
     
     let ads = getAds()
     
     var body: some View {
         NavigationView {
             ZStack {
-                if showModal {
-                    AdView(image: "APPD", presentation: presentation)
+                if showAd {
+                    AdView(showAd: $showAd, image: "APPD")
                 }
                 ScrollView {
                     Text("Soon")
@@ -27,13 +27,16 @@ struct MainView: View {
                 ButtonWindowView(isBack: false, home: true)
             }
         }.onAppear (perform: delay)
+        .navigationBarHidden(true)
+        .navigationBarTitle("Limites")
+        .edgesIgnoringSafeArea(.all)
         
     }
     
     private func delay() {
         // Delay of 45 seconds
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.showModal = true
+            self.showAd = true
         }
     }
 }
