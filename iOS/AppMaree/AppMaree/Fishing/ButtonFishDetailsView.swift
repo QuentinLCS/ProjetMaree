@@ -27,13 +27,24 @@ struct ButtonFishDetailsView: View {
                 RoundedRectangle(cornerRadius: 20)
                     .foregroundColor(Color(backgroundColor.rawValue))
                 VStack {
-                    Image(uiImage: makeUIView(of: image, from: bundleName))
-                    .resizable()
-                    .scaledToFit()
-                Text(name)
-                    .font(.system(size: 15))
-                Text("\(size) cm")
-                    .font(.system(size: 10))
+                    Group {
+                        if (image != "" && bundleName != "") {
+                            Image(uiImage: makeUIView(of: image, from: bundleName))
+                            .resizable()
+                            .scaledToFit()
+                        }
+                        else {
+                            Image(systemName: "ellipsis")
+                        }
+                    }
+                    if (name != "") {
+                        Text(name)
+                        .font(.system(size: 15))
+                    }
+                    if (size != 0) {
+                        Text("\(size) cm")
+                        .font(.system(size: 10))
+                    }
                 }
             }
             .frame(width: 150.0, height: 100.0)
@@ -43,12 +54,13 @@ struct ButtonFishDetailsView: View {
 func makeUIView(of name: String, from bundleName: String) -> UIImage {
     let MainBundleURL = Bundle.main.bundleURL
     let bundle = Bundle( url: MainBundleURL.appendingPathComponent("\(bundleName).bundle"))
-    return UIImage(named: name, in: bundle, with: nil)!
+    let ImageData = UIImage(named: name, in: bundle, with: nil) ?? UIImage(systemName: "ellipsis")!
+    return ImageData
 }
 
 
 struct ButtonFishDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonFishDetailsView(backgroundColor: .white, name: "BAR", image: "Bar_25.png", size: 42, bundleName: "Poisson")
+        ButtonFishDetailsView(backgroundColor: .white, name: "", image: "", size: 0, bundleName: "Shellfish")
     }
 }

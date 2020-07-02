@@ -21,7 +21,6 @@
 		DF44C0F524A8E1F2001D6BDD /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44C0F424A8E1F2001D6BDD /* DateView.swift */; };
 		DF44C0F824A8FB67001D6BDD /* DiagonalBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */; };
 		DF45A1C824A60A5100C4C050 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1C724A60A5100C4C050 /* MainView.swift */; };
-		DF45A1CD24A6138300C4C050 /* MenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1CC24A6138300C4C050 /* MenuButtonView.swift */; };
 		DF45A1CF24A6139600C4C050 /* HomeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1CE24A6139600C4C050 /* HomeButtonView.swift */; };
 		DF45A1E324A64E2E00C4C050 /* FishingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1E224A64E2E00C4C050 /* FishingView.swift */; };
 		DF45A1E524A64E7F00C4C050 /* data.xml in Resources */ = {isa = PBXBuildFile; fileRef = DF45A1E424A64E7F00C4C050 /* data.xml */; };
@@ -31,7 +30,9 @@
 		DF45A1EE24A64FDE00C4C050 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1ED24A64FDE00C4C050 /* TitleView.swift */; };
 		DFBF4F8724AB658300E2DA4B /* StyledText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4F8624AB658300E2DA4B /* StyledText.swift */; };
 		DFBF4F8B24ABB89700E2DA4B /* ButtonWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4F8A24ABB89700E2DA4B /* ButtonWindowView.swift */; };
-		DFBF4F8F24ACFEA000E2DA4B /* Poisson.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DFBF4F8E24ACFEA000E2DA4B /* Poisson.bundle */; };
+		DFBF4F9524ADF8AC00E2DA4B /* Fish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DFBF4F9424ADF8AC00E2DA4B /* Fish.bundle */; };
+		DFBF4F9924AE09B200E2DA4B /* Shellfish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DFBF4F9824AE09B200E2DA4B /* Shellfish.bundle */; };
+		DFBF4F9B24AE371600E2DA4B /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4F9A24AE371600E2DA4B /* XMLParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +52,6 @@
 		DF44C0F424A8E1F2001D6BDD /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagonalBackgroundView.swift; sourceTree = "<group>"; };
 		DF45A1C724A60A5100C4C050 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		DF45A1CC24A6138300C4C050 /* MenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonView.swift; sourceTree = "<group>"; };
 		DF45A1CE24A6139600C4C050 /* HomeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonView.swift; sourceTree = "<group>"; };
 		DF45A1E224A64E2E00C4C050 /* FishingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishingView.swift; sourceTree = "<group>"; };
 		DF45A1E424A64E7F00C4C050 /* data.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = data.xml; sourceTree = "<group>"; };
@@ -61,7 +61,9 @@
 		DF45A1ED24A64FDE00C4C050 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		DFBF4F8624AB658300E2DA4B /* StyledText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledText.swift; sourceTree = "<group>"; };
 		DFBF4F8A24ABB89700E2DA4B /* ButtonWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWindowView.swift; sourceTree = "<group>"; };
-		DFBF4F8E24ACFEA000E2DA4B /* Poisson.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Poisson.bundle; sourceTree = "<group>"; };
+		DFBF4F9424ADF8AC00E2DA4B /* Fish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Fish.bundle; sourceTree = "<group>"; };
+		DFBF4F9824AE09B200E2DA4B /* Shellfish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Shellfish.bundle; sourceTree = "<group>"; };
+		DFBF4F9A24AE371600E2DA4B /* XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +80,8 @@
 		DF02223424A90537009A7747 /* Fishing */ = {
 			isa = PBXGroup;
 			children = (
-				DFBF4F8E24ACFEA000E2DA4B /* Poisson.bundle */,
+				DFBF4F9824AE09B200E2DA4B /* Shellfish.bundle */,
+				DFBF4F9424ADF8AC00E2DA4B /* Fish.bundle */,
 				DF45A1E224A64E2E00C4C050 /* FishingView.swift */,
 				DF02223524A90551009A7747 /* ButtonFishDetailsView.swift */,
 				DF02223924A919E4009A7747 /* Animal.swift */,
@@ -147,6 +150,7 @@
 				DF45A1ED24A64FDE00C4C050 /* TitleView.swift */,
 				DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */,
 				DFBF4F8624AB658300E2DA4B /* StyledText.swift */,
+				DFBF4F9A24AE371600E2DA4B /* XMLParser.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -155,7 +159,6 @@
 			isa = PBXGroup;
 			children = (
 				DF02A7A024A53541009582BC /* ButtonMainView.swift */,
-				DF45A1CC24A6138300C4C050 /* MenuButtonView.swift */,
 				DF45A1CE24A6139600C4C050 /* HomeButtonView.swift */,
 				DFBF4F8A24ABB89700E2DA4B /* ButtonWindowView.swift */,
 			);
@@ -230,8 +233,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFBF4F9924AE09B200E2DA4B /* Shellfish.bundle in Resources */,
+				DFBF4F9524ADF8AC00E2DA4B /* Fish.bundle in Resources */,
 				DF02A79724A360C5009582BC /* LaunchScreen.storyboard in Resources */,
-				DFBF4F8F24ACFEA000E2DA4B /* Poisson.bundle in Resources */,
 				DF45A1E524A64E7F00C4C050 /* data.xml in Resources */,
 				DF02A79424A360C5009582BC /* Preview Assets.xcassets in Resources */,
 				DF02A79124A360C5009582BC /* Assets.xcassets in Resources */,
@@ -248,8 +252,8 @@
 				DFBF4F8B24ABB89700E2DA4B /* ButtonWindowView.swift in Sources */,
 				DF45A1E324A64E2E00C4C050 /* FishingView.swift in Sources */,
 				DFBF4F8724AB658300E2DA4B /* StyledText.swift in Sources */,
-				DF45A1CD24A6138300C4C050 /* MenuButtonView.swift in Sources */,
 				DF44C0F524A8E1F2001D6BDD /* DateView.swift in Sources */,
+				DFBF4F9B24AE371600E2DA4B /* XMLParser.swift in Sources */,
 				DF02A78B24A360C3009582BC /* AppDelegate.swift in Sources */,
 				DF45A1E924A64EF400C4C050 /* LaunchView.swift in Sources */,
 				DF45A1C824A60A5100C4C050 /* MainView.swift in Sources */,

@@ -12,7 +12,7 @@ struct DocumentationView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
-        MenuButtonView(presentation: presentationMode)
+        ButtonWindowView(presentation: presentationMode)
     }
 }
 

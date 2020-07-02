@@ -10,14 +10,16 @@ import SwiftUI
 
 struct ButtonWindowView: View {
     
-    private let colored:Bool
-    private let isBack:Bool
-    private let presentation:Binding<PresentationMode>?
+    private let colored: Bool
+    private let isBack: Bool
+    private let home: Bool
+    private let presentation: Binding<PresentationMode>?
 
-    init(colored: Bool = true, isBack:Bool = false, presentation:Binding<PresentationMode>? = nil) {
+    init(colored: Bool = true, isBack: Bool = false, home: Bool = false, presentation: Binding<PresentationMode>? = nil) {
         self.colored = colored
         self.isBack = isBack
         self.presentation = presentation
+        self.home = home
     }
 
     var body: some View {
@@ -26,7 +28,7 @@ struct ButtonWindowView: View {
             ZStack {
                 Rectangle()
                 .fill(LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0),Color.white]), startPoint: .top, endPoint: .bottom))
-                HomeButtonView(colored: colored, isBack: isBack, presentation: presentation)
+                HomeButtonView(colored: colored, isBack: isBack, home: home, presentation: presentation)
                     .padding(.bottom, 100.0)
                     
             }
