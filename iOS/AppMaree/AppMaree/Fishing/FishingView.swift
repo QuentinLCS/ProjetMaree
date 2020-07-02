@@ -107,7 +107,7 @@ struct FishingView: View {
         if (row * 2 + column < self.fishes.count) {
         return ButtonFishDetailsView(backgroundColor: .white, name: self.fishes[row * 2 + column].name, image: self.fishes[row * 2 + column].imageName, size: self.fishes[row * 2 + column].allowedSize, bundleName: "Fish")
         } else {
-            return ButtonFishDetailsView(backgroundColor: .white, name: "", image: "white", size: 0, bundleName: "Fish")
+            return ButtonFishDetailsView(backgroundColor: .white, name: "", image: "", size: 0, bundleName: "")
         }
     }
     

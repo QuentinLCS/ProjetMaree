@@ -14,12 +14,19 @@ struct MainView: View {
     @State private var showAd = false
     
     let ads = getAds()
+    var currentImage = "APPD"
     
     var body: some View {
         NavigationView {
             ZStack {
                 if showAd {
-                    AdView(showAd: $showAd, image: "APPD")
+                    VStack {
+                        Image(currentImage).resizable().scaledToFit()
+                            .onDisappear(perform: delay)
+                        .modifier(DraggableModifier(direction: .horizontal, showAd: $showAd))
+                        Spacer()
+                    }
+                
                 }
                 ScrollView {
                     Text("Soon")
