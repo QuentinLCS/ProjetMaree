@@ -31,7 +31,7 @@ class AccueilFragment : Fragment() {
      */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        //view.findViewById<Button>(R.id.buttontmp2).visibility=View.INVISIBLE
         view.findViewById<Button>(R.id.button_first).setOnClickListener {
             findNavController().navigate(R.id.action_AccueilFragment_to_HorairesFragment)
         }

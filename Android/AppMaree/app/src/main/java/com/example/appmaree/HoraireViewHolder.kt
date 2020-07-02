@@ -96,27 +96,34 @@ class HoraireViewHolder (inflater: LayoutInflater,parent: ViewGroup): RecyclerVi
         J1L1C5View?.text = jour.ligne1.col5
         J1L2C1View?.text = jour.ligne2.col1
         J1L2C2View?.text = jour.ligne2.col2
-        jour.ligne2.background?.get(0)?.let { J1L2C2View?.setBackgroundColor(it) }
+        jour.ligne2.background?.get(0)?.let { J1L2C2View?.setBackgroundColor(it);J1L2C2View?.setTextColor(getColorText(it)) }
         J1L2C3View?.text = jour.ligne2.col3
-        jour.ligne2.background?.get(1)?.let { J1L2C3View?.setBackgroundColor(it) }
+        jour.ligne2.background?.get(1)?.let { J1L2C3View?.setBackgroundColor(it);J1L2C3View?.setTextColor(getColorText(it)) }
         J1L2C4View?.text = jour.ligne2.col4
-        jour.ligne2.background?.get(2)?.let { J1L2C4View?.setBackgroundColor(it) }
+        jour.ligne2.background?.get(2)?.let { J1L2C4View?.setBackgroundColor(it);J1L2C4View?.setTextColor(getColorText(it)) }
         J1L2C5View?.text = jour.ligne2.col5
-        jour.ligne2.background?.get(3)?.let { J1L2C5View?.setBackgroundColor(it) }
+        jour.ligne2.background?.get(3)?.let { J1L2C5View?.setBackgroundColor(it);J1L2C5View?.setTextColor(getColorText(it)) }
         J1L3C1View?.text = jour.ligne3.col1
         J1L3C2View?.text = jour.ligne3.col2
-        jour.ligne3.background?.get(0)?.let { J1L3C2View?.setBackgroundColor(it) }
+        jour.ligne3.background?.get(0)?.let { J1L3C2View?.setBackgroundColor(it);J1L3C2View?.setTextColor(getColorText(it)) }
         J1L3C3View?.text = jour.ligne3.col3
-        jour.ligne3.background?.get(1)?.let { J1L3C3View?.setBackgroundColor(it) }
+        jour.ligne3.background?.get(1)?.let { J1L3C3View?.setBackgroundColor(it);J1L3C3View?.setTextColor(getColorText(it)) }
         J1L3C4View?.text = jour.ligne3.col4
-        jour.ligne3.background?.get(2)?.let { J1L3C4View?.setBackgroundColor(it) }
+        jour.ligne3.background?.get(2)?.let { J1L3C4View?.setBackgroundColor(it);J1L3C4View?.setTextColor(getColorText(it)) }
         J1L3C5View?.text = jour.ligne3.col5
-        jour.ligne3.background?.get(3)?.let { J1L3C5View?.setBackgroundColor(it) }
+        jour.ligne3.background?.get(3)?.let { J1L3C5View?.setBackgroundColor(it);J1L3C5View?.setTextColor(getColorText(it)) }
         J1L4C1View?.text = jour.ligne4.col1
         J1L4C2View?.text = jour.ligne4.col2
         J1L4C3View?.text = jour.ligne4.col3
         J1L4C4View?.text = jour.ligne4.col4
         J1L4C5View?.text = jour.ligne4.col5
+
+        if(jour.ligne5.col2!=""){
+            val viewl5=itemView.findViewById<TableRow>(R.id.J1L5)
+            val paraml5 =viewl5.layoutParams
+            paraml5.height=ViewGroup.LayoutParams.WRAP_CONTENT
+            viewl5.layoutParams=paraml5
+        }
         J1L5C1View?.text = jour.ligne5.col1
         J1L5C2View?.text = jour.ligne5.col2
         J1L5C3View?.text = jour.ligne5.col3
@@ -124,4 +131,12 @@ class HoraireViewHolder (inflater: LayoutInflater,parent: ViewGroup): RecyclerVi
         J1L5C5View?.text = jour.ligne5.col5
     }
 
+    fun getColorText(backgroundColor : Int):Int{
+        if(backgroundColor==Color.YELLOW){
+            return Color.BLACK
+        }
+        else{
+            return Color.WHITE
+        }
+    }
 }
