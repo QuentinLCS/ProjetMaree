@@ -52,7 +52,7 @@ class HorairesFragment : Fragment() {
 
 
        view.findViewById<Button>(R.id.buttontmp).setOnClickListener {
-            findNavController().navigate(R.id.action_HorairesFragment_to_ParametreFragment)
+            findNavController().navigate(R.id.action_HorairesFragment_to_securiteFragment)
         }
 
         PopUp(activity,view)
