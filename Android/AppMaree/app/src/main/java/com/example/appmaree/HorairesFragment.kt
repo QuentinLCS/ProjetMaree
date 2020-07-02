@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.TableRow
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
@@ -56,9 +57,8 @@ class HorairesFragment : Fragment() {
             layoutManager=LinearLayoutManager(activity)
             adapter=ListAdapter(listeJours)
             scrollToPosition(Calendar.getInstance().get(Calendar.DAY_OF_YEAR)-1)
-           // view.findViewById<Button>(R.id.buttontmp2).visibility=View.VISIBLE
-
         }
+
 
 
         var bottomSheet:View=activity!!.findViewById(R.id.bottom_sheet)
@@ -67,8 +67,6 @@ class HorairesFragment : Fragment() {
         bottomSheet.post {
             behavior.state = BottomSheetBehavior.STATE_COLLAPSED
         }
-
-
 
         /*Bouton services*/
         bottomSheet.findViewById<LinearLayout>(R.id.service).setOnClickListener {

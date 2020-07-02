@@ -44,7 +44,7 @@ class ParametreFragment : Fragment() {
         viewModel=activity.run { ViewModelProviders.of(this!!).get(TableauHoraireViewModel::class.java)  }
 
         view.findViewById<Button>(R.id.tirantDEauButton).setOnClickListener {
-            viewModel.actualiserTirantDEau(tirantDEauEditText.text.toString().toDouble())
+                viewModel.actualiserTirantDEau(tirantDEauEditText.text.toString())
             findNavController().navigate(R.id.action_ParametreFragment_to_HorairesFragment)
         }
 
