@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_HorairesFragment_to_ParametreFragment"
             app:destination="@id/ParametreFragment" />
+        <action
+            android:id="@+id/action_HorairesFragment_to_securiteFragment"
+            app:destination="@id/securiteFragment" />
     </fragment>
     <fragment
         android:id="@+id/ParametreFragment"
@@ -31,4 +34,8 @@
             android:id="@+id/action_ParametreFragment_to_HorairesFragment"
             app:destination="@id/HorairesFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/securiteFragment"
+        android:name="com.example.appmaree.SecuriteFragment"
+        android:label="SecuriteFragment" />
 </navigation>

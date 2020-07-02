@@ -60,6 +60,8 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
     lateinit var listJour :ArrayList<Jour>
     var listePorte =ArrayList<Porte>()
     var listeMaree =ArrayList<Maree>()
+    var latitude : String =""
+    var longitude : String =""
 
     /****************Fonctions pour le calculs des horaires avec le tirant d'eau****************/
 
