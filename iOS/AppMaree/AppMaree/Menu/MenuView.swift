@@ -33,10 +33,8 @@ struct MenuView: View {
                             ButtonMenuView(destination: .settings)
                             Spacer()
                         }
-                        Spacer()
-                        Spacer()
+                        ButtonWindowView(colored: false, presentation: presentationMode)
                     })
-                    HomeButtonView(colored: false, presentation: presentationMode)
                 }
             }
         }

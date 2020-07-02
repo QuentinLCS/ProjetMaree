@@ -22,16 +22,14 @@ struct ButtonMainView: View {
     var body: some View {
         Image(home ? "home" : colored ? "back" : "colored_back")
             .renderingMode(.original)
-        .resizable()
-        .aspectRatio(1, contentMode: .fit)
-        .padding(25)
-        .background(
+            .resizable()
+            .aspectRatio(1, contentMode: .fit)
+            .padding(25.0)
+            .background(
              LinearGradient(gradient: Gradient(colors: [colored ? Color("Primaire 1") : Color.white, colored ? Color("Primaire 2") : Color.white]), startPoint: .top, endPoint: .bottom)
-        )
-        .cornerRadius(100)
-        .frame(width: 100, height: 100)
-        .padding(.bottom, 50)
-        
+            )
+            .clipShape(Circle())
+            .frame(width: 100, height: 100, alignment: .bottom)
     }
     
     struct MainView_Previews: PreviewProvider {

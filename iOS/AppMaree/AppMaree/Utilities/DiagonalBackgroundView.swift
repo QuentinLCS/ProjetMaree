@@ -11,19 +11,22 @@ import SwiftUI
 enum DiagonalColorType: String {
     case primaryColor = "Primaire 1"
     case secondaryColor = "Primaire 2"
+    case white = "White"
     case gradient = ""
 }
 
 struct DiagonalBackgroundView: View {
-    private let color: DiagonalColorType
+    private let startingColor: DiagonalColorType
+    private let finalColor: DiagonalColorType
     
-    init(color: DiagonalColorType = .secondaryColor) {
-        self.color = color
+    init(de sColor: DiagonalColorType = .primaryColor, a fColor: DiagonalColorType = .secondaryColor) {
+        self.startingColor = sColor
+        self.finalColor = fColor
     }
     
     var body: some View {
-        LinearGradient(gradient: Gradient(colors: [(color == DiagonalColorType.gradient || color == DiagonalColorType.primaryColor) ? Color("Primaire 1") : Color("Primaire 2"), (color == DiagonalColorType.gradient || color == DiagonalColorType.secondaryColor) ? Color("Primaire 2") : Color("Primaire 1")]), startPoint: .top, endPoint: .bottom)
-            .padding(-20)
+        LinearGradient(gradient: Gradient(colors: [Color(startingColor.rawValue),Color(finalColor.rawValue)]), startPoint: .top, endPoint: .bottom)
+            .padding(-20.0)
             .rotationEffect(Angle(degrees: -4))
     }
 }

@@ -29,6 +29,9 @@
 		DF45A1E924A64EF400C4C050 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1E824A64EF400C4C050 /* LaunchView.swift */; };
 		DF45A1EC24A64FB100C4C050 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1EB24A64FB100C4C050 /* SliderView.swift */; };
 		DF45A1EE24A64FDE00C4C050 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1ED24A64FDE00C4C050 /* TitleView.swift */; };
+		DFBF4F8724AB658300E2DA4B /* StyledText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4F8624AB658300E2DA4B /* StyledText.swift */; };
+		DFBF4F8B24ABB89700E2DA4B /* ButtonWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4F8A24ABB89700E2DA4B /* ButtonWindowView.swift */; };
+		DFBF4F8F24ACFEA000E2DA4B /* Poisson.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DFBF4F8E24ACFEA000E2DA4B /* Poisson.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +41,7 @@
 		DF02A78A24A360C3009582BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF02A78C24A360C3009582BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DF02A78E24A360C3009582BC /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
-		DF02A79024A360C5009582BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DF02A79024A360C5009582BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = AppMaree/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		DF02A79324A360C5009582BC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DF02A79624A360C5009582BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF02A79824A360C5009582BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +59,9 @@
 		DF45A1E824A64EF400C4C050 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		DF45A1EB24A64FB100C4C050 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		DF45A1ED24A64FDE00C4C050 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		DFBF4F8624AB658300E2DA4B /* StyledText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledText.swift; sourceTree = "<group>"; };
+		DFBF4F8A24ABB89700E2DA4B /* ButtonWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWindowView.swift; sourceTree = "<group>"; };
+		DFBF4F8E24ACFEA000E2DA4B /* Poisson.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Poisson.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,7 @@
 		DF02223424A90537009A7747 /* Fishing */ = {
 			isa = PBXGroup;
 			children = (
+				DFBF4F8E24ACFEA000E2DA4B /* Poisson.bundle */,
 				DF45A1E224A64E2E00C4C050 /* FishingView.swift */,
 				DF02223524A90551009A7747 /* ButtonFishDetailsView.swift */,
 				DF02223924A919E4009A7747 /* Animal.swift */,
@@ -139,6 +146,7 @@
 				DF45A1EB24A64FB100C4C050 /* SliderView.swift */,
 				DF45A1ED24A64FDE00C4C050 /* TitleView.swift */,
 				DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */,
+				DFBF4F8624AB658300E2DA4B /* StyledText.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -149,6 +157,7 @@
 				DF02A7A024A53541009582BC /* ButtonMainView.swift */,
 				DF45A1CC24A6138300C4C050 /* MenuButtonView.swift */,
 				DF45A1CE24A6139600C4C050 /* HomeButtonView.swift */,
+				DFBF4F8A24ABB89700E2DA4B /* ButtonWindowView.swift */,
 			);
 			path = MainButton;
 			sourceTree = "<group>";
@@ -222,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF02A79724A360C5009582BC /* LaunchScreen.storyboard in Resources */,
+				DFBF4F8F24ACFEA000E2DA4B /* Poisson.bundle in Resources */,
 				DF45A1E524A64E7F00C4C050 /* data.xml in Resources */,
 				DF02A79424A360C5009582BC /* Preview Assets.xcassets in Resources */,
 				DF02A79124A360C5009582BC /* Assets.xcassets in Resources */,
@@ -235,7 +245,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFBF4F8B24ABB89700E2DA4B /* ButtonWindowView.swift in Sources */,
 				DF45A1E324A64E2E00C4C050 /* FishingView.swift in Sources */,
+				DFBF4F8724AB658300E2DA4B /* StyledText.swift in Sources */,
 				DF45A1CD24A6138300C4C050 /* MenuButtonView.swift in Sources */,
 				DF44C0F524A8E1F2001D6BDD /* DateView.swift in Sources */,
 				DF02A78B24A360C3009582BC /* AppDelegate.swift in Sources */,
