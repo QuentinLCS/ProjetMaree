@@ -2,6 +2,8 @@
 //  ButtonMainView.swift
 //  AppMaree
 //
+//  Description : Ceci est le corps, le design, la base du boutton principal présent sur toutes les pages.
+// 
 //  Created by unicaen on 25/06/2020.
 //  Copyright © 2020 unicaen. All rights reserved.
 //
@@ -13,6 +15,11 @@ struct ButtonMainView: View {
     private let colored:Bool
     private let home:Bool
     
+    /*
+    * Par défaut, home est à false.
+    * home : permet de changer l'image au centre du bouton. Si "true" alors une maison s'affiche.
+    * Sinon, une croix s'affiche. Ce cas est le plus courant. D'où ma valeur par défaut.
+    */
     init(home: Bool = false, colored: Bool) {
         self.home = home
         self.colored = colored
@@ -20,6 +27,7 @@ struct ButtonMainView: View {
     }
     
     var body: some View {
+        // C'est ici que se trouve le bouton.
         Image(home ? "home" : colored ? "back" : "colored_back")
             .renderingMode(.original)
             .resizable()
