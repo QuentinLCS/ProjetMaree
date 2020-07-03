@@ -2,6 +2,9 @@
 //  ButtonWindowView.swift
 //  AppMaree
 //
+//  Descrption : Cette vue est fait partie des deux possibilement appelées dans l'application
+//  Celle-ci représente le bouton dans une page classique. Bouton rediirgeant vers le menu.
+//
 //  Created by unicaen on 30/06/2020.
 //  Copyright © 2020 unicaen. All rights reserved.
 //
