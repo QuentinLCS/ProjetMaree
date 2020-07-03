@@ -15,7 +15,7 @@
         android:text="@string/nom_port"
         android:textAlignment="center"
         android:textColor="@color/colorTitre"
-        android:textSize="30sp"
+        android:textSize="@dimen/tailleTitre"
         app:layout_constraintBottom_toTopOf="@id/textview_texte_accueil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -28,11 +28,13 @@
         android:layout_height="wrap_content"
         android:text="@string/text_accueil"
         android:textAlignment="textStart"
-        android:textSize="18sp"
+        android:textSize="@dimen/taillePolice"
         app:layout_constraintBottom_toTopOf="@id/button_first"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nom_port" />
+
+
 
     <Button
         android:id="@+id/button_first"
