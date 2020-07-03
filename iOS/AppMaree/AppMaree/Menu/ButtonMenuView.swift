@@ -78,6 +78,7 @@ struct ButtonMenuView: View {
     
     // --------------------------------- ETAPE 5 ---------------------------------
     // Indiquez ce qui doit être affiché. Le texte et l'image sans l'extension. (dans l'ordre)
+    // Une fois cette étape finie, rendez-vous dans "MenuView" afin d'ajouter le bouton.
     // ---------------------------------------------------------------------------
     func Informations(for destination: Destination) -> (String, String) {
          switch destination {
