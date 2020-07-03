@@ -33,10 +33,13 @@ struct LaunchView: View {
                         DiagonalBackgroundView(a: .primaryColor)
 
                         VStack {
-                            
-                            Text("L'association et les auteurs de cette application ne peuvent être tenus responsables d'incidents ou d'accidents engendrés par la lecture des informations de cette application.")
+                            HStack {
+                                Spacer()
+                                Text("L'association et les auteurs de cette application ne peuvent être tenus responsables d'incidents ou d'accidents engendrés par la lecture des informations de cette application.")
                                 .font(.system(size: 18))
-                                .padding(10.0)
+                                Spacer()
+                            }
+                            .padding(.top, 40.0)
                             
                             HStack{
                                 Text("En cliquant sur ")
