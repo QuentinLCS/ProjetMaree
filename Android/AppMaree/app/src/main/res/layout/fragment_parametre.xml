@@ -5,10 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="10"
+        android:weightSum="100"
         android:orientation="vertical"
         android:layout_marginTop="50dp"
         android:layout_marginStart="20dp"
@@ -20,7 +21,7 @@
         android:text="Quel est votre tirant d'eau ?"
         android:textColor="@android:color/black"
         android:textSize="@dimen/taillepoliceparam"
-        android:layout_weight="1"
+        android:layout_weight="10"
         android:layout_gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.13"
@@ -40,11 +41,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tirantDEauTextView"
         app:layout_constraintVertical_bias="0.0"
-        android:layout_weight="1"/>
+        android:layout_weight="10"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="10"
         android:orientation="horizontal"
         android:weightSum="3"
         >
@@ -72,12 +73,12 @@
             android:layout_width="fill_parent"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_height="0dp"
-            android:layout_weight="1"/>
+            android:layout_weight="5"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="10"
             android:orientation="horizontal"
             android:weightSum="3"
             android:layout_margin="2dp"
@@ -109,12 +110,13 @@
                 android:background="@drawable/button_background"
                 android:layout_weight="1"
                 android:text="PLUS"/>
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="10"
             android:weightSum="2"
             android:orientation="vertical">
             <TextView
@@ -134,17 +136,202 @@
                 android:max="100"/>
         </LinearLayout>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-            <!-- Placer exemple ligne à faire manuellement -->
-        </Button>
+        <LinearLayout
+            android:id="@+id/exempleparamlayout"
+            android:layout_width="fill_parent"
+            android:layout_height="10dp"
+            android:layout_weight="15"
+            android:orientation="vertical"
+
+            >
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="4"
+                >
+                <TextView
+                    android:id="@+id/paramtextest1"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="53"/>
+                <TextView
+                    android:id="@+id/paramtextest2"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text=""/>
+                <TextView
+                    android:id="@+id/paramtextest3"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="49"/>
+                <TextView
+                    android:id="@+id/paramtextest4"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text=""/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="4"
+                >
+                <TextView
+                    android:id="@+id/paramtextest5"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0h45"/>
+                <TextView
+                    android:id="@+id/paramtextest6"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="7h27"/>
+                <TextView
+                    android:id="@+id/paramtextest7"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="13h14"/>
+                <TextView
+                    android:id="@+id/paramtextest8"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="19h45"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="4"
+                >
+                <TextView
+                    android:id="@+id/paramtextest9"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="10h51"/>
+                <TextView
+                    android:id="@+id/paramtextest10"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="16h04"/>
+                <TextView
+                    android:id="@+id/paramtextest11"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="23h03"/>
+                <TextView
+                    android:id="@+id/paramtextest12"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="4h28"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/paratextestetantdeau"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="4"
+                >
+                <TextView
+                    android:id="@+id/paramtextest13"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="(10h57"/>
+                <TextView
+                    android:id="@+id/paramtextest14"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="17h59)"/>
+                <TextView
+                    android:id="@+id/paramtextest15"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="(23h09"/>
+                <TextView
+                    android:id="@+id/paramtextest16"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="6h24)"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="4"
+                >
+                <TextView
+                    android:id="@+id/paramtextest17"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="7.6"/>
+                <TextView
+                    android:id="@+id/paramtextest18"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="3.3"/>
+                <TextView
+                    android:id="@+id/paramtextest19"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="7.3"/>
+                <TextView
+                    android:id="@+id/paramtextest20"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="3.75"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="10"
             android:weightSum="5"
             android:orientation="horizontal">
             <LinearLayout
@@ -160,6 +347,7 @@
                 android:textColor="@android:color/white"
                 android:background="@drawable/button_background"
                 android:text="RESET"/>
+
         </LinearLayout>
     </LinearLayout>
     <TextView
