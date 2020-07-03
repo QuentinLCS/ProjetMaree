@@ -2,6 +2,10 @@
 //  LaunchView.swift
 //  AppMaree
 //
+//  Description : Il s'agit de la page affichée au lancement de l'application. Celle contenant les informations nécessaires à la première ouverture.
+//
+//  Si vous souhaitez modifier le texte, rendez-vous aux marqueurs sous forme de commentaire plus bas.
+//
 //  Created by unicaen on 26/06/2020.
 //  Copyright © 2020 unicaen. All rights reserved.
 //
@@ -16,6 +20,9 @@ struct LaunchView: View {
                     TitleView()
                     HStack(spacing: 10.0) {
                             Spacer()
+                        // ---------------------------------- TEXTE 1 ----------------------------------
+                        // Explication de la provenance des données ainsi que leur véracité.
+                        // -----------------------------------------------------------------------------
                         StyledText("""
     Les données affichées sur cette application sont issues du GUIDE IMPRIMÉ et distribué gratuitement. Elles ne sont qu'indicatives.
 
@@ -35,18 +42,23 @@ struct LaunchView: View {
                         VStack {
                             HStack {
                                 Spacer()
+                                // ---------------------------------- TEXTE 2 ----------------------------------
+                                // Dédouanement des auteurs de l'application en cas d'erreur.
+                                // -----------------------------------------------------------------------------
                                 Text("L'association et les auteurs de cette application ne peuvent être tenus responsables d'incidents ou d'accidents engendrés par la lecture des informations de cette application.")
                                 .font(.system(size: 18))
                                 Spacer()
                             }
                             .padding(.top, 40.0)
                             
+                            // Dernière phrase permettant d'indiquer qu'ils acceptent le précédent texte en cliquant sur le bouton.
                             HStack{
                                 Text("En cliquant sur ")
                                 .bold()
                                 .multilineTextAlignment(.center)
                                 .font(.system(size: 20))
                                 
+                                // Réprésentation du bouton en miniature.
                                 Image(systemName: "xmark.circle.fill")
                                     .font(.title)
                                 
@@ -72,6 +84,8 @@ struct LaunchView: View {
                     }
                     .padding(.top, 25.0)
                 }
+                    
+                // Bouton principal permettant de fermer cette page.
                 ButtonWindowView(isBack: false)
             }
         }
