@@ -2,6 +2,9 @@
 //  HomeButtonView.swift
 //  AppMaree
 //
+//  Descrption : Cette vue est fait partie des deux possibilement appelées dans l'application
+//  Celle-ci représente le bouton dans une page classique. Bouton rediirgeant vers la page principale.
+//
 //  Created by unicaen on 26/06/2020.
 //  Copyright © 2020 unicaen. All rights reserved.
 //
