@@ -2,6 +2,11 @@
 //  SceneDelegate.swift
 //  AppMaree
 //
+//  Description : Fichier par défaut présent dans l'application.
+// 
+//  VOUS POUVEZ ICI CHANGER LA PAGE PAR DEFAUT. Celle qui s'affiche à l'ouverture de l'application.
+//  Rendez-vous au marqueur sur cette page pour davantage d'informations.
+//
 //  Created by unicaen on 24/06/2020.
 //  Copyright © 2020 unicaen. All rights reserved.
 //
@@ -19,8 +24,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
-        // Create the SwiftUI view that provides the window contents.
+        // --------------- MODIFIER LA PAGE PAR DEFAUT ---------------
+        // Afin de modifier la page par défaut, changez "LaunchView()" 
+        // par l'appel de votre autre page. 
+        // -----------------------------------------------------------
         let contentView = LaunchView()
+        // let contentView = NouvellePage()
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
