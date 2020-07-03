@@ -60,6 +60,8 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
     lateinit var listJour :ArrayList<Jour>
     var listePorte =ArrayList<Porte>()
     var listeMaree =ArrayList<Maree>()
+    var latitude : String =""
+    var longitude : String =""
 
     /****************Fonctions pour le calculs des horaires avec le tirant d'eau****************/
 
@@ -69,10 +71,42 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
      *
      * @param newVar Nouveau tirant d'eau
      */
-    fun actualiserTirantDEau(newVar : Double){
-        if(tirantDEau!=newVar && newVar> HAUTEUR_PORTE+0.1){
-            tirantDEau=newVar
-            changerHoraireTirantDeau()
+    fun actualiserTirantDEau(newVarString : String){
+        if(newVarString!="") {
+            var newVar=newVarString.toDouble()
+            if (tirantDEau != newVar && newVar > HAUTEUR_PORTE + 0.1) {
+                tirantDEau = newVar
+                changerHoraireTirantDeau()
+            }
+            else{
+                resetTableauTirantDEau()
+                tirantDEau=newVar
+            }
+        }
+        else{
+            if(tirantDEau > HAUTEUR_PORTE + 0.1) {
+                resetTableauTirantDEau()
+            }
+        }
+    }
+
+    fun  resetTableauTirantDEau(){
+        for(jour:Jour in listJour){
+            jour.ligne3.col2=jour.ligne4.col2
+            jour.ligne4.col2=jour.ligne5.col2
+            jour.ligne5.col2=""
+
+            jour.ligne3.col3=jour.ligne4.col3
+            jour.ligne4.col3=jour.ligne5.col3
+            jour.ligne5.col3=""
+
+            jour.ligne3.col4=jour.ligne4.col4
+            jour.ligne4.col4=jour.ligne5.col4
+            jour.ligne5.col4=""
+
+            jour.ligne3.col5=jour.ligne4.col5
+            jour.ligne4.col5=jour.ligne5.col5
+            jour.ligne5.col5=""
         }
     }
 
@@ -85,7 +119,6 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
         val listeHoraire=getHoraireCalculTirantDeau()
         val size=listeHoraire.size
         var i=0
-        var tmp=""
 
         for(jour:Jour in listJour){
             jour.ligne5.col2=jour.ligne4.col2
@@ -252,7 +285,7 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
         ligne2.add(jour)
         ligne3.add(date+" ")
         ligne4.add(mois)
-        ligne5.add(" ")
+        ligne5.add("")
 
         for(i in 0..3){
             var coef :String=" "
@@ -272,7 +305,7 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
             ligne2.add(heureM)
             ligne3.add(heureP)
             ligne4.add(hauteur)
-            ligne5.add(" ")
+            ligne5.add("")
             if(colorM!=Color.WHITE){backgroundMaree.add(colorM)}
             else{backgroundMaree.add(null)}
             if(colorP!=Color.WHITE){backgroundPorte.add(colorP)}

@@ -26,7 +26,7 @@ struct DiagonalBackgroundView: View {
     
     var body: some View {
         LinearGradient(gradient: Gradient(colors: [Color(startingColor.rawValue),Color(finalColor.rawValue)]), startPoint: .top, endPoint: .bottom)
-            .padding(-20.0)
+            .padding(.horizontal, -20.0)
             .rotationEffect(Angle(degrees: -4))
     }
 }

@@ -12,20 +12,28 @@ struct HomeButtonView: View {
     
     private let colored:Bool
     private let isBack:Bool
+    private let home:Bool
     private let presentation:Binding<PresentationMode>?
 
-    init(colored: Bool = true, isBack:Bool = true, presentation:Binding<PresentationMode>? = nil) {
+    init(colored: Bool = true, isBack:Bool = true, home: Bool = false, presentation:Binding<PresentationMode>? = nil) {
         self.colored = colored
         self.isBack = isBack
         self.presentation = presentation
+        self.home = home
     }
       
     var body: some View {
         VStack {
             Spacer()
             if !isBack {
-                NavigationLink(destination: MainView()) {
-                    ButtonMainView(colored: colored)
+                if !home {
+                    NavigationLink(destination: MainView()) {
+                        ButtonMainView(colored: colored)
+                    }
+                } else {
+                    NavigationLink(destination: MenuView()) {
+                        ButtonMainView(home: home, colored: colored)
+                    }
                 }
             } else {
                 Button(action: {
@@ -34,6 +42,12 @@ struct HomeButtonView: View {
                     ButtonMainView(colored: false)
                 }
             }
+        }
+    }
+    
+    struct MenuButton_Previews: PreviewProvider {
+        static var previews: some View {
+            HomeButtonView()
         }
     }
 }

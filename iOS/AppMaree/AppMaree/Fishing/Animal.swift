@@ -8,18 +8,18 @@
 
 import Foundation
 
-struct Animal {
+struct Animal: Identifiable {
+    let id = UUID()
+    let name: String
+    let imageName: String
+    let allowedSize: Int
+    let allowedDate: (String, String)
+    let allowedPerPerson: Int
+    let taggingObligation: Bool
+    let description: String
+    let helpImage: String?
     
-    private let name: String
-    private let imageName: String
-    private let allowedSize: Float
-    private let allowedDate: (String, String)
-    private let allowedPerPerson: Int
-    private let taggingObligation: Bool
-    private let description: String
-    private let helpImage: String?
-    
-    init(name: String, imageName: String = "fishing", allowedSize: Float, allowedDate: (String, String), allowedPerPerson: Int, taggingObligation: Bool = true, description: String = "", helpImage: String? = nil) {
+    init(name: String, imageName: String = "fishing", allowedSize: Int, allowedDate: (String, String) = ("",""), allowedPerPerson: Int = 2, taggingObligation: Bool = true, description: String = "", helpImage: String? = nil) {
     
         self.name = name
         self.imageName = imageName
@@ -36,21 +36,21 @@ struct Animal {
         return "Le/La \(self.name) ne doit pas dépasser une taille de \(self.allowedSize) cm.\n\nAutorisé du \(self.allowedDate.0) au \(self.allowedDate.1), limité à \(self.allowedPerPerson) \(self.name)S par jour et par personne. En dehors de cette période, le pêcher et le relacher est autorisé.\n\n\(self.description)"
     }
     
-    static func getFishes() -> [(String, String, Double)] {
+    static func getFishes(bundleName: String) -> [Animal] {
         
         let fileManager = FileManager.default
         let bundleURL = Bundle.main.bundleURL
-        let assetURL = bundleURL.appendingPathComponent("Poisson.bundle")
+        let assetURL = bundleURL.appendingPathComponent("\(bundleName).bundle")
 
-        var poissons: [(file: String, name: String, size: Double)] = []
+        var poissons: [Animal] = []
         
         do {
           let contents = try fileManager.contentsOfDirectory(at: assetURL, includingPropertiesForKeys: [URLResourceKey.nameKey, URLResourceKey.isDirectoryKey], options: .skipsHiddenFiles)
 
           for item in contents {
             let infos = item.lastPathComponent.split(separator: "_")
-            let size = Double(infos[1])
-            poissons.append((file: item.lastPathComponent, name: String(infos[0]), size: size ?? 0.0))
+            let size = infos[1].split(separator: ".")
+            poissons.append(Animal(name: String(infos[0]).uppercased(), imageName: item.lastPathComponent, allowedSize: Int(size[0]) ?? 0))
           }
         }
         catch let error as NSError {
@@ -58,21 +58,6 @@ struct Animal {
         }
         return poissons
     }
-    
-    static func getShellFishes() -> [Animal] {
-        return [
-            Animal(name: "BAR", imageName: "bar", allowedSize: 42.0, allowedDate: ("1er Mars", "30 Novembre"), allowedPerPerson: 2, description:  "Réglementation applicable au nord du 48e parallèle d'Audienne à la frontière Belge. Marquage obligatoire."),
-            Animal(name: "BAR", imageName: "bar", allowedSize: 42.0, allowedDate: ("1er Mars", "30 Novembre"), allowedPerPerson: 2, description:  "Réglementation applicable au nord du 48e parallèle d'Audienne à la frontière Belge. Marquage obligatoire."),
-            Animal(name: "BAR", imageName: "bar", allowedSize: 42.0, allowedDate: ("1er Mars", "30 Novembre"), allowedPerPerson: 2, description:  "Réglementation applicable au nord du 48e parallèle d'Audienne à la frontière Belge. Marquage obligatoire.")
-        ]
-    }
-    
-    static func countFishes() -> Int {
-        return getFishes().count
-    }
-    
-    static func countShellFishes() -> Int {
-        return getShellFishes().count
-    }
+
 }
 

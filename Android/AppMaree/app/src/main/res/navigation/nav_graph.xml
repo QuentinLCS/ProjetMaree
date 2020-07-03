@@ -22,6 +22,21 @@
         <action
             android:id="@+id/action_HorairesFragment_to_ParametreFragment"
             app:destination="@id/ParametreFragment" />
+        <action
+            android:id="@+id/action_HorairesFragment_to_AProposFragment"
+            app:destination="@id/AProposFragment" />
+        <action
+            android:id="@+id/action_HorairesFragment_to_documentationFragment"
+            app:destination="@id/documentationFragment" />
+        <action
+            android:id="@+id/action_HorairesFragment_to_servicesFragment"
+            app:destination="@id/servicesFragment" />
+        <action
+            android:id="@+id/action_HorairesFragment_to_taillesAutoriseeFragment"
+            app:destination="@id/taillesAutoriseeFragment" />
+        <action
+            android:id="@+id/action_HorairesFragment_to_urgenceFragment"
+            app:destination="@id/urgenceFragment" />
     </fragment>
     <fragment
         android:id="@+id/ParametreFragment"
@@ -30,5 +45,135 @@
         <action
             android:id="@+id/action_ParametreFragment_to_HorairesFragment"
             app:destination="@id/HorairesFragment" />
+        <action
+            android:id="@+id/action_ParametreFragment_to_AProposFragment"
+            app:destination="@id/AProposFragment" />
+        <action
+            android:id="@+id/action_ParametreFragment_to_documentationFragment"
+            app:destination="@id/documentationFragment" />
+        <action
+            android:id="@+id/action_ParametreFragment_to_servicesFragment"
+            app:destination="@id/servicesFragment" />
+        <action
+            android:id="@+id/action_ParametreFragment_to_taillesAutoriseeFragment"
+            app:destination="@id/taillesAutoriseeFragment" />
+        <action
+            android:id="@+id/action_ParametreFragment_to_urgenceFragment"
+            app:destination="@id/urgenceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/AProposFragment"
+        android:name="com.example.appmaree.AProposFragment"
+        android:label="AProposFragment" >
+        <action
+            android:id="@+id/action_AProposFragment_to_HorairesFragment"
+            app:destination="@id/HorairesFragment" />
+        <action
+            android:id="@+id/action_AProposFragment_to_ParametreFragment"
+            app:destination="@id/ParametreFragment" />
+        <action
+            android:id="@+id/action_AProposFragment_to_documentationFragment"
+            app:destination="@id/documentationFragment" />
+        <action
+            android:id="@+id/action_AProposFragment_to_servicesFragment"
+            app:destination="@id/servicesFragment" />
+        <action
+            android:id="@+id/action_AProposFragment_to_taillesAutoriseeFragment"
+            app:destination="@id/taillesAutoriseeFragment" />
+        <action
+            android:id="@+id/action_AProposFragment_to_urgenceFragment"
+            app:destination="@id/urgenceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/documentationFragment"
+        android:name="com.example.appmaree.DocumentationFragment"
+        android:label="DocumentationFragment" >
+        <action
+            android:id="@+id/action_documentationFragment_to_AProposFragment"
+            app:destination="@id/AProposFragment" />
+        <action
+            android:id="@+id/action_documentationFragment_to_HorairesFragment"
+            app:destination="@id/HorairesFragment" />
+        <action
+            android:id="@+id/action_documentationFragment_to_ParametreFragment"
+            app:destination="@id/ParametreFragment" />
+        <action
+            android:id="@+id/action_documentationFragment_to_servicesFragment"
+            app:destination="@id/servicesFragment" />
+        <action
+            android:id="@+id/action_documentationFragment_to_taillesAutoriseeFragment"
+            app:destination="@id/taillesAutoriseeFragment" />
+        <action
+            android:id="@+id/action_documentationFragment_to_urgenceFragment"
+            app:destination="@id/urgenceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/servicesFragment"
+        android:name="com.example.appmaree.ServicesFragment"
+        android:label="ServicesFragment" >
+        <action
+            android:id="@+id/action_servicesFragment_to_AProposFragment"
+            app:destination="@id/AProposFragment" />
+        <action
+            android:id="@+id/action_servicesFragment_to_HorairesFragment"
+            app:destination="@id/HorairesFragment" />
+        <action
+            android:id="@+id/action_servicesFragment_to_ParametreFragment"
+            app:destination="@id/ParametreFragment" />
+        <action
+            android:id="@+id/action_servicesFragment_to_documentationFragment"
+            app:destination="@id/documentationFragment" />
+        <action
+            android:id="@+id/action_servicesFragment_to_taillesAutoriseeFragment"
+            app:destination="@id/taillesAutoriseeFragment" />
+        <action
+            android:id="@+id/action_servicesFragment_to_urgenceFragment"
+            app:destination="@id/urgenceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/taillesAutoriseeFragment"
+        android:name="com.example.appmaree.TaillesAutoriseeFragment"
+        android:label="TaillesAutoriseeFragment" >
+        <action
+            android:id="@+id/action_taillesAutoriseeFragment_to_AProposFragment"
+            app:destination="@id/AProposFragment" />
+        <action
+            android:id="@+id/action_taillesAutoriseeFragment_to_HorairesFragment"
+            app:destination="@id/HorairesFragment" />
+        <action
+            android:id="@+id/action_taillesAutoriseeFragment_to_ParametreFragment"
+            app:destination="@id/ParametreFragment" />
+        <action
+            android:id="@+id/action_taillesAutoriseeFragment_to_documentationFragment"
+            app:destination="@id/documentationFragment" />
+        <action
+            android:id="@+id/action_taillesAutoriseeFragment_to_servicesFragment"
+            app:destination="@id/servicesFragment" />
+        <action
+            android:id="@+id/action_taillesAutoriseeFragment_to_urgenceFragment"
+            app:destination="@id/urgenceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/urgenceFragment"
+        android:name="com.example.appmaree.UrgenceFragment"
+        android:label="UrgenceFragment" >
+        <action
+            android:id="@+id/action_urgenceFragment_to_AProposFragment"
+            app:destination="@id/AProposFragment" />
+        <action
+            android:id="@+id/action_urgenceFragment_to_HorairesFragment"
+            app:destination="@id/HorairesFragment" />
+        <action
+            android:id="@+id/action_urgenceFragment_to_ParametreFragment"
+            app:destination="@id/ParametreFragment" />
+        <action
+            android:id="@+id/action_urgenceFragment_to_documentationFragment"
+            app:destination="@id/documentationFragment" />
+        <action
+            android:id="@+id/action_urgenceFragment_to_servicesFragment"
+            app:destination="@id/servicesFragment" />
+        <action
+            android:id="@+id/action_urgenceFragment_to_taillesAutoriseeFragment"
+            app:destination="@id/taillesAutoriseeFragment" />
     </fragment>
 </navigation>
