@@ -23,7 +23,7 @@ struct MenuView: View {
                     LinearGradient(gradient: Gradient(colors: [Color("Primaire 1"),Color("Primaire 2"), Color("Primaire 3")]), startPoint: /*@START_MENU_TOKEN@*/.top/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.bottom/*@END_MENU_TOKEN@*/)
                     VStack(alignment: .center, spacing: 80, content: {
                         Spacer()
-                        // -------------------------- AFFICHAGE DES BOUTTONS --------------------------
+                        // -------------------------- AFFICHAGE DES BOUTONS --------------------------
                         // C'est ici que sont affichés les boutons. Pour afficher le votre, utilisez la fonction
                         // comme utilisé ci-dessous et insérez-y votre nouvelle page. Concernant leur position, 
                         // à vous de jouer avec leur ordre et les "Spacer()" ! Bon courage !
