@@ -2,6 +2,8 @@
 //  ContentView.swift
 //  AppMaree
 //
+//  Description : Il s'agit du menu coloré permettant de ridirigers vers les différentes autres pages.
+//
 //  Created by unicaen on 24/06/2020.
 //  Copyright © 2020 unicaen. All rights reserved.
 //
