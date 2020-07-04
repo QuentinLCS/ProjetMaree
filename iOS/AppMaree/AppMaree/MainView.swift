@@ -52,7 +52,7 @@ struct MainView: View {
     // ----------------------------------------------------------------------------
     private func delay() {
         // Delay of 45 seconds
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 45) {
             self.showAd = true
         }
     }
