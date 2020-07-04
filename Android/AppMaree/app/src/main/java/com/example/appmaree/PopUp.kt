@@ -9,54 +9,90 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.PopupWindow
 import androidx.fragment.app.FragmentActivity
-import java.util.*
+
 import kotlin.collections.ArrayList
 import kotlin.random.Random
 
-class PopUp (var activity: FragmentActivity?, var view: View) : PopupWindow(activity){
-    private var image : ImageView?
-    private var imageArray : ArrayList<Int>
-    private val tempsEntrePub : Long = 45000
+
+enum class Categorie(val texte: String) {
+    ASSOCIATION("Associations"), RAVITAILLEMENT("Ravitaillement"), BANQUE("Banque"),
+    BAR("Bar - Hotellerie - Restauration")
+}
+
+class Sponsor (val AdresseImage: Int,val poids: Int,val nom: String,val categorie: Categorie)
+
+class PopUp private constructor(activity: FragmentActivity?) : PopupWindow(activity)  {
+    private var image: ImageView?
+    private var imageArray: ArrayList<Int>
+    private val tempsEntrePub: Long = 5000
+    private val handler : Handler
+    private val view : View? = activity?.layoutInflater?.inflate(R.layout.activity_popup, null)
+    private var pub : Boolean = true
+    val arraySponsor : ArrayList<Sponsor>
+
+    companion object {
+        private lateinit var instance: PopUp
+
+        fun getInstance(activity: FragmentActivity?): PopUp {
+            if(!::instance.isInitialized)  instance = PopUp(activity)
+            return instance
+        }
+    }
 
     init {
+        contentView = view
+        handler=Handler()
 
-        val view = activity?.layoutInflater?.inflate(R.layout.activity_popup,null)
-        contentView=view
+        setWidth(LinearLayout.LayoutParams.MATCH_PARENT);
+
         val button = view?.findViewById<Button>(R.id.popupFermer)
-        if (button != null) {
-            button.setOnClickListener {
-                dismiss()
-                Handler().postDelayed({
+        button?.setOnClickListener {
+            dismiss()
+            if(pub){
+                handler.postDelayed({
                     show()
                 }, tempsEntrePub)
             }
+
         }
-        setWidth(LinearLayout.LayoutParams.MATCH_PARENT);
+
         image = view?.findViewById<ImageView>(R.id.popupImage)
 
+
+        arraySponsor= ArrayList()
+
+        arraySponsor.add(Sponsor(R.drawable.atelier_mobile_bateau_2,2,"Atelier Mobile du bateau", Categorie.RAVITAILLEMENT))
+        arraySponsor.add(Sponsor(R.drawable.axe_sail_2,3,"Axe Sail", Categorie.BANQUE))
+        arraySponsor.add(Sponsor(R.drawable.boulangerie2_1,5,"Boulangerie", Categorie.RAVITAILLEMENT))
+        arraySponsor.add(Sponsor(R.drawable.cafe_paix_1,1,"Cafe", Categorie.BAR))
+
         imageArray = ArrayList()
-
-        var mapPoids : HashMap<Int, Int>
-                = HashMap<Int, Int> ()
-
-        mapPoids.put(R.drawable.atelier_mobile_bateau_2 , 2)
-        mapPoids.put(R.drawable.axe_sail_2 , 1)
-        mapPoids.put(R.drawable.boulangerie2_1 , 5)
-        mapPoids.put(R.drawable.bouteille_a_la_mer_2 , 4)
-        mapPoids.put(R.drawable.ca , 1)
-        mapPoids.put(R.drawable.cafe_paix_1 , 1)
-        mapPoids.put(R.drawable.cambuse_2 , 3)
-
-        for(key in mapPoids.keys){
-            for(i in 0..mapPoids[key]!!)
-                imageArray.add(key)
+        for (sponsor in arraySponsor) {
+            for (i in 0..sponsor.poids)
+                imageArray.add(sponsor.AdresseImage)
         }
 
-        Handler().postDelayed({
+        handler.postDelayed({
             show()
         }, tempsEntrePub)
-        
-        /*
+
+    }
+
+
+    fun show() {
+        image?.setImageResource(imageArray.get(Random.nextInt(imageArray.size)))
+        showAtLocation(view, BOTTOM, 0, 0)
+        pub = true
+    }
+
+    fun showSponsor(resource : Int) {
+        image?.setImageResource(resource)
+        showAtLocation(view, BOTTOM, 0, 0)
+        pub = false
+    }
+
+}
+/*
         imageArray = intArrayOf(
             R.drawable.appd,
             R.drawable.atelier_mobile_bateau_2,
@@ -100,12 +136,3 @@ class PopUp (var activity: FragmentActivity?, var view: View) : PopupWindow(acti
             R.drawable.voilerie_des_isles,
             R.drawable.weldom_2)
         */
-        
-    }
-
-    fun show() {
-        image?.setImageResource(imageArray.get(Random.nextInt(imageArray.size)))
-        showAtLocation(view, BOTTOM,0,0)
-    }
-
-}
