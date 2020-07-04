@@ -45,6 +45,9 @@ struct TitleView: View {
                 .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/).edgesIgnoringSafeArea(.all)
             
             VStack {
+                Text("Association des plaisanciers")
+                .fontWeight(.bold)
+                .foregroundColor(titleColor)
                 Text(title)
                     .font(.title)
                     .fontWeight(.bold)

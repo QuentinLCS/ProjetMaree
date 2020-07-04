@@ -43,11 +43,11 @@ struct ButtonFishDetailsView: View {
                     }
                     if (size != 0) {
                         Text("\(size) cm")
-                        .font(.system(size: 10))
+                        .font(.system(size: 13))
                     }
                 }
             }
-            .frame(width: 150.0, height: 100.0)
+            .frame(width: 180.0, height: 120.0)
     }
 }
 
