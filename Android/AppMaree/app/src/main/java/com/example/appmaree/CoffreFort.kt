@@ -14,45 +14,61 @@ class CoffreFort(context: Context?) {
 
 
 
-    val sharedPref: SharedPreferences = context!!.getSharedPreferences(PREF_NAME, PRIVATE_MODE)
+    var sharedPref: SharedPreferences = context!!.getSharedPreferences(PREF_NAME, PRIVATE_MODE)
 
     init {
-        /*if (sharedPref.getBoolean(PREF_NAME, false)){
-            setTirantEau(-1f)
-            setFontSize(15)
+        val editor: SharedPreferences.Editor
+        if (sharedPref.getBoolean(PREF_NAME, false)){
+            reset()
         }
         else{
-            val editor = sharedPref.edit()
+            val editor : SharedPreferences.Editor = sharedPref.edit()
             editor.putBoolean(PREF_NAME, true)
             editor.apply()
-        }*/
+        }
     }
 
     fun setTirantEau(t: Float){
-
+        var editor: SharedPreferences.Editor = sharedPref.edit()
+        editor.putFloat(TIRANTEAU, t)
+        editor.commit()
     }
     fun getTirantEau(): Float{
         return -1f
     }
 
-    fun getFontSize(): Int{
-        return 15
+    fun setFontSize(s: Float){
+        var editor: SharedPreferences.Editor = sharedPref.edit()
+        editor.putFloat(FONTSIZE, s)
+        editor.commit()
     }
-    fun setFontSize(s: Int){
-
+    fun getFontSize(): Float{
+        return 15f
     }
-    fun setCouleur(s: Int){
 
+    fun setCouleur(s: Float){
+        var editor: SharedPreferences.Editor = sharedPref.edit()
+        editor.putFloat(COLOR, s)
+        editor.commit()
     }
     fun getCouleur(): Int{
         return 50
     }
-    fun setPubRestant(t: Int){
 
+    fun setPubRestant(t: Float){
+        var editor: SharedPreferences.Editor = sharedPref.edit()
+        editor.putFloat(PUBRESTANT, t)
+        editor.commit()
     }
     fun getPubRestant(): Int{
         return 30
     }
 
+    fun reset(){
+        setTirantEau(-1f)
+        setFontSize(15f)
+        setCouleur(0f)
+        setPubRestant(0f)
+    }
 
 }

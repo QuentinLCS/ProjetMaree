@@ -45,7 +45,7 @@ struct FishingView: View {
                             ForEach(0..<(fishes.count+1)/2) { row in // create number of rows
                                 HStack {
                                     ForEach(0..<2) { column in // create 2 columns
-                                        self.makeFishCard(row: row, column: column)
+                                        self.makeFishCard(cell: self.getCell(row: row, column: column))
                                         
                                     }
                                 }
@@ -68,7 +68,7 @@ struct FishingView: View {
                             ForEach(0..<(shellFishes.count+1)/2) { row in // create number of rows
                                 HStack {
                                     ForEach(0..<2) { column in // create 2 columns
-                                        self.makeShellfishCard(row: row, column: column)
+                                        self.makeShellfishCard(cell: self.getCell(row: row, column: column))
                                     }
                                 }
                             }
@@ -103,20 +103,24 @@ struct FishingView: View {
         
     }
     
-    func makeFishCard(row: Int, column: Int) -> ButtonFishDetailsView {
-        if (row * 2 + column < self.fishes.count) {
-        return ButtonFishDetailsView(backgroundColor: .white, name: self.fishes[row * 2 + column].name, image: self.fishes[row * 2 + column].imageName, size: self.fishes[row * 2 + column].allowedSize, bundleName: "Fish")
+    func makeFishCard(cell: Int) -> ButtonFishDetailsView {
+        if (cell < self.fishes.count) {
+        return ButtonFishDetailsView(backgroundColor: .white, name: self.fishes[cell].name, image: self.fishes[cell].imageName, size: self.fishes[cell].allowedSize, bundleName: "Fish")
         } else {
             return ButtonFishDetailsView(backgroundColor: .white, name: "", image: "", size: 0, bundleName: "")
         }
     }
     
-    func makeShellfishCard(row: Int, column: Int) -> ButtonFishDetailsView {
-        if (row * 2 + column < self.shellFishes.count) {
-        return ButtonFishDetailsView(backgroundColor: .secondaryColor, name: self.shellFishes[row * 2 + column].name, image: self.shellFishes[row * 2 + column].imageName, size: self.shellFishes[row * 2 + column].allowedSize, bundleName: "Shellfish")
+    func makeShellfishCard(cell: Int) -> ButtonFishDetailsView {
+        if (cell < self.shellFishes.count) {
+        return ButtonFishDetailsView(backgroundColor: .secondaryColor, name: self.shellFishes[cell].name, image: self.shellFishes[cell].imageName, size: self.shellFishes[cell].allowedSize, bundleName: "Shellfish")
         } else {
             return ButtonFishDetailsView(backgroundColor: .secondaryColor, name: "", image: "", size: 0, bundleName: "")
         }
+    }
+    
+    func getCell (row: Int, column: Int) -> Int {
+        return row * 2 + column
     }
 }
 

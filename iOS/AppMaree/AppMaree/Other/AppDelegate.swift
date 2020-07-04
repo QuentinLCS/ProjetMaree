@@ -2,6 +2,8 @@
 //  AppDelegate.swift
 //  AppMaree
 //
+//  Descrption : Fichier par défaut présent dans l'application. Rien à signaler ici.
+//
 //  Created by unicaen on 24/06/2020.
 //  Copyright © 2020 unicaen. All rights reserved.
 //

@@ -43,7 +43,7 @@ class ParametreFragment : Fragment() {
     private var linlayout : LinearLayout? = null
     private var fontsize : Int = 15
     private var color : Int = 50
-    private var cf : CoffreFort = CoffreFort(this.context)
+    //private var cf = CoffreFort(this.context)
     private var progressBarColor: ProgressBar? = null
     /**
      * Fonction automatique lors de la création du fragment
@@ -91,6 +91,12 @@ class ParametreFragment : Fragment() {
                 changefontsize()
             }
         }
+
+        view.findViewById<Button>(R.id.bParamReset).setOnClickListener {
+            //cf.reset()
+            Toast.makeText(this.context, "paramettres reset", Toast.LENGTH_SHORT).show()
+        }
+
 
 
 
