@@ -14,15 +14,29 @@ import kotlin.collections.ArrayList
 import kotlin.random.Random
 
 
-class PopUp(var activity: FragmentActivity?, var view: View) : PopupWindow(activity) {
+class PopUp private constructor(var activity: FragmentActivity?) : PopupWindow(activity)  {
     private var image: ImageView?
     private var imageArray: ArrayList<Int>
-    private val tempsEntrePub: Long = 45000
+    private val tempsEntrePub: Long = 5000
+    private val handler : Handler
+    private val view : View? = activity?.layoutInflater?.inflate(R.layout.activity_popup, null)
 
+
+    companion object {
+        private lateinit var instance: PopUp
+
+        fun getInstance(activity: FragmentActivity?): PopUp {
+            if(!::instance.isInitialized)  instance = PopUp(activity)
+            return instance
+        }
+    }
 
     init {
-        val view = activity?.layoutInflater?.inflate(R.layout.activity_popup, null)
         contentView = view
+        handler=Handler()
+
+        setWidth(LinearLayout.LayoutParams.MATCH_PARENT);
+
         val button = view?.findViewById<Button>(R.id.popupFermer)
         if (button != null) {
             button.setOnClickListener {
@@ -32,7 +46,7 @@ class PopUp(var activity: FragmentActivity?, var view: View) : PopupWindow(activ
                 }, tempsEntrePub)
             }
         }
-        setWidth(LinearLayout.LayoutParams.MATCH_PARENT);
+
         image = view?.findViewById<ImageView>(R.id.popupImage)
 
         imageArray = ArrayList()
@@ -52,7 +66,7 @@ class PopUp(var activity: FragmentActivity?, var view: View) : PopupWindow(activ
                 imageArray.add(key)
         }
 
-        Handler().postDelayed({
+        handler.postDelayed({
             show()
         }, tempsEntrePub)
 

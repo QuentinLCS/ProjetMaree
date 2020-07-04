@@ -103,7 +103,7 @@ class HorairesFragment : Fragment() {
             bottomSheet.post { behavior.state = BottomSheetBehavior.STATE_COLLAPSED }
         }
 
-
+        PopUp.getInstance(activity)
 
     }
 
