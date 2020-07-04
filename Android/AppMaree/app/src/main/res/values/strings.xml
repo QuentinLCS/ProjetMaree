@@ -57,5 +57,7 @@
         "indique l'heure donnée par le SHOM à partir de laquelle la porte ouvre (avec la parenthèse ouvrante) et ferme (avec la parenthèse fermante).\n"
     </string>
 
+    <string name="DescriptionService">"L\'association des plaisanciers de Port Dielette vous présente la liste de ses partenaires pour l\'édition de l'annuaire des marées."
+    </string>
 
 </resources>

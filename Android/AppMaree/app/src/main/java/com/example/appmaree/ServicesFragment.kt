@@ -52,6 +52,7 @@ class ServicesFragment: Fragment() {
 
         val layout = activity?.findViewById<LinearLayout>(R.id.service_layout)
         var textView: TextView
+
         for(categorie in arrayCategorie.keys){
             textView = TextView(activity)
             textView.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)

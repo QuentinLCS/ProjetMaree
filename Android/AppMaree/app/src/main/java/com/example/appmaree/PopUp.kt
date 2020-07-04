@@ -24,7 +24,7 @@ class Sponsor (val AdresseImage: Int,val poids: Int,val nom: String,val categori
 class PopUp private constructor(activity: FragmentActivity?) : PopupWindow(activity)  {
     private var image: ImageView?
     private var imageArray: ArrayList<Int>
-    private val tempsEntrePub: Long = 5000
+    private val tempsEntrePub: Long = 45000
     private val handler : Handler
     private val view : View? = activity?.layoutInflater?.inflate(R.layout.activity_popup, null)
     private var pub : Boolean = true
