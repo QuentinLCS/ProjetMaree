@@ -7,4 +7,6 @@
     <color name="colorGrey">#f2f2f2</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorTitre">#2CECC9</color>
+    <color name="colorServiceCategorie">#000000</color>
+    <color name="colorServiceSponsor">#173CA1</color>
 </resources>
