@@ -105,7 +105,6 @@ class HorairesFragment : Fragment() {
 
 
 
-        PopUp(activity,view)
     }
 
 }
