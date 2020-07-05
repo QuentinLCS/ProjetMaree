@@ -36,6 +36,7 @@
 		DFBF4FA124AEA3BC00E2DA4B /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FA024AEA3BC00E2DA4B /* DraggableView.swift */; };
 		DFBF4FA324B2254600E2DA4B /* Pubs.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DFBF4FA224B2254600E2DA4B /* Pubs.bundle */; };
 		DFBF4FA724B23B5300E2DA4B /* BundleHandlerswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FA624B23B5300E2DA4B /* BundleHandlerswift.swift */; };
+		DFBF4FA924B2835200E2DA4B /* MainDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FA824B2835200E2DA4B /* MainDataRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		DFBF4FA024AEA3BC00E2DA4B /* DraggableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
 		DFBF4FA224B2254600E2DA4B /* Pubs.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Pubs.bundle; sourceTree = "<group>"; };
 		DFBF4FA624B23B5300E2DA4B /* BundleHandlerswift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleHandlerswift.swift; sourceTree = "<group>"; };
+		DFBF4FA824B2835200E2DA4B /* MainDataRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				DF02A79024A360C5009582BC /* Assets.xcassets */,
 				DF02A79824A360C5009582BC /* Info.plist */,
 				DF45A1E424A64E7F00C4C050 /* data.xml */,
+				DFBF4FA824B2835200E2DA4B /* MainDataRow.swift */,
 			);
 			path = AppMaree;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				DF45A1E924A64EF400C4C050 /* LaunchView.swift in Sources */,
 				DF45A1C824A60A5100C4C050 /* MainView.swift in Sources */,
 				DF02A78D24A360C3009582BC /* SceneDelegate.swift in Sources */,
+				DFBF4FA924B2835200E2DA4B /* MainDataRow.swift in Sources */,
 				DFBF4FA724B23B5300E2DA4B /* BundleHandlerswift.swift in Sources */,
 				DF44C0F824A8FB67001D6BDD /* DiagonalBackgroundView.swift in Sources */,
 				DF02A78F24A360C3009582BC /* MenuView.swift in Sources */,

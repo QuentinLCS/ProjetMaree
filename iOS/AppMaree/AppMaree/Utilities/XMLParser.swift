@@ -8,7 +8,8 @@
 
 import SwiftUI
 
-struct Day {
+struct Day: Identifiable {
+    var id = UUID()
     var name: String = ""
     var date: String = ""
     var portes: [Porte] = []

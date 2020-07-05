@@ -12,7 +12,7 @@
 //
 
 import SwiftUI
-
+import UIKit
 
 struct MainView: View {
     
@@ -34,11 +34,12 @@ struct MainView: View {
                             .modifier(DraggableModifier(direction: .horizontal, showAd: $showAd))
                         Spacer()
                     }
+                }
+                //list placeholder
+                List(days) { day in
+                    MainDataRow(day: day)
+                }
                 
-                }
-                ScrollView {
-                    Text("Soon")
-                }
                 ButtonWindowView(isBack: false, home: true)
             }
         }.onAppear (perform: delay)
