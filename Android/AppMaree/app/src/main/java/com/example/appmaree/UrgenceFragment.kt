@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -29,8 +30,31 @@ class UrgenceFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel=activity.run { ViewModelProviders.of(this!!).get(TableauHoraireViewModel::class.java)  }
-        latitude.text=viewModel.latitude
-        longitude.text=viewModel.longitude
+        latitude.text="Latitude :"+viewModel.latitude
+        longitude.text="Longitude :"+viewModel.longitude
+
+        view.findViewById<Button>(R.id.btn_urgence1).setOnClickListener(){
+            var param =view.findViewById<TextView>(R.id.textUrgence1).layoutParams
+            if(param.height!=ViewGroup.LayoutParams.WRAP_CONTENT){
+                param.height=ViewGroup.LayoutParams.WRAP_CONTENT
+            }
+            else{
+              param.height=0
+            }
+            view.findViewById<TextView>(R.id.textUrgence1).layoutParams=param
+        }
+
+        view.findViewById<Button>(R.id.btn_urgence2).setOnClickListener(){
+            var param =view.findViewById<TextView>(R.id.textUrgence2).layoutParams
+            if(param.height!=ViewGroup.LayoutParams.WRAP_CONTENT){
+                param.height=ViewGroup.LayoutParams.WRAP_CONTENT
+            }
+            else{
+                param.height=0
+            }
+            view.findViewById<TextView>(R.id.textUrgence2).layoutParams=param
+        }
+
 
         var bottomSheet:View=activity!!.findViewById(R.id.bottom_sheet)
         val behavior =BottomSheetBehavior.from(bottomSheet)
