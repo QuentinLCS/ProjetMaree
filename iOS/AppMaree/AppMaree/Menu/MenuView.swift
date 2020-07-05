@@ -43,7 +43,7 @@ struct MenuView: View {
                             ButtonMenuView(destination: .settings)
                             Spacer()
                         }
-                        ButtonWindowView(colored: false, presentation: presentationMode)
+                        ButtonWindowView(colored: false,isBack: true, presentation: presentationMode)
                     })
                 }
             }

@@ -11,8 +11,8 @@ import SwiftUI
 struct Day {
     var name: String?
     var date: String?
-    var portes: [Porte]?
-    var marees: [Maree]?
+    var portes: [Porte] = []
+    var marees: [Maree] = []
 }
 
 struct Porte {
@@ -33,7 +33,7 @@ class MareeParser: NSObject {
 
     // a few variables to hold the results as we parse the XML
 
-    var results: [Day]! // the whole array of days
+    var results: [Day] = [] // the whole array of days
     var currentDay: Day! // the current day
     var currentValue: String?
     
@@ -75,10 +75,10 @@ extension MareeParser: XMLParserDelegate {
             self.currentValue = String()
 
         } else if elementName == "porte" {
-            self.currentDay.portes?.append(Porte(etat: attributeDict["etat"]!, heure: attributeDict["heure"]!))
+            self.currentDay.portes.append(Porte(etat: attributeDict["etat"]!, heure: attributeDict["heure"]!))
             
         } else if elementName == "maree" {
-            self.currentDay.marees?.append(Maree(etat: attributeDict["etat"]!, heure: attributeDict["heure"]!,hauteur: attributeDict["heuteur"]!, coef: attributeDict["coef"]))
+            self.currentDay.marees.append(Maree(etat: attributeDict["etat"]!, heure: attributeDict["heure"]!,hauteur: attributeDict["hauteur"]!, coef: attributeDict["coef"]))
         }
 
     }
@@ -124,7 +124,7 @@ extension MareeParser: XMLParserDelegate {
 
         self.currentValue = nil
         self.currentDay = nil
-        self.results = nil
+        self.results = []
 
     }
 
