@@ -38,7 +38,7 @@ class ServicesFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         var popUp = PopUp.getInstance(activity)
-        var arraySponsor = ListeSponsor()
+        var arraySponsor = ListeSponsor().listeSponsor
 
         var arrayCategorie : TreeMap<Categorie,ArrayList<Sponsor>> = TreeMap()
         var cat : Categorie
