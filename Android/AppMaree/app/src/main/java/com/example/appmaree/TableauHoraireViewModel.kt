@@ -52,7 +52,7 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
     /**
      * Dataclass contenant les lignes d'une journée
      */
-    data class Jour(val ligne1:Ligne,val ligne2:Ligne,val ligne3:Ligne,val ligne4:Ligne,val ligne5:Ligne,val background : Int?=null){}
+    data class Jour(val ligne1:Ligne,val ligne2:Ligne,val ligne3:Ligne,val ligne4:Ligne,val ligne5:Ligne,val background : Int?=null)
 
     var tirantDEau:Double =0.0
     lateinit var listeHorairesTirantDEau:ArrayList<String>

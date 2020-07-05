@@ -66,7 +66,7 @@
     <string name="text_urgence1">"Mayday – Mayday – Mayday\nici le bateau [type et nom de l’embarcation];\nQui se signale [nature du sinistre];\nÀ la position [position GPS ou azimut/distance d’un point remarquable];\n[Nombre] de personnes à bord;\nIci le bateau [type et nom de l’embarcation] -\nterminé."</string>
 
     <string name="urgence2">"Type d'urgence:\n\tAvarie de propulsion\n\tAvarie de barre\n\tHélice ou safran engagé\n\tDémâtage\n\tDemanded'avis medical\n"</string>
-    <string name="bouton_urgence2">"Pan-Oan"</string>
+    <string name="bouton_urgence2">"Pan-Pan"</string>
     <string name="text_urgence2">"Pan  Pan - Pan  Pan - Pan  Pan\nici le bateau [type et nom de l’embarcation];\nQui se signale [nature du sinistre];\nÀ la position [position GPS ou azimut/distance d’un point remarquable]; [\nNombre] de personnes à bord;\nIci le bateau [type et nom de l’embarcation] - terminé."</string>
 
 </resources>
