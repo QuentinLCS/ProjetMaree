@@ -2,6 +2,7 @@ package com.example.appmaree
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.widget.Toast
 
 class CoffreFort(context: Context?) {
 
@@ -14,54 +15,59 @@ class CoffreFort(context: Context?) {
 
 
 
-    var sharedPref: SharedPreferences = context!!.getSharedPreferences(PREF_NAME, PRIVATE_MODE)
+    var sharedPref: SharedPreferences? // : SharedPreferences = context!!.getSharedPreferences(PREF_NAME, PRIVATE_MODE)
 
     init {
+        sharedPref = context?.getSharedPreferences(PREF_NAME, PRIVATE_MODE)
         val editor: SharedPreferences.Editor
-        if (sharedPref.getBoolean(PREF_NAME, false)){
-            reset()
+        if (sharedPref!!.getBoolean(PREF_NAME, true)){
         }
         else{
-            val editor : SharedPreferences.Editor = sharedPref.edit()
-            editor.putBoolean(PREF_NAME, true)
+            reset()
+            val editor : SharedPreferences.Editor = sharedPref!!.edit()
+            editor.commit()
             editor.apply()
         }
     }
 
     fun setTirantEau(t: Float){
-        var editor: SharedPreferences.Editor = sharedPref.edit()
+        var editor: SharedPreferences.Editor = sharedPref!!.edit()
         editor.putFloat(TIRANTEAU, t)
         editor.commit()
+        editor.apply()
     }
     fun getTirantEau(): Float{
+        //return sharedPref.getFloat(TIRANTEAU, -1f)
         return -1f
     }
 
     fun setFontSize(s: Float){
-        var editor: SharedPreferences.Editor = sharedPref.edit()
+        var editor: SharedPreferences.Editor = sharedPref!!.edit()
         editor.putFloat(FONTSIZE, s)
         editor.commit()
     }
-    fun getFontSize(): Float{
-        return 15f
+        fun getFontSize(): Float{
+        return sharedPref!!.getFloat(FONTSIZE, 15f)
     }
 
     fun setCouleur(s: Float){
-        var editor: SharedPreferences.Editor = sharedPref.edit()
+        var editor: SharedPreferences.Editor = sharedPref!!.edit()
         editor.putFloat(COLOR, s)
         editor.commit()
     }
-    fun getCouleur(): Int{
-        return 50
+    fun getCouleur(): Float{
+        return sharedPref!!.getFloat(COLOR, 0f)
+        return 50f
     }
 
     fun setPubRestant(t: Float){
-        var editor: SharedPreferences.Editor = sharedPref.edit()
+        var editor: SharedPreferences.Editor = sharedPref!!.edit()
         editor.putFloat(PUBRESTANT, t)
         editor.commit()
     }
-    fun getPubRestant(): Int{
-        return 30
+    fun getPubRestant(): Float{
+        //return sharedPref.getFloat(PUBRESTANT, -1f)
+        return 30f
     }
 
     fun reset(){

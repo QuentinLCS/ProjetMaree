@@ -4,6 +4,7 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationManager
@@ -40,6 +41,7 @@ class MainActivity : AppCompatActivity() {
      * Crée un view model et récupere le tableau et la liste des id
      */
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(TableauHoraireViewModel::class.java)
         viewModel.listJour=SplashScreenActivity.splashViewModel.listJour
@@ -126,6 +128,7 @@ class MainActivity : AppCompatActivity() {
 
     private val mLocationCallback = object : LocationCallback() {
         override fun onLocationResult(locationResult: LocationResult) {
+
             var mLastLocation: Location = locationResult.lastLocation
             viewModel.latitude = mLastLocation.latitude.toString()
             viewModel.longitude= mLastLocation.longitude.toString()

@@ -60,6 +60,42 @@
     <string name="DescriptionService">"L\'association des plaisanciers de Port Dielette vous présente la liste de ses partenaires pour l\'édition de l'annuaire des marées."
     </string>
 
+    <!-- texte de la page à propos -->
+
+    <string name="a_propo_titre1">
+        "  Titre numéro 1     "
+    </string>
+    <string name="a_propo_paragraphe1">
+        " texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
+        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
+        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n\n\n
+        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n\n
+        texttextextextextexttexttextextextextext\ntexttextextextextexttexttextextextextext\n\n\n
+        texttextextextextexttexttextextextextext"
+    </string>
+    <string name="a_propo_titre2">
+        "  Titre numéro 1     "
+    </string>
+    <string name="a_propo_paragraphe2">
+        " texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
+        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
+        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n\n\n
+        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n\n
+        texttextextextextexttexttextextextextext\ntexttextextextextexttexttextextextextext\n\n\n
+        texttextextextextexttexttextextextextext"
+    </string>
+    <string name="a_propo_titre3">
+        "  Titre numéro 1     "
+    </string>
+    <string name="a_propo_paragraphe3">
+        " texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
+        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
+        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n\n\n
+        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n\n
+        texttextextextextexttexttextextextextext\ntexttextextextextexttexttextextextextext\n\n\n
+        texttextextextextexttexttextextextextext"
+    </string>
+
     <!-- texte de la page urgence -->
     <string name="urgence1">"Type d'urgence:\n\tHomme à la mer\n\tInciendie/explosion\n\tVoie d'eau\n\tAbordage\n\tNavire désemparé et à la dérive\n\tÉchouement\n\tChavirement\n\tNavire en train de sombrer\n\tAbandon du navire\n"</string>
     <string name="bouton_urgence1">"May-Day"</string>
