@@ -9,26 +9,17 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.PopupWindow
 import androidx.fragment.app.FragmentActivity
-
 import kotlin.collections.ArrayList
 import kotlin.random.Random
-
-
-enum class Categorie(val texte: String) {
-    ASSOCIATION("Associations"), RAVITAILLEMENT("Ravitaillement"), BANQUE("Banque"),
-    BAR("Bar - Hotellerie - Restauration")
-}
-
-class Sponsor (val AdresseImage: Int,val poids: Int,val nom: String,val categorie: Categorie)
 
 class PopUp private constructor(activity: FragmentActivity?) : PopupWindow(activity)  {
     private var image: ImageView?
     private var imageArray: ArrayList<Int>
-    private val tempsEntrePub: Long = 5000
+    private val tempsEntrePub: Long = 45000
     private val handler : Handler
     private val view : View? = activity?.layoutInflater?.inflate(R.layout.activity_popup, null)
     private var pub : Boolean = true
-    val arraySponsor : ArrayList<Sponsor>
+
 
     companion object {
         private lateinit var instance: PopUp
@@ -59,12 +50,7 @@ class PopUp private constructor(activity: FragmentActivity?) : PopupWindow(activ
         image = view?.findViewById<ImageView>(R.id.popupImage)
 
 
-        arraySponsor= ArrayList()
-
-        arraySponsor.add(Sponsor(R.drawable.atelier_mobile_bateau_2,2,"Atelier Mobile du bateau", Categorie.RAVITAILLEMENT))
-        arraySponsor.add(Sponsor(R.drawable.axe_sail_2,3,"Axe Sail", Categorie.BANQUE))
-        arraySponsor.add(Sponsor(R.drawable.boulangerie2_1,5,"Boulangerie", Categorie.RAVITAILLEMENT))
-        arraySponsor.add(Sponsor(R.drawable.cafe_paix_1,1,"Cafe", Categorie.BAR))
+        val arraySponsor = ListeSponsor()
 
         imageArray = ArrayList()
         for (sponsor in arraySponsor) {
@@ -110,7 +96,7 @@ class PopUp private constructor(activity: FragmentActivity?) : PopupWindow(activ
             R.drawable.comptoir_mer,
             R.drawable.cotentin_surf_club_2,
             R.drawable.ed_and_coif_2,
-            R.drawable.hague_hud_plongee_1,
+            R.drawable.hague_sud_plongee_1,
             R.drawable.hague_sud_plongee,
             R.drawable.intermarche_4,
             R.drawable.lagoon_1,

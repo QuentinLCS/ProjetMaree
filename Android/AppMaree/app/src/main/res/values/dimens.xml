@@ -5,7 +5,8 @@
     <dimen name="taillepoliceparam">24dp</dimen>
     <dimen name="tailleTitre">30sp</dimen>
     <dimen name="taillepolicedocu">15dp</dimen>
-    <dimen name="tailleServiceCategorie">10dp</dimen>
-    <dimen name="tailleServiceSponsor">7dp</dimen>
+    <dimen name="tailleServiceCategorie">10sp</dimen>
+    <dimen name="tailleServiceSponsor">7sp</dimen>
+    <dimen name="paddingServiceCategorie">6dp</dimen>
 
 </resources>

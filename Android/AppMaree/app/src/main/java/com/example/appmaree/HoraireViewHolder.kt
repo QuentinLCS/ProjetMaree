@@ -132,7 +132,7 @@ class HoraireViewHolder (inflater: LayoutInflater,parent: ViewGroup): RecyclerVi
     }
 
     fun getColorText(backgroundColor : Int):Int{
-        if(backgroundColor==Color.YELLOW){
+        if(backgroundColor==Color.YELLOW || backgroundColor==Color.GREEN ){
             return Color.BLACK
         }
         else{

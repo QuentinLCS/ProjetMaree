@@ -19,6 +19,9 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 class ServicesFragment: Fragment() {
 
@@ -35,9 +38,9 @@ class ServicesFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         var popUp = PopUp.getInstance(activity)
-        var arraySponsor = popUp.arraySponsor
+        var arraySponsor = ListeSponsor()
 
-        var arrayCategorie : HashMap<Categorie,ArrayList<Sponsor>> = HashMap()
+        var arrayCategorie : TreeMap<Categorie,ArrayList<Sponsor>> = TreeMap()
         var cat : Categorie
 
         for(sponsor in arraySponsor){
@@ -52,14 +55,16 @@ class ServicesFragment: Fragment() {
 
         val layout = activity?.findViewById<LinearLayout>(R.id.service_layout)
         var textView: TextView
+        var paddingCategorie = (resources.getDimension(R.dimen.paddingServiceCategorie)* resources.displayMetrics.density +0.5f).toInt()
+
         for(categorie in arrayCategorie.keys){
             textView = TextView(activity)
             textView.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             textView.text = categorie.texte
             textView.textSize = resources.getDimension(R.dimen.tailleServiceCategorie)
             textView.setTextColor(ResourcesCompat.getColor(resources,R.color.colorServiceCategorie,null))
+            textView.setPadding(0, paddingCategorie,0,5)
             layout?.addView(textView)
-
             for(sponsor in arrayCategorie[categorie]!!){
                 textView = TextView(activity)
                 textView.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
@@ -73,8 +78,7 @@ class ServicesFragment: Fragment() {
                 }
             }
         }
-
-
+        layout?.setPadding(0,0,0,paddingCategorie*(arrayCategorie.size+1))
 
         var bottomSheet:View=activity!!.findViewById(R.id.bottom_sheet)
         val behavior =BottomSheetBehavior.from(bottomSheet)
