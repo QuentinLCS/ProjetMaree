@@ -7,5 +7,6 @@
     <dimen name="taillepolicedocu">15dp</dimen>
     <dimen name="tailleServiceCategorie">10sp</dimen>
     <dimen name="tailleServiceSponsor">7sp</dimen>
+    <dimen name="paddingServiceCategorie">6dp</dimen>
 
 </resources>
