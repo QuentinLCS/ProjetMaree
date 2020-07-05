@@ -53,7 +53,7 @@ struct MainView: View {
     // ----------------------------------------------------------------------------
     private func delay() {
         // Delay of 45 seconds
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 45) {
             self.showAd = true
         }
     }
@@ -67,7 +67,7 @@ struct MainView: View {
 // Retrieve all days to show them in the scrollview
 func getDays() -> [Day] {
     let dataRetriver = MareeParser()
-    MareeParser.getData()
+    dataRetriver.getData()
     return dataRetriver.results
 }
 
@@ -77,7 +77,11 @@ func getAds() -> [String] {
     var ads: [String] = []
     let contents = BundleHandler.bundleContent(bundleName: "Pubs")
     for item in contents {
-        ads.append(item.lastPathComponent)
+        //let infos = item.lastPathComponent.split(separator: "_")
+        //let size = infos[1].split(separator: ".")
+        //for _ in 0..<(Int(size[0]) ?? 1) {
+            ads.append(item.lastPathComponent)
+        //}
     }
     return ads
 }
