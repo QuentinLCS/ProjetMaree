@@ -89,6 +89,7 @@
             android:textAlignment="center">
         </TextView>
     </TableRow>
+    <!-- J1L3 : ligne avec les étants d'eau -->
     <TableRow
         android:id="@+id/J1L3"
         android:layout_height="wrap_content"

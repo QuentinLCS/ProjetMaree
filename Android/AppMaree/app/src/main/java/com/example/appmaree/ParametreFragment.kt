@@ -131,7 +131,7 @@ class ParametreFragment : Fragment() {
 
     fun changefontsize() {
         fontsize = cf?.getFontSize()!!.toInt()
-        for(i in 0..19)
+        for(i in 0..20)
             if(i < 4 || i >= 12)
                 list.get(i)?.setTextSize(fontsize.toFloat()-3)
             else
@@ -200,6 +200,8 @@ class ParametreFragment : Fragment() {
         list.add(view?.findViewById(R.id.paramtextest18))
         list.add(view?.findViewById(R.id.paramtextest19))
         list.add(view?.findViewById(R.id.paramtextest20))
+        list.add(view?.findViewById(R.id.paramtextest0))
+
 
     }
 

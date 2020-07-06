@@ -55,7 +55,7 @@ class HorairesFragment : Fragment() {
         listeJours=viewModel.listJour
         list_recycler_view.apply {
             layoutManager=LinearLayoutManager(activity)
-            adapter=ListAdapter(listeJours)
+            adapter=ListAdapter(this?.context, listeJours)
             scrollToPosition(Calendar.getInstance().get(Calendar.DAY_OF_YEAR)-1)
         }
 
