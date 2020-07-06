@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.annotation.MainThread
 import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
@@ -27,6 +28,7 @@ class ParametreFragment : Fragment() {
     private var fontsize : Int = 15
     private var color : Float = 50f
     private var cf: CoffreFort? = null
+    private var seekBar: SeekBar? = null
     /**
      * Fonction automatique lors de la création du fragment
      * Initialise le fragment et affiche la vue des paramètres
@@ -50,7 +52,13 @@ class ParametreFragment : Fragment() {
         viewModel=activity.run { ViewModelProviders.of(this!!).get(TableauHoraireViewModel::class.java)  }
         view.findViewById<Button>(R.id.tirantDEauButton).setOnClickListener {
                 viewModel.actualiserTirantDEau(tirantDEauEditText.text.toString())
-            findNavController().navigate(R.id.action_ParametreFragment_to_HorairesFragment)
+            if(tirantDEauEditText.text.toString()!=""){
+                cf?.setTirantEau(tirantDEauEditText.text.toString().toFloat())
+                Toast.makeText(this.context, "tirant d'eau sauvegardé à ${cf?.getTirantEau()}m", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.action_ParametreFragment_to_HorairesFragment)
+            }
+            else
+                Toast.makeText(this.context, "Veuillez mettre une valeur si vous voulez valider le tirant d'eau", Toast.LENGTH_SHORT).show()
         }
         cf = CoffreFort(this.context)
 
@@ -78,13 +86,23 @@ class ParametreFragment : Fragment() {
             changeCouleur()
             Toast.makeText(this.context, "paramètres reset", Toast.LENGTH_SHORT).show()
         }
-        //progressBarColor?.setProgress(cf?.getCouleur()!!.toInt())
-        view.findViewById<ProgressBar>(R.id.progressBarColor).setProgress(cf!!.getCouleur().toInt())
-        view.findViewById<ProgressBar>(R.id.progressBarColor).setOnClickListener {
-            var oui = view.findViewById<ProgressBar>(R.id.progressBarColor)!!.progress
-            cf?.setCouleur(oui?.toFloat())
-            changeCouleur()
-        }
+        seekBar = view.findViewById<SeekBar>(R.id.progressBarColor)
+        seekBar?.setProgress(cf!!.getCouleur().toInt())
+        seekBar?.setOnSeekBarChangeListener(object :
+            SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seek: SeekBar,
+                                           progress: Int, fromUser: Boolean) {
+                cf?.setCouleur((seek.progress*1.5).toFloat())
+                changeCouleur()
+            }
+            override fun onStartTrackingTouch(seekBar: SeekBar?){}
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+
+        })
+
+    // setOnClickListener {
+
+
 
 
         var bottomSheet:View=activity!!.findViewById(R.id.bottom_sheet)
@@ -157,7 +175,7 @@ class ParametreFragment : Fragment() {
 
         val red = -0x10000 + color.toInt()
         val green = -0xff0100 + color.toInt()
-        val blue = -0xffff01 - color.toInt()
+        val blue = -0xffff01 - (color.toInt()/2)
         val yellow = -0x100 + color.toInt()
 
         list.get(4)?.setBackgroundColor(blue)

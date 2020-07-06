@@ -102,17 +102,17 @@ class HoraireViewHolder (var context: Context?, inflater: LayoutInflater, parent
             J1L5View?.setBackgroundResource(0)
         }
         J1L1C1View?.text = jour.ligne1.col1
-        J1L1C1View?.setTextSize(cf!!.getFontSize())
+        J1L1C1View?.setTextSize(cf!!.getFontSize()-3)
         J1L1C2View?.text = jour.ligne1.col2
-        J1L1C2View?.setTextSize(cf!!.getFontSize())
+        J1L1C2View?.setTextSize(cf!!.getFontSize()-3)
         J1L1C3View?.text = jour.ligne1.col3
-        J1L1C3View?.setTextSize(cf!!.getFontSize())
+        J1L1C3View?.setTextSize(cf!!.getFontSize()-3)
         J1L1C4View?.text = jour.ligne1.col4
-        J1L1C4View?.setTextSize(cf!!.getFontSize())
+        J1L1C4View?.setTextSize(cf!!.getFontSize()-3)
         J1L1C5View?.text = jour.ligne1.col5
-        J1L1C5View?.setTextSize(cf!!.getFontSize())
+        J1L1C5View?.setTextSize(cf!!.getFontSize()-3)
         J1L2C1View?.text = jour.ligne2.col1
-        J1L2C1View?.setTextSize(cf!!.getFontSize())
+        J1L2C1View?.setTextSize(cf!!.getFontSize()-3)
         J1L2C2View?.text = jour.ligne2.col2
         J1L2C2View?.setTextSize(cf!!.getFontSize())
         jour.ligne2.background?.get(0)?.let { J1L2C2View?.setBackgroundColor(it);J1L2C2View?.setTextColor(getColorText(it)) }
@@ -140,15 +140,15 @@ class HoraireViewHolder (var context: Context?, inflater: LayoutInflater, parent
         J1L3C5View?.setTextSize(cf!!.getFontSize())
         jour.ligne3.background?.get(3)?.let { J1L3C5View?.setBackgroundColor(it);J1L3C5View?.setTextColor(getColorText(it)) }
         J1L4C1View?.text = jour.ligne4.col1
-        J1L4C1View?.setTextSize(cf!!.getFontSize())
+        J1L4C1View?.setTextSize(cf!!.getFontSize()-3)
         J1L4C2View?.text = jour.ligne4.col2
-        J1L4C2View?.setTextSize(cf!!.getFontSize())
+        J1L4C2View?.setTextSize(cf!!.getFontSize()-3)
         J1L4C3View?.text = jour.ligne4.col3
-        J1L4C3View?.setTextSize(cf!!.getFontSize())
+        J1L4C3View?.setTextSize(cf!!.getFontSize()-3)
         J1L4C4View?.text = jour.ligne4.col4
-        J1L4C4View?.setTextSize(cf!!.getFontSize())
+        J1L4C4View?.setTextSize(cf!!.getFontSize()-3)
         J1L4C5View?.text = jour.ligne4.col5
-        J1L4C5View?.setTextSize(cf!!.getFontSize())
+        J1L4C5View?.setTextSize(cf!!.getFontSize()-3)
 
         if(jour.ligne5.col2!=""){
             val viewl5=itemView.findViewById<TableRow>(R.id.J1L5)
@@ -157,10 +157,15 @@ class HoraireViewHolder (var context: Context?, inflater: LayoutInflater, parent
             viewl5.layoutParams=paraml5
         }
         J1L5C1View?.text = jour.ligne5.col1
+        J1L5C1View?.setTextSize(cf!!.getFontSize()-3)
         J1L5C2View?.text = jour.ligne5.col2
+        J1L5C2View?.setTextSize(cf!!.getFontSize()-3)
         J1L5C3View?.text = jour.ligne5.col3
+        J1L5C3View?.setTextSize(cf!!.getFontSize()-3)
         J1L5C4View?.text = jour.ligne5.col4
+        J1L5C4View?.setTextSize(cf!!.getFontSize()-3)
         J1L5C5View?.text = jour.ligne5.col5
+        J1L5C5View?.setTextSize(cf!!.getFontSize()-3)
     }
 
     fun getColorText(backgroundColor : Int):Int{

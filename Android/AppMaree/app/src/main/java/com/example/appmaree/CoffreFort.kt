@@ -19,32 +19,25 @@ class CoffreFort(context: Context?) {
 
     init {
         sharedPref = context?.getSharedPreferences(PREF_NAME, PRIVATE_MODE)
-        val editor: SharedPreferences.Editor
-        if (sharedPref!!.getBoolean(PREF_NAME, true)){
-        }
-        else{
+        if(sharedPref!!.getBoolean(PREF_NAME, false)){
             reset()
-            val editor : SharedPreferences.Editor = sharedPref!!.edit()
-            editor.commit()
-            editor.apply()
+            sharedPref!!.edit().apply()
         }
     }
 
     fun setTirantEau(t: Float){
         var editor: SharedPreferences.Editor = sharedPref!!.edit()
         editor.putFloat(TIRANTEAU, t)
-        editor.commit()
         editor.apply()
     }
     fun getTirantEau(): Float{
-        //return sharedPref.getFloat(TIRANTEAU, -1f)
-        return -1f
+        return sharedPref!!.getFloat(TIRANTEAU, -1f)
     }
 
     fun setFontSize(s: Float){
         var editor: SharedPreferences.Editor = sharedPref!!.edit()
         editor.putFloat(FONTSIZE, s)
-        editor.commit()
+        editor.apply()
     }
         fun getFontSize(): Float{
         return sharedPref!!.getFloat(FONTSIZE, 15f)
