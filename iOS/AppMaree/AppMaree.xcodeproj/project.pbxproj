@@ -34,6 +34,9 @@
 		DFBF4F9924AE09B200E2DA4B /* Shellfish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DFBF4F9824AE09B200E2DA4B /* Shellfish.bundle */; };
 		DFBF4F9B24AE371600E2DA4B /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4F9A24AE371600E2DA4B /* XMLParser.swift */; };
 		DFBF4FA124AEA3BC00E2DA4B /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FA024AEA3BC00E2DA4B /* DraggableView.swift */; };
+		DFBF4FA324B2254600E2DA4B /* Pubs.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DFBF4FA224B2254600E2DA4B /* Pubs.bundle */; };
+		DFBF4FA724B23B5300E2DA4B /* BundleHandlerswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FA624B23B5300E2DA4B /* BundleHandlerswift.swift */; };
+		DFBF4FA924B2835200E2DA4B /* MainDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FA824B2835200E2DA4B /* MainDataRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +69,9 @@
 		DFBF4F9824AE09B200E2DA4B /* Shellfish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Shellfish.bundle; sourceTree = "<group>"; };
 		DFBF4F9A24AE371600E2DA4B /* XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 		DFBF4FA024AEA3BC00E2DA4B /* DraggableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
+		DFBF4FA224B2254600E2DA4B /* Pubs.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Pubs.bundle; sourceTree = "<group>"; };
+		DFBF4FA624B23B5300E2DA4B /* BundleHandlerswift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleHandlerswift.swift; sourceTree = "<group>"; };
+		DFBF4FA824B2835200E2DA4B /* MainDataRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,7 @@
 		DF02A78924A360C3009582BC /* AppMaree */ = {
 			isa = PBXGroup;
 			children = (
+				DFBF4FA224B2254600E2DA4B /* Pubs.bundle */,
 				DF45A1E824A64EF400C4C050 /* LaunchView.swift */,
 				DF45A1C724A60A5100C4C050 /* MainView.swift */,
 				DF45A1CB24A6134B00C4C050 /* MainButton */,
@@ -124,6 +131,7 @@
 				DF02A79024A360C5009582BC /* Assets.xcassets */,
 				DF02A79824A360C5009582BC /* Info.plist */,
 				DF45A1E424A64E7F00C4C050 /* data.xml */,
+				DFBF4FA824B2835200E2DA4B /* MainDataRow.swift */,
 			);
 			path = AppMaree;
 			sourceTree = "<group>";
@@ -148,6 +156,7 @@
 		DF44C0F624A8EB25001D6BDD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				DFBF4FA624B23B5300E2DA4B /* BundleHandlerswift.swift */,
 				DF45A1EB24A64FB100C4C050 /* SliderView.swift */,
 				DF45A1ED24A64FDE00C4C050 /* TitleView.swift */,
 				DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */,
@@ -236,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFBF4FA324B2254600E2DA4B /* Pubs.bundle in Resources */,
 				DFBF4F9924AE09B200E2DA4B /* Shellfish.bundle in Resources */,
 				DFBF4F9524ADF8AC00E2DA4B /* Fish.bundle in Resources */,
 				DF02A79724A360C5009582BC /* LaunchScreen.storyboard in Resources */,
@@ -262,6 +272,8 @@
 				DF45A1E924A64EF400C4C050 /* LaunchView.swift in Sources */,
 				DF45A1C824A60A5100C4C050 /* MainView.swift in Sources */,
 				DF02A78D24A360C3009582BC /* SceneDelegate.swift in Sources */,
+				DFBF4FA924B2835200E2DA4B /* MainDataRow.swift in Sources */,
+				DFBF4FA724B23B5300E2DA4B /* BundleHandlerswift.swift in Sources */,
 				DF44C0F824A8FB67001D6BDD /* DiagonalBackgroundView.swift in Sources */,
 				DF02A78F24A360C3009582BC /* MenuView.swift in Sources */,
 				DF02A7A424A54723009582BC /* SettingsView.swift in Sources */,

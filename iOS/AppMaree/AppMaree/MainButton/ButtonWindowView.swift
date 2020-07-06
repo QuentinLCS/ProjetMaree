@@ -18,7 +18,7 @@ struct ButtonWindowView: View {
     private let home: Bool
     private let presentation: Binding<PresentationMode>?
 
-    init(colored: Bool = true, isBack: Bool = false, home: Bool = false, presentation: Binding<PresentationMode>? = nil) {
+    init(colored: Bool = true, isBack: Bool = true, home: Bool = false, presentation: Binding<PresentationMode>? = nil) {
         self.colored = colored
         self.isBack = isBack
         self.presentation = presentation

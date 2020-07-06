@@ -37,24 +37,13 @@ struct Animal: Identifiable {
     }
     
     static func getFishes(bundleName: String) -> [Animal] {
-        
-        let fileManager = FileManager.default
-        let bundleURL = Bundle.main.bundleURL
-        let assetURL = bundleURL.appendingPathComponent("\(bundleName).bundle")
-
         var poissons: [Animal] = []
+        let contents = BundleHandler.bundleContent(bundleName: bundleName)
         
-        do {
-          let contents = try fileManager.contentsOfDirectory(at: assetURL, includingPropertiesForKeys: [URLResourceKey.nameKey, URLResourceKey.isDirectoryKey], options: .skipsHiddenFiles)
-
-          for item in contents {
-            let infos = item.lastPathComponent.split(separator: "_")
-            let size = infos[1].split(separator: ".")
-            poissons.append(Animal(name: String(infos[0]).uppercased(), imageName: item.lastPathComponent, allowedSize: Int(size[0]) ?? 0))
-          }
-        }
-        catch let error as NSError {
-          print(error)
+        for item in contents {
+          let infos = item.lastPathComponent.split(separator: "_")
+          let size = infos[1].split(separator: ".")
+          poissons.append(Animal(name: String(infos[0]).uppercased(), imageName: item.lastPathComponent, allowedSize: Int(size[0]) ?? 0))
         }
         return poissons
     }

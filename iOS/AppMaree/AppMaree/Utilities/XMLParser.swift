@@ -8,11 +8,12 @@
 
 import SwiftUI
 
-struct Day {
-    var name: String?
-    var date: String?
-    var portes: [Porte]?
-    var marees: [Maree]?
+struct Day: Identifiable {
+    var id = UUID()
+    var name: String = ""
+    var date: String = ""
+    var portes: [Porte] = []
+    var marees: [Maree] = []
 }
 
 struct Porte {
@@ -33,12 +34,12 @@ class MareeParser: NSObject {
 
     // a few variables to hold the results as we parse the XML
 
-    var results: [Day]! // the whole array of days
+    var results: [Day] = [] // the whole array of days
     var currentDay: Day! // the current day
     var currentValue: String?
     
     
-    class func getData() {
+    func getData() {
         var parser: XMLParser?
         let path = Bundle.main.path(forResource: "data", ofType: "xml")
         if path != nil {
@@ -48,7 +49,7 @@ class MareeParser: NSObject {
         }
 
         if parser != nil {
-            let delegate = MareeParser()
+            let delegate = self
             parser?.delegate = delegate
             parser?.parse()
         }
@@ -68,17 +69,17 @@ extension MareeParser: XMLParserDelegate {
 
         if elementName == key {
 
-            self.currentDay = Day()
+            currentDay = Day()
 
         } else if elementName == "date" {
-            self.currentDay.name = attributeDict["text"]!
-            self.currentValue = String()
+            currentDay.name = attributeDict["text"]!
+            currentValue = String()
 
         } else if elementName == "porte" {
-            self.currentDay.portes?.append(Porte(etat: attributeDict["etat"]!, heure: attributeDict["heure"]!))
+            currentDay.portes.append(Porte(etat: attributeDict["etat"]!, heure: attributeDict["heure"]!))
             
         } else if elementName == "maree" {
-            self.currentDay.marees?.append(Maree(etat: attributeDict["etat"]!, heure: attributeDict["heure"]!,hauteur: attributeDict["heuteur"]!, coef: attributeDict["coef"]))
+            currentDay.marees.append(Maree(etat: attributeDict["etat"]!, heure: attributeDict["heure"]!,hauteur: attributeDict["hauteur"]!, coef: attributeDict["coef"]))
         }
 
     }
@@ -90,7 +91,7 @@ extension MareeParser: XMLParserDelegate {
 
     func parser(_ parser: XMLParser, foundCharacters string: String) {
 
-        self.currentValue? += string
+        currentValue? += string
 
     }
 
@@ -103,15 +104,14 @@ extension MareeParser: XMLParserDelegate {
 
         if elementName == self.key {
 
-            self.results.append(self.currentDay)
-
-            self.currentDay = nil
+            results.append(self.currentDay)
+            currentDay = nil
 
         } else if elementName == "date" {
 
-            self.currentDay.date = currentValue!
+            currentDay.date = currentValue!
 
-            self.currentValue = nil
+            currentValue = nil
 
         }
 
@@ -124,7 +124,7 @@ extension MareeParser: XMLParserDelegate {
 
         self.currentValue = nil
         self.currentDay = nil
-        self.results = nil
+        self.results = []
 
     }
 
