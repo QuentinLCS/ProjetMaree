@@ -68,13 +68,13 @@
     <string name="a_propo_paragraphe1">
         " texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
         texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n\n\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n\n
-        texttextextextextexttexttextextextextext\ntexttextextextextexttexttextextextextext\n\n\n
+        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
+        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
+        texttextextextextexttexttextextextextext\ntexttextextextextexttexttextextextextext\n\n
         texttextextextextexttexttextextextextext"
     </string>
     <string name="a_propo_titre2">
-        "  Titre numéro 1     "
+        "  Titre numéro 2     "
     </string>
     <string name="a_propo_paragraphe2">
         " texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
@@ -85,7 +85,7 @@
         texttextextextextexttexttextextextextext"
     </string>
     <string name="a_propo_titre3">
-        "  Titre numéro 1     "
+        "  Titre numéro 3     "
     </string>
     <string name="a_propo_paragraphe3">
         " texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n

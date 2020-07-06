@@ -67,6 +67,7 @@ class ParametreFragment : Fragment() {
                 Toast.makeText(this.context, "Taille police déjà maximisée", Toast.LENGTH_SHORT).show()
             else{
                 cf?.setFontSize(cf!!.getFontSize()+1)
+                Toast.makeText(this.context, "${cf!!.getTirantEau()}", Toast.LENGTH_SHORT).show()
                 changefontsize()
             }
         }
@@ -99,11 +100,6 @@ class ParametreFragment : Fragment() {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
 
         })
-
-    // setOnClickListener {
-
-
-
 
         var bottomSheet:View=activity!!.findViewById(R.id.bottom_sheet)
         val behavior = BottomSheetBehavior.from(bottomSheet)
@@ -161,7 +157,7 @@ class ParametreFragment : Fragment() {
         }
         else
             view?.findViewById<LinearLayout>(R.id.paratextestetantdeau)?.updateLayoutParams { height = fontsize*2 }
-            linlayout?.updateLayoutParams { height = fontsize*4 }
+        linlayout?.updateLayoutParams { height = fontsize*4 }
 
     }
 
