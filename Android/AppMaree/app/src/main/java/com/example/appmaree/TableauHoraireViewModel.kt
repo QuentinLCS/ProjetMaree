@@ -352,7 +352,7 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
                     mareeList.add(
                         Maree(
                             etat = list.get(0),
-                            heure = list.get(2),
+                            heure = list.get(2).replace(":","h"),
                             hauteur = list.get(1)
                         )
                     )
@@ -360,7 +360,7 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
                         mareeList.add(
                         Maree(
                             etat = list.get(1),
-                            heure = list.get(3),
+                            heure = list.get(3).replace(":","h"),
                             hauteur = list.get(2),
                             coef = list.get(0)
                         )
@@ -405,7 +405,7 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
         while(marees.size>0){
             var min =0
             for(i in 1..marees.size-1){
-                if(compareHoursInf(marees.get(i).heure,marees.get(min).heure,":")){
+                if(compareHoursInf(marees.get(i).heure,marees.get(min).heure,"h")){
                     min=i
                 }
             }

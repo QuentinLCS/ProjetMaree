@@ -17,8 +17,8 @@
         android:layout_gravity="center"
         android:background="@drawable/round_button_background">
         <ImageView
-            android:layout_width="56dp"
-            android:layout_height="56dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:src="@drawable/home"
             android:layout_gravity="center"
             android:layout_weight="1"

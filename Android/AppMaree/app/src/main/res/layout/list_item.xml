@@ -19,75 +19,86 @@
             android:layout_weight="0.2"
             android:textAlignment="center">
         </TextView>
+
         <TextView
             android:id="@+id/J1L1C2"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:textAlignment="center">
-        </TextView>
+            android:textAlignment="center"
+            android:textColor="@android:color/black"></TextView>
+
         <TextView
             android:id="@+id/J1L1C3"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:textAlignment="center" >
-        </TextView>
+            android:textColor="@android:color/black"></TextView>
+
         <TextView
             android:id="@+id/J1L1C4"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:textAlignment="center">
-        </TextView>
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@android:color/black"></TextView>
+
         <TextView
             android:id="@+id/J1L1C5"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:textAlignment="center">
-        </TextView>
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@android:color/black"></TextView>
     </TableRow>
 
     <TableRow
         android:id="@+id/J1L2"
         android:layout_height="wrap_content"
         android:layout_width="match_parent">
+
         <TextView
             android:id="@+id/J1L2C1"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:textAlignment="center">
-        </TextView>
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"></TextView>
+
         <TextView
             android:id="@+id/J1L2C2"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:textAlignment="center">
-        </TextView>
+            android:textAlignment="center"
+            android:textStyle="bold"></TextView>
+
         <TextView
             android:id="@+id/J1L2C3"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:textAlignment="center">
-        </TextView>
+            android:textAlignment="center"
+            android:textStyle="bold"></TextView>
+
         <TextView
             android:id="@+id/J1L2C4"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:textAlignment="center">
-        </TextView>
+            android:textAlignment="center"
+            android:textStyle="bold"></TextView>
+
         <TextView
             android:id="@+id/J1L2C5"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:textAlignment="center">
-        </TextView>
+            android:textAlignment="center"
+            android:textStyle="bold"></TextView>
     </TableRow>
     <!-- J1L3 : ligne avec les étants d'eau -->
     <TableRow
@@ -95,82 +106,99 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:textAlignment="center">
+
         <TextView
             android:id="@+id/J1L3C1"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:textAlignment="center">
-        </TextView>
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"></TextView>
+
         <TextView
             android:id="@+id/J1L3C2"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:textAlignment="center">
-        </TextView>
+            android:textAlignment="center"
+            android:textStyle="bold"></TextView>
+
         <TextView
             android:id="@+id/J1L3C3"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:textAlignment="center">
-        </TextView>
+            android:textAlignment="center"
+            android:textStyle="bold"></TextView>
+
         <TextView
             android:id="@+id/J1L3C4"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:textAlignment="center">
-        </TextView>
+            android:textAlignment="center"
+            android:textStyle="bold"></TextView>
+
         <TextView
             android:id="@+id/J1L3C5"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:textAlignment="center">
-        </TextView>
+            android:textAlignment="center"
+            android:textStyle="bold"></TextView>
     </TableRow>
     <TableRow
         android:id="@+id/J1L4"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:textAlignment="center">
+
         <TextView
             android:id="@+id/J1L4C1"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:textAlignment="center">
-        </TextView>
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"></TextView>
+
         <TextView
             android:id="@+id/J1L4C2"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:textAlignment="center">
-        </TextView>
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"></TextView>
+
         <TextView
             android:id="@+id/J1L4C3"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:textAlignment="center">
-        </TextView>
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"></TextView>
+
         <TextView
             android:id="@+id/J1L4C4"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:textAlignment="center">
-        </TextView>
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"></TextView>
+
         <TextView
             android:id="@+id/J1L4C5"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:textAlignment="center">
-        </TextView>
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"></TextView>
     </TableRow>
     <TableRow
         android:id="@+id/J1L5"
@@ -184,34 +212,42 @@
             android:layout_weight="0.2"
             android:textAlignment="center">
         </TextView>
+
         <TextView
             android:id="@+id/J1L5C2"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:textAlignment="center">
-        </TextView>
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"></TextView>
+
         <TextView
             android:id="@+id/J1L5C3"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:textAlignment="center">
-        </TextView>
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"></TextView>
+
         <TextView
             android:id="@+id/J1L5C4"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:textAlignment="center">
-        </TextView>
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"></TextView>
+
         <TextView
             android:id="@+id/J1L5C5"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:textAlignment="center">
-        </TextView>
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"></TextView>
     </TableRow>
 
 </LinearLayout>
