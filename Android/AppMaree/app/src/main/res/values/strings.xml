@@ -15,7 +15,7 @@
         En cliquant sur OK vous affirmez avoir compris cet avertissement.\n\n
         Autorisation SHOM 2019-2021"
     </string>
-    <string name="bouton_accueil">Valider</string>
+    <string name="bouton_accueil">X</string>
 
     <string name="popup_fermer_label">Fermer</string>
 

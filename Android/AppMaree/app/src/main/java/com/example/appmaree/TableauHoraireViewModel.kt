@@ -86,6 +86,7 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
         else{
             if(tirantDEau > HAUTEUR_PORTE + 0.1) {
                 resetTableauTirantDEau()
+                tirantDEau=0.0
             }
         }
     }
