@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.listJour=SplashScreenActivity.splashViewModel.listJour
         viewModel.listeMaree=SplashScreenActivity.splashViewModel.listeMaree
         viewModel.listePorte=SplashScreenActivity.splashViewModel.listePorte
+        viewModel.tirantDEau=SplashScreenActivity.splashViewModel.tirantDEau
         setContentView(R.layout.activity_main)
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         getLastLocation()

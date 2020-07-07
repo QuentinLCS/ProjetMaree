@@ -52,7 +52,7 @@ class ParametreFragment : Fragment() {
         viewModel=activity.run { ViewModelProviders.of(this!!).get(TableauHoraireViewModel::class.java)  }
 
         if(viewModel.tirantDEau!=0.0){
-            view.findViewById<EditText>(R.id.tirantDEauEditText).hint="Votre tirant d'eau acutel est de ${viewModel.tirantDEau} m"
+            view.findViewById<EditText>(R.id.tirantDEauEditText).hint="Votre tirant d'eau actuel est de ${viewModel.tirantDEau} m"
         }
 
         view.findViewById<Button>(R.id.tirantDEauButton).setOnClickListener {

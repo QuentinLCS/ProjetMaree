@@ -160,8 +160,8 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
      * @return Nouvelle horaire calculé
      */
     fun calculHeureSelonTiranDEau(porte: Porte, mareeMin: Maree,mareeMax: Maree): String {
-        var heureMareeMax : Double =convertHeureDouble(mareeMax.heure,":")
-        var heureMareeMin : Double =convertHeureDouble(mareeMin.heure,":")
+        var heureMareeMax : Double =convertHeureDouble(mareeMax.heure,"h")
+        var heureMareeMin : Double =convertHeureDouble(mareeMin.heure,"h")
         var heurePorte : Double =convertHeureDouble(porte.heure,"h")
         val hauteurMareeMax : Double=mareeMax.hauteur.replace(",",".").toDouble()
         val hauteurMareeMin : Double =mareeMin.hauteur.replace(",",".").toDouble()
@@ -277,7 +277,7 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
             }
         }
         for(maree:Maree in marees){
-            if(maree.heure!="--:--"){
+            if(maree.heure!="--h--"){
                 listeMaree.add(maree)
             }
         }
@@ -458,7 +458,7 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
      * @return Couleur obtenue
      */
     fun getColorMaree(maree: Maree):Int{
-        if(maree.heure=="--:--"){
+        if(maree.heure=="--h--"){
             return Color.WHITE
         }
         else{
