@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     BottomSheetBehavior.STATE_COLLAPSED ->{
                         var param = home.layoutParams
-                        param.height=(56*scale).toInt()
+                        param.height=(75*scale).toInt()
                         home.layoutParams=param
                     }
                     BottomSheetBehavior.STATE_DRAGGING -> { }
@@ -77,7 +77,8 @@ class MainActivity : AppCompatActivity() {
             override fun onSlide(bottomSheet: View, slideOffset: Float) {
                 if(slideOffset>0){
                     var param = home.layoutParams
-                    param.height=(56*scale*(1-slideOffset)).toInt()
+                    param.height=(75*scale*(1-slideOffset)).toInt()
+                    param.width==param.height
                     home.layoutParams=param}
             }
         })

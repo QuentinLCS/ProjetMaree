@@ -6,17 +6,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     app:behavior_hideable="true"
-    app:behavior_peekHeight="56dp"
+    app:behavior_peekHeight="75dp"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
 
     <LinearLayout
+        android:id="@+id/home"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_gravity="center"
         android:background="@drawable/round_button_background">
         <ImageView
-            android:id="@+id/home"
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:src="@drawable/home"
