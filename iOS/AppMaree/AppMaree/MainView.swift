@@ -12,15 +12,15 @@
 //
 
 import SwiftUI
-
+import UIKit
 
 struct MainView: View {
     
-    // Variable dynamique entre les vues permettant d'afficher ou non la vue.
+    // Variable dynamique entre les vues permettant d'afficher ou non la pub.
     @State private var showAd = false
     
     let ads = getAds()
-    var currentImage = "APPD"
+    let days = getDays()
     
     var body: some View {
         NavigationView {
@@ -28,16 +28,18 @@ struct MainView: View {
                 // AFFICHAGE DE LA PUBLICITE
                 if showAd {
                     VStack {
-                        Image(currentImage).resizable().scaledToFit()
+                        Image(uiImage: makeUIView(of: randomAd(), from: "Pubs"))
+                            .resizable().scaledToFit()
                             .onDisappear(perform: delay)
-                        .modifier(DraggableModifier(direction: .horizontal, showAd: $showAd))
+                            .modifier(DraggableModifier(direction: .horizontal, showAd: $showAd))
                         Spacer()
                     }
+                }
+                //list placeholder
+                List(days) { day in
+                    MainDataRow(day: day)
+                }
                 
-                }
-                ScrollView {
-                    Text("Soon")
-                }
                 ButtonWindowView(isBack: false, home: true)
             }
         }.onAppear (perform: delay)
@@ -56,12 +58,32 @@ struct MainView: View {
             self.showAd = true
         }
     }
+    
+    func randomAd() -> String {
+        return ads[Int.random(in: 0..<ads.count)]
+    }
 }
 
+
+// Retrieve all days to show them in the scrollview
+func getDays() -> [Day] {
+    let dataRetriver = MareeParser()
+    dataRetriver.getData()
+    return dataRetriver.results
+}
+
+// Retrieve all ads from the bundle
 func getAds() -> [String] {
-    var ads: [String] = []
-    ads.append("cc")
     
+    var ads: [String] = []
+    let contents = BundleHandler.bundleContent(bundleName: "Pubs")
+    for item in contents {
+        //let infos = item.lastPathComponent.split(separator: "_")
+        //let size = infos[1].split(separator: ".")
+        //for _ in 0..<(Int(size[0]) ?? 1) {
+            ads.append(item.lastPathComponent)
+        //}
+    }
     return ads
 }
 
