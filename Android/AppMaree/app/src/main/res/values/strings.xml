@@ -67,37 +67,28 @@
     <!-- texte de la page à propos -->
 
     <string name="a_propo_titre1">
-        "  Titre numéro 1     "
+        "Association des plaisanciers de Port-Diélette"
     </string>
     <string name="a_propo_paragraphe1">
-        " texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextext\ntexttextextextextexttexttextextextextext\n\n
-        texttextextextextexttexttextextextextext"
+        "L'Association des Plaisanciers de Port-Diélette vous souhaite la bienvenue sur son terrain de jeu !\n
+        Les horaires de marée, ouverture/fermeture de la porte de la marina de Port-Diélette rythment notre loisir !\n
+        Notre association regroupe environ 200 usagers du port.\n
+        Nos objectifs, favoriser les rencontres entre plaisanciers, apporter de la convivialité sur les pontons, défendre les droits des usagers, et la pêche de loisir !\n
+        Notre association est affiliée au Comité Départemental de la Pêche Maritime de Loisirs et à la Fédération Nationale des Pêcheurs Plaisanciers et Sportifs de France.\n
+        Vous pouvez nous rejoindre ! Pour tous renseignements :
+        \nTél. : \nAdresse e-mail :  \nSite internet :  \n"
     </string>
     <string name="a_propo_titre2">
-        "  Titre numéro 2     "
+        "Remerciements"
     </string>
     <string name="a_propo_paragraphe2">
-        " texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n\n\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n\n
-        texttextextextextexttexttextextextextext\ntexttextextextextexttexttextextextextext\n\n\n
-        texttextextextextexttexttextextextextext"
+        "L'application a été réalisée en 2018 dans le cadre d'un projet tuteuré Etudiant du DUT informatique de l' IUT Caen, université Caen Normandie.\nLes auteurs sont :  Bénard Clément, Bonhême-Morsent Léo, Camille Lange.\nTuteur application et modèle initial : Jean-Luc Lamotte\n"
     </string>
     <string name="a_propo_titre3">
-        "  Titre numéro 3     "
+        "Conception support partenaires"
     </string>
     <string name="a_propo_paragraphe3">
-        " texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n\n\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n\n
-        texttextextextextexttexttextextextextext\ntexttextextextextexttexttextextextextext\n\n\n
-        texttextextextextexttexttextextextextext"
+        "Myth.fr 06 22 74 82 06\n version 2018.0"
     </string>
 
     <!-- texte de la page urgence -->
