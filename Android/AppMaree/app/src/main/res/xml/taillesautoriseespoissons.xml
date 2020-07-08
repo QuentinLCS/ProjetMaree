@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string> Bar : 42 cm \n
+    Autorisé du 1ier mars au 30 novembre. 2 bar par jour et par personne. En dehors de cette période, le pêcher-relâcher est autorisé.
+    Reglementation applicable au nord du 48e parallèle d'Audierne à la frontière belge. Marquage obligatoire.</string>
+    <string name="Barbue"> Barbue : 30 cm </string>
+    <string name="Cabillaud"> Cabillaud : 42cm  6 cabillauds par pecheur embarqué, par bateau et par jour. Limité à 20 par navire.</string>
+    <string name="Chinchard"> Chinchard : 15 cm</string>
+    <string name="Congre"> Congre : 60 cm</string>
+    <string name="Dorade grise/rose"> Dorade grise/rose : 23 cm </string>
+    <string name="Dorade royale"> Dorade royale : 23 cm  Marquage obligatoire (voir bar) </string>
+    <string name="Flet"> Flet : 20 cm</string>
+    <string name="Hâ"> Hâ   pêche interdite à la palangre </string>
+    <string name="Hareng"> Hareng : 20 cm </string>
+    <string name="Lieu jaune"> Lieu jaune : 30 cm Marquage obligatoire (voir bar) </string>
+    <string name="Lotte"> Lotte : 50 cm</string>
+    <string name="Maquereau"> Maquereau : 20 cm  Marquage obligatoire (voir bar) </string>
+    <string name="Merlan"> Merlan : 27 cm </string>
+    <string name="Mulet"> Mulet : 30 cm </string>
+    <string name="Orphie"> Orphie : 30 cm </string>
+    <string name="Plie/carrelet"> Plie/carrelet : 27 cm </string>
+    <string name="Raie brunette"> Raie brunette (pêche interdite) </string>
+    <string name="Rouget"> Rouget-Barbet : 15 cm</string>
+    <string name="Sardine"> Sardine : 11 cm</string>
+    <string name="Saumon"> Saumon : 50 cm</string>
+    <string name="Sole"> Sole : 24/25 cm Sole 24 cm du Mt Saint Michel au Cap de la Hague,et 25 cm nord et est-cotentin. Marquage obligatoire.</string>
+    <string name="Truite"> Truite de mer  : 35 cm</string>
+    <string name="Turbot"> Turbot : 30 cm </string>
+</PreferenceScreen>

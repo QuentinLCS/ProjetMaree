@@ -5,9 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/accueil_background"
+    android:background="@color/colorWhite"
     tools:context=".AccueilFragment">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
     <TextView
         android:id="@+id/nom_port"
         android:layout_width="match_parent"
@@ -16,39 +21,76 @@
         android:textAlignment="center"
         android:textColor="@color/colorTitre"
         android:textSize="@dimen/tailleTitre"
-        app:layout_constraintBottom_toTopOf="@id/textview_texte_accueil"
+        android:layout_weight="0.05"
+        app:layout_constraintBottom_toTopOf="@id/logo_accueil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textview_texte_accueil"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:text="@string/text_accueil"
-        android:textAlignment="textStart"
-        android:textSize="@dimen/taillePolice"
-        app:layout_constraintBottom_toTopOf="@id/button_first"
+    <ImageView
+        android:id="@+id/logo_accueil"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+
+        android:layout_weight="0.2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nom_port" />
+        app:layout_constraintTop_toBottomOf="@id/nom_port"
+        app:layout_constraintBottom_toTopOf="@id/condition_utilisation"
+        android:src="@drawable/logo"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="0.2">
 
+            <TextView
+                android:id="@+id/condition_utilisation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_weight="0.1"
+                android:text="@string/text_condition_utilisation"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toTopOf="@id/button_first"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/logo_accueil" />
+
+            <CheckBox
+                android:id="@+id/checkBox_condition_utilisation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.5"
+                android:text="@string/text_checkbox_condition_utilisation"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/button_first"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/condition_utilisation"
+                tools:layout_editor_absoluteX="157dp"
+                tools:layout_editor_absoluteY="569dp" />
+        </LinearLayout>
 
     <Button
         android:id="@+id/button_first"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_background"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_button_background"
         android:text="@string/bouton_accueil"
         android:textColor="@android:color/white"
-        android:textSize="18sp"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_texte_accueil" />
+        app:layout_constraintTop_toBottomOf="@id/checkBox_condition_utilisation" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

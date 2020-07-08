@@ -37,8 +37,7 @@ class CoffreFort(context: Context?) {
         editor.apply()
     }
     fun getTirantEau(): Float{
-        //return sharedPref.getFloat(TIRANTEAU, -1f)
-        return -1f
+        return sharedPref!!.getFloat(TIRANTEAU, -1f)
     }
 
     fun setFontSize(s: Float){

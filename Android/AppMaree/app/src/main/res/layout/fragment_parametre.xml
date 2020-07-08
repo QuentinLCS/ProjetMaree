@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -36,6 +37,7 @@
         android:layout_height="0dp"
         android:hint="Saississez votre tirant d'eau : (à partir de 1.6)"
         android:inputType="number|numberDecimal"
+        android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -143,9 +145,27 @@
             android:layout_width="fill_parent"
             android:layout_height="10dp"
             android:layout_weight="15"
-            android:orientation="vertical"
-
+            android:orientation="horizontal"
             >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:weightSum="5"
+                android:layout_weight="2">
+
+                <TextView
+                    android:id="@+id/paramtextest0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:text="mar 12 juin" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="12"
+                android:weightSum="4"
+                android:orientation="vertical">
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
@@ -323,6 +343,7 @@
 
             </LinearLayout>
 
+            </LinearLayout>
 
 
         </LinearLayout>
@@ -350,6 +371,8 @@
                 android:text="RESET"/>
 
         </LinearLayout>
+
+
     </LinearLayout>
     <TextView
         android:id="@+id/parametreTextView"
@@ -362,5 +385,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
