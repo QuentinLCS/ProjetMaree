@@ -48,198 +48,215 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/horaires_gradient_background"
         android:orientation="vertical"
-        android:background="@drawable/horaires_gradient_background">
+        android:weightSum="1">
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="0.25">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="0.5"
+                android:id="@+id/service"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:id="@+id/service">
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/clock"
                 android:layout_weight="0.5"
-                android:layout_gravity="center"
-                />
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/clock" />
+
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:text="Service"
                     android:layout_weight="0.5"
                     android:textAlignment="center"
                     android:textColor="@android:color/white"
-                    android:textSize="24sp" android:layout_gravity="center"
-                    />
+                    android:textSize="24sp" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="0.5"
+                android:id="@+id/peche"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:id="@+id/peche">
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/fishing"
                 android:layout_weight="0.5"
-                android:layout_gravity="center"
-                />
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/fishing" />
+
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_weight="0.5"
                     android:text="Tailles \nautorisée"
                     android:textAlignment="center"
                     android:textColor="@android:color/white"
-                    android:textSize="24sp"
-                    android:layout_gravity="center"/>
+                    android:textSize="24sp" />
             </LinearLayout>
         </LinearLayout>
 
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.25"
-                >
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="0.5"
-                    android:layout_gravity="center"
-                    android:id="@+id/documentation">
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/documentation"
-                        android:layout_weight="0.5"
-                        android:layout_gravity="center"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Documentations"
-                        android:layout_weight="0.5"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/white"
-                        android:textSize="24sp" android:layout_gravity="center"
-                        />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="0.5"
-                    android:layout_gravity="center"
-                    android:id="@+id/settings">
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/settings"
-                        android:layout_weight="0.5"
-                        android:layout_gravity="center"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.5"
-                        android:text="Paramètres"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/white"
-                        android:textSize="24sp"
-                        android:layout_gravity="center"/>
-                </LinearLayout>
-            </LinearLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="0.25">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="0.5"
+                android:id="@+id/documentation"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:id="@+id/aPropos">
+                android:layout_weight="0.5"
+                android:orientation="vertical">
+
                 <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/documentation"
-                    android:layout_weight="0.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    />
+                    android:layout_weight="0.5"
+                    android:src="@drawable/documentation" />
+
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="A propos"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:text="Documentations"
                     android:layout_weight="0.5"
                     android:textAlignment="center"
                     android:textColor="@android:color/white"
-                    android:textSize="24sp" android:layout_gravity="center"
-                    />
+                    android:textSize="24sp" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="0.5"
+                android:id="@+id/settings"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:id="@+id/urgence">
+                android:layout_weight="0.5"
+                android:orientation="vertical">
+
                 <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/phone"
-                    android:layout_weight="0.5"
-                    android:layout_gravity="center"
-                    />
-                <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_weight="0.5"
-                    android:text="Appels \nd'urgence"
+                    android:src="@drawable/settings" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:text="Paramètres"
                     android:textAlignment="center"
                     android:textColor="@android:color/white"
-                    android:textSize="24sp"
-                    android:layout_gravity="center"/>
+                    android:textSize="24sp" />
             </LinearLayout>
         </LinearLayout>
 
-
-
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.25"
-            android:id="@+id/back"
-            >
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/back"
-                android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25">
 
+            <LinearLayout
+                android:id="@+id/aPropos"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                />
+                android:layout_weight="0.5"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/documentation" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:text="A propos"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/urgence"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="0.5"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/phone" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:text="Appels \nd'urgence"
+                    android:layout_weight="0.5"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
+        <LinearLayout
+            android:id="@+id/back"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/back" />
 
         </LinearLayout>
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
     </LinearLayout>
+
 
 </LinearLayout>

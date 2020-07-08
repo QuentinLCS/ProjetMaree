@@ -18,7 +18,7 @@
         Autorisation SHOM 2019-2021"
     </string>
     <string name="bouton_accueil">✓</string>
-    <string name="text_condition_utilisation">"\n\nConditions d'utilisations"</string>
+    <string name="text_condition_utilisation">"Conditions d'utilisations"</string>
     <string name="text_checkbox_condition_utilisation">"J'accepte les conditions d'utilisation"</string>
 
     <string name="popup_fermer_label">Fermer</string>
