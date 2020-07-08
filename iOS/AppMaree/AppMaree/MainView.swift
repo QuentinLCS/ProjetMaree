@@ -28,7 +28,7 @@ struct MainView: View {
                 // AFFICHAGE DE LA PUBLICITE
                 if showAd {
                     VStack {
-                        Image(uiImage: makeUIView(of: randomAd(), from: "Pubs"))
+                        Image(randomAd())
                             .resizable().scaledToFit()
                             .onDisappear(perform: delay)
                             .modifier(DraggableModifier(direction: .horizontal, showAd: $showAd))
@@ -60,7 +60,7 @@ struct MainView: View {
     }
     
     func randomAd() -> String {
-        return ads[Int.random(in: 0..<ads.count)]
+        return ads[Int.random(in: 0..<ads.count)].file
     }
 }
 
@@ -73,16 +73,15 @@ func getDays() -> [Day] {
 }
 
 // Retrieve all ads from the bundle
-func getAds() -> [String] {
+func getAds() -> [Pub] {
     
-    var ads: [String] = []
-    let contents = BundleHandler.bundleContent(bundleName: "Pubs")
+    var ads: [Pub] = []
+    let contents = JSONContent.JSONContent(filename: "pubs")
+    
     for item in contents {
-        //let infos = item.lastPathComponent.split(separator: "_")
-        //let size = infos[1].split(separator: ".")
-        //for _ in 0..<(Int(size[0]) ?? 1) {
-            ads.append(item.lastPathComponent)
-        //}
+        for _ in 0..<item.weight {
+            ads.append(item)
+        }
     }
     return ads
 }

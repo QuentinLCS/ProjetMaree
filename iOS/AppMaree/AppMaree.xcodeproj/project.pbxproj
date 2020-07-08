@@ -34,9 +34,10 @@
 		DFBF4F9924AE09B200E2DA4B /* Shellfish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DFBF4F9824AE09B200E2DA4B /* Shellfish.bundle */; };
 		DFBF4F9B24AE371600E2DA4B /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4F9A24AE371600E2DA4B /* XMLParser.swift */; };
 		DFBF4FA124AEA3BC00E2DA4B /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FA024AEA3BC00E2DA4B /* DraggableView.swift */; };
-		DFBF4FA324B2254600E2DA4B /* Pubs.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DFBF4FA224B2254600E2DA4B /* Pubs.bundle */; };
 		DFBF4FA724B23B5300E2DA4B /* BundleHandlerswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FA624B23B5300E2DA4B /* BundleHandlerswift.swift */; };
 		DFBF4FA924B2835200E2DA4B /* MainDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FA824B2835200E2DA4B /* MainDataRow.swift */; };
+		DFBF4FAB24B4C17000E2DA4B /* pubs.json in Resources */ = {isa = PBXBuildFile; fileRef = DFBF4FAA24B4C17000E2DA4B /* pubs.json */; };
+		DFBF4FAD24B4CEE800E2DA4B /* JSONContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FAC24B4CEE800E2DA4B /* JSONContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,9 +70,10 @@
 		DFBF4F9824AE09B200E2DA4B /* Shellfish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Shellfish.bundle; sourceTree = "<group>"; };
 		DFBF4F9A24AE371600E2DA4B /* XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 		DFBF4FA024AEA3BC00E2DA4B /* DraggableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
-		DFBF4FA224B2254600E2DA4B /* Pubs.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Pubs.bundle; sourceTree = "<group>"; };
 		DFBF4FA624B23B5300E2DA4B /* BundleHandlerswift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleHandlerswift.swift; sourceTree = "<group>"; };
 		DFBF4FA824B2835200E2DA4B /* MainDataRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataRow.swift; sourceTree = "<group>"; };
+		DFBF4FAA24B4C17000E2DA4B /* pubs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = pubs.json; sourceTree = "<group>"; };
+		DFBF4FAC24B4CEE800E2DA4B /* JSONContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +118,6 @@
 		DF02A78924A360C3009582BC /* AppMaree */ = {
 			isa = PBXGroup;
 			children = (
-				DFBF4FA224B2254600E2DA4B /* Pubs.bundle */,
 				DF45A1E824A64EF400C4C050 /* LaunchView.swift */,
 				DF45A1C724A60A5100C4C050 /* MainView.swift */,
 				DF45A1CB24A6134B00C4C050 /* MainButton */,
@@ -132,6 +133,7 @@
 				DF02A79824A360C5009582BC /* Info.plist */,
 				DF45A1E424A64E7F00C4C050 /* data.xml */,
 				DFBF4FA824B2835200E2DA4B /* MainDataRow.swift */,
+				DFBF4FAA24B4C17000E2DA4B /* pubs.json */,
 			);
 			path = AppMaree;
 			sourceTree = "<group>";
@@ -163,6 +165,7 @@
 				DFBF4F8624AB658300E2DA4B /* StyledText.swift */,
 				DFBF4F9A24AE371600E2DA4B /* XMLParser.swift */,
 				DFBF4FA024AEA3BC00E2DA4B /* DraggableView.swift */,
+				DFBF4FAC24B4CEE800E2DA4B /* JSONContent.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -245,9 +248,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFBF4FA324B2254600E2DA4B /* Pubs.bundle in Resources */,
 				DFBF4F9924AE09B200E2DA4B /* Shellfish.bundle in Resources */,
 				DFBF4F9524ADF8AC00E2DA4B /* Fish.bundle in Resources */,
+				DFBF4FAB24B4C17000E2DA4B /* pubs.json in Resources */,
 				DF02A79724A360C5009582BC /* LaunchScreen.storyboard in Resources */,
 				DF45A1E524A64E7F00C4C050 /* data.xml in Resources */,
 				DF02A79424A360C5009582BC /* Preview Assets.xcassets in Resources */,
@@ -279,6 +282,7 @@
 				DF02A7A424A54723009582BC /* SettingsView.swift in Sources */,
 				DF02223624A90551009A7747 /* ButtonFishDetailsView.swift in Sources */,
 				DF02A7A124A53541009582BC /* ButtonMainView.swift in Sources */,
+				DFBF4FAD24B4CEE800E2DA4B /* JSONContent.swift in Sources */,
 				DF45A1CF24A6139600C4C050 /* HomeButtonView.swift in Sources */,
 				DF02A79F24A527DC009582BC /* ButtonMenuView.swift in Sources */,
 				DF45A1E724A64EB500C4C050 /* DocumentationView.swift in Sources */,

@@ -8,18 +8,18 @@
 
 import Foundation
 
-struct Animal: Identifiable {
+struct Animal: Identifiable, Decodable {
     let id = UUID()
     let name: String
     let imageName: String
     let allowedSize: Int
-    let allowedDate: (String, String)
+    let allowedDate: [String]
     let allowedPerPerson: Int
     let taggingObligation: Bool
     let description: String
     let helpImage: String?
     
-    init(name: String, imageName: String = "fishing", allowedSize: Int, allowedDate: (String, String) = ("",""), allowedPerPerson: Int = 2, taggingObligation: Bool = true, description: String = "", helpImage: String? = nil) {
+    init(name: String, imageName: String = "fishing", allowedSize: Int, allowedDate: [String] = ["",""], allowedPerPerson: Int = 2, taggingObligation: Bool = true, description: String = "", helpImage: String? = nil) {
     
         self.name = name
         self.imageName = imageName
@@ -33,7 +33,7 @@ struct Animal: Identifiable {
     }
     
     func describe() -> String {
-        return "Le/La \(self.name) ne doit pas dépasser une taille de \(self.allowedSize) cm.\n\nAutorisé du \(self.allowedDate.0) au \(self.allowedDate.1), limité à \(self.allowedPerPerson) \(self.name)S par jour et par personne. En dehors de cette période, le pêcher et le relacher est autorisé.\n\n\(self.description)"
+        return "Le/La \(self.name) ne doit pas dépasser une taille de \(self.allowedSize) cm.\n\nAutorisé du \(self.allowedDate[0]) au \(self.allowedDate[1]), limité à \(self.allowedPerPerson) \(self.name)S par jour et par personne. En dehors de cette période, le pêcher et le relacher est autorisé.\n\n\(self.description)"
     }
     
     static func getFishes(bundleName: String) -> [Animal] {
