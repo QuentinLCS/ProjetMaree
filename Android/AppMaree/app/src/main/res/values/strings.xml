@@ -9,6 +9,8 @@
     <string name="previous">Previous</string>
 
     <string name="nom_port">PORT-DIELETTE</string>
+
+    <!-- texte de la page d'accueil -->
     <string name="text_accueil">"Les données affichées sur cette application sont issues du guide imprimé et distribué gratuitement. Elles ne sont qu\'indicatives.\n\n
         Certaines ont été fournies par le SHOM, d\'autres sont calculées. Les horaires sont en HEURE LEGALE et ne prennent pas en compte les variations liées à la météorologie ou à des effets locaux particuliers. En aucun cas, elles ne peuvent être utilisées pour la navigation maritime.\n\n
         L\'association et les auteurs de cette application ne peuvent être tenus responsables d\'incidents ou d\'accidents engendrés par la lecture  des informations de cette application.\n\n
@@ -16,6 +18,8 @@
         Autorisation SHOM 2019-2021"
     </string>
     <string name="bouton_accueil">X</string>
+    <string name="text_condition_utilisation">"\n\nConditions d'utilisations"</string>
+    <string name="text_checkbox_condition_utilisation">"J'accepte les conditions d'utilisation"</string>
 
     <string name="popup_fermer_label">Fermer</string>
 
