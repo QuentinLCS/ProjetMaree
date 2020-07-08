@@ -50,7 +50,7 @@ class PopUp private constructor(activity: FragmentActivity?) : PopupWindow(activ
         contentView = view
         handler=Handler()
 
-        setWidth(LinearLayout.LayoutParams.MATCH_PARENT);
+        width = LinearLayout.LayoutParams.MATCH_PARENT;
 
         val button = view?.findViewById<Button>(R.id.popupFermer)
         button?.setOnClickListener {
@@ -59,13 +59,12 @@ class PopUp private constructor(activity: FragmentActivity?) : PopupWindow(activ
                 handler.postDelayed({
                     show()
                 }, tempsEntrePub)
+                pub =false
             }
-
         }
         image = view?.findViewById(R.id.popupImage)
 
         val arraySponsor = ListeSponsor().listeSponsor
-
         imageArray = ArrayList()
         for (sponsor in arraySponsor) {
             for (i in 0..sponsor.poids)
@@ -95,6 +94,5 @@ class PopUp private constructor(activity: FragmentActivity?) : PopupWindow(activ
     fun showSponsor(resource : Int) {
         image?.setImageResource(resource)
         showAtLocation(view, BOTTOM, 0, 0)
-        pub = false
     }
 }
