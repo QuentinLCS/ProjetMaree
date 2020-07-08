@@ -85,7 +85,7 @@ class DocumentationFragment: Fragment() {
             else
                 list.get(i)?.setTextSize(fontsize.toFloat())
         if(cf!!.getTirantEau() < 1.6) {
-            for (i in 12..15)
+            for (i in 13..16)
                 list.get(i)?.setTextSize(0f)
             view?.findViewById<LinearLayout>(R.id.paratextestetantdeau)?.updateLayoutParams { height = 0 }
         }
