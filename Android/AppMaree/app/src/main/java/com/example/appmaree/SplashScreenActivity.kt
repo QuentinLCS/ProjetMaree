@@ -29,6 +29,7 @@ class SplashScreenActivity : AppCompatActivity() {
             splashViewModel = ViewModelProviders.of(this).get(TableauHoraireViewModel::class.java)
             splashViewModel.xmlToTable()
             var  cf = CoffreFort(this)
+            println(cf.getTirantEau().toString())
             splashViewModel.actualiserTirantDEau(cf.getTirantEau().toString())
             startActivity(intent)
             finish()

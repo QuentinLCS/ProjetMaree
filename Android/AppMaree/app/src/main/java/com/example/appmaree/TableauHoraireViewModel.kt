@@ -55,7 +55,6 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
     data class Jour(val ligne1:Ligne,val ligne2:Ligne,val ligne3:Ligne,val ligne4:Ligne,val ligne5:Ligne,val background : Int?=null)
 
     var tirantDEau:Double =0.0
-    lateinit var listeHorairesTirantDEau:ArrayList<String>
     var pair = true
     lateinit var listJour :ArrayList<Jour>
     var listePorte =ArrayList<Porte>()
@@ -79,8 +78,10 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
                 changerHoraireTirantDeau()
             }
             else{
-                resetTableauTirantDEau()
-                tirantDEau=newVar
+                if(tirantDEau>HAUTEUR_PORTE + 0.1) {
+                    resetTableauTirantDEau()
+                }
+                tirantDEau = newVar
             }
         }
         else{
