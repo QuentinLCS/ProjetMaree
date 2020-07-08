@@ -11,6 +11,7 @@ class CoffreFort(context: Context?) {
     private var FONTSIZE = "ANNUAIRE_DIELETTE_FONTSIZE"
     private var COLOR = "ANNUAIRE_DIELETTE_COULEUR_FOND"
     private var TIRANTEAU = "ANNUAIRE_DIELETTE_TIRANT_D_EAU"
+    private var CASECOCHE = "ANNUAIRE_DIELETTE_CONDITIONS"
     private var PUBRESTANT = "ANNUAIRE_DILETTE_PUB_RESTANT"
 
 
@@ -30,6 +31,16 @@ class CoffreFort(context: Context?) {
         }
     }
 
+    fun setCUCheck(condition: Boolean){
+        var editor: SharedPreferences.Editor = sharedPref!!.edit()
+        editor.putBoolean(CASECOCHE, condition)
+        editor.commit()
+    }
+
+    fun getCUCheck(): Boolean{
+        return sharedPref!!.getBoolean(CASECOCHE, true)
+    }
+
     fun setTirantEau(t: Float){
         var editor: SharedPreferences.Editor = sharedPref!!.edit()
         editor.putFloat(TIRANTEAU, t)
@@ -37,7 +48,7 @@ class CoffreFort(context: Context?) {
         editor.apply()
     }
     fun getTirantEau(): Float{
-        return sharedPref!!.getFloat(TIRANTEAU, -1f)
+        return sharedPref!!.getFloat(TIRANTEAU, 0f)
     }
 
     fun setFontSize(s: Float){
@@ -70,7 +81,7 @@ class CoffreFort(context: Context?) {
     }
 
     fun reset(){
-        setTirantEau(-1f)
+        setTirantEau(0f)
         setFontSize(15f)
         setCouleur(0f)
         setPubRestant(0f)
