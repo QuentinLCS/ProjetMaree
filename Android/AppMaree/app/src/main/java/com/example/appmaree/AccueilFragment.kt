@@ -35,12 +35,18 @@ class AccueilFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         var checkbox = view.findViewById<CheckBox>(R.id.checkBox_condition_utilisation)
+        var cf: CoffreFort = CoffreFort(this.context)
+
+        checkbox.isChecked = cf?.getCUCheck()
+
 
         view.findViewById<Button>(R.id.button_first).setOnClickListener {
             if(checkbox.isChecked){
-            findNavController().navigate(R.id.action_AccueilFragment_to_HorairesFragment)}
+                cf.setCUCheck(true)
+                findNavController().navigate(R.id.action_AccueilFragment_to_HorairesFragment)}
             else{
                 Toast.makeText(this.context,"Vous devez accepter les conditions d'utilisations pour continuer",Toast.LENGTH_SHORT).show()
+                cf.setCUCheck(false)
             }
         }
         view.findViewById<TextView>(R.id.condition_utilisation).setOnClickListener {

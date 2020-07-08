@@ -72,7 +72,6 @@ class ParametreFragment : Fragment() {
                 Toast.makeText(this.context, "Taille police déjà maximisée", Toast.LENGTH_SHORT).show()
             else{
                 cf?.setFontSize(cf!!.getFontSize()+1)
-                Toast.makeText(this.context, "${cf!!.getTirantEau()}", Toast.LENGTH_SHORT).show()
                 changefontsize()
             }
         }
