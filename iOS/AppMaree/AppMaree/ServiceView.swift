@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct DateView: View {
+struct ServiceView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
@@ -16,8 +16,8 @@ struct DateView: View {
     }
 }
 
-struct DateView_Previews: PreviewProvider {
+struct ServiceView_Previews: PreviewProvider {
     static var previews: some View {
-        DateView()
+        ServiceView()
     }
 }
