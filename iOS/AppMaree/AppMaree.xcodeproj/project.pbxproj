@@ -18,7 +18,7 @@
 		DF02A79F24A527DC009582BC /* ButtonMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02A79E24A527DC009582BC /* ButtonMenuView.swift */; };
 		DF02A7A124A53541009582BC /* ButtonMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02A7A024A53541009582BC /* ButtonMainView.swift */; };
 		DF02A7A424A54723009582BC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02A7A324A54723009582BC /* SettingsView.swift */; };
-		DF44C0F524A8E1F2001D6BDD /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44C0F424A8E1F2001D6BDD /* DateView.swift */; };
+		DF44C0F524A8E1F2001D6BDD /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44C0F424A8E1F2001D6BDD /* ServiceView.swift */; };
 		DF44C0F824A8FB67001D6BDD /* DiagonalBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */; };
 		DF45A1C824A60A5100C4C050 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1C724A60A5100C4C050 /* MainView.swift */; };
 		DF45A1CF24A6139600C4C050 /* HomeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1CE24A6139600C4C050 /* HomeButtonView.swift */; };
@@ -38,6 +38,7 @@
 		DFBF4FA924B2835200E2DA4B /* MainDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FA824B2835200E2DA4B /* MainDataRow.swift */; };
 		DFBF4FAB24B4C17000E2DA4B /* pubs.json in Resources */ = {isa = PBXBuildFile; fileRef = DFBF4FAA24B4C17000E2DA4B /* pubs.json */; };
 		DFBF4FAD24B4CEE800E2DA4B /* JSONContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FAC24B4CEE800E2DA4B /* JSONContent.swift */; };
+		DFBF4FAF24B611E000E2DA4B /* fish.json in Resources */ = {isa = PBXBuildFile; fileRef = DFBF4FAE24B611E000E2DA4B /* fish.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +55,7 @@
 		DF02A79E24A527DC009582BC /* ButtonMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMenuView.swift; sourceTree = "<group>"; };
 		DF02A7A024A53541009582BC /* ButtonMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMainView.swift; sourceTree = "<group>"; };
 		DF02A7A324A54723009582BC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		DF44C0F424A8E1F2001D6BDD /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		DF44C0F424A8E1F2001D6BDD /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
 		DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagonalBackgroundView.swift; sourceTree = "<group>"; };
 		DF45A1C724A60A5100C4C050 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DF45A1CE24A6139600C4C050 /* HomeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonView.swift; sourceTree = "<group>"; };
@@ -74,6 +75,7 @@
 		DFBF4FA824B2835200E2DA4B /* MainDataRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataRow.swift; sourceTree = "<group>"; };
 		DFBF4FAA24B4C17000E2DA4B /* pubs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = pubs.json; sourceTree = "<group>"; };
 		DFBF4FAC24B4CEE800E2DA4B /* JSONContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONContent.swift; sourceTree = "<group>"; };
+		DFBF4FAE24B611E000E2DA4B /* fish.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = fish.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +124,7 @@
 				DF45A1C724A60A5100C4C050 /* MainView.swift */,
 				DF45A1CB24A6134B00C4C050 /* MainButton */,
 				DF02A7A224A544F8009582BC /* Menu */,
-				DF44C0F424A8E1F2001D6BDD /* DateView.swift */,
+				DF44C0F424A8E1F2001D6BDD /* ServiceView.swift */,
 				DF02223424A90537009A7747 /* Fishing */,
 				DF45A1E624A64EB500C4C050 /* DocumentationView.swift */,
 				DF02A7A324A54723009582BC /* SettingsView.swift */,
@@ -134,6 +136,7 @@
 				DF45A1E424A64E7F00C4C050 /* data.xml */,
 				DFBF4FA824B2835200E2DA4B /* MainDataRow.swift */,
 				DFBF4FAA24B4C17000E2DA4B /* pubs.json */,
+				DFBF4FAE24B611E000E2DA4B /* fish.json */,
 			);
 			path = AppMaree;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				DFBF4F9924AE09B200E2DA4B /* Shellfish.bundle in Resources */,
 				DFBF4F9524ADF8AC00E2DA4B /* Fish.bundle in Resources */,
 				DFBF4FAB24B4C17000E2DA4B /* pubs.json in Resources */,
+				DFBF4FAF24B611E000E2DA4B /* fish.json in Resources */,
 				DF02A79724A360C5009582BC /* LaunchScreen.storyboard in Resources */,
 				DF45A1E524A64E7F00C4C050 /* data.xml in Resources */,
 				DF02A79424A360C5009582BC /* Preview Assets.xcassets in Resources */,
@@ -269,7 +273,7 @@
 				DFBF4F8B24ABB89700E2DA4B /* ButtonWindowView.swift in Sources */,
 				DF45A1E324A64E2E00C4C050 /* FishingView.swift in Sources */,
 				DFBF4F8724AB658300E2DA4B /* StyledText.swift in Sources */,
-				DF44C0F524A8E1F2001D6BDD /* DateView.swift in Sources */,
+				DF44C0F524A8E1F2001D6BDD /* ServiceView.swift in Sources */,
 				DFBF4F9B24AE371600E2DA4B /* XMLParser.swift in Sources */,
 				DF02A78B24A360C3009582BC /* AppDelegate.swift in Sources */,
 				DF45A1E924A64EF400C4C050 /* LaunchView.swift in Sources */,

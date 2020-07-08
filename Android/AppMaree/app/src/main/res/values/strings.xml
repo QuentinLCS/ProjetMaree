@@ -61,43 +61,34 @@
         "indique l'heure donnée par le SHOM à partir de laquelle la porte ouvre (avec la parenthèse ouvrante) et ferme (avec la parenthèse fermante).\n"
     </string>
 
-    <string name="DescriptionService">"L\'association des plaisanciers de Port Dielette vous présente la liste de ses partenaires pour l\'édition de l'annuaire des marées."
+    <string name="DescriptionService">"L\'association des plaisanciers de Port Dielette vous présente la liste de ses partenaires pour l\'édition de l'annuaire des marées.\n\n"
     </string>
 
     <!-- texte de la page à propos -->
 
     <string name="a_propo_titre1">
-        "  Titre numéro 1     "
+        "Association des plaisanciers de Port-Diélette"
     </string>
     <string name="a_propo_paragraphe1">
-        " texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextext\ntexttextextextextexttexttextextextextext\n\n
-        texttextextextextexttexttextextextextext"
+        "L'Association des Plaisanciers de Port-Diélette vous souhaite la bienvenue sur son terrain de jeu !\n
+        Les horaires de marée, ouverture/fermeture de la porte de la marina de Port-Diélette rythment notre loisir !\n
+        Notre association regroupe environ 200 usagers du port.\n
+        Nos objectifs, favoriser les rencontres entre plaisanciers, apporter de la convivialité sur les pontons, défendre les droits des usagers, et la pêche de loisir !\n
+        Notre association est affiliée au Comité Départemental de la Pêche Maritime de Loisirs et à la Fédération Nationale des Pêcheurs Plaisanciers et Sportifs de France.\n
+        Vous pouvez  nous rejoindre ! Pour tous renseignements :
+        \nTél. : 06 82 37 75 62 \nAdresse e-mail : app.dielette@gmail.com  \nSite internet : http://appd.eklablog.com \n"
     </string>
     <string name="a_propo_titre2">
-        "  Titre numéro 2     "
+        "Remerciements"
     </string>
     <string name="a_propo_paragraphe2">
-        " texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n\n\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n\n
-        texttextextextextexttexttextextextextext\ntexttextextextextexttexttextextextextext\n\n\n
-        texttextextextextexttexttextextextextext"
+        "L'application a été réalisée en 2020 dans le cadre d'un projet tuteuré Etudiant du DUT informatique de l' IUT Caen, université Grand Ouest Normandie.\n\nLes auteurs sont :  Chavas Nathan, Danger Tristan, Lechasles Quentin, Leveziel Damien et Roussel Alexandre.\n\nTuteur application et modèle initial : Jean-Luc Lamotte\n"
     </string>
     <string name="a_propo_titre3">
-        "  Titre numéro 3     "
+        "Conception support partenaires"
     </string>
     <string name="a_propo_paragraphe3">
-        " texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n\n\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n\n
-        texttextextextextexttexttextextextextext\ntexttextextextextexttexttextextextextext\n\n\n
-        texttextextextextexttexttextextextextext"
+        "Myth.fr 06 22 74 82 06\n version 2020.0"
     </string>
 
     <!-- texte de la page urgence -->

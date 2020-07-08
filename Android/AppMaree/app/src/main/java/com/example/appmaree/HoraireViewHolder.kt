@@ -169,7 +169,7 @@ class HoraireViewHolder (var context: Context?, inflater: LayoutInflater, parent
     }
 
     fun getColorText(backgroundColor : Int):Int{
-        if(backgroundColor==Color.YELLOW || backgroundColor==Color.GREEN ){
+        if(backgroundColor==(Color.YELLOW+cf?.getCouleur()!!.toInt()) || backgroundColor==(Color.GREEN+cf?.getCouleur()!!.toInt()) ){
             return Color.BLACK
         }
         else{
