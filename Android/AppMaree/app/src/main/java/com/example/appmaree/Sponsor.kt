@@ -10,7 +10,6 @@ data class Sponsor (val AdresseImage: Int,val poids: Int,val nom: String,val cat
 
 class ListeSponsor {
     val listeSponsor : ArrayList<Sponsor> = ArrayList()
-
     init{
         listeSponsor.add(Sponsor(R.drawable.atelier_mobile_bateau_2,2,"Atelier Mobile du bateau", Categorie.NAUTISME))
         listeSponsor.add(Sponsor(R.drawable.manche_iles_express_1,1,"Manche Iles Express", Categorie.PERMIS))
