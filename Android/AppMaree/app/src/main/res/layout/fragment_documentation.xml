@@ -237,9 +237,40 @@
                 android:textSize="@dimen/taillepolicedocu"
                 android:text="@string/DocuParagraphe2"/>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="4"
+                >
+                <TextView
+                    android:id="@+id/paramtextest21"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0h45"/>
+                <TextView
+                    android:id="@+id/paramtextest22"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="7h27"/>
+                <TextView
+                    android:id="@+id/paramtextest23"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="13h14"/>
+                <TextView
+                    android:id="@+id/paramtextest24"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="19h45"/>
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -247,9 +278,40 @@
                 android:textSize="@dimen/taillepolicedocu"
                 android:text="@string/DocuParagraphe3"/>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="4"
+                >
+                <TextView
+                    android:id="@+id/paramtextest25"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="10h51"/>
+                <TextView
+                    android:id="@+id/paramtextest26"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="16h04"/>
+                <TextView
+                    android:id="@+id/paramtextest28"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="23h03"/>
+                <TextView
+                    android:id="@+id/paramtextest29"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="4h28"/>
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -257,9 +319,209 @@
                 android:textSize="@dimen/taillepolicedocu"
                 android:text="@string/DocuParagraphe4"/>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+            <LinearLayout
+                android:id="@+id/exempleparamlayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="15"
+                android:orientation="horizontal"
+                >
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:weightSum="5"
+                    android:layout_weight="3">
+
+                    <TextView
+                        android:id="@+id/paramtextest30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
+                        android:text="mar 12 juin" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="12"
+                    android:weightSum="4"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:weightSum="4"
+                        >
+                        <TextView
+                            android:id="@+id/paramtextest31"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="53"/>
+                        <TextView
+                            android:id="@+id/paramtextest32"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text=""/>
+                        <TextView
+                            android:id="@+id/paramtextest33"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="49"/>
+                        <TextView
+                            android:id="@+id/paramtextest34"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text=""/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:weightSum="4"
+                        >
+                        <TextView
+                            android:id="@+id/paramtextest35"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="0h45"/>
+                        <TextView
+                            android:id="@+id/paramtextest36"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="7h27"/>
+                        <TextView
+                            android:id="@+id/paramtextest37"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="13h14"/>
+                        <TextView
+                            android:id="@+id/paramtextest38"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="19h45"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:weightSum="4"
+                        >
+                        <TextView
+                            android:id="@+id/paramtextest39"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="10h51"/>
+                        <TextView
+                            android:id="@+id/paramtextest40"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="16h04"/>
+                        <TextView
+                            android:id="@+id/paramtextest41"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="23h03"/>
+                        <TextView
+                            android:id="@+id/paramtextest42"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="4h28"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="4"
+                        >
+                        <TextView
+                            android:id="@+id/paramtextest43"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="(10h57"/>
+                        <TextView
+                            android:id="@+id/paramtextest44"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="17h59)"/>
+                        <TextView
+                            android:id="@+id/paramtextest45"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="(23h09"/>
+                        <TextView
+                            android:id="@+id/paramtextest46"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="6h24)"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:weightSum="4"
+                        >
+                        <TextView
+                            android:id="@+id/paramtextest47"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="7.6"/>
+                        <TextView
+                            android:id="@+id/paramtextest48"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="3.3"/>
+                        <TextView
+                            android:id="@+id/paramtextest49"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="7.3"/>
+                        <TextView
+                            android:id="@+id/paramtextest50"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="3.75"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -267,9 +529,41 @@
                 android:textSize="@dimen/taillepolicedocu"
                 android:text="@string/DocuParagraphe5"/>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:weightSum="4"
+                >
+                <TextView
+                    android:id="@+id/paramtextest51"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="7.6"/>
+                <TextView
+                    android:id="@+id/paramtextest52"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="3.3"/>
+                <TextView
+                    android:id="@+id/paramtextest53"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="7.3"/>
+                <TextView
+                    android:id="@+id/paramtextest54"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="3.75"/>
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -277,9 +571,40 @@
                 android:textSize="@dimen/taillepolicedocu"
                 android:text="@string/DocuParagraphe6"/>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="4"
+                >
+                <TextView
+                    android:id="@+id/paramtextest55"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="10h51"/>
+                <TextView
+                    android:id="@+id/paramtextest56"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="16h04"/>
+                <TextView
+                    android:id="@+id/paramtextest57"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="23h03"/>
+                <TextView
+                    android:id="@+id/paramtextest58"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="4h28"/>
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -287,19 +612,47 @@
                 android:textSize="@dimen/taillepolicedocu"
                 android:text="@string/DocuParagraphe7"/>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="4"
+                >
+                <TextView
+                    android:id="@+id/paramtextest59"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="(10h57"/>
+                <TextView
+                    android:id="@+id/paramtextest60"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="17h59)"/>
+                <TextView
+                    android:id="@+id/paramtextest61"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="(23h09"/>
+                <TextView
+                    android:id="@+id/paramtextest62"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="6h24)"/>
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingBottom="70dp"
                 android:textSize="@dimen/taillepolicedocu"
                 android:text="@string/DocuParagraphe8"/>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
 
         </LinearLayout>
 

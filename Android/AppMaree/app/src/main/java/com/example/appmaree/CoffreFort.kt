@@ -38,7 +38,7 @@ class CoffreFort(context: Context?) {
     }
 
     fun getCUCheck(): Boolean{
-        return sharedPref!!.getBoolean(CASECOCHE, true)
+        return sharedPref!!.getBoolean(CASECOCHE, false)
     }
 
     fun setTirantEau(t: Float){
