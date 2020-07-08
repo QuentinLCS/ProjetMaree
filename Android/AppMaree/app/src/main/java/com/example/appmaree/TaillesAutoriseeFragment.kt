@@ -9,8 +9,13 @@ import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.*
+import java.io.File
 
 class TaillesAutoriseeFragment: Fragment() {
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,6 +30,15 @@ class TaillesAutoriseeFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         var bottomSheet:View=activity!!.findViewById(R.id.bottom_sheet)
         val behavior =BottomSheetBehavior.from(bottomSheet)
+
+        var listpoisson: RecyclerView = view.findViewById(R.id.list_poisson)
+        listpoisson.apply {
+
+        }
+
+        //val xmlFile: File = File("R.xml.taillesautoriseespoissons")
+
+
 /*Bouton services*/
         bottomSheet.findViewById<LinearLayout>(R.id.service).setOnClickListener {
             findNavController().navigate(R.id.action_taillesAutoriseeFragment_to_servicesFragment)
