@@ -1,5 +1,7 @@
 package com.example.appmaree
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -36,8 +38,23 @@ class AccueilFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         var checkbox = view.findViewById<CheckBox>(R.id.checkBox_condition_utilisation)
         var cf: CoffreFort = CoffreFort(this.context)
+        val builder = AlertDialog.Builder(activity)
+        var conditionLu : Boolean = false
+        builder.setTitle("Conditions d'utilisation")
+        builder.setMessage(R.string.text_accueil)
+        builder.setNeutralButton("OK") { dialog, which -> }
 
         checkbox.isChecked = cf?.getCUCheck()
+        conditionLu=checkbox.isChecked
+        checkbox.setOnClickListener(){
+            if(conditionLu){
+                checkbox.isChecked=true
+            }
+            else{
+                Toast.makeText(this.context,"Vous devez lire les conditions d'utilisations pour les accepter",Toast.LENGTH_SHORT).show()
+                checkbox.isChecked=false
+            }
+        }
 
 
         view.findViewById<Button>(R.id.button_first).setOnClickListener {
@@ -49,8 +66,10 @@ class AccueilFragment : Fragment() {
                 cf.setCUCheck(false)
             }
         }
-        view.findViewById<TextView>(R.id.condition_utilisation).setOnClickListener {
 
+        view.findViewById<TextView>(R.id.condition_utilisation).setOnClickListener {
+            builder.show()
+            conditionLu=true
         }
     }
 }
