@@ -204,12 +204,6 @@
         "category": "Garage - Taxi"
     },
     {
-        "name": "Taxi Durel",
-        "file": "taxi_durel4",
-        "weight": 4,
-        "category": "Garage - Taxi"
-    },
-    {
         "name": "Alimentation Pain Ti Pou Bar",
         "file": "ti_pou_bar",
         "weight": 1,
