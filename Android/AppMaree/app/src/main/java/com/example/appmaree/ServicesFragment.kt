@@ -74,7 +74,7 @@ class ServicesFragment: Fragment() {
                 }
             }
         }
-        layout?.setPadding(0,0,0,paddingCategorie*(arrayCategorie.size+3))
+        layout?.setPadding(0,0,0,paddingCategorie*(arrayCategorie.size+1)+(125* resources.displayMetrics.density +0.5f).toInt())
 
         var bottomSheet:View=activity!!.findViewById(R.id.bottom_sheet)
         val behavior =BottomSheetBehavior.from(bottomSheet)

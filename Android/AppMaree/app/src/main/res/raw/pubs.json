@@ -211,7 +211,7 @@
     },
     {
         "name": "Alimentation Pain Ti Pou Bar",
-        "file": "ti_pou_Bar",
+        "file": "ti_pou_bar",
         "weight": 1,
         "category": "Avitaillement"
     },
