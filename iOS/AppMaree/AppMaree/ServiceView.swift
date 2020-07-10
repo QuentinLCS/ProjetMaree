@@ -11,9 +11,73 @@ import SwiftUI
 struct ServiceView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    var body: some View {
-        ButtonWindowView(presentation: presentationMode)
+    let sortedAds: [String: [Pub]]
+    let sortedCategory: [String]
+    
+    init() {
+        self.sortedAds = mappedAds()
+        self.sortedCategory = categoryArray()
     }
+    
+    var body: some View {
+        NavigationView {
+            ZStack {
+                ScrollView {
+                    HStack {
+                        Spacer()
+                        Text("L'association des plaisanciers de Port Dielette vous présente la liste de ses partenaires pour l'édition de l'annuaire des marées.")
+                            .font(.title)
+                            .fontWeight(.semibold)
+                        Spacer()
+                    }
+                    Spacer()
+                    .frame(height: 60)
+                    ForEach(0..<sortedCategory.count) { category in // create number of rows
+                        VStack {
+                            Text(self.sortedCategory[category])
+                                .font(.title)
+                            ForEach(0..<self.sortedAds[self.sortedCategory[category]]!.count) { value in
+                                Text(self.sortedAds[self.sortedCategory[category]]![value].name)
+                            }
+                        }
+                        Spacer()
+                        .frame(height: 10)
+                    }
+                }
+                ButtonWindowView(presentation: presentationMode)
+            }
+        }
+        .navigationBarHidden(true)
+        .navigationBarTitle("Service")
+        .edgesIgnoringSafeArea(.all)
+    }
+}
+
+func mappedAds() -> [String: [Pub]] {
+    let ads: [Pub] = getAds()
+    //Sort ads by their name and regroup them under the same category
+    let map = ads.sorted(by: {$0.name < $1.name }).reduce(into: [String: [Pub]]()) { result, element in
+        // Get the category of the current element
+        let category = element.category
+        // initialize an array with one element or add another element to the existing value
+        result[category, default: []].append(element)
+    }
+    return map
+}
+
+func categoryArray() -> [String] {
+    let ads: [Pub] = getAds()
+    var array: [String] = []
+    //Add in array every existing category
+    for ad in ads {
+        if !(array.contains(ad.category)) {
+            array.append(ad.category)
+        }
+    }
+    //Sort the category by name
+    array.sort()
+    print(array[0])
+    return array
 }
 
 struct ServiceView_Previews: PreviewProvider {

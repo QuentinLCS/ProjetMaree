@@ -12,14 +12,13 @@
 //
 
 import SwiftUI
-import UIKit
 
 struct MainView: View {
     
     // Variable dynamique entre les vues permettant d'afficher ou non la pub.
     @State private var showAd = false
     
-    let ads = getAds()
+    let ads = getAdsWithWeight()
     let days = getDays()
     
     var body: some View {
@@ -70,20 +69,6 @@ func getDays() -> [Day] {
     let dataRetriver = MareeParser()
     dataRetriver.getData()
     return dataRetriver.results
-}
-
-// Retrieve all ads from the bundle
-func getAds() -> [Pub] {
-    
-    var ads: [Pub] = []
-    let contents = JSONContent.JSONContent(filename: "pubs")
-    
-    for item in contents {
-        for _ in 0..<item.weight {
-            ads.append(item)
-        }
-    }
-    return ads
 }
 
 struct MainView_Previews: PreviewProvider {
