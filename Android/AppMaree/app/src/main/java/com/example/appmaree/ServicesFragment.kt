@@ -30,15 +30,12 @@ class ServicesFragment: Fragment() {
 
         var popUp = PopUp.getInstance(activity)
 
-        var arraySponsor = ListeSponsor().listeSponsor
-        var arrayCategorie : TreeMap<Categorie,ArrayList<Sponsor>> = TreeMap()
-        var cat : Categorie
-        arraySponsor?.sortWith(kotlin.Comparator{ sponsor: Sponsor, sponsor1: Sponsor ->
-            sponsor.nom.compareTo(sponsor1.nom)
-        })
+        var arraySponsor = ListeSponsor(activity?.applicationContext).listeSponsor
+        var arrayCategorie : TreeMap<String,ArrayList<Sponsor>> = TreeMap()
+        var cat : String
 
         for(sponsor in arraySponsor){
-            cat=sponsor.categorie
+            cat=sponsor.category
             if(arrayCategorie.containsKey(cat)){
                 arrayCategorie[cat]?.add(sponsor)
             }else{
@@ -54,21 +51,26 @@ class ServicesFragment: Fragment() {
         for(categorie in arrayCategorie.keys){
             textView = TextView(activity)
             textView.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-            textView.text = categorie.texte
+            textView.text = categorie
             textView.textSize = resources.getDimension(R.dimen.tailleServiceCategorie)
             textView.setTextColor(ResourcesCompat.getColor(resources,R.color.colorServiceCategorie,null))
             textView.setPadding(0, paddingCategorie,0,5)
             layout?.addView(textView)
+            arrayCategorie[categorie]?.sortWith(kotlin.Comparator{ sponsor: Sponsor, sponsor1: Sponsor ->
+                sponsor.name.compareTo(sponsor1.name)
+            })
             for(sponsor in arrayCategorie[categorie]!!){
                 textView = TextView(activity)
                 textView.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-                textView.text = sponsor.nom
+                textView.text = sponsor.name
                 textView.textSize = resources.getDimension(R.dimen.tailleServiceSponsor)
                 textView.setTextColor(ResourcesCompat.getColor(resources,R.color.colorServiceSponsor,null))
                 textView.isClickable = true
                 layout?.addView(textView)
                 textView.setOnClickListener{
-                    popUp.showSponsor(sponsor.AdresseImage)
+                    activity?.resources?.getIdentifier(sponsor.file,"drawable", activity?.packageName)?.let { it1 ->
+                        popUp.showSponsor(it1)
+                    }
                 }
             }
         }

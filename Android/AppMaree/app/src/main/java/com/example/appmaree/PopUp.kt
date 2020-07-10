@@ -62,18 +62,21 @@ class PopUp private constructor(activity: FragmentActivity?) : PopupWindow(activ
                 pub =false
             }
         }
+
         image = view?.findViewById(R.id.popupImage)
-
-        val arraySponsor = ListeSponsor().listeSponsor
+        val arraySponsor = ListeSponsor(activity?.applicationContext).listeSponsor
         imageArray = ArrayList()
-        for (sponsor in arraySponsor) {
-            for (i in 0..sponsor.poids)
-                imageArray.add(sponsor.AdresseImage)
-        }
 
+        for (sponsor in arraySponsor) {
+            val resourceImage = activity?.resources?.getIdentifier(sponsor.file,"drawable", activity?.packageName)
+            for (i in 0..sponsor.weight)
+                resourceImage?.let { imageArray.add(it) }
+        }
         handler.postDelayed({
             show()
         }, tempsEntrePub)
+
+
     }
 
     /**
