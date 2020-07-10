@@ -35,7 +35,7 @@
         android:id="@+id/tirantDEauEditText"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:hint="Saississez votre tirant d'eau : (à partir de 1.6)"
+        android:hint="Saississez votre tirant d'eau : (à partir de 1.6m)"
         android:inputType="number|numberDecimal"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -342,13 +342,9 @@
                     android:text="3.75"/>
 
             </LinearLayout>
-
             </LinearLayout>
 
-
         </LinearLayout>
-
-
 
         <LinearLayout
             android:layout_width="match_parent"

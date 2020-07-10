@@ -89,6 +89,7 @@ class ParametreFragment : Fragment() {
             view.findViewById<ProgressBar>(R.id.progressBarColor).setProgress(cf!!.getCouleur().toInt())
             changefontsize()
             changeCouleur()
+            view.findViewById<EditText>(R.id.tirantDEauEditText).hint="Saississez votre tirant d'eau : (à partir de 1.6m)"
             Toast.makeText(this.context, "paramètres reset", Toast.LENGTH_SHORT).show()
         }
         seekBar = view.findViewById<SeekBar>(R.id.progressBarColor)

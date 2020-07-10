@@ -502,7 +502,7 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
            6->return "Juin"
            7->return "Juillet"
            8->return "Août"
-           9->return "Septemnre"
+           9->return "Septembre"
            10->return "Octobre"
            11->return "Novembre"
            12->return "Décembre"
