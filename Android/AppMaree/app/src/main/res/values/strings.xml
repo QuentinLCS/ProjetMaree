@@ -18,7 +18,7 @@
         Autorisation SHOM 2019-2021"
     </string>
     <string name="bouton_accueil">✓</string>
-    <string name="text_condition_utilisation">"\n\nConditions d'utilisations"</string>
+    <string name="text_condition_utilisation">"Conditions d'utilisations"</string>
     <string name="text_checkbox_condition_utilisation">"J'accepte les conditions d'utilisation"</string>
 
     <string name="popup_fermer_label">Fermer</string>
@@ -67,45 +67,38 @@
     <!-- texte de la page à propos -->
 
     <string name="a_propo_titre1">
-        "  Titre numéro 1     "
+        "Association des plaisanciers de Port-Diélette"
     </string>
     <string name="a_propo_paragraphe1">
-        " texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextext\ntexttextextextextexttexttextextextextext\n\n
-        texttextextextextexttexttextextextextext"
+        "L'Association des Plaisanciers de Port-Diélette vous souhaite la bienvenue sur son terrain de jeu !\n
+        Les horaires de marée, ouverture/fermeture de la porte de la marina de Port-Diélette rythment notre loisir !\n
+        Notre association regroupe environ 200 usagers du port.\n
+        Nos objectifs, favoriser les rencontres entre plaisanciers, apporter de la convivialité sur les pontons, défendre les droits des usagers, et la pêche de loisir !\n
+        Notre association est affiliée au Comité Départemental de la Pêche Maritime de Loisirs et à la Fédération Nationale des Pêcheurs Plaisanciers et Sportifs de France.\n
+        Vous pouvez  nous rejoindre ! Pour tous renseignements :
+        \nTél. : 06 82 37 75 62 \nAdresse e-mail : app.dielette@gmail.com  \nSite internet : http://appd.eklablog.com \n"
     </string>
     <string name="a_propo_titre2">
-        "  Titre numéro 2     "
+        "Remerciements"
     </string>
     <string name="a_propo_paragraphe2">
-        " texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n\n\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n\n
-        texttextextextextexttexttextextextextext\ntexttextextextextexttexttextextextextext\n\n\n
-        texttextextextextexttexttextextextextext"
+        "L'application a été réalisée en 2020 dans le cadre d'un projet tuteuré Etudiant du DUT informatique de l' IUT Caen, université Grand Ouest Normandie.\n\nLes auteurs sont :  Chavas Nathan, Danger Tristan, Lechasles Quentin, Leveziel Damien et Roussel Alexandre.\n\nTuteur application et modèle initial : Jean-Luc Lamotte\n"
     </string>
     <string name="a_propo_titre3">
-        "  Titre numéro 3     "
+        "Conception support partenaires"
     </string>
     <string name="a_propo_paragraphe3">
-        " texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n\n\n
-        texttextextextextexttexttextextextextexttexttextextextextexttexttextextextextext\n\n
-        texttextextextextexttexttextextextextext\ntexttextextextextexttexttextextextextext\n\n\n
-        texttextextextextexttexttextextextextext"
+        "Myth.fr 06 22 74 82 06\n version 2020.0"
     </string>
 
     <!-- texte de la page urgence -->
-    <string name="urgence1">"Type d'urgence:\n\tHomme à la mer\n\tInciendie/explosion\n\tVoie d'eau\n\tAbordage\n\tNavire désemparé et à la dérive\n\tÉchouement\n\tChavirement\n\tNavire en train de sombrer\n\tAbandon du navire\n"</string>
+    <string name="titre_urgence">"Urgences</string>
+    <string name="text_numero_urgence">"Numéro d'appel : 196"</string>
+    <string name="urgence1"><b>Type d\'urgence :</b>\n\tHomme à la mer\n\tIncendie/explosion\n\tVoie d\'eau\n\tAbordage\n\tNavire désemparé et à la dérive\n\tÉchouement\n\tChavirement\n\tNavire en train de sombrer\n\tAbandon du navire\n</string>
     <string name="bouton_urgence1">"May-Day"</string>
     <string name="text_urgence1">"Mayday – Mayday – Mayday\nici le bateau [type et nom de l’embarcation];\nQui se signale [nature du sinistre];\nÀ la position [position GPS ou azimut/distance d’un point remarquable];\n[Nombre] de personnes à bord;\nIci le bateau [type et nom de l’embarcation] -\nterminé."</string>
 
-    <string name="urgence2">"Type d'urgence:\n\tAvarie de propulsion\n\tAvarie de barre\n\tHélice ou safran engagé\n\tDémâtage\n\tDemanded'avis medical\n"</string>
+    <string name="urgence2"><b>Type d\'urgence :</b>\n\tAvarie de propulsion\n\tAvarie de barre\n\tHélice ou safran engagé\n\tDémâtage\n\tDemanded\'avis medical\n</string>
     <string name="bouton_urgence2">"Pan-Pan"</string>
     <string name="text_urgence2">"Pan  Pan - Pan  Pan - Pan  Pan\nici le bateau [type et nom de l’embarcation];\nQui se signale [nature du sinistre];\nÀ la position [position GPS ou azimut/distance d’un point remarquable]; [\nNombre] de personnes à bord;\nIci le bateau [type et nom de l’embarcation] - terminé."</string>
 

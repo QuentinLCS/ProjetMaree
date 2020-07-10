@@ -1,0 +1,230 @@
+[
+    {
+        "name": "Association des plaisanciers Port Dielette",
+        "file": "appd",
+        "weight": 1,
+        "category": "Associations"
+    },
+    {
+        "name": "Atelier mobile du bateau",
+        "file": "atelier_mobile_bateau",
+        "weight": 2,
+        "category": "Nautisme"
+    },
+    {
+        "name": "Crédit Agricole",
+        "file": "ca",
+        "weight": 1,
+        "category": "Banque"
+    },
+    {
+        "name": "Manche Iles Express",
+        "file": "manche_iles_express",
+        "weight": 1,
+        "category": "Permis Bateau, Croisières, Transport Passagers"
+    },
+    {
+        "name": "Club de Surf",
+        "file": "cotentin_surf_club",
+        "weight": 2,
+        "category": "Associations"
+    },
+    {
+        "name": "Le café de la paix",
+        "file": "cafe_paix",
+        "weight": 1,
+        "category": "Bar - Hotellerie - Restauration"
+    },
+    {
+        "name": "Wine shop Une bouteille à la mer",
+        "file": "bouteille_a_la_mer",
+        "weight": 2,
+        "category": "Avitaillement"
+    },
+    {
+        "name": "Charles Optique",
+        "file": "charles_optique",
+        "weight": 2,
+        "category": "Confort"
+    },
+    {
+        "name": "Brasserie des Pieux Les travailleurs de l'amer",
+        "file": "les_travailleurs_de_l_amer",
+        "weight": 2,
+        "category": "Avitaillement"
+    },
+    {
+        "name": "Bar Tcheu ptit Louis",
+        "file": "tcheu_ptit_louis",
+        "weight": 1,
+        "category": "Bar - Hotellerie - Restauration"
+    },
+    {
+        "name": "Axe Sail",
+        "file": "axe_sail",
+        "weight": 2,
+        "category": "Nautisme"
+    },
+    {
+        "name": "Boulangerie-patisserie Croquez-moi",
+        "file": "boulangerie2",
+        "weight": 1,
+        "category": "Avitaillement"
+    },
+    {
+        "name": "Traiteur La cambuse de Diélette",
+        "file": "cambuse",
+        "weight": 2,
+        "category": "Bar - Hotellerie - Restauration"
+    },
+    {
+        "name": "Restaurant Le Cap Marine",
+        "file": "cap_marine",
+        "weight": 1,
+        "category": "Bar - Hotellerie - Restauration"
+    },
+    {
+        "name": "Carteret Marine",
+        "file": "carteret_marine",
+        "weight": 2,
+        "category": "Nautisme"
+    },
+    {
+        "name": "Centre Nautique de Dielette",
+        "file": "cn_dielette",
+        "weight": 2,
+        "category": "Associations"
+    },
+    {
+        "name": "Coccimarket",
+        "file": "coccimarket",
+        "weight": 2,
+        "category": "Avitaillement"
+    },
+    {
+        "name": "Le Comptoir de la Mer",
+        "file": "comptoir_mer",
+        "weight": 1,
+        "category": "Nautisme"
+    },
+    {
+        "name": "Ed and Coif",
+        "file": "ed_and_coif",
+        "weight": 2,
+        "category": "Confort"
+    },
+    {
+        "name": "Hague Sud Plongée",
+        "file": "hague_sud_plongee",
+        "weight": 1,
+        "category": "Associations"
+    },
+    {
+        "name": "Intermarché",
+        "file": "intermarche",
+        "weight": 4,
+        "category": "Avitaillement"
+    },
+    {
+        "name": "Hotel Restaurant de la Falaise",
+        "file": "la_falaise",
+        "weight": 1,
+        "category": "Bar - Hotellerie - Restauration"
+    },
+    {
+        "name": "Institut et Spa le Lagon",
+        "file": "lagoon",
+        "weight": 1,
+        "category": "Confort"
+    },
+    {
+        "name": "Bar Hotel Le Bar du Douet",
+        "file": "le_douet",
+        "weight": 1,
+        "category": "Bar - Hotellerie - Restauration"
+    },
+    {
+        "name": "Restaurant Brasserie Le Vent de Mer",
+        "file": "le_vent_mer",
+        "weight": 1,
+        "category": "Bar - Hotellerie - Restauration"
+    },
+    {
+        "name": "John Silver",
+        "file": "long_john_silver",
+        "weight": 1,
+        "category": "Permis Bateau, Croisières, Transport Passagers"
+    },
+    {
+        "name": "La maison du biscuit",
+        "file": "maison_du_biscuit",
+        "weight": 2,
+        "category": "Avitaillement"
+    },
+    {
+        "name": "MecaNautic",
+        "file": "mecanautic",
+        "weight": 1,
+        "category": "Nautisme"
+    },
+    {
+        "name": "Peche and Co",
+        "file": "peche_and_co",
+        "weight": 2,
+        "category": "Nautisme"
+    },
+    {
+        "name": "Garage Leroutier",
+        "file": "peugeot_leroutier",
+        "weight": 1,
+        "category": "Garage - Taxi"
+    },
+    {
+        "name": "Voile et Vent de Sciotot",
+        "file": "sciotot",
+        "weight": 2,
+        "category": "Associations"
+    },
+    {
+        "name": "SNSM",
+        "file": "snsm",
+        "weight": 4,
+        "category": "Nautisme"
+    },
+    {
+        "name": "Taxi Durel",
+        "file": "taxi_durel",
+        "weight": 2,
+        "category": "Garage - Taxi"
+    },
+    {
+        "name": "Taxi Thomine",
+        "file": "taxi_thomine",
+        "weight": 2,
+        "category": "Garage - Taxi"
+    },
+    {
+        "name": "Taxi Durel",
+        "file": "taxi_durel4",
+        "weight": 4,
+        "category": "Garage - Taxi"
+    },
+    {
+        "name": "Alimentation Pain Ti Pou Bar",
+        "file": "ti_pou_bar",
+        "weight": 1,
+        "category": "Avitaillement"
+    },
+    {
+        "name": "Voilerie des Isles",
+        "file": "voilerie_des_isles",
+        "weight": 1,
+        "category": "Nautisme"
+    },
+    {
+        "name": "Weldom",
+        "file": "weldom",
+        "weight": 2,
+        "category": "Bricolage"
+    }
+]

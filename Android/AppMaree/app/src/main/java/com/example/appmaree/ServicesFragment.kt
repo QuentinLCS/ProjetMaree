@@ -1,27 +1,18 @@
 package com.example.appmaree
 
 import android.annotation.SuppressLint
-import android.content.res.Resources
 import android.os.Bundle
-import android.os.Handler
-import android.text.Layout
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import android.widget.RelativeLayout
 import android.widget.TextView
-import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import java.util.*
 import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
 
 class ServicesFragment: Fragment() {
 
@@ -38,13 +29,13 @@ class ServicesFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         var popUp = PopUp.getInstance(activity)
-        var arraySponsor = ListeSponsor().listeSponsor
 
-        var arrayCategorie : TreeMap<Categorie,ArrayList<Sponsor>> = TreeMap()
-        var cat : Categorie
+        var arraySponsor = ListeSponsor(activity?.applicationContext).listeSponsor
+        var arrayCategorie : TreeMap<String,ArrayList<Sponsor>> = TreeMap()
+        var cat : String
 
         for(sponsor in arraySponsor){
-            cat=sponsor.categorie
+            cat=sponsor.category
             if(arrayCategorie.containsKey(cat)){
                 arrayCategorie[cat]?.add(sponsor)
             }else{
@@ -60,25 +51,30 @@ class ServicesFragment: Fragment() {
         for(categorie in arrayCategorie.keys){
             textView = TextView(activity)
             textView.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-            textView.text = categorie.texte
+            textView.text = categorie
             textView.textSize = resources.getDimension(R.dimen.tailleServiceCategorie)
             textView.setTextColor(ResourcesCompat.getColor(resources,R.color.colorServiceCategorie,null))
             textView.setPadding(0, paddingCategorie,0,5)
             layout?.addView(textView)
+            arrayCategorie[categorie]?.sortWith(kotlin.Comparator{ sponsor: Sponsor, sponsor1: Sponsor ->
+                sponsor.name.compareTo(sponsor1.name)
+            })
             for(sponsor in arrayCategorie[categorie]!!){
                 textView = TextView(activity)
                 textView.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-                textView.text = sponsor.nom
+                textView.text = sponsor.name
                 textView.textSize = resources.getDimension(R.dimen.tailleServiceSponsor)
                 textView.setTextColor(ResourcesCompat.getColor(resources,R.color.colorServiceSponsor,null))
                 textView.isClickable = true
                 layout?.addView(textView)
                 textView.setOnClickListener{
-                    popUp.showSponsor(sponsor.AdresseImage)
+                    activity?.resources?.getIdentifier(sponsor.file,"drawable", activity?.packageName)?.let { it1 ->
+                        popUp.showSponsor(it1)
+                    }
                 }
             }
         }
-        layout?.setPadding(0,0,0,paddingCategorie*(arrayCategorie.size+1))
+        layout?.setPadding(0,0,0,paddingCategorie*(arrayCategorie.size+1)+(125* resources.displayMetrics.density +0.5f).toInt())
 
         var bottomSheet:View=activity!!.findViewById(R.id.bottom_sheet)
         val behavior =BottomSheetBehavior.from(bottomSheet)

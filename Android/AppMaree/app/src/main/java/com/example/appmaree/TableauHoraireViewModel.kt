@@ -61,6 +61,7 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
     var listeMaree =ArrayList<Maree>()
     var latitude : String =""
     var longitude : String =""
+    var cf: CoffreFort = CoffreFort(application)
 
     /****************Fonctions pour le calculs des horaires avec le tirant d'eau****************/
 
@@ -443,10 +444,10 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
     fun getColor(value:String):Int{
         var color:Int= Color.WHITE
         when(value){
-            "PM"->color= Color.BLUE
-            "BM"->color= Color.YELLOW
-            "ouverture"->color= Color.GREEN
-            "fermeture"->color= Color.RED
+            "PM"->color= (Color.BLUE-cf.getCouleur().toInt())
+            "BM"->color= (Color.YELLOW+cf.getCouleur().toInt())
+            "ouverture"->color= (Color.GREEN+cf.getCouleur().toInt())
+            "fermeture"->color= (Color.RED+cf.getCouleur().toInt())
         }
         return color
     }
@@ -501,7 +502,7 @@ class TableauHoraireViewModel(application: Application) : AndroidViewModel(appli
            6->return "Juin"
            7->return "Juillet"
            8->return "Août"
-           9->return "Septemnre"
+           9->return "Septembre"
            10->return "Octobre"
            11->return "Novembre"
            12->return "Décembre"
