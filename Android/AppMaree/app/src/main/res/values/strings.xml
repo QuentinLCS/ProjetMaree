@@ -92,11 +92,13 @@
     </string>
 
     <!-- texte de la page urgence -->
-    <string name="urgence1">"Type d'urgence:\n\tHomme à la mer\n\tInciendie/explosion\n\tVoie d'eau\n\tAbordage\n\tNavire désemparé et à la dérive\n\tÉchouement\n\tChavirement\n\tNavire en train de sombrer\n\tAbandon du navire\n"</string>
+    <string name="titre_urgence">"Urgences</string>
+    <string name="text_numero_urgence">"Numéro d'appel : 196"</string>
+    <string name="urgence1"><b>Type d\'urgence :</b>\n\tHomme à la mer\n\tIncendie/explosion\n\tVoie d\'eau\n\tAbordage\n\tNavire désemparé et à la dérive\n\tÉchouement\n\tChavirement\n\tNavire en train de sombrer\n\tAbandon du navire\n</string>
     <string name="bouton_urgence1">"May-Day"</string>
     <string name="text_urgence1">"Mayday – Mayday – Mayday\nici le bateau [type et nom de l’embarcation];\nQui se signale [nature du sinistre];\nÀ la position [position GPS ou azimut/distance d’un point remarquable];\n[Nombre] de personnes à bord;\nIci le bateau [type et nom de l’embarcation] -\nterminé."</string>
 
-    <string name="urgence2">"Type d'urgence:\n\tAvarie de propulsion\n\tAvarie de barre\n\tHélice ou safran engagé\n\tDémâtage\n\tDemanded'avis medical\n"</string>
+    <string name="urgence2"><b>Type d\'urgence :</b>\n\tAvarie de propulsion\n\tAvarie de barre\n\tHélice ou safran engagé\n\tDémâtage\n\tDemanded\'avis medical\n</string>
     <string name="bouton_urgence2">"Pan-Pan"</string>
     <string name="text_urgence2">"Pan  Pan - Pan  Pan - Pan  Pan\nici le bateau [type et nom de l’embarcation];\nQui se signale [nature du sinistre];\nÀ la position [position GPS ou azimut/distance d’un point remarquable]; [\nNombre] de personnes à bord;\nIci le bateau [type et nom de l’embarcation] - terminé."</string>
 

@@ -6,28 +6,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-    <TextView
-        android:id="@+id/latitude"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Latitude:"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/longitude"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/servicesTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/titre_urgence"
+            android:textAlignment="center"
+            android:textColor="@color/colorTitre"
+            android:textSize="@dimen/tailleTitre"
+            />
+
+        <TextView
+            android:id="@+id/latitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Latitude:"
+            android:textColor="#000000" />
 
     <TextView
         android:id="@+id/longitude"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Longitude:"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,11 +49,23 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="?android:attr/listDivider" />
+        <TextView
+            android:id="@+id/numero_urgence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_numero_urgence"
+            android:textColor="#000000" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/urgence1"/>
+            android:text="@string/urgence1"
+            android:textAlignment="center"
+            android:textColor="#000000" />
 
         <Button
             android:id="@+id/btn_urgence1"
@@ -50,11 +73,15 @@
             android:layout_height="wrap_content"
             android:text="@string/bouton_urgence1"
             android:layout_gravity="center"/>
+
         <TextView
             android:id="@+id/textUrgence1"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:text="@string/text_urgence1"/>
+            android:layout_gravity="center"
+            android:text="@string/text_urgence1"
+            android:textAlignment="center"
+            android:textColor="#000000" />
 
         <View
             android:id="@+id/divider2"
@@ -65,7 +92,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/urgence2"/>
+            android:text="@string/urgence2"
+            android:textAlignment="center"
+            android:textColor="#000000" />
 
         <Button
             android:id="@+id/btn_urgence2"
@@ -77,9 +106,14 @@
             android:id="@+id/textUrgence2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="@string/text_urgence2"/>
+            android:text="@string/text_urgence2"
+            android:textColor="#000000"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="125dp"/>
     </LinearLayout>
 
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
