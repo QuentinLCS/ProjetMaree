@@ -32,6 +32,13 @@ struct TitleView: View {
         self.subTitleColor = nil
     }
     
+    init(title:String, subTitle:String ) {
+        self.title = title
+        self.titleColor = Color("Primaire 1")
+        self.subTitle = subTitle
+        self.subTitleColor = Color("Primaire 1")
+    }
+    
     init(title:String, titleColor:Color, subTitle:String, subTitleColor:Color) {
         self.title = title
         self.titleColor = titleColor
@@ -42,12 +49,9 @@ struct TitleView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/).edgesIgnoringSafeArea(.all)
+            .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/).edgesIgnoringSafeArea(.all)
             
             VStack {
-                Text("Association des plaisanciers")
-                .fontWeight(.bold)
-                .foregroundColor(titleColor)
                 Text(title)
                     .font(.title)
                     .fontWeight(.bold)

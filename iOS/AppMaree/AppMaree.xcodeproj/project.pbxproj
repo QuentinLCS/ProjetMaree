@@ -39,6 +39,7 @@
 		DFBF4FAB24B4C17000E2DA4B /* pubs.json in Resources */ = {isa = PBXBuildFile; fileRef = DFBF4FAA24B4C17000E2DA4B /* pubs.json */; };
 		DFBF4FAD24B4CEE800E2DA4B /* JSONContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FAC24B4CEE800E2DA4B /* JSONContent.swift */; };
 		DFBF4FAF24B611E000E2DA4B /* fish.json in Resources */ = {isa = PBXBuildFile; fileRef = DFBF4FAE24B611E000E2DA4B /* fish.json */; };
+		DFBF4FB124B7618A00E2DA4B /* Pub.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FB024B7618A00E2DA4B /* Pub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		DFBF4FAA24B4C17000E2DA4B /* pubs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = pubs.json; sourceTree = "<group>"; };
 		DFBF4FAC24B4CEE800E2DA4B /* JSONContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONContent.swift; sourceTree = "<group>"; };
 		DFBF4FAE24B611E000E2DA4B /* fish.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = fish.json; sourceTree = "<group>"; };
+		DFBF4FB024B7618A00E2DA4B /* Pub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pub.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				DFBF4FA824B2835200E2DA4B /* MainDataRow.swift */,
 				DFBF4FAA24B4C17000E2DA4B /* pubs.json */,
 				DFBF4FAE24B611E000E2DA4B /* fish.json */,
+				DFBF4FB024B7618A00E2DA4B /* Pub.swift */,
 			);
 			path = AppMaree;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFBF4FB124B7618A00E2DA4B /* Pub.swift in Sources */,
 				DFBF4FA124AEA3BC00E2DA4B /* DraggableView.swift in Sources */,
 				DFBF4F8B24ABB89700E2DA4B /* ButtonWindowView.swift in Sources */,
 				DF45A1E324A64E2E00C4C050 /* FishingView.swift in Sources */,

@@ -8,15 +8,7 @@
 
 import SwiftUI
 
-struct Pub: Codable, Hashable {
-    var name: String
-    var file: String
-    var weight: Int
-    var category: String
-}
-
 class JSONContent {
-    
     static func JSONContent(filename: String) -> [Pub] {
         let url = Bundle.main.url(forResource: filename, withExtension: "json")!
         let data = try! Data(contentsOf: url)
