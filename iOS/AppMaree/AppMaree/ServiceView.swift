@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct ServiceView: View {
+    @State private var showAd = false
+    @State private var adFile = ""
+    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     let sortedAds: [String: [Pub]]
@@ -22,6 +25,15 @@ struct ServiceView: View {
     var body: some View {
         NavigationView {
             ZStack {
+                if showAd {
+                    VStack {
+                        Image(adFile)
+                            .resizable().scaledToFit()
+                            .modifier(DraggableModifier(direction: .horizontal, showAd: $showAd))
+                        Spacer()
+                    }
+                    .zIndex(2)
+                }
                 ScrollView {
                     HStack {
                         Spacer()
@@ -31,18 +43,29 @@ struct ServiceView: View {
                         Spacer()
                     }
                     Spacer()
-                    .frame(height: 60)
+                        .frame(height: 60)
+                    
                     ForEach(0..<sortedCategory.count) { category in // create number of rows
                         VStack {
                             Text(self.sortedCategory[category])
                                 .font(.title)
+                            
+                                Spacer()
+                                    .frame(height: 10)
                             ForEach(0..<self.sortedAds[self.sortedCategory[category]]!.count) { value in
-                                Text(self.sortedAds[self.sortedCategory[category]]![value].name)
+                               
+                                Button(action: {
+                                    self.showAd = true
+                                    self.adFile = self.sortedAds[self.sortedCategory[category]]![value].file
+                                }) { Text(self.sortedAds[self.sortedCategory[category]]![value].name)
+                                }
                             }
+                            Spacer()
+                            .frame(height: 20)
                         }
-                        Spacer()
-                        .frame(height: 10)
                     }
+                    Spacer()
+                    .frame(height: 250)
                 }
                 ButtonWindowView(presentation: presentationMode)
             }

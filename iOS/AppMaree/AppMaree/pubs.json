@@ -3,7 +3,7 @@
         "name": "Association des plaisanciers Port Dielette",
         "file": "appd",
         "weight": 1,
-        "category": "Association"
+        "category": "Associations"
     },
     {
         "name": "Atelier mobile du bateau",
@@ -21,19 +21,19 @@
         "name": "Manche Iles Express",
         "file": "manche_iles_express",
         "weight": 1,
-        "category": "Permis"
+        "category": "Permis Bateau, Croisières, Transport Passagers"
     },
     {
         "name": "Club de Surf",
         "file": "cotentin_surf_club",
         "weight": 2,
-        "category": "Association"
+        "category": "Associations"
     },
     {
         "name": "Le café de la paix",
         "file": "cafe_paix",
         "weight": 1,
-        "category": "Bar"
+        "category": "Bar - Hotellerie - Restauration"
     },
     {
         "name": "Wine shop Une bouteille à la mer",
@@ -57,7 +57,7 @@
         "name": "Bar Tcheu ptit Louis",
         "file": "tcheu_ptit_louis",
         "weight": 1,
-        "category": "Bar"
+        "category": "Bar - Hotellerie - Restauration"
     },
     {
         "name": "Axe Sail",
@@ -75,13 +75,13 @@
         "name": "Traiteur La cambuse de Diélette",
         "file": "cambuse",
         "weight": 2,
-        "category": "Bar"
+        "category": "Bar - Hotellerie - Restauration"
     },
     {
         "name": "Restaurant Le Cap Marine",
         "file": "cap_marine",
         "weight": 1,
-        "category": "Bar"
+        "category": "Bar - Hotellerie - Restauration"
     },
     {
         "name": "Carteret Marine",
@@ -93,7 +93,7 @@
         "name": "Centre Nautique de Dielette",
         "file": "cn_dielette",
         "weight": 2,
-        "category": "Association"
+        "category": "Associations"
     },
     {
         "name": "Coccimarket",
@@ -117,7 +117,7 @@
         "name": "Hague Sud Plongée",
         "file": "hague_sud_plongee",
         "weight": 1,
-        "category": "Association"
+        "category": "Associations"
     },
     {
         "name": "Intermarché",
@@ -129,7 +129,7 @@
         "name": "Hotel Restaurant de la Falaise",
         "file": "la_falaise",
         "weight": 1,
-        "category": "Bar"
+        "category": "Bar - Hotellerie - Restauration"
     },
     {
         "name": "Institut et Spa le Lagon",
@@ -141,19 +141,19 @@
         "name": "Bar Hotel Le Bar du Douet",
         "file": "le_douet",
         "weight": 1,
-        "category": "Bar"
+        "category": "Bar - Hotellerie - Restauration"
     },
     {
         "name": "Restaurant Brasserie Le Vent de Mer",
         "file": "le_vent_mer",
         "weight": 1,
-        "category": "Bar"
+        "category": "Bar - Hotellerie - Restauration"
     },
     {
-        "name": "Long John Silver",
+        "name": "John Silver",
         "file": "long_john_silver",
         "weight": 1,
-        "category": "Permis"
+        "category": "Permis Bateau, Croisières, Transport Passagers"
     },
     {
         "name": "La maison du biscuit",
@@ -177,13 +177,13 @@
         "name": "Garage Leroutier",
         "file": "peugeot_leroutier",
         "weight": 1,
-        "category": "Garage"
+        "category": "Garage - Taxi"
     },
     {
         "name": "Voile et Vent de Sciotot",
         "file": "sciotot",
         "weight": 2,
-        "category": "Association"
+        "category": "Associations"
     },
     {
         "name": "SNSM",
@@ -195,19 +195,13 @@
         "name": "Taxi Durel",
         "file": "taxi_durel",
         "weight": 2,
-        "category": "Garage"
+        "category": "Garage - Taxi"
     },
     {
         "name": "Taxi Thomine",
         "file": "taxi_thomine",
         "weight": 2,
-        "category": "Garage"
-    },
-    {
-        "name": "Taxi Durel",
-        "file": "taxi_durel4",
-        "weight": 4,
-        "category": "Garage"
+        "category": "Garage - Taxi"
     },
     {
         "name": "Alimentation Pain Ti Pou Bar",
