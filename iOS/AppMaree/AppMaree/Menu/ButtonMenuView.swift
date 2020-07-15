@@ -28,6 +28,7 @@ enum Destination {
     case fishing
     case documentation
     case settings
+    case info
     // case nouvellePage
 }
 
@@ -71,6 +72,8 @@ struct ButtonMenuView: View {
                 return AnyView(DocumentationView())
             case .settings:
                 return AnyView(SettingsView())
+            case .info:
+                return AnyView(InformationView())
             // case .nouvellePage:
             //  return AnyViews(nouvellePage())
         }
@@ -83,13 +86,15 @@ struct ButtonMenuView: View {
     func Informations(for destination: Destination) -> (String, String) {
          switch destination {
              case .service:
-                 return ("Date", "clock")
+                 return ("Services", "clock")
              case .fishing:
                  return ("Pêche", "fishing")
              case .documentation:
                  return ("Manuel d'utilisation", "documentation")
              case .settings:
                  return ("Paramètres", "settings")
+            case .info:
+                return ("À propos", "info")
              // case .nouvellePage:
              //  return ("nouvellePage", "imagePage")
         }

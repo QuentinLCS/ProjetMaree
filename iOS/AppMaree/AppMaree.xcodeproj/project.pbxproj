@@ -40,6 +40,7 @@
 		DFBF4FAD24B4CEE800E2DA4B /* JSONContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FAC24B4CEE800E2DA4B /* JSONContent.swift */; };
 		DFBF4FAF24B611E000E2DA4B /* fish.json in Resources */ = {isa = PBXBuildFile; fileRef = DFBF4FAE24B611E000E2DA4B /* fish.json */; };
 		DFBF4FB124B7618A00E2DA4B /* Pub.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FB024B7618A00E2DA4B /* Pub.swift */; };
+		DFBF4FB324BEC0D500E2DA4B /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FB224BEC0D500E2DA4B /* InformationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		DFBF4FAC24B4CEE800E2DA4B /* JSONContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONContent.swift; sourceTree = "<group>"; };
 		DFBF4FAE24B611E000E2DA4B /* fish.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = fish.json; sourceTree = "<group>"; };
 		DFBF4FB024B7618A00E2DA4B /* Pub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pub.swift; sourceTree = "<group>"; };
+		DFBF4FB224BEC0D500E2DA4B /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				DFBF4FAA24B4C17000E2DA4B /* pubs.json */,
 				DFBF4FAE24B611E000E2DA4B /* fish.json */,
 				DFBF4FB024B7618A00E2DA4B /* Pub.swift */,
+				DFBF4FB224BEC0D500E2DA4B /* InformationView.swift */,
 			);
 			path = AppMaree;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				DF02A79F24A527DC009582BC /* ButtonMenuView.swift in Sources */,
 				DF45A1E724A64EB500C4C050 /* DocumentationView.swift in Sources */,
 				DF45A1EC24A64FB100C4C050 /* SliderView.swift in Sources */,
+				DFBF4FB324BEC0D500E2DA4B /* InformationView.swift in Sources */,
 				DF45A1EE24A64FDE00C4C050 /* TitleView.swift in Sources */,
 				DF02223A24A919E4009A7747 /* Animal.swift in Sources */,
 			);

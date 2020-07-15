@@ -35,6 +35,8 @@ struct MenuView: View {
                             Spacer()
                             ButtonMenuView(destination: .fishing)
                             Spacer()
+                            ButtonMenuView(destination: .info)
+                            Spacer()
                             // ButtonMenuView(destination: .nouvellePage)
                         }
                         HStack {
