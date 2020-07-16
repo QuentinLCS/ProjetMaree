@@ -33,6 +33,7 @@ struct InformationView: View {
                     
                     
                 }
+                
                 ButtonWindowView(isBack: true, presentation: presentationMode)
             }
         }

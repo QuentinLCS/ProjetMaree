@@ -12,19 +12,20 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Binding var waterParameter: String
     
     var body: some View {
         NavigationView {
             VStack {
                 TitleView(title: "PARAMÈTRES")
-                ZStack {
-                    Text("...")
-                }
+                TextField("Votre tirant d'eau : (à partir de 1.6)", text: $waterParameter)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .foregroundColor(Color("Primaire 1"))
                 SliderView()
                 SliderView()
                 SliderView()
                 ButtonWindowView(presentation: presentationMode)
-            }
+            }.padding(.horizontal)
         }
         .navigationBarHidden(true)
         .navigationBarTitle("titre")
@@ -34,6 +35,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView(waterParameter: "5")
     }
 }

@@ -17,6 +17,7 @@ struct TitleView: View {
     private let titleColor:Color
     private let subTitle:String?
     private let subTitleColor:Color?
+    private let backgroundColor:Color
     
     /*
     * Afficher un titre.
@@ -25,31 +26,34 @@ struct TitleView: View {
     * - title (permet de modifier le texte affiché)
     * - titleColor (permet de modifier la couleur du texte)
     */
-    init(title:String = "PORT-DIELETTE", titleColor:Color = Color("Primaire 1")) {
+    init(title:String = "PORT-DIELETTE", titleColor:Color = Color("Primaire 1"), backgroundColor:Color = .white) {
         self.title = title
         self.titleColor = titleColor
         self.subTitle = nil
         self.subTitleColor = nil
+        self.backgroundColor = backgroundColor
     }
     
-    init(title:String, subTitle:String ) {
+    init(title:String, subTitle:String, backgroundColor:Color = .white ) {
         self.title = title
         self.titleColor = Color("Primaire 1")
         self.subTitle = subTitle
         self.subTitleColor = Color("Primaire 1")
+        self.backgroundColor = backgroundColor
     }
     
-    init(title:String, titleColor:Color, subTitle:String, subTitleColor:Color) {
+    init(title:String, titleColor:Color, subTitle:String, subTitleColor:Color, backgroundColor:Color = .white) {
         self.title = title
         self.titleColor = titleColor
         self.subTitle = subTitle
         self.subTitleColor = subTitleColor
+        self.backgroundColor = backgroundColor
     }
     
     var body: some View {
         ZStack {
             Rectangle()
-            .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/).edgesIgnoringSafeArea(.all)
+            .foregroundColor(backgroundColor).edgesIgnoringSafeArea(.all)
             
             VStack {
                 Text(title)
@@ -58,10 +62,11 @@ struct TitleView: View {
                     .foregroundColor(titleColor)
                 if subTitle != nil {
                     Text(String(subTitle!))
-                        .font(.title)
+                        .font(.headline)
                         .fontWeight(.bold)
                         .foregroundColor(subTitleColor)
                 }
+                Spacer()
             }
         }.frame(height: 50.0)
         

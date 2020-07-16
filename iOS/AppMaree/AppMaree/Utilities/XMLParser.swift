@@ -14,6 +14,7 @@ struct Day: Identifiable {
     var date: String = ""
     var portes: [Porte] = []
     var marees: [Maree] = []
+    var dateString: String = ""
 }
 
 struct Porte {
@@ -110,7 +111,7 @@ extension MareeParser: XMLParserDelegate {
         } else if elementName == "date" {
 
             currentDay.date = currentValue!
-
+            currentDay.dateString = dateString(date: currentDay.date)
             currentValue = nil
 
         }
@@ -126,6 +127,14 @@ extension MareeParser: XMLParserDelegate {
         self.currentDay = nil
         self.results = []
 
+    }
+    
+    func dateString(date: String) -> String {
+        let months: [String] = ["JAN", "FEV", "MAR", "AVR", "MAI", "JUN", "JUI", "AOU", "SEP", "OCT", "NOV", "DEC"]
+        let dateSplit: [String.SubSequence] = date.split(separator: "/")
+        let day: String = String(dateSplit[0])
+        let month: String = months[(Int(dateSplit[1]) ?? 0) - 1]
+        return day + "\n" + month        
     }
 
 }

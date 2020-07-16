@@ -36,14 +36,12 @@ struct ServiceView: View {
                 }
                 ScrollView {
                     HStack {
-                        Spacer()
-                        Text("L'association des plaisanciers de Port Dielette vous présente la liste de ses partenaires pour l'édition de l'annuaire des marées.")
-                            .font(.title)
-                            .fontWeight(.semibold)
-                        Spacer()
+                        TitleView(title: "PORT-DIELETTE", subTitle: "Liste des partenaires")
                     }
-                    Spacer()
-                        .frame(height: 60)
+                    Text("L'association des plaisanciers de Port Dielette vous présente la liste de ses partenaires pour l'édition de l'annuaire des marées.")
+                        .fontWeight(.semibold)
+                        .multilineTextAlignment(.center)
+                        .padding()
                     
                     ForEach(0..<sortedCategory.count) { category in // create number of rows
                         VStack {

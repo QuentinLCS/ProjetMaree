@@ -17,13 +17,30 @@ struct MainView: View {
     
     // Variable dynamique entre les vues permettant d'afficher ou non la pub.
     @State private var showAd = false
-    
+    @State var waterParameter: String = ""
+
     let ads = getAdsWithWeight()
     let days = getDays()
+    let opacities:[Double] = [1.0, 0.6]
     
     var body: some View {
         NavigationView {
             ZStack {
+                LinearGradient(gradient: Gradient(colors: [Color("Primaire 1"),Color("Primaire 2"), Color("Primaire 3")]), startPoint: /*@START_MENU_TOKEN@*/.top/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.bottom/*@END_MENU_TOKEN@*/)
+                
+                // LISTE DES JOURS
+                ScrollView {
+                    VStack {
+                        ForEach(0..<self.days.count) { number in
+                        
+                            MainDataRow(day: self.days[number])
+                                .background(Color.white.opacity(self.opacities[number % 2]))
+                        }
+                    }
+                    TitleView(title: "FIN", titleColor: Color.white, backgroundColor: .clear)
+                        .padding(.bottom, 200.0)
+                }
+                
                 // AFFICHAGE DE LA PUBLICITE
                 if showAd {
                     VStack {
@@ -33,10 +50,6 @@ struct MainView: View {
                             .modifier(DraggableModifier(direction: .horizontal, showAd: $showAd))
                         Spacer()
                     }
-                }
-                //list placeholder
-                List(days) { day in
-                    MainDataRow(day: day)
                 }
                 
                 ButtonWindowView(isBack: false, home: true)

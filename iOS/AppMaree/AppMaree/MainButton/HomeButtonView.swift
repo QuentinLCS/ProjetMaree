@@ -42,7 +42,7 @@ struct HomeButtonView: View {
                 Button(action: {
                     self.presentation?.wrappedValue.dismiss()
                 }) {
-                    ButtonMainView(colored: false)
+                    ButtonMainView(colored: colored)
                 }
             }
         }
