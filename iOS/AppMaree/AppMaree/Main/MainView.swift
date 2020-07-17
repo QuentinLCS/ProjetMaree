@@ -52,7 +52,7 @@ struct MainView: View {
                         .padding(.bottom, 200.0)
                 }
                 
-                // AFFICHAGE DE LA PUBLICITE
+                // AFFICHAGE DE LA PUBLICITE test
                 if showAd {
                     VStack {
                         Image(randomAd())
