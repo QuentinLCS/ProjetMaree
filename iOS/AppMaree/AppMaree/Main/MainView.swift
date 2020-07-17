@@ -17,11 +17,22 @@ struct MainView: View {
     
     // Variable dynamique entre les vues permettant d'afficher ou non la pub.
     @State private var showAd = false
-    @State var waterParameter: String = ""
 
+    @ObservedObject var settingsVM = SettingsViewModel()
+    
     let ads = getAdsWithWeight()
-    let days = getDays()
+    var days: [Day] = []
     let opacities:[Double] = [1.0, 0.6]
+
+    init() {
+        if settingsVM.exists(key: "days") {
+            let dataRetriver = MareeParser()
+            dataRetriver.getData()
+            settingsVM.days = dataRetriver.results
+        }
+        
+        self.days = self.$settingsVM.days.wrappedValue
+    }
     
     var body: some View {
         NavigationView {
@@ -74,14 +85,6 @@ struct MainView: View {
     func randomAd() -> String {
         return ads[Int.random(in: 0..<ads.count)].file
     }
-}
-
-
-// Retrieve all days to show them in the scrollview
-func getDays() -> [Day] {
-    let dataRetriver = MareeParser()
-    dataRetriver.getData()
-    return dataRetriver.results
 }
 
 struct MainView_Previews: PreviewProvider {

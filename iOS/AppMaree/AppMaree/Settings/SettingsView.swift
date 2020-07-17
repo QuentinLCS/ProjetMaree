@@ -12,15 +12,14 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @Binding var waterParameter: String
     
     var body: some View {
         NavigationView {
             VStack {
                 TitleView(title: "PARAMÈTRES")
-                TextField("Votre tirant d'eau : (à partir de 1.6)", text: $waterParameter)
+                /*TextField("Votre tirant d'eau : (à partir de 1.6)", text: $waterParameter)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .foregroundColor(Color("Primaire 1"))
+                    .foregroundColor(Color("Primaire 1"))*/
                 SliderView()
                 SliderView()
                 SliderView()
@@ -32,11 +31,3 @@ struct SettingsView: View {
         .edgesIgnoringSafeArea(.all)
     }
 }
-
-/*
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView(waterParameter: "5")
-    }
-}
-*/
