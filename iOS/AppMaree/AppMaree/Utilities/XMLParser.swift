@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct Day: Identifiable {
+struct Day: Codable, Identifiable {
     var id = UUID()
     var name: String = ""
     var date: String = ""
@@ -17,12 +17,12 @@ struct Day: Identifiable {
     var dateString: String = ""
 }
 
-struct Porte {
+struct Porte: Codable {
     var etat: String
     var heure: String
 }
 
-struct Maree {
+struct Maree: Codable {
     var etat: String
     var heure: String
     var hauteur: String
@@ -137,5 +137,7 @@ extension MareeParser: XMLParserDelegate {
         return day + "\n" + month        
     }
 
+    
+    
 }
 

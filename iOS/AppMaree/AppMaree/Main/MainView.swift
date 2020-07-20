@@ -17,7 +17,7 @@ struct MainView: View {
     
     // Variable dynamique entre les vues permettant d'afficher ou non la pub.
     @State private var showAd = false
-
+    
     @ObservedObject var settingsVM = SettingsViewModel()
     
     let ads = getAdsWithWeight()
@@ -25,13 +25,19 @@ struct MainView: View {
     let opacities:[Double] = [1.0, 0.6]
 
     init() {
-        if settingsVM.exists(key: "days") {
+        
+        UITableView.appearance().separatorStyle = .none
+        UITableViewCell.appearance().backgroundColor = .clear
+        UITableView.appearance().backgroundColor = .clear
+        
+        if !SettingsViewModel.exists(key: SettingsViewModel.daysKey) {
             let dataRetriver = MareeParser()
             dataRetriver.getData()
             settingsVM.days = dataRetriver.results
         }
         
-        self.days = self.$settingsVM.days.wrappedValue
+        self.days = settingsVM.days!
+    
     }
     
     var body: some View {
@@ -40,15 +46,13 @@ struct MainView: View {
                 LinearGradient(gradient: Gradient(colors: [Color("Primaire 1"),Color("Primaire 2"), Color("Primaire 3")]), startPoint: /*@START_MENU_TOKEN@*/.top/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.bottom/*@END_MENU_TOKEN@*/)
                 
                 // LISTE DES JOURS
-                ScrollView {
-                    VStack {
-                        ForEach(0..<self.days.count) { number in
-                        
-                            MainDataRow(day: self.days[number])
-                                .background(Color.white.opacity(self.opacities[number % 2]))
-                        }
-                    }
-                    TitleView(title: "FIN", titleColor: Color.white, backgroundColor: .clear)
+                List {
+                    ForEach(0..<self.days.count) { number in
+                    
+                        MainDataRow(day: self.days[number])
+                            .background(Color.white.opacity(self.opacities[number % 2]))
+                    }.listRowInsets(EdgeInsets())
+                    TitleView(title: "...", titleColor: .black ,backgroundColor: .clear)
                         .padding(.bottom, 200.0)
                 }
                 
@@ -65,6 +69,7 @@ struct MainView: View {
                 
                 ButtonWindowView(isBack: false, home: true)
             }
+            
         }.onAppear (perform: delay)
         .navigationBarHidden(true)
         .navigationBarTitle("Limites")

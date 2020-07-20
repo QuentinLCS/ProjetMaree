@@ -26,9 +26,11 @@
 		DF45A1E524A64E7F00C4C050 /* data.xml in Resources */ = {isa = PBXBuildFile; fileRef = DF45A1E424A64E7F00C4C050 /* data.xml */; };
 		DF45A1E724A64EB500C4C050 /* DocumentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1E624A64EB500C4C050 /* DocumentationView.swift */; };
 		DF45A1E924A64EF400C4C050 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1E824A64EF400C4C050 /* LaunchView.swift */; };
-		DF45A1EC24A64FB100C4C050 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1EB24A64FB100C4C050 /* SliderView.swift */; };
 		DF45A1EE24A64FDE00C4C050 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1ED24A64FDE00C4C050 /* TitleView.swift */; };
-		DF8094B724C1C7150050CB6B /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8094B624C1C7150050CB6B /* SettingsViewModel.swift */; };
+		DF579A2524C4AEC8005AF947 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF579A2424C4AEC8005AF947 /* SettingsViewModel.swift */; };
+		DF579A2D24C50DE4005AF947 /* WaterSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF579A2C24C50DE4005AF947 /* WaterSettings.swift */; };
+		DF8094B924C201D60050CB6B /* Fish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DF8094B824C201D60050CB6B /* Fish.bundle */; };
+		DF8094BB24C201DA0050CB6B /* Shellfish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DF8094BA24C201DA0050CB6B /* Shellfish.bundle */; };
 		DFBF4F8724AB658300E2DA4B /* StyledText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4F8624AB658300E2DA4B /* StyledText.swift */; };
 		DFBF4F8B24ABB89700E2DA4B /* ButtonWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4F8A24ABB89700E2DA4B /* ButtonWindowView.swift */; };
 		DFBF4F9B24AE371600E2DA4B /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4F9A24AE371600E2DA4B /* XMLParser.swift */; };
@@ -64,9 +66,11 @@
 		DF45A1E424A64E7F00C4C050 /* data.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = data.xml; sourceTree = "<group>"; };
 		DF45A1E624A64EB500C4C050 /* DocumentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentationView.swift; sourceTree = "<group>"; };
 		DF45A1E824A64EF400C4C050 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
-		DF45A1EB24A64FB100C4C050 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		DF45A1ED24A64FDE00C4C050 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
-		DF8094B624C1C7150050CB6B /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		DF579A2424C4AEC8005AF947 /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		DF579A2C24C50DE4005AF947 /* WaterSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterSettings.swift; sourceTree = "<group>"; };
+		DF8094B824C201D60050CB6B /* Fish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Fish.bundle; sourceTree = "<group>"; };
+		DF8094BA24C201DA0050CB6B /* Shellfish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Shellfish.bundle; path = ../../../../../../../../Applications/Shellfish.bundle; sourceTree = "<group>"; };
 		DFBF4F8624AB658300E2DA4B /* StyledText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledText.swift; sourceTree = "<group>"; };
 		DFBF4F8A24ABB89700E2DA4B /* ButtonWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWindowView.swift; sourceTree = "<group>"; };
 		DFBF4F9A24AE371600E2DA4B /* XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 		DF02223424A90537009A7747 /* Fishing */ = {
 			isa = PBXGroup;
 			children = (
+				DF8094BA24C201DA0050CB6B /* Shellfish.bundle */,
+				DF8094B824C201D60050CB6B /* Fish.bundle */,
 				DF45A1E224A64E2E00C4C050 /* FishingView.swift */,
 				DF02223524A90551009A7747 /* ButtonFishDetailsView.swift */,
 				DF02223924A919E4009A7747 /* Animal.swift */,
@@ -125,10 +131,10 @@
 				DF45A1CB24A6134B00C4C050 /* MainButton */,
 				DF02A7A224A544F8009582BC /* Menu */,
 				DF02223424A90537009A7747 /* Fishing */,
-				DF44C0F424A8E1F2001D6BDD /* ServiceView.swift */,
-				DF45A1E624A64EB500C4C050 /* DocumentationView.swift */,
 				DF8094B524C1C6D50050CB6B /* Settings */,
 				DFBF4FB224BEC0D500E2DA4B /* InformationView.swift */,
+				DF45A1E624A64EB500C4C050 /* DocumentationView.swift */,
+				DF44C0F424A8E1F2001D6BDD /* ServiceView.swift */,
 				DF44C0F624A8EB25001D6BDD /* Utilities */,
 				DF02A79224A360C5009582BC /* Preview Content */,
 				DF45A1EA24A64F0C00C4C050 /* Other */,
@@ -162,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				DFBF4FA624B23B5300E2DA4B /* BundleHandlerswift.swift */,
-				DF45A1EB24A64FB100C4C050 /* SliderView.swift */,
 				DF45A1ED24A64FDE00C4C050 /* TitleView.swift */,
 				DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */,
 				DFBF4F8624AB658300E2DA4B /* StyledText.swift */,
@@ -197,7 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				DF02A7A324A54723009582BC /* SettingsView.swift */,
-				DF8094B624C1C7150050CB6B /* SettingsViewModel.swift */,
+				DF579A2424C4AEC8005AF947 /* SettingsViewModel.swift */,
+				DF579A2C24C50DE4005AF947 /* WaterSettings.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -272,8 +278,10 @@
 			files = (
 				DFBF4FAB24B4C17000E2DA4B /* pubs.json in Resources */,
 				DFBF4FAF24B611E000E2DA4B /* fish.json in Resources */,
+				DF8094BB24C201DA0050CB6B /* Shellfish.bundle in Resources */,
 				DF02A79724A360C5009582BC /* LaunchScreen.storyboard in Resources */,
 				DF45A1E524A64E7F00C4C050 /* data.xml in Resources */,
+				DF8094B924C201D60050CB6B /* Fish.bundle in Resources */,
 				DF02A79424A360C5009582BC /* Preview Assets.xcassets in Resources */,
 				DF02A79124A360C5009582BC /* Assets.xcassets in Resources */,
 			);
@@ -308,11 +316,11 @@
 				DF45A1CF24A6139600C4C050 /* HomeButtonView.swift in Sources */,
 				DF02A79F24A527DC009582BC /* ButtonMenuView.swift in Sources */,
 				DF45A1E724A64EB500C4C050 /* DocumentationView.swift in Sources */,
-				DF45A1EC24A64FB100C4C050 /* SliderView.swift in Sources */,
 				DFBF4FB324BEC0D500E2DA4B /* InformationView.swift in Sources */,
 				DF45A1EE24A64FDE00C4C050 /* TitleView.swift in Sources */,
+				DF579A2D24C50DE4005AF947 /* WaterSettings.swift in Sources */,
 				DF02223A24A919E4009A7747 /* Animal.swift in Sources */,
-				DF8094B724C1C7150050CB6B /* SettingsViewModel.swift in Sources */,
+				DF579A2524C4AEC8005AF947 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

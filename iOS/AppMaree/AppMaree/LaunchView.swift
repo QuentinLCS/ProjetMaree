@@ -13,6 +13,9 @@
 import SwiftUI
 
 struct LaunchView: View {
+    
+    @ObservedObject var settingsVM = SettingsViewModel()
+    
     var body: some View {
         NavigationView {
             ZStack {

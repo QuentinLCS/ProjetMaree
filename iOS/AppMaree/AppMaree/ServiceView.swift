@@ -97,7 +97,6 @@ func categoryArray() -> [String] {
     }
     //Sort the category by name
     array.sort()
-    print(array[0])
     return array
 }
 
