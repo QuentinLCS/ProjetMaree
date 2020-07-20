@@ -28,7 +28,7 @@ struct MainDataRow: View {
                     Text(verbatim: self.day.marees[number].coef ?? "--")
                     
                     ZStack {
-                        self.colors[number % 2][0]
+                        self.colors[self.day.marees[number].etat == "PM" ? 1 : 0][0]
                         Text(verbatim: self.day.marees[number].heure)
                     }
                     ZStack {

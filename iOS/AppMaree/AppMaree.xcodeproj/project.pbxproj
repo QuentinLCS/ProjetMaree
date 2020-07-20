@@ -18,6 +18,7 @@
 		DF02A79F24A527DC009582BC /* ButtonMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02A79E24A527DC009582BC /* ButtonMenuView.swift */; };
 		DF02A7A124A53541009582BC /* ButtonMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02A7A024A53541009582BC /* ButtonMainView.swift */; };
 		DF02A7A424A54723009582BC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02A7A324A54723009582BC /* SettingsView.swift */; };
+		DF43C47024C5DB2100921B4D /* ConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C46F24C5DB2100921B4D /* ConditionsView.swift */; };
 		DF44C0F524A8E1F2001D6BDD /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44C0F424A8E1F2001D6BDD /* ServiceView.swift */; };
 		DF44C0F824A8FB67001D6BDD /* DiagonalBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */; };
 		DF45A1C824A60A5100C4C050 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1C724A60A5100C4C050 /* MainView.swift */; };
@@ -58,6 +59,7 @@
 		DF02A79E24A527DC009582BC /* ButtonMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMenuView.swift; sourceTree = "<group>"; };
 		DF02A7A024A53541009582BC /* ButtonMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMainView.swift; sourceTree = "<group>"; };
 		DF02A7A324A54723009582BC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		DF43C46F24C5DB2100921B4D /* ConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionsView.swift; sourceTree = "<group>"; };
 		DF44C0F424A8E1F2001D6BDD /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
 		DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagonalBackgroundView.swift; sourceTree = "<group>"; };
 		DF45A1C724A60A5100C4C050 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -126,7 +128,7 @@
 		DF02A78924A360C3009582BC /* AppMaree */ = {
 			isa = PBXGroup;
 			children = (
-				DF45A1E824A64EF400C4C050 /* LaunchView.swift */,
+				DF43C46E24C5DAF800921B4D /* Launch */,
 				DFBF4FB424C0D9AC00E2DA4B /* Main */,
 				DF45A1CB24A6134B00C4C050 /* MainButton */,
 				DF02A7A224A544F8009582BC /* Menu */,
@@ -162,6 +164,15 @@
 				DF02A79E24A527DC009582BC /* ButtonMenuView.swift */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		DF43C46E24C5DAF800921B4D /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				DF45A1E824A64EF400C4C050 /* LaunchView.swift */,
+				DF43C46F24C5DB2100921B4D /* ConditionsView.swift */,
+			);
+			path = Launch;
 			sourceTree = "<group>";
 		};
 		DF44C0F624A8EB25001D6BDD /* Utilities */ = {
@@ -314,6 +325,7 @@
 				DF02A7A124A53541009582BC /* ButtonMainView.swift in Sources */,
 				DFBF4FAD24B4CEE800E2DA4B /* JSONContent.swift in Sources */,
 				DF45A1CF24A6139600C4C050 /* HomeButtonView.swift in Sources */,
+				DF43C47024C5DB2100921B4D /* ConditionsView.swift in Sources */,
 				DF02A79F24A527DC009582BC /* ButtonMenuView.swift in Sources */,
 				DF45A1E724A64EB500C4C050 /* DocumentationView.swift in Sources */,
 				DFBF4FB324BEC0D500E2DA4B /* InformationView.swift in Sources */,

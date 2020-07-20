@@ -23,7 +23,7 @@ class SettingsViewModel: ObservableObject {
         }
     }
     
-    @Published var settings: SavedSettings = SettingsViewModel.exists(key: SettingsViewModel.settingsKey) ? try? PropertyListDecoder().decode(SavedSettings.self, from: UserDefaults.standard.value(forKey: SettingsViewModel.settingsKey) as! Data) : SavedSettings(water: "1.6", fontSize: 1.0) {
+    @Published var settings: SavedSettings = SettingsViewModel.exists(key: SettingsViewModel.settingsKey) ? try? PropertyListDecoder().decode(SavedSettings.self, from: UserDefaults.standard.value(forKey: SettingsViewModel.settingsKey) as! Data) : SavedSettings(water: "1.6", fontSize: 16) {
         
         didSet {
             let encodedData = try? PropertyListEncoder().encode(self.settings)

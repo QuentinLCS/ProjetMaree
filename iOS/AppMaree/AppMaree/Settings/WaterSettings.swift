@@ -23,7 +23,7 @@ func affecterCote(tirantEau: Double) -> Double
 {
   return (hauteurSeuilPorte + hauteurPorte) + max(tirantEau - hauteurPorte, 0)
 }
-
+/*
 func tirantEau(tirantEau: Double)
 {
     let days = settingsVM.days!
@@ -43,8 +43,8 @@ func tirantEau(tirantEau: Double)
         var newHours = NewHours()
         
         if affecterCote(tirantEau: tirantEau) > 0 {
-            newHours.ouvertureMaree1 = parametrer(maPorte: jourActuel.porte[0], tirantEau: tirantEau, jourActuel: jourActuel, jourSuivant: jourSuivant, jourPrecedent: jourPrecedent)
-            newHours.fermetureMaree1 = parametrer(maPorte: jourActuel.porte[1], tirantEau: tirantEau, jourActuel: jourActuel, jourSuivant: jourSuivant, jourPrecedent: jourPrecedent)
+            newHours.ouvertureMaree1 = parametrer(maPorte: jourActuel.portes[0], tirantEau: tirantEau, jourActuel: jourActuel, jourSuivant: jourSuivant, jourPrecedent: jourPrecedent)
+            newHours.fermetureMaree1 = parametrer(maPorte: jourActuel.portes[1], tirantEau: tirantEau, jourActuel: jourActuel, jourSuivant: jourSuivant, jourPrecedent: jourPrecedent)
             
             if newHours.ouvertureMaree1=="-----" {  newHours.fermetureMaree1="-----" }
             if newHours.fermetureMaree1=="-----" {  newHours.ouvertureMaree1="-----" }
@@ -231,6 +231,6 @@ function calculTirantEau(tirantEau, porte, mareeMin, mareeMax) // fait le calcul
     else
    retour += minute
     return retour
-}
+}*/
 
 

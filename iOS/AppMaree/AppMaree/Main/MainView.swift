@@ -70,7 +70,7 @@ struct MainView: View {
                 ButtonWindowView(isBack: false, home: true)
             }
             
-        }.onAppear (perform: delay)
+        }
         .navigationBarHidden(true)
         .navigationBarTitle("Limites")
         .edgesIgnoringSafeArea(.all)

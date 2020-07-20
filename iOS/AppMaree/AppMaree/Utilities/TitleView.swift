@@ -26,6 +26,14 @@ struct TitleView: View {
     * - title (permet de modifier le texte affiché)
     * - titleColor (permet de modifier la couleur du texte)
     */
+    init() {
+        self.title = "PORT-DIELETTE"
+        self.titleColor = Color("Primaire 1")
+        self.subTitle = "Association de plaisanciers"
+        self.subTitleColor = Color("Primaire 1")
+        self.backgroundColor = .white
+    }
+    
     init(title:String = "PORT-DIELETTE", titleColor:Color = Color("Primaire 1"), backgroundColor:Color = .white) {
         self.title = title
         self.titleColor = titleColor
