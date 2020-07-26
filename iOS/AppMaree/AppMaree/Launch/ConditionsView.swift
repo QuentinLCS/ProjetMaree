@@ -11,7 +11,7 @@ import SwiftUI
 struct ConditionsView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @ObservedObject var settingsVM = SettingsViewModel()
+    @EnvironmentObject var settingsVM : SettingsViewModel
     
     var body: some View {
     
@@ -36,7 +36,7 @@ struct ConditionsView: View {
                     // ---------------------------------- TEXTE 2 ----------------------------------
                     // Dédouanement des auteurs de l'application en cas d'erreur.
                     // -----------------------------------------------------------------------------
-                    Text("L'association et les auteurs de cette application ne peuvent être tenus responsables d'incidents ou d'accidents engendrés par la lecture des informations de cette application.")
+                    //Text("L'association et les auteurs de cette application ne peuvent être tenus responsables d'incidents ou d'accidents engendrés par la lecture des informations de cette application.")
                     .font(.system(size: 18))
                         .padding([.leading, .bottom, .trailing], 20)
                         .padding(.top, 40)
@@ -47,12 +47,12 @@ struct ConditionsView: View {
                         .font(.system(size: 18))
                     
                     Button(action: {
-                        self.$settingsVM.agreement.wrappedValue.toggle()
+                        self.$settingsVM.settings.agreement.wrappedValue.toggle()
                     }) {
-                        if self.$settingsVM.agreement.wrappedValue {
-                            Text("NON")
-                        } else {
+                        if self.$settingsVM.settings.agreement.wrappedValue {
                             Text("OUI")
+                        } else {
+                            Text("NON")
                         }
                     }
                     

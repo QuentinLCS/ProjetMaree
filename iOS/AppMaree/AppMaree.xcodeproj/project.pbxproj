@@ -18,9 +18,10 @@
 		DF02A79F24A527DC009582BC /* ButtonMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02A79E24A527DC009582BC /* ButtonMenuView.swift */; };
 		DF02A7A124A53541009582BC /* ButtonMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02A7A024A53541009582BC /* ButtonMainView.swift */; };
 		DF02A7A424A54723009582BC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02A7A324A54723009582BC /* SettingsView.swift */; };
-		DF43C47024C5DB2100921B4D /* ConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C46F24C5DB2100921B4D /* ConditionsView.swift */; };
 		DF43C47224CDD0DB00921B4D /* MainFontSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C47124CDD0DB00921B4D /* MainFontSizeView.swift */; };
 		DF43C47624CDD84000921B4D /* SettingsColorEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C47524CDD84000921B4D /* SettingsColorEditorView.swift */; };
+		DF43C47B24CDE49800921B4D /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C47A24CDE49800921B4D /* LaunchView.swift */; };
+		DF43C47E24CDE4DE00921B4D /* ConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C47D24CDE4DE00921B4D /* ConditionsView.swift */; };
 		DF44C0F524A8E1F2001D6BDD /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44C0F424A8E1F2001D6BDD /* ServiceView.swift */; };
 		DF44C0F824A8FB67001D6BDD /* DiagonalBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */; };
 		DF45A1C824A60A5100C4C050 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1C724A60A5100C4C050 /* MainView.swift */; };
@@ -28,7 +29,6 @@
 		DF45A1E324A64E2E00C4C050 /* FishingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1E224A64E2E00C4C050 /* FishingView.swift */; };
 		DF45A1E524A64E7F00C4C050 /* data.xml in Resources */ = {isa = PBXBuildFile; fileRef = DF45A1E424A64E7F00C4C050 /* data.xml */; };
 		DF45A1E724A64EB500C4C050 /* DocumentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1E624A64EB500C4C050 /* DocumentationView.swift */; };
-		DF45A1E924A64EF400C4C050 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1E824A64EF400C4C050 /* LaunchView.swift */; };
 		DF45A1EE24A64FDE00C4C050 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1ED24A64FDE00C4C050 /* TitleView.swift */; };
 		DF579A2524C4AEC8005AF947 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF579A2424C4AEC8005AF947 /* SettingsViewModel.swift */; };
 		DF579A2D24C50DE4005AF947 /* WaterSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF579A2C24C50DE4005AF947 /* WaterSettings.swift */; };
@@ -61,9 +61,10 @@
 		DF02A79E24A527DC009582BC /* ButtonMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMenuView.swift; sourceTree = "<group>"; };
 		DF02A7A024A53541009582BC /* ButtonMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMainView.swift; sourceTree = "<group>"; };
 		DF02A7A324A54723009582BC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		DF43C46F24C5DB2100921B4D /* ConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionsView.swift; sourceTree = "<group>"; };
 		DF43C47124CDD0DB00921B4D /* MainFontSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFontSizeView.swift; sourceTree = "<group>"; };
 		DF43C47524CDD84000921B4D /* SettingsColorEditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsColorEditorView.swift; sourceTree = "<group>"; };
+		DF43C47A24CDE49800921B4D /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		DF43C47D24CDE4DE00921B4D /* ConditionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionsView.swift; sourceTree = "<group>"; };
 		DF44C0F424A8E1F2001D6BDD /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
 		DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagonalBackgroundView.swift; sourceTree = "<group>"; };
 		DF45A1C724A60A5100C4C050 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -71,7 +72,6 @@
 		DF45A1E224A64E2E00C4C050 /* FishingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishingView.swift; sourceTree = "<group>"; };
 		DF45A1E424A64E7F00C4C050 /* data.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = data.xml; sourceTree = "<group>"; };
 		DF45A1E624A64EB500C4C050 /* DocumentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentationView.swift; sourceTree = "<group>"; };
-		DF45A1E824A64EF400C4C050 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		DF45A1ED24A64FDE00C4C050 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		DF579A2424C4AEC8005AF947 /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		DF579A2C24C50DE4005AF947 /* WaterSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterSettings.swift; sourceTree = "<group>"; };
@@ -173,8 +173,8 @@
 		DF43C46E24C5DAF800921B4D /* Launch */ = {
 			isa = PBXGroup;
 			children = (
-				DF45A1E824A64EF400C4C050 /* LaunchView.swift */,
-				DF43C46F24C5DB2100921B4D /* ConditionsView.swift */,
+				DF43C47A24CDE49800921B4D /* LaunchView.swift */,
+				DF43C47D24CDE4DE00921B4D /* ConditionsView.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -317,9 +317,9 @@
 				DF45A1E324A64E2E00C4C050 /* FishingView.swift in Sources */,
 				DFBF4F8724AB658300E2DA4B /* StyledText.swift in Sources */,
 				DF44C0F524A8E1F2001D6BDD /* ServiceView.swift in Sources */,
+				DF43C47B24CDE49800921B4D /* LaunchView.swift in Sources */,
 				DFBF4F9B24AE371600E2DA4B /* XMLParser.swift in Sources */,
 				DF02A78B24A360C3009582BC /* AppDelegate.swift in Sources */,
-				DF45A1E924A64EF400C4C050 /* LaunchView.swift in Sources */,
 				DF45A1C824A60A5100C4C050 /* MainView.swift in Sources */,
 				DF02A78D24A360C3009582BC /* SceneDelegate.swift in Sources */,
 				DFBF4FA924B2835200E2DA4B /* MainDataRow.swift in Sources */,
@@ -333,11 +333,11 @@
 				DF43C47224CDD0DB00921B4D /* MainFontSizeView.swift in Sources */,
 				DFBF4FAD24B4CEE800E2DA4B /* JSONContent.swift in Sources */,
 				DF45A1CF24A6139600C4C050 /* HomeButtonView.swift in Sources */,
-				DF43C47024C5DB2100921B4D /* ConditionsView.swift in Sources */,
 				DF02A79F24A527DC009582BC /* ButtonMenuView.swift in Sources */,
 				DF45A1E724A64EB500C4C050 /* DocumentationView.swift in Sources */,
 				DFBF4FB324BEC0D500E2DA4B /* InformationView.swift in Sources */,
 				DF45A1EE24A64FDE00C4C050 /* TitleView.swift in Sources */,
+				DF43C47E24CDE4DE00921B4D /* ConditionsView.swift in Sources */,
 				DF579A2D24C50DE4005AF947 /* WaterSettings.swift in Sources */,
 				DF02223A24A919E4009A7747 /* Animal.swift in Sources */,
 				DF579A2524C4AEC8005AF947 /* SettingsViewModel.swift in Sources */,
