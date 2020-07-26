@@ -60,7 +60,7 @@ struct SettingsView: View {
         }
         .navigationBarHidden(true)
         .navigationBarTitle("titre")
-        .edgesIgnoringSafeArea(.all)
+        .edgesIgnoringSafeArea(.top)
         .environmentObject(settingsVM)
     }
 }

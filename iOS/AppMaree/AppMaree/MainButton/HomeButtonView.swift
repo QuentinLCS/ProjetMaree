@@ -36,8 +36,18 @@ struct HomeButtonView: View {
                         ButtonMainView(colored: colored)
                     }
                 } else {
-                    NavigationLink(destination: MenuView()) {
-                        ButtonMainView(home: home, colored: colored)
+                    HStack(spacing: 50) {
+                        NavigationLink(destination: MenuView()) {
+                            ButtonSecondView(image: "clock")
+                        }
+                        
+                        NavigationLink(destination: MenuView()) {
+                            ButtonMainView(home: home, colored: colored)
+                        }
+                        
+                        NavigationLink(destination: EmergencyView()) {
+                            ButtonSecondView(image: "phone")
+                        }
                     }
                 }
             } else {
@@ -47,7 +57,7 @@ struct HomeButtonView: View {
                     ButtonMainView(colored: colored)
                 }
             }
-        }
+        }.padding(.bottom, 20.0)
     }
     
     struct MenuButton_Previews: PreviewProvider {

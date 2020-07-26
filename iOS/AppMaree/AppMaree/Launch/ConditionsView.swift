@@ -19,7 +19,7 @@ struct ConditionsView: View {
             TitleView()
                 .padding(.bottom, 20)
             
-           StyledText("""
+            StyledText("""
             Les données affichées sur cette application sont issues du GUIDE IMPRIMÉ et distribué gratuitement. Elles ne sont qu'indicatives.
 
              Certaines ont été fournies par le SHOM, d'autres sont calculées. Les horaires sont en HEURE LÉGALE et ne prennent pas en compte les variations liées à la météorologie ou à des effets locaux particuliers. En aucun cas, elles ne peuvent être utilisées pour la navigation maritime.
@@ -36,10 +36,10 @@ struct ConditionsView: View {
                     // ---------------------------------- TEXTE 2 ----------------------------------
                     // Dédouanement des auteurs de l'application en cas d'erreur.
                     // -----------------------------------------------------------------------------
-                    Text("L'association et les auteurs de cette application ne peuvent être tenus responsables d'incidents ou d'accidents engendrés par la lecture des informations de cette application.")
+                    /*Text("L'association et les auteurs de cette application ne peuvent être tenus responsables d'incidents ou d'accidents engendrés par la lecture des informations de cette application.")
                         .font(.system(size: 18))
                         .padding([.leading, .bottom, .trailing], 20)
-                        .padding(.top, 40)
+                        .padding(.top, 40)*/
                     
                     Text("J'accepte les conditions d'utilisation")
                         .bold()

@@ -49,14 +49,16 @@ struct MenuView: View {
                             ButtonMenuView(destination: .info)
                             Spacer()
                         }
-                        ButtonWindowView(colored: false,isBack: true, presentation: presentationMode)
+                        Spacer()
+                        Spacer()
                     })
+                    HomeButtonView(colored: false, isBack: true, presentation: presentationMode)
                 }
             }
         }
         .navigationBarHidden(true)
         .navigationBarTitle("titre")
-        .edgesIgnoringSafeArea(.all)
+        .edgesIgnoringSafeArea(.top)
     }
 }
 

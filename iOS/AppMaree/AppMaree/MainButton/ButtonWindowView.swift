@@ -29,10 +29,8 @@ struct ButtonWindowView: View {
         VStack {
             Spacer()
             ZStack {
-                Rectangle()
-                .fill(LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0),Color.white]), startPoint: .top, endPoint: .bottom))
+                LinearGradient(gradient: Gradient(stops:  [.init(color: Color.white.opacity(0), location: 0),.init(color: Color.white, location: 0.8)]), startPoint: .top, endPoint: .bottom)
                 HomeButtonView(colored: colored, isBack: isBack, home: home, presentation: presentation).environmentObject(settingsVM)
-                    .padding(.bottom, 100.0)
                     
             }
             .frame(height: 200.0)

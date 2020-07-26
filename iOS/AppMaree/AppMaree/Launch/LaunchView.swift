@@ -35,7 +35,7 @@ struct LaunchView: View {
                     
                     // Bouton principal permettant de fermer cette page.
                     if $settingsVM.settings.agreement.wrappedValue {
-                        ButtonWindowView(isBack: false).environmentObject(settingsVM)
+                        HomeButtonView(isBack: false).environmentObject(settingsVM)
                     } else {
                         Spacer()
                         Text("Vous devez accepter les conditions d'utilisation de l'application pour l'utiliser !")
@@ -49,7 +49,7 @@ struct LaunchView: View {
         }
         .navigationBarHidden(true)
         .navigationBarTitle("Limites")
-        .edgesIgnoringSafeArea(.all)
+        .edgesIgnoringSafeArea(.top)
         .environmentObject(settingsVM)
     }
 }

@@ -71,8 +71,8 @@ struct MainView: View {
             
         }
         .navigationBarHidden(true)
-        .navigationBarTitle("Limites")
-        .edgesIgnoringSafeArea(.all)
+        .navigationBarTitle("titre")
+        .edgesIgnoringSafeArea(.top)
         .environmentObject(settingsVM)
         
     }

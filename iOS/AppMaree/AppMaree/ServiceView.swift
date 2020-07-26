@@ -23,54 +23,49 @@ struct ServiceView: View {
     }
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                if showAd {
-                    VStack {
-                        Image(adFile)
-                            .resizable().scaledToFit()
-                            .modifier(DraggableModifier(direction: .horizontal, showAd: $showAd))
-                        Spacer()
-                    }
-                    .zIndex(2)
-                }
-                ScrollView {
-                    HStack {
-                        TitleView(title: "PORT-DIELETTE", subTitle: "Liste des partenaires")
-                    }
-                    Text("L'association des plaisanciers de Port Dielette vous présente la liste de ses partenaires pour l'édition de l'annuaire des marées.")
-                        .fontWeight(.semibold)
-                        .multilineTextAlignment(.center)
-                        .padding()
-                    
-                    ForEach(0..<sortedCategory.count) { category in // create number of rows
-                        VStack {
-                            Text(self.sortedCategory[category])
-                                .font(.title)
-                            
-                                Spacer()
-                                    .frame(height: 10)
-                            ForEach(0..<self.sortedAds[self.sortedCategory[category]]!.count) { value in
-                               
-                                Button(action: {
-                                    self.showAd = true
-                                    self.adFile = self.sortedAds[self.sortedCategory[category]]![value].file
-                                }) { Text(self.sortedAds[self.sortedCategory[category]]![value].name)
-                                }
-                            }
-                            Spacer()
-                            .frame(height: 20)
-                        }
-                    }
+        ZStack {
+            if showAd {
+                VStack {
+                    Image(adFile)
+                        .resizable().scaledToFit()
+                        .modifier(DraggableModifier(direction: .horizontal, showAd: $showAd))
                     Spacer()
-                    .frame(height: 250)
                 }
-                ButtonWindowView(presentation: presentationMode)
+                .zIndex(2)
             }
+            ScrollView {
+                HStack {
+                    TitleView(title: "PORT-DIELETTE", subTitle: "Liste des partenaires")
+                }
+                Text("L'association des plaisanciers de Port Dielette vous présente la liste de ses partenaires pour l'édition de l'annuaire des marées.")
+                    .fontWeight(.semibold)
+                    .multilineTextAlignment(.center)
+                    .padding()
+                
+                ForEach(0..<sortedCategory.count) { category in // create number of rows
+                    VStack {
+                        Text(self.sortedCategory[category])
+                            .font(.title)
+                        
+                            Spacer()
+                                .frame(height: 10)
+                        ForEach(0..<self.sortedAds[self.sortedCategory[category]]!.count) { value in
+                           
+                            Button(action: {
+                                self.showAd = true
+                                self.adFile = self.sortedAds[self.sortedCategory[category]]![value].file
+                            }) { Text(self.sortedAds[self.sortedCategory[category]]![value].name)
+                            }
+                        }
+                        Spacer()
+                        .frame(height: 20)
+                    }
+                }
+                Spacer()
+                .frame(height: 250)
+            }
+            ButtonWindowView(presentation: presentationMode)
         }
-        .navigationBarHidden(true)
-        .navigationBarTitle("Service")
-        .edgesIgnoringSafeArea(.all)
     }
 }
 

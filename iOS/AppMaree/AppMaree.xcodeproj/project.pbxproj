@@ -22,6 +22,11 @@
 		DF43C47624CDD84000921B4D /* SettingsColorEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C47524CDD84000921B4D /* SettingsColorEditorView.swift */; };
 		DF43C47B24CDE49800921B4D /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C47A24CDE49800921B4D /* LaunchView.swift */; };
 		DF43C48024CDE62D00921B4D /* ConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C47F24CDE62D00921B4D /* ConditionsView.swift */; };
+		DF43C48224CE23CB00921B4D /* ButtonSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C48124CE23CB00921B4D /* ButtonSecondView.swift */; };
+		DF43C48424CE2D9C00921B4D /* EmergencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C48324CE2D9C00921B4D /* EmergencyView.swift */; };
+		DF43C48724CE2EC000921B4D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C48624CE2EC000921B4D /* LocationManager.swift */; };
+		DF43C48924CE324B00921B4D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C48824CE324B00921B4D /* MapView.swift */; };
+		DF43C48B24CE330C00921B4D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C48A24CE330C00921B4D /* Coordinator.swift */; };
 		DF44C0F524A8E1F2001D6BDD /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44C0F424A8E1F2001D6BDD /* ServiceView.swift */; };
 		DF44C0F824A8FB67001D6BDD /* DiagonalBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */; };
 		DF45A1C824A60A5100C4C050 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1C724A60A5100C4C050 /* MainView.swift */; };
@@ -65,6 +70,11 @@
 		DF43C47524CDD84000921B4D /* SettingsColorEditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsColorEditorView.swift; sourceTree = "<group>"; };
 		DF43C47A24CDE49800921B4D /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		DF43C47F24CDE62D00921B4D /* ConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionsView.swift; sourceTree = "<group>"; };
+		DF43C48124CE23CB00921B4D /* ButtonSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSecondView.swift; sourceTree = "<group>"; };
+		DF43C48324CE2D9C00921B4D /* EmergencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyView.swift; sourceTree = "<group>"; };
+		DF43C48624CE2EC000921B4D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		DF43C48824CE324B00921B4D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		DF43C48A24CE330C00921B4D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		DF44C0F424A8E1F2001D6BDD /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
 		DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagonalBackgroundView.swift; sourceTree = "<group>"; };
 		DF45A1C724A60A5100C4C050 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -135,6 +145,7 @@
 				DF43C46E24C5DAF800921B4D /* Launch */,
 				DFBF4FB424C0D9AC00E2DA4B /* Main */,
 				DF45A1CB24A6134B00C4C050 /* MainButton */,
+				DF43C48524CE2EA500921B4D /* Emergency */,
 				DF02A7A224A544F8009582BC /* Menu */,
 				DF02223424A90537009A7747 /* Fishing */,
 				DF8094B524C1C6D50050CB6B /* Settings */,
@@ -145,10 +156,10 @@
 				DF02A79224A360C5009582BC /* Preview Content */,
 				DF45A1EA24A64F0C00C4C050 /* Other */,
 				DF02A79024A360C5009582BC /* Assets.xcassets */,
-				DF02A79824A360C5009582BC /* Info.plist */,
 				DF45A1E424A64E7F00C4C050 /* data.xml */,
 				DFBF4FAA24B4C17000E2DA4B /* pubs.json */,
 				DFBF4FAE24B611E000E2DA4B /* fish.json */,
+				DF02A79824A360C5009582BC /* Info.plist */,
 			);
 			path = AppMaree;
 			sourceTree = "<group>";
@@ -179,6 +190,25 @@
 			path = Launch;
 			sourceTree = "<group>";
 		};
+		DF43C48524CE2EA500921B4D /* Emergency */ = {
+			isa = PBXGroup;
+			children = (
+				DF43C48324CE2D9C00921B4D /* EmergencyView.swift */,
+				DF43C48624CE2EC000921B4D /* LocationManager.swift */,
+				DF43C48C24CE335F00921B4D /* Map */,
+			);
+			path = Emergency;
+			sourceTree = "<group>";
+		};
+		DF43C48C24CE335F00921B4D /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				DF43C48824CE324B00921B4D /* MapView.swift */,
+				DF43C48A24CE330C00921B4D /* Coordinator.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		DF44C0F624A8EB25001D6BDD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				DF02A7A024A53541009582BC /* ButtonMainView.swift */,
+				DF43C48124CE23CB00921B4D /* ButtonSecondView.swift */,
 				DF45A1CE24A6139600C4C050 /* HomeButtonView.swift */,
 				DFBF4F8A24ABB89700E2DA4B /* ButtonWindowView.swift */,
 			);
@@ -319,11 +350,14 @@
 				DF44C0F524A8E1F2001D6BDD /* ServiceView.swift in Sources */,
 				DF43C47B24CDE49800921B4D /* LaunchView.swift in Sources */,
 				DFBF4F9B24AE371600E2DA4B /* XMLParser.swift in Sources */,
+				DF43C48424CE2D9C00921B4D /* EmergencyView.swift in Sources */,
+				DF43C48924CE324B00921B4D /* MapView.swift in Sources */,
 				DF02A78B24A360C3009582BC /* AppDelegate.swift in Sources */,
 				DF45A1C824A60A5100C4C050 /* MainView.swift in Sources */,
 				DF02A78D24A360C3009582BC /* SceneDelegate.swift in Sources */,
 				DFBF4FA924B2835200E2DA4B /* MainDataRow.swift in Sources */,
 				DFBF4FA724B23B5300E2DA4B /* BundleHandlerswift.swift in Sources */,
+				DF43C48724CE2EC000921B4D /* LocationManager.swift in Sources */,
 				DF44C0F824A8FB67001D6BDD /* DiagonalBackgroundView.swift in Sources */,
 				DF02A78F24A360C3009582BC /* MenuView.swift in Sources */,
 				DF43C47624CDD84000921B4D /* SettingsColorEditorView.swift in Sources */,
@@ -333,7 +367,9 @@
 				DF43C47224CDD0DB00921B4D /* MainFontSizeView.swift in Sources */,
 				DFBF4FAD24B4CEE800E2DA4B /* JSONContent.swift in Sources */,
 				DF45A1CF24A6139600C4C050 /* HomeButtonView.swift in Sources */,
+				DF43C48224CE23CB00921B4D /* ButtonSecondView.swift in Sources */,
 				DF02A79F24A527DC009582BC /* ButtonMenuView.swift in Sources */,
+				DF43C48B24CE330C00921B4D /* Coordinator.swift in Sources */,
 				DF45A1E724A64EB500C4C050 /* DocumentationView.swift in Sources */,
 				DFBF4FB324BEC0D500E2DA4B /* InformationView.swift in Sources */,
 				DF45A1EE24A64FDE00C4C050 /* TitleView.swift in Sources */,
