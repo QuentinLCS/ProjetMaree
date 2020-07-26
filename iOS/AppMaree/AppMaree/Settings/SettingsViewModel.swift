@@ -15,7 +15,7 @@ class SettingsViewModel: ObservableObject {
     
     let defaults = UserDefaults.standard
     
-    @Published var settings: SavedSettings = SettingsViewModel.exists(key: SettingsViewModel.settingsKey) ? try? PropertyListDecoder().decode(SavedSettings.self, from: UserDefaults.standard.value(forKey: SettingsViewModel.settingsKey) as! Data) : SavedSettings(agreement: false, water: "1.6", fontSize: 16, colors: [CustomColor(red: 0, green: 0, blue: 0), CustomColor(red: 0, green: 0, blue: 0), CustomColor(red: 0, green: 0, blue: 0), CustomColor(red: 0, green: 0, blue: 0)]) {
+    @Published var settings: SavedSettings = SettingsViewModel.exists(key: SettingsViewModel.settingsKey) ? try? PropertyListDecoder().decode(SavedSettings.self, from: UserDefaults.standard.value(forKey: SettingsViewModel.settingsKey) as! Data) : SavedSettings(agreement: false, water: "1.6", fontSize: 16, colors: [CustomColor(red: 255, green: 245, blue: 0), CustomColor(red: 88, green: 175, blue: 255), CustomColor(red: 66, green: 255, blue: 97), CustomColor(red: 255, green: 115, blue: 115)]) {
         didSet {
             let encodedData = try? PropertyListEncoder().encode(self.settings)
             defaults.set(encodedData, forKey: SettingsViewModel.settingsKey)

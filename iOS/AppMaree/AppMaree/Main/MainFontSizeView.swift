@@ -39,7 +39,7 @@ struct MainFontSizeView: View {
             } else {
                 if isDate {
                     Text(self.data)
-                        .fontWeight(.bold)
+                        //.fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .padding(.trailing)
                 } else {

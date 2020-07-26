@@ -17,7 +17,16 @@ struct SettingsColorEditorView: View {
     var body: some View {
         VStack {
             Circle()
-                //.foregroundColor(Color(red: $settingsVM.settings.colors[colorToEdit].red.wrappedValue/255.0, green: $settingsVM.settings.colors[colorToEdit].green.wrappedValue/255.0, blue: $settingsVM.settings.colors[colorToEdit].blue.wrappedValue/255.0))
+                .foregroundColor(Color(red: $settingsVM.settings.colors[colorToEdit].red.wrappedValue, green: $settingsVM.settings.colors[colorToEdit].green.wrappedValue, blue: $settingsVM.settings.colors[colorToEdit].blue.wrappedValue))
+            
+            Text("Rouge")
+            Slider(value: $settingsVM.settings.colors[self.colorToEdit].red, in: 0...1, step: 1/255)
+            
+            Text("Vert")
+            Slider(value: $settingsVM.settings.colors[self.colorToEdit].green, in: 0...1, step: 1/255)
+            
+            Text("Bleu")
+            Slider(value: $settingsVM.settings.colors[self.colorToEdit].blue, in: 0...1, step: 1/255)
             
             ButtonWindowView(isBack: true, presentation: presentationMode)
         }

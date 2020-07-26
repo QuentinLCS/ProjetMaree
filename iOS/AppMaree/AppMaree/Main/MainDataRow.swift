@@ -13,7 +13,6 @@ struct MainDataRow: View {
     @EnvironmentObject var settingsVM : SettingsViewModel
     
     let day: Day
-    let colors:[[Color]] = [[Color.yellow, Color.green],[Color.blue, Color.red]]
     
     var body: some View {
         HStack(spacing: 0) {
@@ -26,15 +25,15 @@ struct MainDataRow: View {
                     MainFontSizeView(data: self.day.marees[number].coef ?? "--")
                         
                     ZStack {
-                        
-                        self.colors[self.day.marees[number].etat == "PM" ? 1 : 0][0]
+        
+                        Color(red: self.$settingsVM.settings.colors[mareeColor(day: self.day, number: number)].red.wrappedValue, green: self.$settingsVM.settings.colors[mareeColor(day: self.day, number: number)].green.wrappedValue, blue: self.$settingsVM.settings.colors[mareeColor(day: self.day, number: number)].blue.wrappedValue)
                         
                         MainFontSizeView(data: self.day.marees[number].heure)
                         
                     }
+                    
                     ZStack {
-                        
-                        self.colors[number % 2][1]
+                        Color(red: self.$settingsVM.settings.colors[doorColor(day: self.day, number: number)].red.wrappedValue, green: self.$settingsVM.settings.colors[doorColor(day: self.day, number: number)].green.wrappedValue, blue: self.$settingsVM.settings.colors[doorColor(day: self.day, number: number)].blue.wrappedValue)
 
                         MainFontSizeView(data: self.day.portes[number].heure)
                         
@@ -46,4 +45,12 @@ struct MainDataRow: View {
             }
         }.padding(.horizontal)
     }
+}
+
+func mareeColor(day: Day, number: Int) -> Int {
+    return day.marees[number].etat == "PM" ? 1 : 0
+}
+
+func doorColor(day: Day, number: Int) -> Int {
+    return day.portes[number].etat == "ouverture" ? 2 : 3
 }
