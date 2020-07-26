@@ -21,7 +21,7 @@
 		DF43C47224CDD0DB00921B4D /* MainFontSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C47124CDD0DB00921B4D /* MainFontSizeView.swift */; };
 		DF43C47624CDD84000921B4D /* SettingsColorEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C47524CDD84000921B4D /* SettingsColorEditorView.swift */; };
 		DF43C47B24CDE49800921B4D /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C47A24CDE49800921B4D /* LaunchView.swift */; };
-		DF43C47E24CDE4DE00921B4D /* ConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C47D24CDE4DE00921B4D /* ConditionsView.swift */; };
+		DF43C48024CDE62D00921B4D /* ConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C47F24CDE62D00921B4D /* ConditionsView.swift */; };
 		DF44C0F524A8E1F2001D6BDD /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44C0F424A8E1F2001D6BDD /* ServiceView.swift */; };
 		DF44C0F824A8FB67001D6BDD /* DiagonalBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */; };
 		DF45A1C824A60A5100C4C050 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1C724A60A5100C4C050 /* MainView.swift */; };
@@ -64,7 +64,7 @@
 		DF43C47124CDD0DB00921B4D /* MainFontSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFontSizeView.swift; sourceTree = "<group>"; };
 		DF43C47524CDD84000921B4D /* SettingsColorEditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsColorEditorView.swift; sourceTree = "<group>"; };
 		DF43C47A24CDE49800921B4D /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
-		DF43C47D24CDE4DE00921B4D /* ConditionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionsView.swift; sourceTree = "<group>"; };
+		DF43C47F24CDE62D00921B4D /* ConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionsView.swift; sourceTree = "<group>"; };
 		DF44C0F424A8E1F2001D6BDD /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
 		DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagonalBackgroundView.swift; sourceTree = "<group>"; };
 		DF45A1C724A60A5100C4C050 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				DF43C47A24CDE49800921B4D /* LaunchView.swift */,
-				DF43C47D24CDE4DE00921B4D /* ConditionsView.swift */,
+				DF43C47F24CDE62D00921B4D /* ConditionsView.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -337,7 +337,7 @@
 				DF45A1E724A64EB500C4C050 /* DocumentationView.swift in Sources */,
 				DFBF4FB324BEC0D500E2DA4B /* InformationView.swift in Sources */,
 				DF45A1EE24A64FDE00C4C050 /* TitleView.swift in Sources */,
-				DF43C47E24CDE4DE00921B4D /* ConditionsView.swift in Sources */,
+				DF43C48024CDE62D00921B4D /* ConditionsView.swift in Sources */,
 				DF579A2D24C50DE4005AF947 /* WaterSettings.swift in Sources */,
 				DF02223A24A919E4009A7747 /* Animal.swift in Sources */,
 				DF579A2524C4AEC8005AF947 /* SettingsViewModel.swift in Sources */,
