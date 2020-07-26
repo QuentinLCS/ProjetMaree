@@ -31,7 +31,7 @@ struct ButtonWindowView: View {
             ZStack {
                 Rectangle()
                 .fill(LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0),Color.white]), startPoint: .top, endPoint: .bottom))
-                HomeButtonView(colored: colored, isBack: isBack, home: home, presentation: presentation)
+                HomeButtonView(colored: colored, isBack: isBack, home: home, presentation: presentation).environmentObject(settingsVM)
                     .padding(.bottom, 100.0)
                     
             }

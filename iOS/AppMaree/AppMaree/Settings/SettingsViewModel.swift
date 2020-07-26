@@ -10,21 +10,12 @@ import Foundation
 
 class SettingsViewModel: ObservableObject {
     
-    static let agreementKey: String = "agreement"
     static let settingsKey: String = "settings"
     static let daysKey: String = "days"
     
     let defaults = UserDefaults.standard
     
-    @Published var agreement: Bool = SettingsViewModel.exists(key: SettingsViewModel.agreementKey) ? try? PropertyListDecoder().decode(Bool.self, from: UserDefaults.standard.value(forKey: SettingsViewModel.agreementKey) as! Data) : false {
-        didSet {
-            let encodedData = try? PropertyListEncoder().encode(self.agreement)
-            defaults.set(encodedData, forKey: SettingsViewModel.agreementKey)
-        }
-    }
-    
-    @Published var settings: SavedSettings = SettingsViewModel.exists(key: SettingsViewModel.settingsKey) ? try? PropertyListDecoder().decode(SavedSettings.self, from: UserDefaults.standard.value(forKey: SettingsViewModel.settingsKey) as! Data) : SavedSettings(water: "1.6", fontSize: 16) {
-        
+    @Published var settings: SavedSettings = SettingsViewModel.exists(key: SettingsViewModel.settingsKey) ? try? PropertyListDecoder().decode(SavedSettings.self, from: UserDefaults.standard.value(forKey: SettingsViewModel.settingsKey) as! Data) : SavedSettings(agreement: false, water: "1.6", fontSize: 16, colors: [CustomColor(red: 0, green: 0, blue: 0), CustomColor(red: 0, green: 0, blue: 0), CustomColor(red: 0, green: 0, blue: 0), CustomColor(red: 0, green: 0, blue: 0)]) {
         didSet {
             let encodedData = try? PropertyListEncoder().encode(self.settings)
             defaults.set(encodedData, forKey: SettingsViewModel.settingsKey)

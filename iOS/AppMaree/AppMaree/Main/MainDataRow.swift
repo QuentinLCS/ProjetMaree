@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MainDataRow: View {
     
-    @ObservedObject var settingsVM = SettingsViewModel()
+    @EnvironmentObject var settingsVM : SettingsViewModel
     
     let day: Day
     let colors:[[Color]] = [[Color.yellow, Color.green],[Color.blue, Color.red]]
@@ -18,25 +18,30 @@ struct MainDataRow: View {
     var body: some View {
         HStack(spacing: 0) {
             
-            Text(self.day.dateString)
-                .fontWeight(.bold)
-                .multilineTextAlignment(.center)
-                .padding(.trailing)
-
+            MainFontSizeView(data: self.day.dateString, isDate: true)
+            
             ForEach(0..<4) { number in
                 VStack(spacing: 0) {
-                    Text(verbatim: self.day.marees[number].coef ?? "--")
                     
-                    ZStack {
-                        self.colors[self.day.marees[number].etat == "PM" ? 1 : 0][0]
-                        Text(verbatim: self.day.marees[number].heure)
-                    }
-                    ZStack {
-                        self.colors[number % 2][1]
-                        Text(verbatim: self.day.portes[number].heure)
-                    }
+                    MainFontSizeView(data: self.day.marees[number].coef ?? "--")
                         
-                    Text(verbatim: self.day.marees[number].hauteur)
+                    ZStack {
+                        
+                        self.colors[self.day.marees[number].etat == "PM" ? 1 : 0][0]
+                        
+                        MainFontSizeView(data: self.day.marees[number].heure)
+                        
+                    }
+                    ZStack {
+                        
+                        self.colors[number % 2][1]
+
+                        MainFontSizeView(data: self.day.portes[number].heure)
+                        
+                    }
+                    
+                    MainFontSizeView(data: self.day.marees[number].hauteur)
+                   
                 }
             }
         }.padding(.horizontal)

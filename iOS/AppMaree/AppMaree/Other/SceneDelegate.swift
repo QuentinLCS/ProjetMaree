@@ -17,7 +17,7 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    let settingsVM = SettingsViewModel()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -28,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Afin de modifier la page par défaut, changez "LaunchView()" 
         // par l'appel de votre autre page. 
         // -----------------------------------------------------------
-        let contentView = LaunchView()
+        let contentView = LaunchView().environmentObject(settingsVM)
         // let contentView = NouvellePage()
 
         // Use a UIHostingController as window root view controller.

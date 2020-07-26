@@ -18,8 +18,6 @@ struct MainView: View {
     // Variable dynamique entre les vues permettant d'afficher ou non la pub.
     @State private var showAd = false
     
-    @ObservedObject var settingsVM = SettingsViewModel()
-    
     let ads = getAdsWithWeight()
     var days: [Day] = []
     let opacities:[Double] = [1.0, 0.6]
@@ -74,6 +72,7 @@ struct MainView: View {
         .navigationBarHidden(true)
         .navigationBarTitle("Limites")
         .edgesIgnoringSafeArea(.all)
+        .environmentObject(settingsVM)
         
     }
     

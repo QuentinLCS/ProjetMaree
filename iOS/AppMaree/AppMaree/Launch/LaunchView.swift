@@ -14,7 +14,7 @@ import SwiftUI
 
 struct LaunchView: View {
     
-    @ObservedObject var settingsVM = SettingsViewModel()
+    @EnvironmentObject var settingsVM : SettingsViewModel
     
     var body: some View {
         NavigationView {
@@ -33,16 +33,16 @@ struct LaunchView: View {
                         .foregroundColor(Color("Primaire 1"))
                     }
                     
-                    $settingsVM.agreement.wrappedValue ? Text("true") : Text("false")
-                    
                     // Bouton principal permettant de fermer cette page.
-                    if $settingsVM.agreement.wrappedValue {
-                        ButtonWindowView(isBack: false)
+                    if $settingsVM.settings.agreement.wrappedValue {
+                        ButtonWindowView(isBack: false).environmentObject(settingsVM)
                     } else {
+                        Spacer()
                         Text("Vous devez accepter les conditions d'utilisation de l'application pour l'utiliser !")
                             .foregroundColor(Color.red)
                             .multilineTextAlignment(.center)
                             .padding(.top)
+                        Spacer()
                     }
                 }
             }
@@ -50,6 +50,7 @@ struct LaunchView: View {
         .navigationBarHidden(true)
         .navigationBarTitle("Limites")
         .edgesIgnoringSafeArea(.all)
+        .environmentObject(settingsVM)
     }
 }
     
