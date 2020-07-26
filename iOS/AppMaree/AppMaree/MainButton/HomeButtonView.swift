@@ -13,6 +13,8 @@ import SwiftUI
 
 struct HomeButtonView: View {
     
+    @EnvironmentObject var settingsVM : SettingsViewModel
+    
     private let colored:Bool
     private let isBack:Bool
     private let home:Bool
@@ -30,7 +32,7 @@ struct HomeButtonView: View {
             Spacer()
             if !isBack {
                 if !home {
-                    NavigationLink(destination: MainView()) {
+                    NavigationLink(destination: MainView().environmentObject(settingsVM)) {
                         ButtonMainView(colored: colored)
                     }
                 } else {

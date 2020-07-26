@@ -186,6 +186,7 @@
 				DF45A1ED24A64FDE00C4C050 /* TitleView.swift */,
 				DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */,
 				DFBF4F8624AB658300E2DA4B /* StyledText.swift */,
+				DF579A2C24C50DE4005AF947 /* WaterSettings.swift */,
 				DFBF4F9A24AE371600E2DA4B /* XMLParser.swift */,
 				DFBF4FA024AEA3BC00E2DA4B /* DraggableView.swift */,
 				DFBF4FAC24B4CEE800E2DA4B /* JSONContent.swift */,
@@ -219,7 +220,6 @@
 				DF02A7A324A54723009582BC /* SettingsView.swift */,
 				DF43C47524CDD84000921B4D /* SettingsColorEditorView.swift */,
 				DF579A2424C4AEC8005AF947 /* SettingsViewModel.swift */,
-				DF579A2C24C50DE4005AF947 /* WaterSettings.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";

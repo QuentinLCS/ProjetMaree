@@ -18,12 +18,13 @@ struct MainView: View {
     // Variable dynamique entre les vues permettant d'afficher ou non la pub.
     @State private var showAd = false
     
+    
     let ads = getAdsWithWeight()
     var days: [Day] = []
     let opacities:[Double] = [1.0, 0.6]
 
     init() {
-        
+
         UITableView.appearance().separatorStyle = .none
         UITableViewCell.appearance().backgroundColor = .clear
         UITableView.appearance().backgroundColor = .clear

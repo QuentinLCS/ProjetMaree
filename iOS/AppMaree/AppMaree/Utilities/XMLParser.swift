@@ -105,6 +105,7 @@ extension MareeParser: XMLParserDelegate {
 
         if elementName == self.key {
 
+            self.currentDay.marees = sortMaree(marees: self.currentDay.marees)
             results.append(self.currentDay)
             currentDay = nil
 
@@ -128,16 +129,40 @@ extension MareeParser: XMLParserDelegate {
         self.results = []
 
     }
-    
-    func dateString(date: String) -> String {
-        let months: [String] = ["JAN", "FEV", "MAR", "AVR", "MAI", "JUN", "JUI", "AOU", "SEP", "OCT", "NOV", "DEC"]
-        let dateSplit: [String.SubSequence] = date.split(separator: "/")
-        let day: String = String(dateSplit[0])
-        let month: String = months[(Int(dateSplit[1]) ?? 0) - 1]
-        return day + "\n" + month        
-    }
+}
 
+func dateString(date: String) -> String {
+    let months: [String] = ["JAN", "FEV", "MAR", "AVR", "MAI", "JUN", "JUI", "AOU", "SEP", "OCT", "NOV", "DEC"]
+    let dateSplit: [String.SubSequence] = date.split(separator: "/")
+    let day: String = String(dateSplit[0])
+    let month: String = months[(Int(dateSplit[1]) ?? 0) - 1]
+    return day + "\n" + month
+}
+
+func sortMaree(marees: [Maree]) -> [Maree] {
+    var marees: [Maree] = marees
+    var newArray: [Maree] = []
     
+    while newArray.count < 4 {
+        var min = 0
+        for i in 0 ..< marees.count {
+            if (StringHoursComparator(hourString1: marees[i].heure, hourString2: marees[min].heure, separator: ":")) {
+                min = i
+            }
+        }
+        newArray.append(marees[min])
+        marees.remove(at: min)
+    }
     
+    return newArray
+}
+
+func StringHoursComparator(hourString1: String, hourString2: String, separator: Character) -> Bool {
+    let hour1 = hourString1.split(separator: separator)[0]
+    let hour2 = hourString2.split(separator: separator)[0]
+    
+    if hour1 == "" || hour1 == "--" || hour1 == "-------" { return false }
+    else if hour2 == "" || hour2 == "--" || hour2 == "-------" { return true }
+    else { return Int(hour1)! <= Int(hour2)! }
 }
 

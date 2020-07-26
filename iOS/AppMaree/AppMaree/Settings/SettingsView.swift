@@ -36,7 +36,7 @@ struct SettingsView: View {
                     .foregroundColor(Color("Primaire 1"))
                     .keyboardType(.numberPad)
                 
-                MainDataRow(day: Day(portes: [Porte(etat: "ouverte", heure: "11h11"),Porte(etat: "ouverte", heure: "11h11"),Porte(etat: "ouverte", heure: "11h11"),Porte(etat: "ouverte", heure: "11h11")], marees: [Maree(etat: "PM", heure: "11h11", hauteur: "2,6", coef: "56"),Maree(etat: "BM", heure: "11h11", hauteur: "2,6"),Maree(etat: "PM", heure: "11h11", hauteur: "2,6", coef: "56"),Maree(etat: "BM", heure: "11h11", hauteur: "2,6", coef: "56")], dateString: "01 JAN"))
+                MainDataRow(day: Day(portes: [Porte(etat: "ouverture", heure: "11h11"),Porte(etat: "fermeture", heure: "11h11"),Porte(etat: "ouverture", heure: "11h11"),Porte(etat: "fermeture", heure: "11h11")], marees: [Maree(etat: "PM", heure: "11h11", hauteur: "2,6", coef: "56"),Maree(etat: "BM", heure: "11h11", hauteur: "2,6"),Maree(etat: "PM", heure: "11h11", hauteur: "2,6", coef: "56"),Maree(etat: "BM", heure: "11h11", hauteur: "2,6", coef: "56")], dateString: "01 JAN"))
                 
                 Slider(value: $settingsVM.settings.fontSize, in: 1...3, step: 1)
                 
@@ -47,6 +47,12 @@ struct SettingsView: View {
                                 .foregroundColor(Color(red: self.$settingsVM.settings.colors[number].red.wrappedValue, green: self.$settingsVM.settings.colors[number].green.wrappedValue, blue: self.$settingsVM.settings.colors[number].blue.wrappedValue))
                         }
                     }
+                }
+                
+                Button(action: {
+                    SettingsViewModel.resetAll()
+                }) {
+                    Text("Reset to default")
                 }
                 
                 ButtonWindowView(isBack: true, presentation: presentationMode)

@@ -16,6 +16,7 @@ struct MainFontSizeView: View {
     
     var body: some View {
         ZStack {
+        
             if self.$settingsVM.settings.fontSize.wrappedValue == 2 {
                 if isDate {
                     Text(self.data)
@@ -39,7 +40,7 @@ struct MainFontSizeView: View {
             } else {
                 if isDate {
                     Text(self.data)
-                        //.fontWeight(.bold)
+                        .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .padding(.trailing)
                 } else {
