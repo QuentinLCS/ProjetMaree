@@ -49,7 +49,7 @@ struct MainView: View {
                 
                 // LISTE DES JOURS
                 List {
-                    ForEach($settings.dayNumber.wrappedValue ..< self.days.count) { number in
+                    ForEach(($settings.dayNumber.wrappedValue < 1 ? $settings.dayNumber.wrappedValue : $settings.dayNumber.wrappedValue - 1) ..< self.days.count) { number in
                     
                         MainDataRow(day: self.days[number])
                             .background(Color.white.opacity(self.opacities[number % 2]))
