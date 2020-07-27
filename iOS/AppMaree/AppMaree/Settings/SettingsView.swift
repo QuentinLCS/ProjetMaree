@@ -25,40 +25,62 @@ struct CustomColor: Codable {
 
 struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @EnvironmentObject var settingsVM : SettingsViewModel
+    @EnvironmentObject var settings : SettingsViewModel
     
     var body: some View {
         NavigationView {
-            VStack {
-                TitleView(title: "PARAMÈTRES")
-                TextField("Votre tirant d'eau : (à partir de 1.6)", text: $settingsVM.settings.water)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .foregroundColor(Color("Primaire 1"))
-                    .keyboardType(.numberPad)
-                
-                MainDataRow(day: Day(portes: [Porte(etat: "ouverture", heure: "11h11"),Porte(etat: "fermeture", heure: "11h11"),Porte(etat: "ouverture", heure: "11h11"),Porte(etat: "fermeture", heure: "11h11")], marees: [Maree(etat: "PM", heure: "11h11", hauteur: "2,6", coef: "56"),Maree(etat: "BM", heure: "11h11", hauteur: "2,6"),Maree(etat: "PM", heure: "11h11", hauteur: "2,6", coef: "56"),Maree(etat: "BM", heure: "11h11", hauteur: "2,6", coef: "56")], dateString: "01 JAN"))
-                
-                Text("Taille de l'écriture:")
-                Slider(value: $settingsVM.settings.fontSize, in: 1...3, step: 1)
-                
-                Text("Couleurs des cellules:")
-                HStack {
-                    ForEach(0..<4) { number in
-                        NavigationLink(destination: SettingsColorEditorView(colorToEdit: number)) {
-                            Circle()
-                                .foregroundColor(Color(red: self.$settingsVM.settings.colors[number].red.wrappedValue, green: self.$settingsVM.settings.colors[number].green.wrappedValue, blue: self.$settingsVM.settings.colors[number].blue.wrappedValue))
+            ZStack {
+                VStack(alignment: .leading) {
+                    TitleView(title: "PARAMÈTRES")
+                    
+                    Text("Quel est votre tirant d'eau ?")
+                       .fontWeight(.bold)
+                       .padding(.top)
+                    TextField("Votre tirant d'eau : (à partir de 1.6)", text: $settings.settings.water)
+                        .padding(.bottom, 20.0)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .foregroundColor(Color("Primaire 1"))
+                        .keyboardType(.numberPad)
+                    
+                    MainDataRow()
+                    
+                    Text("Taille du texte: ")
+                        .fontWeight(.bold)
+                        .padding(.top, 20)
+                    Slider(value: $settings.settings.fontSize, in: 1...3, step: 1)
+                    
+                    Text("Modifier les couleurs ?")
+                        .fontWeight(.bold)
+                        .padding(.top, 20)
+                    
+                    VStack {
+                        HStack {
+                            ForEach(0..<4) { number in
+                                NavigationLink(destination: SettingsColorEditorView(colorToEdit: number)) {
+                                    Circle()
+                                        .foregroundColor(Color(red: self.$settings.settings.colors[number].red.wrappedValue, green: self.$settings.settings.colors[number].green.wrappedValue, blue: self.$settings.settings.colors[number].blue.wrappedValue))
+                                }
+                            }
+                        }.frame(maxHeight: 100)
+                        
+                        Button(action: {
+                           SettingsViewModel.resetAll()
+                        }) {
+                           Text("Réinitialiser l'application")
+                               .fontWeight(.semibold)
+                               .foregroundColor(Color.white)
+                               .padding()
+                               .background(Color.black)
+                               .cornerRadius(30)
+                               .shadow(radius: 10)
                         }
+                        .padding(.top, 20.0)
                     }
-                }
-                
-                Button(action: {
-                    SettingsViewModel.resetAll()
-                }) {
-                    Text("Reset to default")
-                }
+                    Spacer()
+                }.padding(.horizontal, 20)
                 
                 ButtonWindowView(isBack: true, presentation: presentationMode)
-            }.padding(.horizontal)
+            }
         }
         .navigationBarHidden(true)
         .navigationBarTitle("titre")

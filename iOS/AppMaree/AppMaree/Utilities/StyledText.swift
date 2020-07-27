@@ -97,3 +97,7 @@ extension StyledText: View {
         return text
     }
 }
+
+extension TextStyle {
+    static func highlight() -> TextStyle { .foregroundColor(Color("Primaire 1")) }
+}

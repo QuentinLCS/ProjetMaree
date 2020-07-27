@@ -17,6 +17,7 @@ struct MainView: View {
     
     // Variable dynamique entre les vues permettant d'afficher ou non la pub.
     @State private var showAd = false
+    @State private var imageAd: String = ""
     
     @EnvironmentObject var settings: SettingsViewModel
     
@@ -37,7 +38,7 @@ struct MainView: View {
         }
         
         self.days = settingsVM.days!
-        settingsVM.focusedDate = dateCreator(day: 1, month: 1)
+        settingsVM.focusedDate = Date()
     
     }
     
@@ -60,12 +61,13 @@ struct MainView: View {
                 // AFFICHAGE DE LA PUBLICITE test
                 if showAd {
                     VStack {
-                        Image(randomAd())
+                        Image($imageAd.wrappedValue)
                             .resizable().scaledToFit()
-                            .onDisappear(perform: delay)
                             .modifier(DraggableModifier(direction: .horizontal, showAd: $showAd))
                         Spacer()
                     }
+                    .transition(AnyTransition.slide)
+                    .animation(.default)
                 }
                 
                 ButtonWindowView(isBack: false, home: true)
@@ -76,7 +78,7 @@ struct MainView: View {
         .navigationBarHidden(true)
         .navigationBarTitle("titre")
         .edgesIgnoringSafeArea(.top)
-        .environmentObject(settingsVM)
+        .environmentObject(settings)
         
     }
     
@@ -87,10 +89,8 @@ struct MainView: View {
         // Delay of 45 seconds
         DispatchQueue.main.asyncAfter(deadline: .now() + 45) {
             self.showAd = true
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-            settingsVM.focusedDate = Date()
+            self.imageAd = self.randomAd()
+            self.delay()
         }
     }
     

@@ -31,16 +31,15 @@ struct PartnerView: View {
                         .modifier(DraggableModifier(direction: .horizontal, showAd: $showAd))
                     Spacer()
                 }
-                .zIndex(2)
             }
+            
             ScrollView {
-                HStack {
-                    TitleView(title: "PORT-DIELETTE", subTitle: "Liste des partenaires")
-                }
+                TitleView(title: "PARTENAIRES")
+                
                 Text("L'association des plaisanciers de Port Dielette vous présente la liste de ses partenaires pour l'édition de l'annuaire des marées.")
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.center)
-                    .padding()
+                    .padding([.leading, .bottom, .trailing], 20.0)
                 
                 ForEach(0..<sortedCategory.count) { category in // create number of rows
                     VStack {
@@ -57,13 +56,15 @@ struct PartnerView: View {
                             }) { Text(self.sortedAds[self.sortedCategory[category]]![value].name)
                             }
                         }
-                        Spacer()
-                        .frame(height: 20)
                     }
+                    .padding(.bottom)
                 }
-                Spacer()
-                .frame(height: 250)
+                
+                Text("Merci à eux !")
+                    .fontWeight(.bold)
+                    .padding(.bottom, 200.0)
             }
+            
             ButtonWindowView(presentation: presentationMode)
         }
     }

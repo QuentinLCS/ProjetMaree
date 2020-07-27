@@ -11,8 +11,10 @@ import SwiftUI
 struct ConditionsView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @EnvironmentObject var settingsVM : SettingsViewModel
+    @EnvironmentObject var settings : SettingsViewModel
     
+    @Binding var secondsLeft: Int
+
     var body: some View {
     
         VStack {
@@ -40,6 +42,7 @@ struct ConditionsView: View {
                         .font(.system(size: 18))
                         .padding([.leading, .bottom, .trailing], 20)
                         .padding(.top, 40)
+                        .fixedSize(horizontal: false, vertical: true)
                     
                     Text("J'accepte les conditions d'utilisation")
                         .bold()
@@ -47,14 +50,16 @@ struct ConditionsView: View {
                         .font(.system(size: 18))
                     
                     Button(action: {
-                        self.$settingsVM.settings.agreement.wrappedValue.toggle()
+                        self.$settings.settings.agreement.wrappedValue.toggle()
                     }) {
-                        if self.$settingsVM.settings.agreement.wrappedValue {
+                        if self.$settings.settings.agreement.wrappedValue {
                             Text("OUI")
                         } else {
                             Text("NON")
                         }
                     }
+                    .transition(AnyTransition.slide)
+                    .animation(.default)
                     
                     Text("Acceptation SHOM 2019 - 2021")
                         .fontWeight(.semibold)
@@ -64,9 +69,11 @@ struct ConditionsView: View {
                     Spacer()
                 }
 
-                HomeButtonView(colored: false, isBack: true, presentation: presentationMode)
+                ButtonWindowView(isBack: true, presentation: presentationMode)
             }
         }
         .edgesIgnoringSafeArea(.bottom)
+        .onAppear(perform: {self.secondsLeft = -1})
+        .onDisappear(perform: {self.secondsLeft = 3})
     }
 }

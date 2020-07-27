@@ -46,8 +46,9 @@ struct EmergencyMessageView: View {
                     }
                 }
             } else {
-                Text("Mayday/Pan pan ! (x3) Ici le bateau [TYPE ET NOM D'EMBARCATION] qui signale [NATURE DU SINISTRE] à la position [POSITION GPS ou AZIMUT/DISTANCE D'UN POINT REMARQUABLE]. [NOMBRE] à bord. Ici le bateau [TYPE ET NOM D'EMBARCATION]. Terminé.")
+                Text("Mayday/Pan pan ! (x3) Ici le bateau [TYPE ET NOM D'EMBARCATION] qui signale [NATURE DU SINISTRE] à la position [POSITION GPS ou AZIMUT/DISTANCE D'UN POINT REMARQUABLE]. [NOMBRE INDIVIDUS] à bord. Ici le bateau [TYPE ET NOM D'EMBARCATION]. Terminé.")
                 .font(.callout)
+                .fontWeight(.semibold)
                 .foregroundColor(Color.white)
                 .padding()
                 .background(Color.red.opacity(0.5))

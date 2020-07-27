@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // par l'appel de votre autre page. 
         // -----------------------------------------------------------
         let contentView = LaunchView().environmentObject(settingsVM)
-        // let contentView = NouvellePage()
+        // let contentView = NouvellePage().environmentObject(settingsVM)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

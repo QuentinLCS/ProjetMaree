@@ -10,14 +10,14 @@ import SwiftUI
 
 struct MainFontSizeView: View {
     
-    @EnvironmentObject var settingsVM : SettingsViewModel
+    @EnvironmentObject var settings : SettingsViewModel
     var data: String
     var isDate: Bool = false
     var color: CustomColor? = nil
     
     var body: some View {
         ZStack {
-            if self.$settingsVM.settings.fontSize.wrappedValue == 2 {
+            if self.$settings.settings.fontSize.wrappedValue == 2 {
                 if isDate {
                     Text(self.data)
                         .fontWeight(.bold)
@@ -30,7 +30,7 @@ struct MainFontSizeView: View {
                         .foregroundColor(contrastedTextColor(color: self.color))
                         .fixedSize(horizontal: true, vertical: true)
                 }
-            } else if self.$settingsVM.settings.fontSize.wrappedValue == 3 {
+            } else if self.$settings.settings.fontSize.wrappedValue == 3 {
                 if isDate {
                     Text(self.data)
                         .fontWeight(.bold)

@@ -14,12 +14,15 @@ import SwiftUI
 
 struct LaunchView: View {
     
-    @EnvironmentObject var settingsVM : SettingsViewModel
+    @EnvironmentObject var settings : SettingsViewModel
+    
+    @State var autoSwitch: Bool = false
+    @State var secondsLeft: Int = 3
     
     var body: some View {
         NavigationView {
             ZStack {
-                VStack() {
+                VStack(spacing: 30) {
                     TitleView()
                     // ---------------------------------- TEXTE 1 ----------------------------------
                     // Explication de la provenance des données ainsi que leur véracité.
@@ -27,17 +30,39 @@ struct LaunchView: View {
                     Image("logo")
                         .resizable()
                         .scaledToFit()
-                    NavigationLink(destination: ConditionsView()) {
+                    NavigationLink(destination: ConditionsView(secondsLeft: self.$secondsLeft)) {
                         Text("Lire les conditions d'utilisation")
                         .underline()
                         .foregroundColor(Color("Primaire 1"))
                     }
                     
                     // Bouton principal permettant de fermer cette page.
-                    if $settingsVM.settings.agreement.wrappedValue {
-                        HomeButtonView(isBack: false).environmentObject(settingsVM)
+                    if $settings.settings.agreement.wrappedValue {
+                        NavigationLink(destination: MainView().environmentObject(settingsVM), isActive: $autoSwitch) {
+                            EmptyView()
+                        }
+                        
+                        StyledText("""
+                        Conditions d'utilisation déjà acceptées !
+
+                        Vous pouvez poursuivre en cliquant sur le bouton ci-dessous ou attendre \(self.$secondsLeft.wrappedValue) secondes.
+
+                        Bon voyage !
+                        """)
+                        .style(.highlight(), ranges: { [$0.range(of: "Conditions d'utilisation déjà acceptées !")!]})
+                        .style(.bold(), ranges: { [$0.range(of: "Conditions d'utilisation déjà acceptées !")!, $0.range(of: "cliquant sur le bouton ci-dessous")!,  $0.range(of: "\(self.$secondsLeft.wrappedValue) secondes")!, $0.range(of: "Bon voyage !")! ]})
+                            .padding([.leading, .bottom, .trailing], 20.0)
+                            .multilineTextAlignment(.center)
+                            .onAppear(perform: delay)
+                        
+                        Button(action: {
+                            self.$autoSwitch.wrappedValue = true
+                        }) {
+                            ButtonMainView(colored: true)
+                        }
+                        .padding(.bottom, 20.0)
                     } else {
-                        Spacer()
+                        
                         Text("Vous devez accepter les conditions d'utilisation de l'application pour l'utiliser !")
                             .foregroundColor(Color.red)
                             .multilineTextAlignment(.center)
@@ -45,15 +70,25 @@ struct LaunchView: View {
                         Spacer()
                     }
                 }
+                .padding(.horizontal, 20.0)
             }
         }
         .navigationBarHidden(true)
         .navigationBarTitle("titre")
         .edgesIgnoringSafeArea(.top)
-        .environmentObject(settingsVM)
     }
-}
     
-extension TextStyle {
-    static func highlight() -> TextStyle { .foregroundColor(Color("Primaire 1")) }
+    private func delay() {
+     
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            if self.$secondsLeft.wrappedValue == 0 {
+                self.$autoSwitch.wrappedValue = true
+            } else if self.$secondsLeft.wrappedValue > 0 {
+                self.$secondsLeft.wrappedValue -= 1
+                self.delay()
+            }
+            
+        }
+        
+    }
 }

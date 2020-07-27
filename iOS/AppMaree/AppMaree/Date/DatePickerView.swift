@@ -11,7 +11,7 @@ import SwiftUI
 struct DatePickerView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @EnvironmentObject var settingsVM: SettingsViewModel
+    @EnvironmentObject var settings: SettingsViewModel
     
     var body: some View {
         
@@ -21,7 +21,7 @@ struct DatePickerView: View {
                 
                 Text("Vous pouvez afficher les horaires d'une journée spécifique, postérieure à la date du jour dans la limite des dates disponibles sur l'application.")
                 
-                DatePicker("", selection: self.$settingsVM.focusedDate, in: dateCreator(day: 1, month: 1)...dateCreator(day: 31, month: 12), displayedComponents: .date)
+                DatePicker("", selection: self.$settings.focusedDate, in: Date()...dateCreator(day: 31, month: 12), displayedComponents: .date)
                     .labelsHidden()
             }
             .padding(.horizontal, 20.0)

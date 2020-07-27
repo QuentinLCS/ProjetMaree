@@ -20,25 +20,30 @@ struct AnimalDetailsView: View {
                 TitleView(title: "PÈCHE EN BATEAU : LIMITES", subTitle: "\(animal.name) : \(animal.allowedSize)cm")
                     .padding(.bottom, 30.0)
                 
-                    Text(animal.describe()).padding(.horizontal, 20.0)
+                Text(animal.describe()).padding(.horizontal, 20.0)
                 
                 ZStack {
                     DiagonalBackgroundView(a: .primaryColor)
                     
-                    VStack {
-                        TitleView(title: "Qu'est-ce qu'un marquage ?", titleColor: Color.white, backgroundColor: Color.clear)
+                    VStack (spacing: 0) {
+                        Text("Qu'est-ce qu'un marquage ?")
+                            .font(.system(size: 22))
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.white)
+                        
                         if animal.helpImage != nil {
                            Image(animal.helpImage!)
                                .resizable()
                                .scaledToFit()
                                .padding()
-                       } else {
+                        } else {
                            Image("marquage-poisson")
                                .resizable()
                                .scaledToFit()
                                .padding()
-                       }
-                    }
+                        }
+                        Spacer()
+                    }.padding(.top, 20.0)
                 }
             }
             ButtonWindowView(isBack: true, presentation: presentationMode)
