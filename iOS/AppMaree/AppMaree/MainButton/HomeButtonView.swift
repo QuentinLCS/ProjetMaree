@@ -13,8 +13,6 @@ import SwiftUI
 
 struct HomeButtonView: View {
     
-    @EnvironmentObject var settingsVM : SettingsViewModel
-    
     private let colored:Bool
     private let isBack:Bool
     private let home:Bool
@@ -37,7 +35,7 @@ struct HomeButtonView: View {
                     }
                 } else {
                     HStack(spacing: 50) {
-                        NavigationLink(destination: MenuView()) {
+                        NavigationLink(destination: DatePickerView()) {
                             ButtonSecondView(image: "clock")
                         }
                         
@@ -58,11 +56,5 @@ struct HomeButtonView: View {
                 }
             }
         }.padding(.bottom, 20.0)
-    }
-    
-    struct MenuButton_Previews: PreviewProvider {
-        static var previews: some View {
-            HomeButtonView()
-        }
     }
 }

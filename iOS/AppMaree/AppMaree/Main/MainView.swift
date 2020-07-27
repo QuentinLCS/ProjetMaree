@@ -18,6 +18,7 @@ struct MainView: View {
     // Variable dynamique entre les vues permettant d'afficher ou non la pub.
     @State private var showAd = false
     
+    @EnvironmentObject var settings: SettingsViewModel
     
     let ads = getAdsWithWeight()
     var days: [Day] = []
@@ -36,6 +37,7 @@ struct MainView: View {
         }
         
         self.days = settingsVM.days!
+        settingsVM.focusedDate = Date()
     
     }
     
@@ -46,7 +48,7 @@ struct MainView: View {
                 
                 // LISTE DES JOURS
                 List {
-                    ForEach(0..<self.days.count) { number in
+                    ForEach($settings.dayNumber.wrappedValue ..< self.days.count) { number in
                     
                         MainDataRow(day: self.days[number])
                             .background(Color.white.opacity(self.opacities[number % 2]))

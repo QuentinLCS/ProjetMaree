@@ -13,6 +13,8 @@ import SwiftUI
 
 struct ButtonWindowView: View {
     
+    @EnvironmentObject var settingsVM : SettingsViewModel
+    
     private let colored: Bool
     private let isBack: Bool
     private let home: Bool
@@ -36,11 +38,5 @@ struct ButtonWindowView: View {
             .frame(height: 200.0)
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-    }
-    
-    struct MainView_Previews: PreviewProvider {
-        static var previews: some View {
-            ButtonWindowView()
-        }
     }
 }

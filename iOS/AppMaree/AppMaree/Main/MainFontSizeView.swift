@@ -16,7 +16,6 @@ struct MainFontSizeView: View {
     
     var body: some View {
         ZStack {
-            Text("cc")
             if self.$settingsVM.settings.fontSize.wrappedValue == 2 {
                 if isDate {
                     Text(self.data)

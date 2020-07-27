@@ -27,6 +27,8 @@
 		DF43C48724CE2EC000921B4D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C48624CE2EC000921B4D /* LocationManager.swift */; };
 		DF43C48924CE324B00921B4D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C48824CE324B00921B4D /* MapView.swift */; };
 		DF43C48B24CE330C00921B4D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C48A24CE330C00921B4D /* Coordinator.swift */; };
+		DF43C49024CE471F00921B4D /* EmergencyMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C48F24CE471F00921B4D /* EmergencyMessageView.swift */; };
+		DF43C49524CE5BEF00921B4D /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C49424CE5BEF00921B4D /* DatePickerView.swift */; };
 		DF44C0F524A8E1F2001D6BDD /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44C0F424A8E1F2001D6BDD /* ServiceView.swift */; };
 		DF44C0F824A8FB67001D6BDD /* DiagonalBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */; };
 		DF45A1C824A60A5100C4C050 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1C724A60A5100C4C050 /* MainView.swift */; };
@@ -75,6 +77,8 @@
 		DF43C48624CE2EC000921B4D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		DF43C48824CE324B00921B4D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		DF43C48A24CE330C00921B4D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		DF43C48F24CE471F00921B4D /* EmergencyMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyMessageView.swift; sourceTree = "<group>"; };
+		DF43C49424CE5BEF00921B4D /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		DF44C0F424A8E1F2001D6BDD /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
 		DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagonalBackgroundView.swift; sourceTree = "<group>"; };
 		DF45A1C724A60A5100C4C050 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 				DFBF4FB424C0D9AC00E2DA4B /* Main */,
 				DF45A1CB24A6134B00C4C050 /* MainButton */,
 				DF43C48524CE2EA500921B4D /* Emergency */,
+				DF43C49624CE5BF600921B4D /* Date */,
 				DF02A7A224A544F8009582BC /* Menu */,
 				DF02223424A90537009A7747 /* Fishing */,
 				DF8094B524C1C6D50050CB6B /* Settings */,
@@ -194,19 +199,20 @@
 			isa = PBXGroup;
 			children = (
 				DF43C48324CE2D9C00921B4D /* EmergencyView.swift */,
+				DF43C48F24CE471F00921B4D /* EmergencyMessageView.swift */,
 				DF43C48624CE2EC000921B4D /* LocationManager.swift */,
-				DF43C48C24CE335F00921B4D /* Map */,
+				DF43C48824CE324B00921B4D /* MapView.swift */,
+				DF43C48A24CE330C00921B4D /* Coordinator.swift */,
 			);
 			path = Emergency;
 			sourceTree = "<group>";
 		};
-		DF43C48C24CE335F00921B4D /* Map */ = {
+		DF43C49624CE5BF600921B4D /* Date */ = {
 			isa = PBXGroup;
 			children = (
-				DF43C48824CE324B00921B4D /* MapView.swift */,
-				DF43C48A24CE330C00921B4D /* Coordinator.swift */,
+				DF43C49424CE5BEF00921B4D /* DatePickerView.swift */,
 			);
-			path = Map;
+			path = Date;
 			sourceTree = "<group>";
 		};
 		DF44C0F624A8EB25001D6BDD /* Utilities */ = {
@@ -346,6 +352,7 @@
 				DFBF4FA124AEA3BC00E2DA4B /* DraggableView.swift in Sources */,
 				DFBF4F8B24ABB89700E2DA4B /* ButtonWindowView.swift in Sources */,
 				DF45A1E324A64E2E00C4C050 /* FishingView.swift in Sources */,
+				DF43C49024CE471F00921B4D /* EmergencyMessageView.swift in Sources */,
 				DFBF4F8724AB658300E2DA4B /* StyledText.swift in Sources */,
 				DF44C0F524A8E1F2001D6BDD /* ServiceView.swift in Sources */,
 				DF43C47B24CDE49800921B4D /* LaunchView.swift in Sources */,
@@ -355,6 +362,7 @@
 				DF02A78B24A360C3009582BC /* AppDelegate.swift in Sources */,
 				DF45A1C824A60A5100C4C050 /* MainView.swift in Sources */,
 				DF02A78D24A360C3009582BC /* SceneDelegate.swift in Sources */,
+				DF43C49524CE5BEF00921B4D /* DatePickerView.swift in Sources */,
 				DFBF4FA924B2835200E2DA4B /* MainDataRow.swift in Sources */,
 				DFBF4FA724B23B5300E2DA4B /* BundleHandlerswift.swift in Sources */,
 				DF43C48724CE2EC000921B4D /* LocationManager.swift in Sources */,

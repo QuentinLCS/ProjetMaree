@@ -48,7 +48,7 @@ struct LaunchView: View {
             }
         }
         .navigationBarHidden(true)
-        .navigationBarTitle("Limites")
+        .navigationBarTitle("titre")
         .edgesIgnoringSafeArea(.top)
         .environmentObject(settingsVM)
     }

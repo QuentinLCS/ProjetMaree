@@ -31,6 +31,22 @@ class SettingsViewModel: ObservableObject {
         }
     }
     
+    var focusedDate: Date = Date() {
+        didSet {
+            let today = Date()
+            var dateComponents = DateComponents()
+            let userCalendar = Calendar.current
+            
+            dateComponents.day = 1
+            dateComponents.month = 1
+            dateComponents.year = userCalendar.component(.year, from: today)
+            
+            self.dayNumber = daysBetweenDates(date1: userCalendar.date(from: dateComponents)!, date2: self.focusedDate)
+        }
+    }
+    
+    @Published var dayNumber: Int = 0
+    
     static func exists(key: String) -> Bool {
         return UserDefaults.standard.object(forKey: key) != nil
     }

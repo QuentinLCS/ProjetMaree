@@ -10,6 +10,7 @@ import Foundation
 import MapKit
 
 class LocationManager: NSObject, ObservableObject {
+    
     private let locationManager = CLLocationManager()
     @Published var location: CLLocation? = nil
     
@@ -19,7 +20,7 @@ class LocationManager: NSObject, ObservableObject {
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.distanceFilter = kCLDistanceFilterNone
         self.locationManager.requestWhenInUseAuthorization()
-        self.locationManager.startUpdatingHeading()
+        self.locationManager.startUpdatingLocation()
     }
 }
 
