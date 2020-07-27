@@ -11,8 +11,8 @@ import SwiftUI
 struct FishingView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    let fishes: [Animal] = Animal.getFishes(bundleName: "Fish")
-    let shellFishes: [Animal] = Animal.getFishes(bundleName: "Shellfish")
+    let fishes: [Animal] = Animal.getFishes()
+    let shellFishes: [Animal] = Animal.getShellFishes()
     
     var body: some View {
         NavigationView {
@@ -45,7 +45,8 @@ struct FishingView: View {
                             ForEach(0..<(fishes.count+1)/2) { row in // create number of rows
                                 HStack {
                                     ForEach(0..<2) { column in // create 2 columns
-                                        self.makeFishCard(cell: self.getCell(row: row, column: column))
+                                        
+                                        self.makeFishCard(fishes: self.fishes,cell: self.getCell(row: row, column: column))
                                         
                                     }
                                 }
@@ -68,19 +69,22 @@ struct FishingView: View {
                             ForEach(0..<(shellFishes.count+1)/2) { row in // create number of rows
                                 HStack {
                                     ForEach(0..<2) { column in // create 2 columns
-                                        self.makeShellfishCard(cell: self.getCell(row: row, column: column))
+                                       
+                                        self.makeShellfishCard(shellFishes: self.shellFishes,cell: self.getCell(row: row, column: column))
+                                        
                                     }
                                 }
                             }
-                            Spacer()
                         }
+                        .padding(.bottom, 30.0)
+                        
                         VStack {
                             Spacer()
                                 
                             Text("Il manque une espèce ?")
                                 .fontWeight(.bold)
                                 .padding(.vertical)
-                            Text("Paramètres > Nous contacter")
+                            Text("À propos > Nous contacter")
                                 .fontWeight(.bold)
                                 .foregroundColor(Color.white)
                             Spacer()
@@ -98,35 +102,32 @@ struct FishingView: View {
             }
         }
         .navigationBarHidden(true)
-        .navigationBarTitle("Limites")
+        .navigationBarTitle("Titre")
         .edgesIgnoringSafeArea(.top)
         
     }
     
-    func makeFishCard(cell: Int) -> ButtonFishDetailsView {
-        if (cell < self.fishes.count) {
-        return ButtonFishDetailsView(backgroundColor: .white, name: self.fishes[cell].name, image: self.fishes[cell].imageName, size: self.fishes[cell].allowedSize, bundleName: "Fish")
+func makeFishCard(fishes: [Animal], cell: Int) -> some View {
+        if (cell < fishes.count) {
+            return AnyView(NavigationLink(destination: AnimalDetailsView(animal: fishes[cell])) {
+                ButtonFishView(backgroundColor: .white, name: fishes[cell].name, image: fishes[cell].imageName, size: fishes[cell].allowedSize, bundleName: "Fish")
+                }.buttonStyle(PlainButtonStyle()))
         } else {
-            return ButtonFishDetailsView(backgroundColor: .white, name: "", image: "", size: 0, bundleName: "")
+            return AnyView(ButtonFishView(backgroundColor: .white, name: "", image: "", size: 0, bundleName: ""))
         }
     }
     
-    func makeShellfishCard(cell: Int) -> ButtonFishDetailsView {
-        if (cell < self.shellFishes.count) {
-        return ButtonFishDetailsView(backgroundColor: .secondaryColor, name: self.shellFishes[cell].name, image: self.shellFishes[cell].imageName, size: self.shellFishes[cell].allowedSize, bundleName: "Shellfish")
+func makeShellfishCard(shellFishes: [Animal], cell: Int) -> some View {
+        if (cell < shellFishes.count) {
+            return AnyView(NavigationLink(destination: AnimalDetailsView(animal: shellFishes[cell])) {
+                ButtonFishView(backgroundColor: .secondaryColor, name: shellFishes[cell].name, image: shellFishes[cell].imageName, size: shellFishes[cell].allowedSize, bundleName: "Shellfish")
+            }.buttonStyle(PlainButtonStyle()))
         } else {
-            return ButtonFishDetailsView(backgroundColor: .secondaryColor, name: "", image: "", size: 0, bundleName: "")
+            return AnyView(ButtonFishView(backgroundColor: .secondaryColor, name: "", image: "", size: 0, bundleName: ""))
         }
     }
     
     func getCell (row: Int, column: Int) -> Int {
         return row * 2 + column
-    }
-}
-
-
-struct FishingView_Previews: PreviewProvider {
-    static var previews: some View {
-        FishingView()
     }
 }

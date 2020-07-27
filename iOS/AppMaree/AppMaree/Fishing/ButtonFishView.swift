@@ -14,7 +14,7 @@ enum FishButtonColorType: String {
     case white = "White"
 }
 
-struct ButtonFishDetailsView: View {
+struct ButtonFishView: View {
     let backgroundColor: FishButtonColorType
     let name: String
     let image: String
@@ -29,7 +29,7 @@ struct ButtonFishDetailsView: View {
                 VStack {
                     Group {
                         if (image != "" && bundleName != "") {
-                            Image(uiImage: makeUIView(of: image, from: bundleName))
+                            Image(image)
                             .resizable()
                             .scaledToFit()
                         }
@@ -56,11 +56,4 @@ func makeUIView(of name: String, from bundleName: String) -> UIImage {
     let bundle = Bundle( url: MainBundleURL.appendingPathComponent("\(bundleName).bundle"))
     let ImageData = UIImage(named: name, in: bundle, with: nil) ?? UIImage(systemName: "ellipsis")!
     return ImageData
-}
-
-
-struct ButtonFishDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ButtonFishDetailsView(backgroundColor: .white, name: "", image: "", size: 0, bundleName: "Shellfish")
-    }
 }

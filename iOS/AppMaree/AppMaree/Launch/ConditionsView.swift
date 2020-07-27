@@ -64,7 +64,7 @@ struct ConditionsView: View {
                     Spacer()
                 }
 
-                ButtonWindowView(colored: false, isBack: true, presentation: presentationMode)
+                HomeButtonView(colored: false, isBack: true, presentation: presentationMode)
             }
         }
         .edgesIgnoringSafeArea(.bottom)

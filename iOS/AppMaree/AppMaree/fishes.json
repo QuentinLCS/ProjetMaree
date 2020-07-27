@@ -1,0 +1,33 @@
+[
+    [
+        {
+            "name": "BAR",
+            "imageName": "bar",
+            "allowedSize": 25.0,
+            "allowedDate":
+            [
+                "1er Mars",
+                "30 Novembre"
+            ],
+            "description": "Réglementation applicable au nord du 48e parallèle d'Audienne à la frontière Belge.",
+            "allowedPerPerson": 2,
+            "taggingObligation": true,
+        }
+    ],
+    [
+        {
+            "name": "ARAIGNÉE",
+            "imageName": "araignee",
+            "allowedSize": 25.0,
+            "allowedDate":
+            [
+                "1er Mars",
+                "30 Novembre"
+            ],
+            "description": "Réglementation applicable au nord du 48e parallèle d'Audienne à la frontière Belge.",
+            "allowedPerPerson": 2,
+            "taggingObligation": true,
+        }
+    ]
+]
+ 

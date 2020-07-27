@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-struct Pub: Codable, Hashable {
+struct AdsManager: Codable, Hashable {
     var name: String
     var file: String
     var weight: Int
@@ -18,10 +18,10 @@ struct Pub: Codable, Hashable {
 
 
 // Retrieve all ads from the bundle
-func getAdsWithWeight() -> [Pub] {
+func getAdsWithWeight() -> [AdsManager] {
     
-    var ads: [Pub] = []
-    let contents = JSONContent.JSONContent(filename: "pubs")
+    var ads: [AdsManager] = []
+    let contents = JSONContent.JSONAdsContent()
     
     for item in contents {
         for _ in 0..<item.weight {
@@ -31,6 +31,6 @@ func getAdsWithWeight() -> [Pub] {
     return ads
 }
 
-func getAds() -> [Pub] {
-    return JSONContent.JSONContent(filename: "pubs")
+func getAds() -> [AdsManager] {
+    return JSONContent.JSONAdsContent()
 }

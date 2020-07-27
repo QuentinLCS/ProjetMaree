@@ -68,7 +68,7 @@ struct ButtonMenuView: View {
             case .date:
                 return AnyView(DatePickerView())
             case .partner:
-                return AnyView(ServiceView())
+                return AnyView(PartnerView())
             case .fishing:
                 return AnyView(FishingView())
             case .documentation:

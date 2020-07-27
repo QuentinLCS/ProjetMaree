@@ -28,14 +28,14 @@ struct MainDataRow: View {
         
                         Color(red: self.$settingsVM.settings.colors[mareeColor(day: self.day, number: number)].red.wrappedValue, green: self.$settingsVM.settings.colors[mareeColor(day: self.day, number: number)].green.wrappedValue, blue: self.$settingsVM.settings.colors[mareeColor(day: self.day, number: number)].blue.wrappedValue)
                         
-                        MainFontSizeView(data: self.day.marees[number].heure)
+                        MainFontSizeView(data: self.day.marees[number].heure, color: self.$settingsVM.settings.colors[mareeColor(day: self.day, number: number)].wrappedValue)
                         
                     }
                     
                     ZStack {
                         Color(red: self.$settingsVM.settings.colors[doorColor(day: self.day, number: number)].red.wrappedValue, green: self.$settingsVM.settings.colors[doorColor(day: self.day, number: number)].green.wrappedValue, blue: self.$settingsVM.settings.colors[doorColor(day: self.day, number: number)].blue.wrappedValue)
 
-                        MainFontSizeView(data: self.day.portes[number].heure)
+                        MainFontSizeView(data: self.day.portes[number].heure, color: self.$settingsVM.settings.colors[doorColor(day: self.day, number: number)].wrappedValue)
                         
                     }
                     

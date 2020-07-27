@@ -8,13 +8,13 @@
 
 import SwiftUI
 
-struct ServiceView: View {
+struct PartnerView: View {
     @State private var showAd = false
     @State private var adFile = ""
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    let sortedAds: [String: [Pub]]
+    let sortedAds: [String: [AdsManager]]
     let sortedCategory: [String]
     
     init() {
@@ -69,10 +69,10 @@ struct ServiceView: View {
     }
 }
 
-func mappedAds() -> [String: [Pub]] {
-    let ads: [Pub] = getAds()
+func mappedAds() -> [String: [AdsManager]] {
+    let ads: [AdsManager] = getAds()
     //Sort ads by their name and regroup them under the same category
-    let map = ads.sorted(by: {$0.name < $1.name }).reduce(into: [String: [Pub]]()) { result, element in
+    let map = ads.sorted(by: {$0.name < $1.name }).reduce(into: [String: [AdsManager]]()) { result, element in
         // Get the category of the current element
         let category = element.category
         // initialize an array with one element or add another element to the existing value
@@ -82,7 +82,7 @@ func mappedAds() -> [String: [Pub]] {
 }
 
 func categoryArray() -> [String] {
-    let ads: [Pub] = getAds()
+    let ads: [AdsManager] = getAds()
     var array: [String] = []
     //Add in array every existing category
     for ad in ads {
@@ -97,6 +97,6 @@ func categoryArray() -> [String] {
 
 struct ServiceView_Previews: PreviewProvider {
     static var previews: some View {
-        ServiceView()
+        PartnerView()
     }
 }
