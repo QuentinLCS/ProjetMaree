@@ -57,9 +57,3 @@ struct LaunchView: View {
 extension TextStyle {
     static func highlight() -> TextStyle { .foregroundColor(Color("Primaire 1")) }
 }
-
-struct LaunchView_Previews: PreviewProvider {
-    static var previews: some View {
-        LaunchView()
-    }
-}

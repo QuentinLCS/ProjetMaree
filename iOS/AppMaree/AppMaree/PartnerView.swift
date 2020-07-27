@@ -68,35 +68,3 @@ struct PartnerView: View {
         }
     }
 }
-
-func mappedAds() -> [String: [AdsManager]] {
-    let ads: [AdsManager] = getAds()
-    //Sort ads by their name and regroup them under the same category
-    let map = ads.sorted(by: {$0.name < $1.name }).reduce(into: [String: [AdsManager]]()) { result, element in
-        // Get the category of the current element
-        let category = element.category
-        // initialize an array with one element or add another element to the existing value
-        result[category, default: []].append(element)
-    }
-    return map
-}
-
-func categoryArray() -> [String] {
-    let ads: [AdsManager] = getAds()
-    var array: [String] = []
-    //Add in array every existing category
-    for ad in ads {
-        if !(array.contains(ad.category)) {
-            array.append(ad.category)
-        }
-    }
-    //Sort the category by name
-    array.sort()
-    return array
-}
-
-struct ServiceView_Previews: PreviewProvider {
-    static var previews: some View {
-        PartnerView()
-    }
-}

@@ -107,7 +107,7 @@ struct FishingView: View {
         
     }
     
-func makeFishCard(fishes: [Animal], cell: Int) -> some View {
+    func makeFishCard(fishes: [Animal], cell: Int) -> some View {
         if (cell < fishes.count) {
             return AnyView(NavigationLink(destination: AnimalDetailsView(animal: fishes[cell])) {
                 ButtonFishView(backgroundColor: .white, name: fishes[cell].name, image: fishes[cell].imageName, size: fishes[cell].allowedSize, bundleName: "Fish")
@@ -117,7 +117,7 @@ func makeFishCard(fishes: [Animal], cell: Int) -> some View {
         }
     }
     
-func makeShellfishCard(shellFishes: [Animal], cell: Int) -> some View {
+    func makeShellfishCard(shellFishes: [Animal], cell: Int) -> some View {
         if (cell < shellFishes.count) {
             return AnyView(NavigationLink(destination: AnimalDetailsView(animal: shellFishes[cell])) {
                 ButtonFishView(backgroundColor: .secondaryColor, name: shellFishes[cell].name, image: shellFishes[cell].imageName, size: shellFishes[cell].allowedSize, bundleName: "Shellfish")

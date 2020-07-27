@@ -37,7 +37,7 @@ struct MainView: View {
         }
         
         self.days = settingsVM.days!
-        settingsVM.focusedDate = Date()
+        settingsVM.focusedDate = dateCreator(day: 1, month: 1)
     
     }
     
@@ -88,15 +88,13 @@ struct MainView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 45) {
             self.showAd = true
         }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            settingsVM.focusedDate = Date()
+        }
     }
     
     func randomAd() -> String {
         return ads[Int.random(in: 0..<ads.count)].file
-    }
-}
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
     }
 }
