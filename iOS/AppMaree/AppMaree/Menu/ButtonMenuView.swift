@@ -24,7 +24,8 @@ import SwiftUI
 // Ajouter un cas. "case <nom>" Cela permettra de simplifier et d'éviter les erreurs
 // ---------------------------------------------------------------------------
 enum Destination {
-    case service
+    case date
+    case partner
     case fishing
     case documentation
     case settings
@@ -64,7 +65,9 @@ struct ButtonMenuView: View {
     // ---------------------------------------------------------------------------
     func destinationFinder(for destination: Destination) -> AnyView {
         switch destination {
-            case .service:
+            case .date:
+                return AnyView(DatePickerView())
+            case .partner:
                 return AnyView(ServiceView())
             case .fishing:
                 return AnyView(FishingView())
@@ -85,8 +88,10 @@ struct ButtonMenuView: View {
     // ---------------------------------------------------------------------------
     func Informations(for destination: Destination) -> (String, String) {
          switch destination {
-             case .service:
-                 return ("Services", "clock")
+             case .date:
+                return ("Date", "clock")
+             case .partner:
+                 return ("Partenaires", "partner")
              case .fishing:
                  return ("Pêche", "fishing")
              case .documentation:

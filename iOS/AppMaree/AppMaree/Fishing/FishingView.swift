@@ -99,7 +99,7 @@ struct FishingView: View {
         }
         .navigationBarHidden(true)
         .navigationBarTitle("Limites")
-        .edgesIgnoringSafeArea(.all)
+        .edgesIgnoringSafeArea(.top)
         
     }
     

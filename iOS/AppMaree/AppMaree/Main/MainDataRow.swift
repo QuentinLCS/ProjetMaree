@@ -10,35 +10,47 @@ import SwiftUI
 
 struct MainDataRow: View {
     
-    @ObservedObject var settingsVM = SettingsViewModel()
+    @EnvironmentObject var settingsVM : SettingsViewModel
     
     let day: Day
-    let colors:[[Color]] = [[Color.yellow, Color.green],[Color.blue, Color.red]]
     
     var body: some View {
         HStack(spacing: 0) {
             
-            Text(self.day.dateString)
-                .fontWeight(.bold)
-                .multilineTextAlignment(.center)
-                .padding(.trailing)
-
+            MainFontSizeView(data: self.day.dateString, isDate: true)
+            
             ForEach(0..<4) { number in
                 VStack(spacing: 0) {
-                    Text(verbatim: self.day.marees[number].coef ?? "--")
+                    
+                    MainFontSizeView(data: self.day.marees[number].coef ?? "--")
+                        
+                    ZStack {
+        
+                        Color(red: self.$settingsVM.settings.colors[mareeColor(day: self.day, number: number)].red.wrappedValue, green: self.$settingsVM.settings.colors[mareeColor(day: self.day, number: number)].green.wrappedValue, blue: self.$settingsVM.settings.colors[mareeColor(day: self.day, number: number)].blue.wrappedValue)
+                        
+                        MainFontSizeView(data: self.day.marees[number].heure)
+                        
+                    }
                     
                     ZStack {
-                        self.colors[number % 2][0]
-                        Text(verbatim: self.day.marees[number].heure)
-                    }
-                    ZStack {
-                        self.colors[number % 2][1]
-                        Text(verbatim: self.day.portes[number].heure)
-                    }
+                        Color(red: self.$settingsVM.settings.colors[doorColor(day: self.day, number: number)].red.wrappedValue, green: self.$settingsVM.settings.colors[doorColor(day: self.day, number: number)].green.wrappedValue, blue: self.$settingsVM.settings.colors[doorColor(day: self.day, number: number)].blue.wrappedValue)
+
+                        MainFontSizeView(data: self.day.portes[number].heure)
                         
-                    Text(verbatim: self.day.marees[number].hauteur)
+                    }
+                    
+                    MainFontSizeView(data: self.day.marees[number].hauteur)
+                   
                 }
             }
         }.padding(.horizontal)
     }
+}
+
+func mareeColor(day: Day, number: Int) -> Int {
+    return day.marees[number].etat == "PM" ? 1 : 0
+}
+
+func doorColor(day: Day, number: Int) -> Int {
+    return day.portes[number].etat == "ouverture" ? 2 : 3
 }

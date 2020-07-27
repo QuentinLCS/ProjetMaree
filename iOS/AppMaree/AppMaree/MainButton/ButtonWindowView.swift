@@ -13,6 +13,8 @@ import SwiftUI
 
 struct ButtonWindowView: View {
     
+    @EnvironmentObject var settingsVM : SettingsViewModel
+    
     private let colored: Bool
     private let isBack: Bool
     private let home: Bool
@@ -29,20 +31,12 @@ struct ButtonWindowView: View {
         VStack {
             Spacer()
             ZStack {
-                Rectangle()
-                .fill(LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0),Color.white]), startPoint: .top, endPoint: .bottom))
-                HomeButtonView(colored: colored, isBack: isBack, home: home, presentation: presentation)
-                    .padding(.bottom, 100.0)
+                LinearGradient(gradient: Gradient(stops:  [.init(color: Color.white.opacity(0), location: 0),.init(color: Color.white, location: 0.8)]), startPoint: .top, endPoint: .bottom)
+                HomeButtonView(colored: colored, isBack: isBack, home: home, presentation: presentation).environmentObject(settingsVM)
                     
             }
             .frame(height: 200.0)
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-    }
-    
-    struct MainView_Previews: PreviewProvider {
-        static var previews: some View {
-            ButtonWindowView()
-        }
     }
 }

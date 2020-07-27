@@ -30,12 +30,22 @@ struct HomeButtonView: View {
             Spacer()
             if !isBack {
                 if !home {
-                    NavigationLink(destination: MainView()) {
+                    NavigationLink(destination: MainView().environmentObject(settingsVM)) {
                         ButtonMainView(colored: colored)
                     }
                 } else {
-                    NavigationLink(destination: MenuView()) {
-                        ButtonMainView(home: home, colored: colored)
+                    HStack(spacing: 50) {
+                        NavigationLink(destination: DatePickerView()) {
+                            ButtonSecondView(image: "clock")
+                        }
+                        
+                        NavigationLink(destination: MenuView()) {
+                            ButtonMainView(home: home, colored: colored)
+                        }
+                        
+                        NavigationLink(destination: EmergencyView()) {
+                            ButtonSecondView(image: "phone")
+                        }
                     }
                 }
             } else {
@@ -45,12 +55,6 @@ struct HomeButtonView: View {
                     ButtonMainView(colored: colored)
                 }
             }
-        }
-    }
-    
-    struct MenuButton_Previews: PreviewProvider {
-        static var previews: some View {
-            HomeButtonView()
-        }
+        }.padding(.bottom, 20.0)
     }
 }

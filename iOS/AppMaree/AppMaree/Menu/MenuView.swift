@@ -18,7 +18,7 @@ struct MenuView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
-                TitleView(title: "PORT-DIELETTE", subTitle: "Association de plaisanciers")
+                TitleView()
                 Spacer()
                 ZStack {
                     LinearGradient(gradient: Gradient(colors: [Color("Primaire 1"),Color("Primaire 2"), Color("Primaire 3")]), startPoint: /*@START_MENU_TOKEN@*/.top/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.bottom/*@END_MENU_TOKEN@*/)
@@ -31,7 +31,7 @@ struct MenuView: View {
                         // ----------------------------------------------------------------------------
                         HStack {
                             Spacer()
-                            ButtonMenuView(destination: .service)
+                            ButtonMenuView(destination: .date)
                             Spacer()
                             ButtonMenuView(destination: .fishing)
                             Spacer()
@@ -46,17 +46,21 @@ struct MenuView: View {
                         }
                         HStack {
                             Spacer()
+                            ButtonMenuView(destination: .partner)
+                            Spacer()
                             ButtonMenuView(destination: .info)
                             Spacer()
                         }
-                        ButtonWindowView(colored: false,isBack: true, presentation: presentationMode)
+                        Spacer()
+                        Spacer()
                     })
+                    HomeButtonView(colored: false, isBack: true, presentation: presentationMode)
                 }
             }
         }
         .navigationBarHidden(true)
         .navigationBarTitle("titre")
-        .edgesIgnoringSafeArea(.all)
+        .edgesIgnoringSafeArea(.top)
     }
 }
 

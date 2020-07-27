@@ -39,7 +39,7 @@ struct InformationView: View {
         }
         .navigationBarHidden(true)
         .navigationBarTitle("titre")
-        .edgesIgnoringSafeArea(.all)
+        .edgesIgnoringSafeArea(.top)
     }
 }
 

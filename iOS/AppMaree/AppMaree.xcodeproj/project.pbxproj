@@ -18,6 +18,17 @@
 		DF02A79F24A527DC009582BC /* ButtonMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02A79E24A527DC009582BC /* ButtonMenuView.swift */; };
 		DF02A7A124A53541009582BC /* ButtonMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02A7A024A53541009582BC /* ButtonMainView.swift */; };
 		DF02A7A424A54723009582BC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02A7A324A54723009582BC /* SettingsView.swift */; };
+		DF43C47224CDD0DB00921B4D /* MainFontSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C47124CDD0DB00921B4D /* MainFontSizeView.swift */; };
+		DF43C47624CDD84000921B4D /* SettingsColorEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C47524CDD84000921B4D /* SettingsColorEditorView.swift */; };
+		DF43C47B24CDE49800921B4D /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C47A24CDE49800921B4D /* LaunchView.swift */; };
+		DF43C48024CDE62D00921B4D /* ConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C47F24CDE62D00921B4D /* ConditionsView.swift */; };
+		DF43C48224CE23CB00921B4D /* ButtonSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C48124CE23CB00921B4D /* ButtonSecondView.swift */; };
+		DF43C48424CE2D9C00921B4D /* EmergencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C48324CE2D9C00921B4D /* EmergencyView.swift */; };
+		DF43C48724CE2EC000921B4D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C48624CE2EC000921B4D /* LocationManager.swift */; };
+		DF43C48924CE324B00921B4D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C48824CE324B00921B4D /* MapView.swift */; };
+		DF43C48B24CE330C00921B4D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C48A24CE330C00921B4D /* Coordinator.swift */; };
+		DF43C49524CE5BEF00921B4D /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C49424CE5BEF00921B4D /* DatePickerView.swift */; };
+		DF440D0B24CEF20C00C9C8A9 /* EmergencyMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF440D0A24CEF20C00C9C8A9 /* EmergencyMessageView.swift */; };
 		DF44C0F524A8E1F2001D6BDD /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44C0F424A8E1F2001D6BDD /* ServiceView.swift */; };
 		DF44C0F824A8FB67001D6BDD /* DiagonalBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */; };
 		DF45A1C824A60A5100C4C050 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1C724A60A5100C4C050 /* MainView.swift */; };
@@ -25,7 +36,6 @@
 		DF45A1E324A64E2E00C4C050 /* FishingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1E224A64E2E00C4C050 /* FishingView.swift */; };
 		DF45A1E524A64E7F00C4C050 /* data.xml in Resources */ = {isa = PBXBuildFile; fileRef = DF45A1E424A64E7F00C4C050 /* data.xml */; };
 		DF45A1E724A64EB500C4C050 /* DocumentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1E624A64EB500C4C050 /* DocumentationView.swift */; };
-		DF45A1E924A64EF400C4C050 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1E824A64EF400C4C050 /* LaunchView.swift */; };
 		DF45A1EE24A64FDE00C4C050 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1ED24A64FDE00C4C050 /* TitleView.swift */; };
 		DF579A2524C4AEC8005AF947 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF579A2424C4AEC8005AF947 /* SettingsViewModel.swift */; };
 		DF579A2D24C50DE4005AF947 /* WaterSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF579A2C24C50DE4005AF947 /* WaterSettings.swift */; };
@@ -58,6 +68,17 @@
 		DF02A79E24A527DC009582BC /* ButtonMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMenuView.swift; sourceTree = "<group>"; };
 		DF02A7A024A53541009582BC /* ButtonMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMainView.swift; sourceTree = "<group>"; };
 		DF02A7A324A54723009582BC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		DF43C47124CDD0DB00921B4D /* MainFontSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFontSizeView.swift; sourceTree = "<group>"; };
+		DF43C47524CDD84000921B4D /* SettingsColorEditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsColorEditorView.swift; sourceTree = "<group>"; };
+		DF43C47A24CDE49800921B4D /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		DF43C47F24CDE62D00921B4D /* ConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionsView.swift; sourceTree = "<group>"; };
+		DF43C48124CE23CB00921B4D /* ButtonSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSecondView.swift; sourceTree = "<group>"; };
+		DF43C48324CE2D9C00921B4D /* EmergencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyView.swift; sourceTree = "<group>"; };
+		DF43C48624CE2EC000921B4D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		DF43C48824CE324B00921B4D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		DF43C48A24CE330C00921B4D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		DF43C49424CE5BEF00921B4D /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		DF440D0A24CEF20C00C9C8A9 /* EmergencyMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyMessageView.swift; sourceTree = "<group>"; };
 		DF44C0F424A8E1F2001D6BDD /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
 		DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagonalBackgroundView.swift; sourceTree = "<group>"; };
 		DF45A1C724A60A5100C4C050 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -65,7 +86,6 @@
 		DF45A1E224A64E2E00C4C050 /* FishingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishingView.swift; sourceTree = "<group>"; };
 		DF45A1E424A64E7F00C4C050 /* data.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = data.xml; sourceTree = "<group>"; };
 		DF45A1E624A64EB500C4C050 /* DocumentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentationView.swift; sourceTree = "<group>"; };
-		DF45A1E824A64EF400C4C050 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		DF45A1ED24A64FDE00C4C050 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		DF579A2424C4AEC8005AF947 /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		DF579A2C24C50DE4005AF947 /* WaterSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterSettings.swift; sourceTree = "<group>"; };
@@ -126,9 +146,11 @@
 		DF02A78924A360C3009582BC /* AppMaree */ = {
 			isa = PBXGroup;
 			children = (
-				DF45A1E824A64EF400C4C050 /* LaunchView.swift */,
+				DF43C46E24C5DAF800921B4D /* Launch */,
 				DFBF4FB424C0D9AC00E2DA4B /* Main */,
 				DF45A1CB24A6134B00C4C050 /* MainButton */,
+				DF43C48524CE2EA500921B4D /* Emergency */,
+				DF43C49624CE5BF600921B4D /* Date */,
 				DF02A7A224A544F8009582BC /* Menu */,
 				DF02223424A90537009A7747 /* Fishing */,
 				DF8094B524C1C6D50050CB6B /* Settings */,
@@ -139,10 +161,10 @@
 				DF02A79224A360C5009582BC /* Preview Content */,
 				DF45A1EA24A64F0C00C4C050 /* Other */,
 				DF02A79024A360C5009582BC /* Assets.xcassets */,
-				DF02A79824A360C5009582BC /* Info.plist */,
 				DF45A1E424A64E7F00C4C050 /* data.xml */,
 				DFBF4FAA24B4C17000E2DA4B /* pubs.json */,
 				DFBF4FAE24B611E000E2DA4B /* fish.json */,
+				DF02A79824A360C5009582BC /* Info.plist */,
 			);
 			path = AppMaree;
 			sourceTree = "<group>";
@@ -164,6 +186,35 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		DF43C46E24C5DAF800921B4D /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				DF43C47A24CDE49800921B4D /* LaunchView.swift */,
+				DF43C47F24CDE62D00921B4D /* ConditionsView.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		DF43C48524CE2EA500921B4D /* Emergency */ = {
+			isa = PBXGroup;
+			children = (
+				DF43C48324CE2D9C00921B4D /* EmergencyView.swift */,
+				DF440D0A24CEF20C00C9C8A9 /* EmergencyMessageView.swift */,
+				DF43C48624CE2EC000921B4D /* LocationManager.swift */,
+				DF43C48824CE324B00921B4D /* MapView.swift */,
+				DF43C48A24CE330C00921B4D /* Coordinator.swift */,
+			);
+			path = Emergency;
+			sourceTree = "<group>";
+		};
+		DF43C49624CE5BF600921B4D /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				DF43C49424CE5BEF00921B4D /* DatePickerView.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
 		DF44C0F624A8EB25001D6BDD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +222,7 @@
 				DF45A1ED24A64FDE00C4C050 /* TitleView.swift */,
 				DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */,
 				DFBF4F8624AB658300E2DA4B /* StyledText.swift */,
+				DF579A2C24C50DE4005AF947 /* WaterSettings.swift */,
 				DFBF4F9A24AE371600E2DA4B /* XMLParser.swift */,
 				DFBF4FA024AEA3BC00E2DA4B /* DraggableView.swift */,
 				DFBF4FAC24B4CEE800E2DA4B /* JSONContent.swift */,
@@ -182,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				DF02A7A024A53541009582BC /* ButtonMainView.swift */,
+				DF43C48124CE23CB00921B4D /* ButtonSecondView.swift */,
 				DF45A1CE24A6139600C4C050 /* HomeButtonView.swift */,
 				DFBF4F8A24ABB89700E2DA4B /* ButtonWindowView.swift */,
 			);
@@ -202,8 +255,8 @@
 			isa = PBXGroup;
 			children = (
 				DF02A7A324A54723009582BC /* SettingsView.swift */,
+				DF43C47524CDD84000921B4D /* SettingsColorEditorView.swift */,
 				DF579A2424C4AEC8005AF947 /* SettingsViewModel.swift */,
-				DF579A2C24C50DE4005AF947 /* WaterSettings.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -213,6 +266,7 @@
 			children = (
 				DF45A1C724A60A5100C4C050 /* MainView.swift */,
 				DFBF4FA824B2835200E2DA4B /* MainDataRow.swift */,
+				DF43C47124CDD0DB00921B4D /* MainFontSizeView.swift */,
 				DFBF4FB024B7618A00E2DA4B /* Pub.swift */,
 			);
 			path = Main;
@@ -294,30 +348,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF440D0B24CEF20C00C9C8A9 /* EmergencyMessageView.swift in Sources */,
 				DFBF4FB124B7618A00E2DA4B /* Pub.swift in Sources */,
 				DFBF4FA124AEA3BC00E2DA4B /* DraggableView.swift in Sources */,
 				DFBF4F8B24ABB89700E2DA4B /* ButtonWindowView.swift in Sources */,
 				DF45A1E324A64E2E00C4C050 /* FishingView.swift in Sources */,
 				DFBF4F8724AB658300E2DA4B /* StyledText.swift in Sources */,
 				DF44C0F524A8E1F2001D6BDD /* ServiceView.swift in Sources */,
+				DF43C47B24CDE49800921B4D /* LaunchView.swift in Sources */,
 				DFBF4F9B24AE371600E2DA4B /* XMLParser.swift in Sources */,
+				DF43C48424CE2D9C00921B4D /* EmergencyView.swift in Sources */,
+				DF43C48924CE324B00921B4D /* MapView.swift in Sources */,
 				DF02A78B24A360C3009582BC /* AppDelegate.swift in Sources */,
-				DF45A1E924A64EF400C4C050 /* LaunchView.swift in Sources */,
 				DF45A1C824A60A5100C4C050 /* MainView.swift in Sources */,
 				DF02A78D24A360C3009582BC /* SceneDelegate.swift in Sources */,
+				DF43C49524CE5BEF00921B4D /* DatePickerView.swift in Sources */,
 				DFBF4FA924B2835200E2DA4B /* MainDataRow.swift in Sources */,
 				DFBF4FA724B23B5300E2DA4B /* BundleHandlerswift.swift in Sources */,
+				DF43C48724CE2EC000921B4D /* LocationManager.swift in Sources */,
 				DF44C0F824A8FB67001D6BDD /* DiagonalBackgroundView.swift in Sources */,
 				DF02A78F24A360C3009582BC /* MenuView.swift in Sources */,
+				DF43C47624CDD84000921B4D /* SettingsColorEditorView.swift in Sources */,
 				DF02A7A424A54723009582BC /* SettingsView.swift in Sources */,
 				DF02223624A90551009A7747 /* ButtonFishDetailsView.swift in Sources */,
 				DF02A7A124A53541009582BC /* ButtonMainView.swift in Sources */,
+				DF43C47224CDD0DB00921B4D /* MainFontSizeView.swift in Sources */,
 				DFBF4FAD24B4CEE800E2DA4B /* JSONContent.swift in Sources */,
 				DF45A1CF24A6139600C4C050 /* HomeButtonView.swift in Sources */,
+				DF43C48224CE23CB00921B4D /* ButtonSecondView.swift in Sources */,
 				DF02A79F24A527DC009582BC /* ButtonMenuView.swift in Sources */,
+				DF43C48B24CE330C00921B4D /* Coordinator.swift in Sources */,
 				DF45A1E724A64EB500C4C050 /* DocumentationView.swift in Sources */,
 				DFBF4FB324BEC0D500E2DA4B /* InformationView.swift in Sources */,
 				DF45A1EE24A64FDE00C4C050 /* TitleView.swift in Sources */,
+				DF43C48024CDE62D00921B4D /* ConditionsView.swift in Sources */,
 				DF579A2D24C50DE4005AF947 /* WaterSettings.swift in Sources */,
 				DF02223A24A919E4009A7747 /* Animal.swift in Sources */,
 				DF579A2524C4AEC8005AF947 /* SettingsViewModel.swift in Sources */,

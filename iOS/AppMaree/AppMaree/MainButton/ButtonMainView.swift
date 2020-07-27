@@ -39,10 +39,4 @@ struct ButtonMainView: View {
             .clipShape(Circle())
             .frame(width: 100, height: 100, alignment: .bottom)
     }
-    
-    struct MainView_Previews: PreviewProvider {
-        static var previews: some View {
-            ButtonMainView(colored: true)
-        }
-    }
 }

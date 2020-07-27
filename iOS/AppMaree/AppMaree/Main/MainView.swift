@@ -18,14 +18,14 @@ struct MainView: View {
     // Variable dynamique entre les vues permettant d'afficher ou non la pub.
     @State private var showAd = false
     
-    @ObservedObject var settingsVM = SettingsViewModel()
+    @EnvironmentObject var settings: SettingsViewModel
     
     let ads = getAdsWithWeight()
     var days: [Day] = []
     let opacities:[Double] = [1.0, 0.6]
 
     init() {
-        
+
         UITableView.appearance().separatorStyle = .none
         UITableViewCell.appearance().backgroundColor = .clear
         UITableView.appearance().backgroundColor = .clear
@@ -37,6 +37,7 @@ struct MainView: View {
         }
         
         self.days = settingsVM.days!
+        settingsVM.focusedDate = Date()
     
     }
     
@@ -47,7 +48,7 @@ struct MainView: View {
                 
                 // LISTE DES JOURS
                 List {
-                    ForEach(0..<self.days.count) { number in
+                    ForEach($settings.dayNumber.wrappedValue ..< self.days.count) { number in
                     
                         MainDataRow(day: self.days[number])
                             .background(Color.white.opacity(self.opacities[number % 2]))
@@ -70,10 +71,11 @@ struct MainView: View {
                 ButtonWindowView(isBack: false, home: true)
             }
             
-        }.onAppear (perform: delay)
+        }
         .navigationBarHidden(true)
-        .navigationBarTitle("Limites")
-        .edgesIgnoringSafeArea(.all)
+        .navigationBarTitle("titre")
+        .edgesIgnoringSafeArea(.top)
+        .environmentObject(settingsVM)
         
     }
     

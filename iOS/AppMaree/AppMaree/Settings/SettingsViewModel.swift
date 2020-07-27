@@ -10,21 +10,13 @@ import Foundation
 
 class SettingsViewModel: ObservableObject {
     
-    static let agreementKey: String = "agreement"
     static let settingsKey: String = "settings"
     static let daysKey: String = "days"
     
     let defaults = UserDefaults.standard
+    static let defaultSettings = SavedSettings(agreement: false, water: "1.6", fontSize: 16, colors: [CustomColor(red: 1, green: 245/255, blue: 0), CustomColor(red: 88/255, green: 175/255, blue: 1), CustomColor(red: 66/255, green: 1, blue: 97/255), CustomColor(red: 1, green: 115/255, blue: 115/255)])
     
-    @Published var agreement: Bool = SettingsViewModel.exists(key: SettingsViewModel.agreementKey) ? try? PropertyListDecoder().decode(Bool.self, from: UserDefaults.standard.value(forKey: SettingsViewModel.agreementKey) as! Data) : false {
-        didSet {
-            let encodedData = try? PropertyListEncoder().encode(self.agreement)
-            defaults.set(encodedData, forKey: SettingsViewModel.agreementKey)
-        }
-    }
-    
-    @Published var settings: SavedSettings = SettingsViewModel.exists(key: SettingsViewModel.settingsKey) ? try? PropertyListDecoder().decode(SavedSettings.self, from: UserDefaults.standard.value(forKey: SettingsViewModel.settingsKey) as! Data) : SavedSettings(water: "1.6", fontSize: 1.0) {
-        
+    @Published var settings: SavedSettings = SettingsViewModel.exists(key: SettingsViewModel.settingsKey) ? try? PropertyListDecoder().decode(SavedSettings.self, from: UserDefaults.standard.value(forKey: SettingsViewModel.settingsKey) as! Data) : defaultSettings {
         didSet {
             let encodedData = try? PropertyListEncoder().encode(self.settings)
             defaults.set(encodedData, forKey: SettingsViewModel.settingsKey)
@@ -39,8 +31,31 @@ class SettingsViewModel: ObservableObject {
         }
     }
     
+    var focusedDate: Date = Date() {
+        didSet {
+            let today = Date()
+            var dateComponents = DateComponents()
+            let userCalendar = Calendar.current
+            
+            dateComponents.day = 1
+            dateComponents.month = 1
+            dateComponents.year = userCalendar.component(.year, from: today)
+            
+            self.dayNumber = daysBetweenDates(date1: userCalendar.date(from: dateComponents)!, date2: self.focusedDate)
+        }
+    }
+    
+    @Published var dayNumber: Int = 0
+    
     static func exists(key: String) -> Bool {
         return UserDefaults.standard.object(forKey: key) != nil
+    }
+    
+    static func resetAll() {
+        UserDefaults.standard.removeObject(forKey: settingsKey)
+        UserDefaults.standard.removeObject(forKey: daysKey)
+        settingsVM.settings = defaultSettings
+        settingsVM.days = nil
     }
     
 }
