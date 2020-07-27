@@ -72,6 +72,7 @@ struct MainView: View {
             }
             
         }
+        .onAppear(perform: delay)
         .navigationBarHidden(true)
         .navigationBarTitle("titre")
         .edgesIgnoringSafeArea(.top)

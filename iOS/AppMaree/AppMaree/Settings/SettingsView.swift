@@ -38,8 +38,10 @@ struct SettingsView: View {
                 
                 MainDataRow(day: Day(portes: [Porte(etat: "ouverture", heure: "11h11"),Porte(etat: "fermeture", heure: "11h11"),Porte(etat: "ouverture", heure: "11h11"),Porte(etat: "fermeture", heure: "11h11")], marees: [Maree(etat: "PM", heure: "11h11", hauteur: "2,6", coef: "56"),Maree(etat: "BM", heure: "11h11", hauteur: "2,6"),Maree(etat: "PM", heure: "11h11", hauteur: "2,6", coef: "56"),Maree(etat: "BM", heure: "11h11", hauteur: "2,6", coef: "56")], dateString: "01 JAN"))
                 
+                Text("Taille de l'écriture:")
                 Slider(value: $settingsVM.settings.fontSize, in: 1...3, step: 1)
                 
+                Text("Couleurs des cellules:")
                 HStack {
                     ForEach(0..<4) { number in
                         NavigationLink(destination: SettingsColorEditorView(colorToEdit: number)) {

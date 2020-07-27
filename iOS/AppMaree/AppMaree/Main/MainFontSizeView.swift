@@ -25,8 +25,10 @@ struct MainFontSizeView: View {
                         .padding(.trailing)
                         .font(.system(size: 20))
                 } else {
-                    Text(self.data).font(.system(size: 20))
+                    Text(self.data)
+                        .font(.system(size: 20))
                         .foregroundColor(contrastedTextColor(color: self.color))
+                        .fixedSize(horizontal: true, vertical: true)
                 }
             } else if self.$settingsVM.settings.fontSize.wrappedValue == 3 {
                 if isDate {
@@ -36,8 +38,10 @@ struct MainFontSizeView: View {
                         .padding(.trailing)
                         .font(.system(size: 25))
                 } else {
-                    Text(self.data).font(.system(size: 25))
+                    Text(self.data)
+                        .font(.system(size: 25))
                         .foregroundColor(contrastedTextColor(color: self.color))
+                        .fixedSize(horizontal: true, vertical: true)
                 }
             } else {
                 if isDate {
@@ -48,6 +52,7 @@ struct MainFontSizeView: View {
                 } else {
                     Text(self.data)
                         .foregroundColor(contrastedTextColor(color: self.color))
+                        .fixedSize(horizontal: true, vertical: true)
                 }
             }
         }
