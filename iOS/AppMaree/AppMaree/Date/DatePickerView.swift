@@ -17,7 +17,7 @@ struct DatePickerView: View {
         
         ZStack {
             VStack {
-                DatePicker("", selection: self.$settingsVM.focusedDate, in: Date()...)
+                DatePicker("", selection: self.$settingsVM.focusedDate, in: Date()..., displayedComponents: .date)
                     .labelsHidden()
             }
             

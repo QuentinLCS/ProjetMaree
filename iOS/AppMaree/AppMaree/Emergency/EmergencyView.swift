@@ -23,20 +23,21 @@ struct EmergencyView: View {
                 TitleView(title: "SIGNALER UN PROBLÈME", titleColor: Color.red)
 
                 EmergencyMessageView()
-                
+            
                 ZStack {
                     MapView()
-                        .frame(height: 350)
-                    VStack {
+                        .padding(.top, 25)
+                    VStack(spacing: 0) {
                         Text("lat: \(coordinate.latitude), long: \(coordinate.longitude)")
                             .fontWeight(.semibold)
                             .foregroundColor(Color.white)
                             .padding()
                             .background(Color("Primaire 2"))
                             .cornerRadius(30)
+                            .shadow(radius: 10)
                         Spacer()
                     }
-                }
+                }.frame(height: 350)
             }
             ButtonWindowView(isBack: true, presentation: presentationMode)
         }

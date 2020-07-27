@@ -31,7 +31,7 @@ struct MenuView: View {
                         // ----------------------------------------------------------------------------
                         HStack {
                             Spacer()
-                            ButtonMenuView(destination: .service)
+                            ButtonMenuView(destination: .date)
                             Spacer()
                             ButtonMenuView(destination: .fishing)
                             Spacer()
@@ -45,6 +45,8 @@ struct MenuView: View {
                             Spacer()
                         }
                         HStack {
+                            Spacer()
+                            ButtonMenuView(destination: .partner)
                             Spacer()
                             ButtonMenuView(destination: .info)
                             Spacer()
