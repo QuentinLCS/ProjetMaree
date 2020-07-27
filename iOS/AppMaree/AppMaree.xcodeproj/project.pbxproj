@@ -28,6 +28,7 @@
 		DF43C48924CE324B00921B4D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C48824CE324B00921B4D /* MapView.swift */; };
 		DF43C48B24CE330C00921B4D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C48A24CE330C00921B4D /* Coordinator.swift */; };
 		DF43C49524CE5BEF00921B4D /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43C49424CE5BEF00921B4D /* DatePickerView.swift */; };
+		DF440D0B24CEF20C00C9C8A9 /* EmergencyMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF440D0A24CEF20C00C9C8A9 /* EmergencyMessageView.swift */; };
 		DF44C0F524A8E1F2001D6BDD /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44C0F424A8E1F2001D6BDD /* ServiceView.swift */; };
 		DF44C0F824A8FB67001D6BDD /* DiagonalBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */; };
 		DF45A1C824A60A5100C4C050 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1C724A60A5100C4C050 /* MainView.swift */; };
@@ -77,6 +78,7 @@
 		DF43C48824CE324B00921B4D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		DF43C48A24CE330C00921B4D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		DF43C49424CE5BEF00921B4D /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		DF440D0A24CEF20C00C9C8A9 /* EmergencyMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyMessageView.swift; sourceTree = "<group>"; };
 		DF44C0F424A8E1F2001D6BDD /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
 		DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagonalBackgroundView.swift; sourceTree = "<group>"; };
 		DF45A1C724A60A5100C4C050 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				DF43C48324CE2D9C00921B4D /* EmergencyView.swift */,
+				DF440D0A24CEF20C00C9C8A9 /* EmergencyMessageView.swift */,
 				DF43C48624CE2EC000921B4D /* LocationManager.swift */,
 				DF43C48824CE324B00921B4D /* MapView.swift */,
 				DF43C48A24CE330C00921B4D /* Coordinator.swift */,
@@ -345,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF440D0B24CEF20C00C9C8A9 /* EmergencyMessageView.swift in Sources */,
 				DFBF4FB124B7618A00E2DA4B /* Pub.swift in Sources */,
 				DFBF4FA124AEA3BC00E2DA4B /* DraggableView.swift in Sources */,
 				DFBF4F8B24ABB89700E2DA4B /* ButtonWindowView.swift in Sources */,
