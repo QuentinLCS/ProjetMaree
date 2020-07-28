@@ -19,7 +19,8 @@ struct MainDataRow: View {
     }
     
     var body: some View {
-        HStack(spacing: 0) {
+        Text("cc")
+        /*HStack(spacing: 0) {
             MainFontSizeView(data: self.day.dateString, isDate: true)
             
             ForEach(0..<4) { number in
@@ -50,7 +51,7 @@ struct MainDataRow: View {
                 }
             }
         }.frame(maxHeight: 140)
-        .padding(.horizontal)
+        .padding(.horizontal)*/
         
     }
 }

@@ -16,7 +16,8 @@ struct MainFontSizeView: View {
     var color: CustomColor? = nil
     
     var body: some View {
-        ZStack {
+        Text("cc")
+        /*ZStack {
             if self.$settings.settings.fontSize.wrappedValue == 2 {
                 if isDate {
                     Text(self.data)
@@ -55,7 +56,7 @@ struct MainFontSizeView: View {
                         .fixedSize(horizontal: true, vertical: true)
                 }
             }
-        }
+        }*/
     }
     
     func contrastedTextColor(color: CustomColor?) -> Color {

@@ -29,6 +29,8 @@ struct SettingsView: View {
     
     var body: some View {
         NavigationView {
+            Text("cc")
+            /*
             ZStack {
                 VStack(alignment: .leading) {
                     TitleView(title: "PARAMÈTRES")
@@ -80,7 +82,7 @@ struct SettingsView: View {
                 }.padding(.horizontal, 20)
                 
                 ButtonWindowView(isBack: true, presentation: presentationMode)
-            }
+            }*/
         }
         .navigationBarHidden(true)
         .navigationBarTitle("titre")

@@ -57,7 +57,7 @@
 /* Begin PBXFileReference section */
 		DF02223524A90551009A7747 /* ButtonFishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFishView.swift; sourceTree = "<group>"; };
 		DF02223924A919E4009A7747 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
-		DF02A78724A360C3009582BC /* AppMaree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppMaree.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF02A78724A360C3009582BC /* Port Diélette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Port Diélette.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF02A78A24A360C3009582BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF02A78C24A360C3009582BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DF02A78E24A360C3009582BC /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 		DF02A78824A360C3009582BC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DF02A78724A360C3009582BC /* AppMaree.app */,
+				DF02A78724A360C3009582BC /* Port Diélette.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -289,7 +289,7 @@
 			);
 			name = AppMaree;
 			productName = AppMaree;
-			productReference = DF02A78724A360C3009582BC /* AppMaree.app */;
+			productReference = DF02A78724A360C3009582BC /* Port Diélette.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -530,8 +530,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = UniCaen.AppMaree;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = QuentinL.AppMaree;
+				PRODUCT_NAME = "Port Diélette";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -551,8 +551,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = UniCaen.AppMaree;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = QuentinL.AppMaree;
+				PRODUCT_NAME = "Port Diélette";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
