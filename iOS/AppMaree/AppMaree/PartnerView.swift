@@ -8,13 +8,13 @@
 
 import SwiftUI
 
-struct ServiceView: View {
+struct PartnerView: View {
     @State private var showAd = false
     @State private var adFile = ""
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    let sortedAds: [String: [Pub]]
+    let sortedAds: [String: [AdsManager]]
     let sortedCategory: [String]
     
     init() {
@@ -31,16 +31,15 @@ struct ServiceView: View {
                         .modifier(DraggableModifier(direction: .horizontal, showAd: $showAd))
                     Spacer()
                 }
-                .zIndex(2)
             }
+            
             ScrollView {
-                HStack {
-                    TitleView(title: "PORT-DIELETTE", subTitle: "Liste des partenaires")
-                }
+                TitleView(title: "PARTENAIRES")
+                
                 Text("L'association des plaisanciers de Port Dielette vous présente la liste de ses partenaires pour l'édition de l'annuaire des marées.")
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.center)
-                    .padding()
+                    .padding([.leading, .bottom, .trailing], 20.0)
                 
                 ForEach(0..<sortedCategory.count) { category in // create number of rows
                     VStack {
@@ -57,46 +56,16 @@ struct ServiceView: View {
                             }) { Text(self.sortedAds[self.sortedCategory[category]]![value].name)
                             }
                         }
-                        Spacer()
-                        .frame(height: 20)
                     }
+                    .padding(.bottom)
                 }
-                Spacer()
-                .frame(height: 250)
+                
+                Text("Merci à eux !")
+                    .fontWeight(.bold)
+                    .padding(.bottom, 200.0)
             }
+            
             ButtonWindowView(presentation: presentationMode)
         }
-    }
-}
-
-func mappedAds() -> [String: [Pub]] {
-    let ads: [Pub] = getAds()
-    //Sort ads by their name and regroup them under the same category
-    let map = ads.sorted(by: {$0.name < $1.name }).reduce(into: [String: [Pub]]()) { result, element in
-        // Get the category of the current element
-        let category = element.category
-        // initialize an array with one element or add another element to the existing value
-        result[category, default: []].append(element)
-    }
-    return map
-}
-
-func categoryArray() -> [String] {
-    let ads: [Pub] = getAds()
-    var array: [String] = []
-    //Add in array every existing category
-    for ad in ads {
-        if !(array.contains(ad.category)) {
-            array.append(ad.category)
-        }
-    }
-    //Sort the category by name
-    array.sort()
-    return array
-}
-
-struct ServiceView_Previews: PreviewProvider {
-    static var previews: some View {
-        ServiceView()
     }
 }

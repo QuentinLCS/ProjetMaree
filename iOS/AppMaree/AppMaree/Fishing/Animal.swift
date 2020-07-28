@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Animal: Identifiable, Decodable {
+struct Animal: Identifiable, Decodable, Hashable {
     let id = UUID()
     let name: String
     let imageName: String
@@ -18,6 +18,8 @@ struct Animal: Identifiable, Decodable {
     let taggingObligation: Bool
     let description: String
     let helpImage: String?
+    
+    static var allAnimals: [[Animal]] = [[]]
     
     init(name: String, imageName: String = "fishing", allowedSize: Int, allowedDate: [String] = ["",""], allowedPerPerson: Int = 2, taggingObligation: Bool = true, description: String = "", helpImage: String? = nil) {
     
@@ -29,23 +31,24 @@ struct Animal: Identifiable, Decodable {
         self.taggingObligation = taggingObligation
         self.description = description
         self.helpImage = helpImage
-        
     }
     
     func describe() -> String {
-        return "Le/La \(self.name) ne doit pas dépasser une taille de \(self.allowedSize) cm.\n\nAutorisé du \(self.allowedDate[0]) au \(self.allowedDate[1]), limité à \(self.allowedPerPerson) \(self.name)S par jour et par personne. En dehors de cette période, le pêcher et le relacher est autorisé.\n\n\(self.description)"
+        return "Le/La \(self.name) ne doit pas dépasser une taille de \(self.allowedSize) cm.\n\nAutorisé du \(self.allowedDate[0]) au \(self.allowedDate[1]), limité à \(self.allowedPerPerson) \(self.name)S par jour et par personne. En dehors de cette période, le pêcher et le relacher est autorisé.\n\n\(self.description)\nMarquage " + (self.taggingObligation ? "OBLIGATOIRE" : "FACULTATIF") + "."
     }
     
-    static func getFishes(bundleName: String) -> [Animal] {
-        var poissons: [Animal] = []
-        let contents = BundleHandler.bundleContent(bundleName: bundleName)
-        
-        for item in contents {
-          let infos = item.lastPathComponent.split(separator: "_")
-          let size = infos[1].split(separator: ".")
-          poissons.append(Animal(name: String(infos[0]).uppercased(), imageName: item.lastPathComponent, allowedSize: Int(size[0]) ?? 0))
+    static func getFishes() -> [Animal] {
+        if allAnimals[0].isEmpty {
+            allAnimals = JSONContent.JSONFishesContent()
         }
-        return poissons
+        return allAnimals[0]
+    }
+    
+    static func getShellFishes() -> [Animal] {
+        if allAnimals[0].isEmpty {
+            allAnimals = JSONContent.JSONFishesContent()
+        }
+        return allAnimals[1]
     }
 
 }

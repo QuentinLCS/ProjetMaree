@@ -1,0 +1,53 @@
+//
+//  FishDetailsView.swift
+//  AppMaree
+//
+//  Created by unicaen on 27/07/2020.
+//  Copyright © 2020 unicaen. All rights reserved.
+//
+
+import SwiftUI
+
+struct AnimalDetailsView: View {
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    let animal: Animal
+    
+    var body: some View {
+        ZStack {
+            VStack {
+                TitleView(title: "PÈCHE EN BATEAU : LIMITES", subTitle: "\(animal.name) : \(animal.allowedSize)cm")
+                    .padding(.bottom, 30.0)
+                
+                Text(animal.describe()).padding(.horizontal, 20.0)
+                
+                ZStack {
+                    DiagonalBackgroundView(a: .primaryColor)
+                    
+                    VStack (spacing: 0) {
+                        Text("Qu'est-ce qu'un marquage ?")
+                            .font(.system(size: 22))
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.white)
+                        
+                        if animal.helpImage != nil {
+                           Image(animal.helpImage!)
+                               .resizable()
+                               .scaledToFit()
+                               .padding()
+                        } else {
+                           Image("marquage-poisson")
+                               .resizable()
+                               .scaledToFit()
+                               .padding()
+                        }
+                        Spacer()
+                    }.padding(.top, 20.0)
+                }
+            }
+            ButtonWindowView(isBack: true, presentation: presentationMode)
+        }.edgesIgnoringSafeArea(.bottom)
+        
+    }
+}

@@ -8,229 +8,100 @@
 
 import Foundation
 
-let hauteurPorte = 1.5
-let hauteurSeuilPorte = 3.5
-let settingsVM = SettingsViewModel()
+let HAUTEUR_PORTE = 1.5
+let HAUTEUR_SEUIL_PORTE = 3.5
 
-struct NewHours {
-    var ouvertureMaree1: String = "--h--"
-    var fermetureMaree1: String = "--h--"
-    var ouvertureMaree2: String = "--h--"
-    var fermetureMaree2: String = "--h--"
-}
-
-func affecterCote(tirantEau: Double) -> Double
-{
-  return (hauteurSeuilPorte + hauteurPorte) + max(tirantEau - hauteurPorte, 0)
-}
-/*
-func tirantEau(tirantEau: Double)
-{
-    let days = settingsVM.days!
+/**
+ * Fonction pour calculer l'horaire d'entrée ou de sortie en fonction du tirant d'eau
+ */
+func calculHeureSelonTiranDEau(tirantDEau: Double) {
+    var days = settingsVM.days!
+    let listMarees = getListMarees()
+    var mareeNumber = 0
     
-    if tirantEau < (hauteurPorte + 0.05) || tirantEau > (hauteurPorte + hauteurSeuilPorte) {
-        print("Tirant d'eau invalide")
-        return
+    for dayNumber in 0..<days.count {
+        
+        var actualDay = days[dayNumber]
+        var mareeMax: Maree
+        var mareeMin: Maree
+        var heureMareeMax: Double
+        var heureMareeMin: Double
+        var heurePorte: Double
+        var hauteurMareeMax: Double
+        var hauteurMareeMin: Double
+        var hauteurMax = 0.0
+        var dureeMaree: Double
+        var marnage: Double
+        var sinus: Double
+        var hauteurCalculeePorte: Double
+        var hauteurCalculeePlusTirantDEau: Double
+        var retour: String
+        var heure : Double
+        
+        for number in 0..<4 {
+            
+            if actualDay.portes[number].heure.contains("h") {
+                mareeMax = listMarees[mareeNumber+1]
+                mareeMin = listMarees[mareeNumber]
+                mareeNumber += 1
+                heureMareeMax = convertStringHourToDouble(heure: mareeMax.heure, separator: ":")
+                heureMareeMin = convertStringHourToDouble(heure: mareeMin.heure, separator: ":")
+                heurePorte = convertStringHourToDouble(heure: actualDay.portes[number].heure, separator: "h")
+                hauteurMareeMax = Double(mareeMax.hauteur.replacingOccurrences(of: ",", with: "."))!
+                hauteurMareeMin = Double(mareeMin.hauteur.replacingOccurrences(of: ",", with: "."))!
+                hauteurMax = 0.0
+                if heureMareeMin > heureMareeMax { heureMareeMax+=24 }
+                if heureMareeMax < heurePorte { heurePorte-=24 }
+                if heureMareeMin > heurePorte { heurePorte+=24 }
+                dureeMaree = heureMareeMax - heureMareeMin
+                marnage = hauteurMareeMax - hauteurMareeMin
+                sinus = sin(Double.pi/2 * ((heurePorte-heureMareeMin) / dureeMaree))
+                hauteurCalculeePorte = sinus*sinus*marnage+hauteurMareeMin
+                hauteurCalculeePlusTirantDEau = hauteurCalculeePorte + tirantDEau - HAUTEUR_PORTE
+                if marnage > 0 { hauteurMax = hauteurMareeMax }
+                else { hauteurMax = hauteurMareeMin }
+
+                if (hauteurCalculeePlusTirantDEau > hauteurMax) || (hauteurCalculeePlusTirantDEau+0.1 > hauteurMax) {
+                    actualDay.portes[number].estimatedHour = "-----"
+                } else {
+                    heure = dureeMaree / Double.pi * 2.0 * asin(sqrt((hauteurCalculeePlusTirantDEau - hauteurMareeMin) / marnage)) + heureMareeMin
+                    if heure > 24 { heure -= 24 }
+                    retour = "\(Int(floor(heure)))h"
+                    heure -= floor(heure)
+                    if floor( heure * 60 ) < 10 { retour += "0"}
+                    retour += "\(Int(floor(heure * 60)))"
+                    days[dayNumber].portes[number].estimatedHour = retour
+                }
+            }
+        }
     }
+    settingsVM.days = days
+}
+
+/**
+ * Fonction qui converti l'heure en décimal
+ *
+ * @param heure Heure a convertir
+ * @param separator Séparateur entre les heures et les minutes (: ou h)
+ * @return Double correspond à l'heure
+ */
+func convertStringHourToDouble(heure: String, separator: Character) -> Double{
+    var heureDouble : Double = Double(heure.split(separator: separator)[0])!
+    heureDouble += Double(heure.split(separator: separator)[1])!/60
+    return heureDouble
+}
+
+func getListMarees() -> [Maree] {
+    let days = settingsVM.days!
+    var listMarees: [Maree] = []
     
-    settingsVM.settings.water = String(tirantEau)
-    
-    for number in 0 ..< days.count {
-        let jourActuel = days[number]
-        let jourPrecedent = days[number+1]
-        let jourSuivant = days[number-1]
-        
-        var newHours = NewHours()
-        
-        if affecterCote(tirantEau: tirantEau) > 0 {
-            newHours.ouvertureMaree1 = parametrer(maPorte: jourActuel.portes[0], tirantEau: tirantEau, jourActuel: jourActuel, jourSuivant: jourSuivant, jourPrecedent: jourPrecedent)
-            newHours.fermetureMaree1 = parametrer(maPorte: jourActuel.portes[1], tirantEau: tirantEau, jourActuel: jourActuel, jourSuivant: jourSuivant, jourPrecedent: jourPrecedent)
-            
-            if newHours.ouvertureMaree1=="-----" {  newHours.fermetureMaree1="-----" }
-            if newHours.fermetureMaree1=="-----" {  newHours.ouvertureMaree1="-----" }
-            
-            newHours.ouvertureMaree2 = parametrer(maPorte: jourActuel.porte[2], tirantEau: tirantEau, jourActuel: jourActuel, jourSuivant: jourSuivant, jourPrecedent: jourPrecedent)
-            newHours.fermetureMaree2 = parametrer(maPorte: jourActuel.porte[3], tirantEau: tirantEau, jourActuel: jourActuel, jourSuivant: jourSuivant, jourPrecedent: jourPrecedent)
-            
-            if newHours.ouvertureMaree2=="-----" {  newHours.fermetureMaree2="-----" }
-            if newHours.fermetureMaree2=="-----" {  newHours.ouvertureMaree2="-----" }
+    days.forEach { day in
+        day.marees.forEach { maree in
+            if !maree.heure.contains("-") {
+                listMarees.append(maree)
+            }
         }
     }
     
-    settingsVM.days = days
+    return listMarees
 }
-        
-
-func parametrer(maPorte: Porte, tirantEau: Double, jourActuel: Day, jourSuivant: Day, jourPrecedent: Day)
-{
-    
-    // test des marées de jourPrecedent
-    if jourPrecedent.marees[3].heure == 60 {
-      if (maPorte.heure >= jourPrecedent.maree[2].heure - 24 && maPorte.heure < jourActuel.maree[0].heure)
-      //vérifit si la porte est entre le jourPrécédent et le jourActuel
-          return calculTirantEau(tirantEau, maPorte, jourPrecedent.maree[2], jourActuel.maree[0])
-    }
-    else
-    {
-      // on est sur la maree 4 du jour précédent
-      if (maPorte.heure >= jourPrecedent.maree[3].heure - 24 && maPorte.heure < jourActuel.maree[0].heure)
-      //vérifit si la porte est entre le jourPrécédent et le jourActuel
-          return calculTirantEau(tirantEau, maPorte, jourPrecedent.maree[3], jourActuel.maree[0])
-    }
-  
-  // test des marées de jourActuel
-  if (maPorte.heure >= jourActuel.maree[0].heure && maPorte.heure < jourActuel.maree[1].heure)
-    return calculTirantEau(tirantEau, maPorte, jourActuel.maree[0], jourActuel.maree[1])
-  if (maPorte.heure >= jourActuel.maree[1].heure && maPorte.heure < jourActuel.maree[2].heure)
-    return calculTirantEau(tirantEau, maPorte, jourActuel.maree[1], jourActuel.maree[2])
-  if(jourActuel.maree[3].heure != 60) // on est sur un jour à 4 marées
-  {
-    if (maPorte.heure >= jourActuel.maree[2].heure && maPorte.heure < jourActuel.maree[3].heure)
-      return calculTirantEau(tirantEau, maPorte, jourActuel.maree[2], jourActuel.maree[3])
-    if (jourSuivant != undefined)
-    {
-      if (maPorte.heure >= jourActuel.maree[3].heure && maPorte.heure < jourSuivant.maree[0].heure + 24)
-        return calculTirantEau(tirantEau, maPorte, jourActuel.maree[3], jourSuivant.maree[0])
-    }
-  }
-  else // on est sur un jour à 3 marées
-  {
-    if (maPorte.heure >= jourActuel.maree[2].heure && maPorte.heure < jourSuivant.maree[0].heure + 24)
-      return calculTirantEau(tirantEau, maPorte, jourActuel.maree[2], jourSuivant.maree[0])
-  }
-  // test des marées de jourSuivant
-  if (jourSuivant != undefined)
-  {
-    if (maPorte.heure >= jourSuivant.maree[0].heure + 24 && maPorte.heure < jourSuivant.maree[1].heure + 24)
-      return calculTirantEau(tirantEau, maPorte, jourSuivant.maree[0], jourSuivant.maree[1])
-    if (maPorte.heure >= jourSuivant.maree[1].heure + 24 && maPorte.heure < jourSuivant.maree[2].heure + 24)
-      return calculTirantEau(tirantEau, maPorte, jourSuivant.maree[1], jourSuivant.maree[2])
-    if (jourSuivant.maree[3].heure != 60)
-    {
-      if (maPorte.heure >= jourSuivant.maree[2].heure + 24 && maPorte.heure < jourSuivant.maree[3].heure + 24)
-        return calculTirantEau(tirantEau, maPorte, jourSuivant.maree[2], jourSuivant.maree[3])
-    }
-  }
-  // si on arrive ici c'est qu'aucune marée ne convient
-  return "--1--"
-}
-
-function calculTirantEau(tirantEau, porte, mareeMin, mareeMax) // fait le calcul compliqué. Retourne un "String" au format 12h12
-{
-
-    if(!porte)
-   return "error"
-    
-    let porteHeure = porte.heure
-    
-    let aHeure, bHeure
-    let aHauteur, bHauteur
-    
-    aHeure = mareeMin.heure
-    aHauteur = mareeMin.hauteur
-    
-    bHeure = mareeMax.heure
-    bHauteur = mareeMax.hauteur
-    
-    
-
-    // ZZ console.log('################################################### ')
-    // ZZ console.log ('aHeure='   + aHeure + '    bHeure='  + bHeure +  '  heure porte=' +porteHeure)
-    // ZZ console.log('ahaut : ' + aHauteur + '   bHauteur :'+bHauteur )
-
-    if (aHeure > bHeure)
-   bHeure += 24
-    // console.log ('aHeure=' +aHeure + '    bHeure='+bHeure + '        ' + '  heure porte=' +porteHeure)
-    // Ce cas arrive. il faut le corriger
-    //    aHeure=0.4166666666666667    bHeure=6.983333333333333  heure porte=28.05
-
-    //if (aHeure < bHeure && bHeure < 24 && porteHeure >24) {
-// porteHeure=porteHeure-24
-// console.log('COUCOU')
-  //  }
-
-    if (bHeure < porteHeure) { porteHeure=porteHeure-24 }
-    if (aHeure > porteHeure) { porteHeure=porteHeure+24 }
-
-
-    // console.log('aheure : ' + aHeure + '   bheure :'+bHeure )
-    // console.log('ahaut : ' + aHauteur + '   bHauteur :'+bHauteur )
-    // console.log('HeurePorte officiel : ' + porteHeure  )
-    // if (!(aHeure < porteHeure && porteHeure<bHeure))
-    // console.log('GROS PROBLEME')
-
-
-
-    let cote = affecterCote(tirantEau)
-    let dureeMaree = bHeure - aHeure
-    let marnage
-    let heure
-    let hauteurCalculeePlusTirantEau
-    let hauteurMax
-    
-    let heurePorteCalculee
-    let hauteurCalculeePorte
-    
-    // ici tirantEau est une chaine. vive les langages typés !
-    tirantEau=parseFloat(tirantEau)
-    // le calcul est le meme pour les marées montantes et descendante
-    // le principe est le suivant :
-    // on calcule la hauteur d'eau ha sur la sinusoide à l'heure de l'ouverture de la porte.
-    // a Carteret, on peut avoir jusqu'à 50 cm en plus
-    // on ajoute à hauteur d'eau trouvée la différence entre le tirant d'eau et le seuil de la porte et on obtient hauteurplustiranteau
-    // on vérifie que hauteurplustiranteau n'est pas supérieur à la hauteur à PM.
-    // on calcule l'heure correspondant la hauteurplustiranteau
-    
-    // on retire la hauteur de la basse mer pour ne travailler que sur la variation de hauteur
-    marnage = (bHauteur - aHauteur)
-    
-    // on calcule la hauteur d'eau à partir de la sinusoide pour l'horaire officiel de la porte
-    let sinus=Math.sin(Math.PI/2*((porteHeure-aHeure)/dureeMaree))
-    hauteurCalculeePorte =sinus*sinus*marnage+aHauteur
-
-    // on calcule la nouvelle hauteur avec le tirant d'eau
-    hauteurCalculeePlusTirantEau=hauteurCalculeePorte+tirantEau-hauteurPorte
-    
-    //    if (cote > bHauteur || cote < aHauteur)
-    
-    if (marnage>0) hauteurMax=bHauteur
-    else hauteurMax=aHauteur
-
-    if (hauteurCalculeePlusTirantEau > hauteurMax || (hauteurCalculeePlusTirantEau+0.1) > hauteurMax)
-   return "-----"
-
-    heure  = dureeMaree / Math.PI * 2.0 * Math.asin(
-   Math.sqrt((hauteurCalculeePlusTirantEau-aHauteur) / marnage ))+aHeure
-    
-  //  if (aHauteur < bHauteur) console.log('#################                        montante  heure='+heure)
-  //  else console.log('#################                        descendante heure='+heure)
-
-  //  console.log('aheure : ' + aHeure + '   bheure :'+bHeure + '  dureeMaree : ' + dureeMaree)
-  //  console.log('ahaut : ' + aHauteur + '   bHauteur :'+bHauteur + '  marnage : ' + marnage)
-  //  console.log('HeurePorte officiel : ' + porteHeure + '    Heure calculee pour tirant eau:' + heure )
-  //  console.log('hauteurCalculeePorte   '+hauteurCalculeePorte)
-  //  console.log('hauteurCalculeePlusTirantEau : '+hauteurCalculeePlusTirantEau)
-  //  console.log('   tiranteau '+ tirantEau +' hauteurPorte '+  hauteurPorte     )
-
-//    if ((marnage > 0 && heure<=porteHeure ) || (marnage < 0 && heure>=porteHeure ))
-// console.log('GROS PROBLEME')
-
-    
-    //if (heure>porteHeure)  delta = (heure-porteHeure)
-    //else delta=porteHeure-heure
-    
-    if (heure > 24)
-   heure -= 24
-    
-    let minute = Math.floor(heure%1*60)
-    
-    let retour = Math.floor(heure) + "h" // format : "12h"
-    
-    if (minute < 10)
-   retour = retour + "0" + minute
-    else
-   retour += minute
-    return retour
-}*/
-
-

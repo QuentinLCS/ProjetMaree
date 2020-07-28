@@ -10,13 +10,16 @@ import SwiftUI
 
 struct MainDataRow: View {
     
-    @EnvironmentObject var settingsVM : SettingsViewModel
+    @EnvironmentObject var settings : SettingsViewModel
     
     let day: Day
     
+    init(day: Day = Day(portes: [Porte(etat: "ouverture", heure: "06h53"),Porte(etat: "fermeture", heure: "13h40"),Porte(etat: "ouverture", heure: "19h23"),Porte(etat: "fermeture", heure: "02h00")], marees: [Maree(etat: "PM", heure: "04h22", hauteur: "2,1"),Maree(etat: "BM", heure: "10h03", hauteur: "9,25", coef: "79"),Maree(etat: "PM", heure: "16h46", hauteur: "1,95"),Maree(etat: "BM", heure: "22h27", hauteur: "8,95", coef: "77")], dateString: "01 JAN")) {
+        self.day = day
+    }
+    
     var body: some View {
         HStack(spacing: 0) {
-            
             MainFontSizeView(data: self.day.dateString, isDate: true)
             
             ForEach(0..<4) { number in
@@ -26,24 +29,29 @@ struct MainDataRow: View {
                         
                     ZStack {
         
-                        Color(red: self.$settingsVM.settings.colors[mareeColor(day: self.day, number: number)].red.wrappedValue, green: self.$settingsVM.settings.colors[mareeColor(day: self.day, number: number)].green.wrappedValue, blue: self.$settingsVM.settings.colors[mareeColor(day: self.day, number: number)].blue.wrappedValue)
+                        Color(red: self.$settings.settings.colors[mareeColor(day: self.day, number: number)].red.wrappedValue, green: self.$settings.settings.colors[mareeColor(day: self.day, number: number)].green.wrappedValue, blue: self.$settings.settings.colors[mareeColor(day: self.day, number: number)].blue.wrappedValue)
                         
-                        MainFontSizeView(data: self.day.marees[number].heure)
+                        MainFontSizeView(data: self.day.marees[number].heure, color: self.$settings.settings.colors[mareeColor(day: self.day, number: number)].wrappedValue)
                         
                     }
                     
                     ZStack {
-                        Color(red: self.$settingsVM.settings.colors[doorColor(day: self.day, number: number)].red.wrappedValue, green: self.$settingsVM.settings.colors[doorColor(day: self.day, number: number)].green.wrappedValue, blue: self.$settingsVM.settings.colors[doorColor(day: self.day, number: number)].blue.wrappedValue)
+                        Color(red: self.$settings.settings.colors[doorColor(day: self.day, number: number)].red.wrappedValue, green: self.$settings.settings.colors[doorColor(day: self.day, number: number)].green.wrappedValue, blue: self.$settings.settings.colors[doorColor(day: self.day, number: number)].blue.wrappedValue)
 
-                        MainFontSizeView(data: self.day.portes[number].heure)
+                        MainFontSizeView(data: self.day.portes[number].heure, color: self.$settings.settings.colors[doorColor(day: self.day, number: number)].wrappedValue)
                         
                     }
                     
+                    if self.day.portes[number].estimatedHour != nil {
+                        MainFontSizeView(data: self.day.portes[number].estimatedHour!)
+                    }
                     MainFontSizeView(data: self.day.marees[number].hauteur)
                    
                 }
             }
-        }.padding(.horizontal)
+        }.frame(maxHeight: 140)
+        .padding(.horizontal)
+        
     }
 }
 

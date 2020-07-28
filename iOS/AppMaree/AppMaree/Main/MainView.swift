@@ -17,6 +17,7 @@ struct MainView: View {
     
     // Variable dynamique entre les vues permettant d'afficher ou non la pub.
     @State private var showAd = false
+    @State private var imageAd: String = ""
     
     @EnvironmentObject var settings: SettingsViewModel
     
@@ -37,7 +38,7 @@ struct MainView: View {
         }
         
         self.days = settingsVM.days!
-        settingsVM.focusedDate = Date()
+        if settingsVM.dayNumber == -1 { settingsVM.focusedDate = Date() }
     
     }
     
@@ -48,7 +49,7 @@ struct MainView: View {
                 
                 // LISTE DES JOURS
                 List {
-                    ForEach($settings.dayNumber.wrappedValue ..< self.days.count) { number in
+                    ForEach(($settings.dayNumber.wrappedValue < 1 ? $settings.dayNumber.wrappedValue : $settings.dayNumber.wrappedValue - 1) ..< self.days.count) { number in
                     
                         MainDataRow(day: self.days[number])
                             .background(Color.white.opacity(self.opacities[number % 2]))
@@ -60,22 +61,24 @@ struct MainView: View {
                 // AFFICHAGE DE LA PUBLICITE test
                 if showAd {
                     VStack {
-                        Image(randomAd())
+                        Image($imageAd.wrappedValue)
                             .resizable().scaledToFit()
-                            .onDisappear(perform: delay)
                             .modifier(DraggableModifier(direction: .horizontal, showAd: $showAd))
                         Spacer()
                     }
+                    .transition(AnyTransition.slide)
+                    .animation(.default)
                 }
                 
                 ButtonWindowView(isBack: false, home: true)
             }
             
         }
+        .onAppear(perform: delay)
         .navigationBarHidden(true)
         .navigationBarTitle("titre")
         .edgesIgnoringSafeArea(.top)
-        .environmentObject(settingsVM)
+        .environmentObject(settings)
         
     }
     
@@ -86,16 +89,12 @@ struct MainView: View {
         // Delay of 45 seconds
         DispatchQueue.main.asyncAfter(deadline: .now() + 45) {
             self.showAd = true
+            self.imageAd = self.randomAd()
+            self.delay()
         }
     }
     
     func randomAd() -> String {
         return ads[Int.random(in: 0..<ads.count)].file
-    }
-}
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
     }
 }

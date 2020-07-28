@@ -34,9 +34,3 @@ struct DiagonalBackgroundView: View {
             .rotationEffect(Angle(degrees: -4))
     }
 }
-
-struct DiagonalView_Previews: PreviewProvider {
-    static var previews: some View {
-        DiagonalBackgroundView()
-    }
-}
