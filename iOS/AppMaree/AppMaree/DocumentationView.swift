@@ -46,14 +46,15 @@ struct DocumentationView: View {
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.horizontal, 20.0)
                 
-                MainDataRow()
+                MainDataRow(day: Day(portes: [Porte(etat: "ouverture", heure: "06h53", estimatedHour: "7h12"),Porte(etat: "fermeture", heure: "13h40", estimatedHour: "13h08"),Porte(etat: "ouverture", heure: "19h23", estimatedHour: "20h07"),Porte(etat: "fermeture", heure: "02h00", estimatedHour: "1h58")], marees: [Maree(etat: "PM", heure: "04h22", hauteur: "2,1"),Maree(etat: "BM", heure: "10h03", hauteur: "9,25", coef: "79"),Maree(etat: "PM", heure: "16h46", hauteur: "1,95"),Maree(etat: "BM", heure: "22h27", hauteur: "8,95", coef: "77")], dateString: "01 JAN"))
                 
                 StyledText("""
                     NOUVELLE TROISIEME LIGNE :
-                    Indique l'heure à partir de laquelle la hauteur d'eau est égale ou supérieure à 2 mètres (première couleur) et inférieur à 2 mètres (deuxième couleur). Ces horaires sont approximées et ne sont pas en provenance du SHOM.
+                    Celle-ci indique alors l'heure donnée par le SHOM à partir de laquelle la porte ouvre (premier élément des parenthèses) ou ferme (second élément des parenthèses).
+                    
 
                     NOUVELLE QUATRIÈME LIGNE :
-                    Celle-ci indique alors l'heure donnée par le SHOM à partir de laquelle la porte ouvre (premier élément des parenthèses) ou ferme (second élément des parenthèses).
+                    Indique l'heure à partir de laquelle la hauteur d'eau est égale ou supérieure à 2 mètres (première couleur) et inférieur à 2 mètres (deuxième couleur). Ces horaires sont approximées et ne sont pas en provenance du SHOM.
                     """)
                         .style(.highlight(), ranges: { [$0.range(of: "NOUVELLE TROISIEME LIGNE :")!, $0.range(of: "NOUVELLE QUATRIÈME LIGNE :")!]})
                         .style(.bold(), ranges: { [$0.range(of: "NOUVELLE TROISIEME LIGNE :")!, $0.range(of: "NOUVELLE QUATRIÈME LIGNE :")!, $0.range(of: "première couleur")!, $0.range(of: "premier élément")!, $0.range(of: "première couleur")!, $0.range(of: "second élément")!]})

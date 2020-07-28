@@ -36,12 +36,11 @@ struct SettingsView: View {
                     Text("Quel est votre tirant d'eau ?")
                        .fontWeight(.bold)
                        .padding(.top)
-                    TextField("Votre tirant d'eau : (à partir de 1.6)", text: $settings.settings.water)
+                    TextField("Votre tirant d'eau : (à partir de \(doShort(value: HAUTEUR_PORTE+0.1, decimals: 2)))", text: $settings.settings.water)
                         .padding(.bottom, 20.0)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .foregroundColor(Color("Primaire 1"))
                         .keyboardType(.numberPad)
-                        .onChange(calculHeureSelonTiranDEau)
                     
                     MainDataRow()
                     
@@ -87,5 +86,9 @@ struct SettingsView: View {
         .navigationBarTitle("titre")
         .edgesIgnoringSafeArea(.top)
         .environmentObject(settingsVM)
+    }
+    
+    func doShort(value: Double, decimals: Int) -> String {
+        return String(format: "%0.\(decimals)f", value)
     }
 }

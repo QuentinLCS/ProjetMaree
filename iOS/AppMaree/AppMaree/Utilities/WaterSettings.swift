@@ -13,45 +13,40 @@ let HAUTEUR_SEUIL_PORTE = 3.5
 
 /**
  * Fonction pour calculer l'horaire d'entrée ou de sortie en fonction du tirant d'eau
- *
- * @param porte Porte (ouverture/fermeture) pour laquelle on veut calculer le nouvelle horaire
- * @param mareeMin Maree avant la porte
- * @param mareeMax Maree après la porte
- * @return Nouvelle horaire calculé
  */
-func calculHeureSelonTiranDEau() {
+func calculHeureSelonTiranDEau(tirantDEau: Double) {
+    var days = settingsVM.days!
+    let listMarees = getListMarees()
+    var mareeNumber = 0
     
-    if let tirantDEau = Double(settingsVM.settings.water) {
-        let days = settingsVM.days!
+    for dayNumber in 0..<days.count {
         
-        for dayNumber in 0..<settingsVM.days!.count {
+        var actualDay = days[dayNumber]
+        var mareeMax: Maree
+        var mareeMin: Maree
+        var heureMareeMax: Double
+        var heureMareeMin: Double
+        var heurePorte: Double
+        var hauteurMareeMax: Double
+        var hauteurMareeMin: Double
+        var hauteurMax = 0.0
+        var dureeMaree: Double
+        var marnage: Double
+        var sinus: Double
+        var hauteurCalculeePorte: Double
+        var hauteurCalculeePlusTirantDEau: Double
+        var retour: String
+        var heure : Double
+        
+        for number in 0..<4 {
             
-            let nextDay = days[dayNumber+1]
-            var actualDay = days[dayNumber]
-            var mareeMax: Maree
-            var mareeMin: Maree
-            var heureMareeMax: Double
-            var heureMareeMin: Double
-            var heurePorte: Double
-            var hauteurMareeMax: Double
-            var hauteurMareeMin: Double
-            var hauteurMax = 0.0
-            var dureeMaree: Double
-            var marnage: Double
-            var sinus: Double
-            var hauteurCalculeePorte: Double
-            var hauteurCalculeePlusTirantDEau: Double
-            var retour: String
-            var heure : Double
-            
-            for number in 0..<2 {
-                
-                mareeMax = nextDay.marees[number]
-                mareeMin = actualDay.marees[number]
-                
-                heureMareeMax = Double(nextDay.marees[number].heure.split(separator: "h")[0])!
-                heureMareeMin = Double(actualDay.marees[number].heure.split(separator: "h")[0])!
-                heurePorte = Double(actualDay.marees[number].heure.split(separator: "h")[0])!
+            if actualDay.portes[number].heure.contains("h") {
+                mareeMax = listMarees[mareeNumber+1]
+                mareeMin = listMarees[mareeNumber]
+                mareeNumber += 1
+                heureMareeMax = convertStringHourToDouble(heure: mareeMax.heure, separator: ":")
+                heureMareeMin = convertStringHourToDouble(heure: mareeMin.heure, separator: ":")
+                heurePorte = convertStringHourToDouble(heure: actualDay.portes[number].heure, separator: "h")
                 hauteurMareeMax = Double(mareeMax.hauteur.replacingOccurrences(of: ",", with: "."))!
                 hauteurMareeMin = Double(mareeMin.hauteur.replacingOccurrences(of: ",", with: "."))!
                 hauteurMax = 0.0
@@ -72,11 +67,41 @@ func calculHeureSelonTiranDEau() {
                     heure = dureeMaree / Double.pi * 2.0 * asin(sqrt((hauteurCalculeePlusTirantDEau - hauteurMareeMin) / marnage)) + heureMareeMin
                     if heure > 24 { heure -= 24 }
                     retour = "\(Int(floor(heure)))h"
+                    heure -= floor(heure)
                     if floor( heure * 60 ) < 10 { retour += "0"}
                     retour += "\(Int(floor(heure * 60)))"
-                    actualDay.portes[number].estimatedHour = retour
+                    days[dayNumber].portes[number].estimatedHour = retour
                 }
             }
         }
     }
+    settingsVM.days = days
+}
+
+/**
+ * Fonction qui converti l'heure en décimal
+ *
+ * @param heure Heure a convertir
+ * @param separator Séparateur entre les heures et les minutes (: ou h)
+ * @return Double correspond à l'heure
+ */
+func convertStringHourToDouble(heure: String, separator: Character) -> Double{
+    var heureDouble : Double = Double(heure.split(separator: separator)[0])!
+    heureDouble += Double(heure.split(separator: separator)[1])!/60
+    return heureDouble
+}
+
+func getListMarees() -> [Maree] {
+    let days = settingsVM.days!
+    var listMarees: [Maree] = []
+    
+    days.forEach { day in
+        day.marees.forEach { maree in
+            if !maree.heure.contains("-") {
+                listMarees.append(maree)
+            }
+        }
+    }
+    
+    return listMarees
 }

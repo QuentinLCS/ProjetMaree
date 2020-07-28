@@ -83,7 +83,6 @@ extension MareeParser: XMLParserDelegate {
         } else if elementName == "maree" {
             currentDay.marees.append(Maree(etat: attributeDict["etat"]!, heure: attributeDict["heure"]!,hauteur: attributeDict["hauteur"]!, coef: attributeDict["coef"]))
         }
-
     }
 
     // found characters

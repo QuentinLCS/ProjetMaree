@@ -14,7 +14,7 @@ struct MainDataRow: View {
     
     let day: Day
     
-    init(day: Day = Day(portes: [Porte(etat: "ouverture", heure: "06h53", estimatedHour: ""),Porte(etat: "fermeture", heure: "13h40", estimatedHour: ""),Porte(etat: "ouverture", heure: "19h23", estimatedHour: ""),Porte(etat: "fermeture", heure: "02h00", estimatedHour: "")], marees: [Maree(etat: "PM", heure: "04h22", hauteur: "2,1"),Maree(etat: "BM", heure: "10h03", hauteur: "9,25", coef: "79"),Maree(etat: "PM", heure: "16h46", hauteur: "1,95"),Maree(etat: "BM", heure: "22h27", hauteur: "8,95", coef: "77")], dateString: "01 JAN")) {
+    init(day: Day = Day(portes: [Porte(etat: "ouverture", heure: "06h53"),Porte(etat: "fermeture", heure: "13h40"),Porte(etat: "ouverture", heure: "19h23"),Porte(etat: "fermeture", heure: "02h00")], marees: [Maree(etat: "PM", heure: "04h22", hauteur: "2,1"),Maree(etat: "BM", heure: "10h03", hauteur: "9,25", coef: "79"),Maree(etat: "PM", heure: "16h46", hauteur: "1,95"),Maree(etat: "BM", heure: "22h27", hauteur: "8,95", coef: "77")], dateString: "01 JAN")) {
         self.day = day
     }
     

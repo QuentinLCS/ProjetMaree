@@ -18,6 +18,15 @@ class SettingsViewModel: ObservableObject {
     
     @Published var settings: SavedSettings = SettingsViewModel.exists(key: SettingsViewModel.settingsKey) ? try? PropertyListDecoder().decode(SavedSettings.self, from: UserDefaults.standard.value(forKey: SettingsViewModel.settingsKey) as! Data) : defaultSettings {
         didSet {
+            if oldValue?.water != self.settings?.water {
+                if let newWater = Double((self.settings?.water)!) {
+                    if newWater >= HAUTEUR_PORTE + 0.1 {
+                        calculHeureSelonTiranDEau(tirantDEau: newWater)
+                    } else {
+                        self.settings?.water = oldValue!.water
+                    }
+                }
+            }
             let encodedData = try? PropertyListEncoder().encode(self.settings)
             defaults.set(encodedData, forKey: SettingsViewModel.settingsKey)
         }
