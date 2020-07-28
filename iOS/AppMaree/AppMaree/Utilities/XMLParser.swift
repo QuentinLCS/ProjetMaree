@@ -20,6 +20,7 @@ struct Day: Codable, Identifiable {
 struct Porte: Codable {
     var etat: String
     var heure: String
+    var estimatedHour: String?
 }
 
 struct Maree: Codable {

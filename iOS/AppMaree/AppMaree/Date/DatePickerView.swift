@@ -14,7 +14,6 @@ struct DatePickerView: View {
     @EnvironmentObject var settings: SettingsViewModel
     
     var body: some View {
-        
         ZStack {
             VStack {
                 TitleView(title: "SELECTIONNEZ UNE DATE")
@@ -28,7 +27,5 @@ struct DatePickerView: View {
             
             ButtonWindowView(isBack: true, presentation: presentationMode)
         }
-        
-
     }
 }

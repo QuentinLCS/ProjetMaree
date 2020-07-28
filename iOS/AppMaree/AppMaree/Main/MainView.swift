@@ -38,7 +38,7 @@ struct MainView: View {
         }
         
         self.days = settingsVM.days!
-        settingsVM.focusedDate = Date()
+        if settingsVM.dayNumber == -1 { settingsVM.focusedDate = Date() }
     
     }
     

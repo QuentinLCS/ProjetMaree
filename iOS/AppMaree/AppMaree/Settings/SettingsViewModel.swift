@@ -14,7 +14,7 @@ class SettingsViewModel: ObservableObject {
     static let daysKey: String = "days"
     
     let defaults = UserDefaults.standard
-    static let defaultSettings = SavedSettings(agreement: false, water: "1.6", fontSize: 1, colors: [CustomColor(red: 1, green: 245/255, blue: 0), CustomColor(red: 88/255, green: 175/255, blue: 1), CustomColor(red: 66/255, green: 1, blue: 97/255), CustomColor(red: 1, green: 115/255, blue: 115/255)])
+    static let defaultSettings = SavedSettings(agreement: false, water: "", fontSize: 1, colors: [CustomColor(red: 1, green: 245/255, blue: 0), CustomColor(red: 88/255, green: 175/255, blue: 1), CustomColor(red: 66/255, green: 1, blue: 97/255), CustomColor(red: 1, green: 115/255, blue: 115/255)])
     
     @Published var settings: SavedSettings = SettingsViewModel.exists(key: SettingsViewModel.settingsKey) ? try? PropertyListDecoder().decode(SavedSettings.self, from: UserDefaults.standard.value(forKey: SettingsViewModel.settingsKey) as! Data) : defaultSettings {
         didSet {
@@ -33,11 +33,11 @@ class SettingsViewModel: ObservableObject {
     
     var focusedDate: Date = Date() {
         didSet {
-            self.dayNumber = daysBetweenDates(date1:dateCreator(day: 1, month: 1), date2: self.focusedDate)
+            self.dayNumber = daysBetweenDates(date1: dateCreator(day: 1, month: 1), date2: self.focusedDate)
         }
     }
     
-    @Published var dayNumber: Int = 0
+    @Published var dayNumber: Int = -1
     
     static func exists(key: String) -> Bool {
         return UserDefaults.standard.object(forKey: key) != nil

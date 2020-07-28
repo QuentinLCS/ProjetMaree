@@ -41,6 +41,7 @@ struct SettingsView: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .foregroundColor(Color("Primaire 1"))
                         .keyboardType(.numberPad)
+                        .onChange(calculHeureSelonTiranDEau)
                     
                     MainDataRow()
                     
