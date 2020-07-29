@@ -43,23 +43,23 @@ struct Animal: Identifiable, Decodable, Hashable {
         }
         
         if self.allowedDate != nil {
-            description += "Autorisé du \(self.allowedDate![0]) au \(self.allowedDate![1]). En dehors de cette période, le pêcher et le relacher est autorisé."
+            description += "Autorisé du \(self.allowedDate![0]) au \(self.allowedDate![1]). En dehors de cette période, le pêcher et le relacher est autorisé. "
         }
         
         if self.allowedPerPerson != nil {
-            description += " Limité à \(self.allowedPerPerson!) par jour et par personne."
+            description += "Limité à \(self.allowedPerPerson!) par jour et par personne. "
         }
         
         if self.allowedPerShip != nil {
-            description += " Limité à \(self.allowedPerShip!) par navire."
+            description += "Limité à \(self.allowedPerShip!) par navire. "
         }
         
         if self.description != nil {
-            description += "\n\n\(self.description!)"
+            description += "\n\n\(self.description!) "
         }
         
         if self.taggingObligation != nil {
-            description += " Marquage \(self.taggingObligation! ? "OBLIGATOIRE" : "FACULTATIF")."
+            description += "Marquage \(self.taggingObligation! ? "OBLIGATOIRE" : "FACULTATIF")."
         }
         
         return description
