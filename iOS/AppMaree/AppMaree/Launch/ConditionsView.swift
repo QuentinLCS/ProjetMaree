@@ -57,8 +57,6 @@ struct ConditionsView: View {
                                     Text("NON")
                                 }
                             }
-                            .transition(AnyTransition.slide)
-                            .animation(.default)
                             
                             Text("Acceptation SHOM 2019 - 2021")
                                 .fontWeight(.semibold)
