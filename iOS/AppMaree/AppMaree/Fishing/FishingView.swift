@@ -28,33 +28,38 @@ struct FishingView: View {
                                 + Text("Certaines sont interdites à la pêche selon la période.")
                                     .bold()
                                 
+                                HStack {
+                                    Text("POISSONS")
+                                        .font(.title)
+                                        .fontWeight(.bold)
+                                        .multilineTextAlignment(.leading)
+                                    Spacer()
+                                }
                             }
                             .padding(.horizontal)
                         }
-                        HStack {
-                            Text("POISSONS")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .multilineTextAlignment(.leading)
-                                .padding()
-                            Spacer()
+                        .frame(maxWidth: UIScreen.main.bounds.size.width)
+                        .padding(.horizontal, 20)
+                        
+                        ZStack {
+                            DiagonalBackgroundView()
+                                .frame(minWidth: 1200)
+                            
+                            VStack(spacing: 20) {
+                                Spacer()
+                                //Affichage de tous les éléments
+                                ForEach(0..<(fishes.count+1)/2) { row in // create number of rows
+                                  HStack {
+                                      ForEach(0..<2) { column in // create 2 columns
+                                          
+                                          self.makeFishCard(fishes: self.fishes,cell: self.getCell(row: row, column: column))
+                                              
+                                          }
+                                      }
+                                  }
+                                  Spacer()
+                              }
                         }
-                        VStack(spacing: 20) {
-                            Spacer()
-                            //Affichage de tous les éléments
-                            ForEach(0..<(fishes.count+1)/2) { row in // create number of rows
-                                HStack {
-                                    ForEach(0..<2) { column in // create 2 columns
-                                        
-                                        self.makeFishCard(fishes: self.fishes,cell: self.getCell(row: row, column: column))
-                                        
-                                    }
-                                }
-                            }
-                            Spacer()
-                        }
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .background(DiagonalBackgroundView())
                         
                         HStack {
                             Spacer()
@@ -64,6 +69,8 @@ struct FishingView: View {
                                 .multilineTextAlignment(.trailing)
                                 .padding()
                         }
+                        .frame(maxWidth: UIScreen.main.bounds.size.width)
+                        .padding(.horizontal, 20)
                         VStack(spacing: 20) {
                             //Affichage de tous les éléments
                             ForEach(0..<(shellFishes.count+1)/2) { row in // create number of rows
@@ -111,20 +118,20 @@ struct FishingView: View {
     func makeFishCard(fishes: [Animal], cell: Int) -> some View {
         if (cell < fishes.count) {
             return AnyView(NavigationLink(destination: AnimalDetailsView(animal: fishes[cell])) {
-                ButtonFishView(backgroundColor: .white, name: fishes[cell].name, image: fishes[cell].imageName, size: fishes[cell].allowedSize, bundleName: "Fish")
+                ButtonFishView(backgroundColor: .white, name: fishes[cell].name, image: fishes[cell].imageName, size: fishes[cell].allowedSize)
                 }.buttonStyle(PlainButtonStyle()))
         } else {
-            return AnyView(ButtonFishView(backgroundColor: .white, name: "", image: "", size: 0, bundleName: ""))
+            return AnyView(ButtonFishView(backgroundColor: .white, name: "", image: ""))
         }
     }
     
     func makeShellfishCard(shellFishes: [Animal], cell: Int) -> some View {
         if (cell < shellFishes.count) {
             return AnyView(NavigationLink(destination: AnimalDetailsView(animal: shellFishes[cell])) {
-                ButtonFishView(backgroundColor: .secondaryColor, name: shellFishes[cell].name, image: shellFishes[cell].imageName, size: shellFishes[cell].allowedSize, bundleName: "Shellfish")
+                ButtonFishView(backgroundColor: .secondaryColor, name: shellFishes[cell].name, image: shellFishes[cell].imageName, size: shellFishes[cell].allowedSize)
             }.buttonStyle(PlainButtonStyle()))
         } else {
-            return AnyView(ButtonFishView(backgroundColor: .secondaryColor, name: "", image: "", size: 0, bundleName: ""))
+            return AnyView(ButtonFishView(backgroundColor: .secondaryColor, name: "", image: ""))
         }
     }
     

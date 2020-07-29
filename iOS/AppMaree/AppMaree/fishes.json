@@ -3,7 +3,7 @@
         {
             "name": "BAR",
             "imageName": "bar",
-            "allowedSize": 25.0,
+            "allowedSize": 42.0,
             "allowedDate":
             [
                 "1er Mars",
@@ -12,21 +12,161 @@
             "description": "Réglementation applicable au nord du 48e parallèle d'Audienne à la frontière Belge.",
             "allowedPerPerson": 2,
             "taggingObligation": true,
+        },
+        {
+            "name": "BARBUE",
+            "imageName": "barbue",
+            "allowedSize": 30.0,
+        },
+        {
+            "name": "CABILLAUD",
+            "imageName": "cabillaud",
+            "allowedSize": 42.0,
+            "allowedPerPerson": 6,
+            "allowedPerShip": 20,
+        },
+        {
+            "name": "CHINCHARD",
+            "imageName": "chinchard",
+            "allowedSize": 15.0
+        },
+        {
+            "name": "CONGRE",
+            "imageName": "cabillaud",
+            "allowedSize": 60.0
+        },
+        {
+            "name": "DORADE GRISE/ROSE",
+            "imageName": "dorade",
+            "allowedSize": 23.0
+        },
+        {
+            "name": "DORADE ROYALE",
+            "imageName": "dorade_royale",
+            "allowedSize": 23.0,
+            "taggingObligation": true
+        },
+        {
+            "name": "FLET",
+            "imageName": "flet",
+            "allowedSize": 20.0
+        },
+        {
+            "name": "HÂ",
+            "imageName": "ha",
+            "description": "Pêche interdite à la palangre."
+        },
+        {
+            "name": "HARENG",
+            "imageName": "hareng",
+            "allowedSize": 20.0
+        },
+        {
+            "name": "LIEU JAUNE",
+            "imageName": "lieu_jaune",
+            "allowedSize": 30.0,
+            "taggingObligation": true
+        },
+        {
+            "name": "LOTTE",
+            "imageName": "lotte",
+            "allowedSize": 50.0
+        },
+        {
+            "name": "MAQUEREAU",
+            "imageName": "maquereau",
+            "allowedSize": 20.0,
+            "taggingObligation": true
+        },
+        {
+            "name": "MERLAN",
+            "imageName": "merlan",
+            "allowedSize": 27.0
+        },
+        {
+            "name": "MULET",
+            "imageName": "mulet",
+            "allowedSize": 30.0
+        },
+        {
+            "name": "ORPHIE",
+            "imageName": "orphie",
+            "allowedSize": 30.0
+        },
+        {
+            "name": "PLIE",
+            "imageName": "plie",
+            "allowedSize": 27.0
+        },
+        {
+            "name": "RAIE BRUNETTE",
+            "imageName": "raie_brunette",
+            "description": "Pêche interdite"
+        },
+        {
+            "name": "SARDINE",
+            "imageName": "sardine",
+            "allowedSize": 11.0
+        },
+        {
+            "name": "SAUMON",
+            "imageName": "saumon",
+            "allowedSize": 50.0
+        },
+        {
+            "name": "SOLE",
+            "imageName": "sole",
+            "allowedSize": 24.0,
+            "taggingObligation": true
+        },
+        {
+            "name": "TRUITE",
+            "imageName": "truite",
+            "allowedSize": 35.0
+        },
+        {
+            "name": "TURBOT",
+            "imageName": "turbot",
+            "allowedSize": 30.0
         }
     ],
     [
         {
             "name": "ARAIGNÉE",
             "imageName": "araignee",
-            "allowedSize": 25.0,
-            "allowedDate":
-            [
-                "1er Mars",
-                "30 Novembre"
-            ],
-            "description": "Réglementation applicable au nord du 48e parallèle d'Audienne à la frontière Belge.",
-            "allowedPerPerson": 2,
-            "taggingObligation": true,
+            "allowedSize": 12.0
+        },
+        {
+            "name": "BOUQUET",
+            "imageName": "bouquet",
+            "allowedSize": 5.0
+        },
+        {
+            "name": "ETRILLE",
+            "imageName": "etrille",
+            "allowedSize": 6.5
+        },
+        {
+            "name": "HOMARD",
+            "imageName": "homard",
+            "allowedSize": 8.7,
+            "taggingObligation": true
+        },
+        {
+            "name": "LANGOUSTE",
+            "imageName": "langouste",
+            "allowedSize": 11.0
+        },
+        {
+            "name": "TOURTEAU",
+            "imageName": "tourteau",
+            "allowedSize": 14.0
+        },
+        {
+            "name": "BULOT",
+            "imageName": "bulot",
+            "allowedSize": 4.5,
+            "description": "Attention ! Une taille suppérieure à 7cm déconseillée pour des raisons sanitaires."
         }
     ]
 ]

@@ -18,7 +18,7 @@ struct AnimalDetailsView: View {
         NavigationView {
             ZStack {
                 ScrollView {
-                    TitleView(title: "PÈCHE EN BATEAU : LIMITES", subTitle: "\(animal.name) : \(animal.allowedSize)cm")
+                    TitleView(title: "PÈCHE EN BATEAU : LIMITES", subTitle: "\(animal.name)")
                         .padding(.bottom, 30.0)
                     
                     Text(animal.describe()).padding(.horizontal, 20.0)
@@ -46,7 +46,7 @@ struct AnimalDetailsView: View {
                             Spacer()
                         }
                         .padding(.top, 20.0)
-                        .padding(.bottom, 200)
+                        .padding(.bottom, 250)
                     }
                 }
                 ButtonWindowView(isBack: true, presentation: presentationMode)

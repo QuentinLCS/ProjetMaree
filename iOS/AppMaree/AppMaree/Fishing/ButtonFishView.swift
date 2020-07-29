@@ -18,8 +18,14 @@ struct ButtonFishView: View {
     let backgroundColor: FishButtonColorType
     let name: String
     let image: String
-    let size: Int
-    let bundleName: String
+    let size: Double?
+    
+    init(backgroundColor: FishButtonColorType, name: String, image: String, size: Double? = nil) {
+        self.backgroundColor = backgroundColor
+        self.name = name
+        self.image = image
+        self.size = size
+    }
     
     var body: some View {
        
@@ -28,7 +34,7 @@ struct ButtonFishView: View {
                     .foregroundColor(Color(backgroundColor.rawValue))
                 VStack {
                     Group {
-                        if (image != "" && bundleName != "") {
+                        if (image != "") {
                             Image(image)
                             .resizable()
                             .scaledToFit()
@@ -37,13 +43,15 @@ struct ButtonFishView: View {
                             Image(systemName: "ellipsis")
                         }
                     }
-                    if (name != "") {
-                        Text(name)
+                    
+                    Text(name)
                         .font(.system(size: 15))
-                    }
-                    if (size != 0) {
-                        Text("\(size) cm")
-                        .font(.system(size: 13))
+                        .foregroundColor(self.backgroundColor == .secondaryColor ? Color.white : Color.black)
+    
+                    if (size != nil) {
+                        Text("\(doShortDouble(value: size!, decimals: 1)) cm")
+                            .font(.system(size: 13))
+                            .foregroundColor(self.backgroundColor == .secondaryColor ? Color.white : Color.black)
                     }
                 }
             }
