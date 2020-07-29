@@ -66,6 +66,10 @@ struct Animal: Identifiable, Decodable, Hashable {
             description += "Marquage \(self.taggingObligation! ? "OBLIGATOIRE" : "FACULTATIF")."
         }
         
+        if self.description != nil || self.taggingObligation != nil {
+            description += "\n\n"
+        }
+        
         return description
     }
     
