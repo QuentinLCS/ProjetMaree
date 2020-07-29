@@ -12,6 +12,7 @@ class SettingsViewModel: ObservableObject {
     
     static let settingsKey: String = "settings"
     static let daysKey: String = "days"
+    static let animalsKey: String = "animals"
     
     let defaults = UserDefaults.standard
     static let defaultSettings = SavedSettings(agreement: false, water: "", fontSize: 1, colors: [CustomColor(red: 1, green: 245/255, blue: 0), CustomColor(red: 88/255, green: 175/255, blue: 1), CustomColor(red: 66/255, green: 1, blue: 97/255), CustomColor(red: 1, green: 115/255, blue: 115/255)])
@@ -50,6 +51,13 @@ class SettingsViewModel: ObservableObject {
     
     static func exists(key: String) -> Bool {
         return UserDefaults.standard.object(forKey: key) != nil
+    }
+    
+    var animals: [[Animal]]? = SettingsViewModel.exists(key: SettingsViewModel.animalsKey) ? try! PropertyListDecoder().decode(Array<Array<Animal>>.self, from: UserDefaults.standard.value(forKey: SettingsViewModel.animalsKey) as! Data) : nil {
+        didSet {
+            let encodedData = try? PropertyListEncoder().encode(self.animals)
+            defaults.set(encodedData, forKey: SettingsViewModel.animalsKey)
+        }
     }
     
     static func resetAll() {

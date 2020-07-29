@@ -11,8 +11,17 @@ import SwiftUI
 struct FishingView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    let fishes: [Animal] = Animal.getFishes()
-    let shellFishes: [Animal] = Animal.getShellFishes()
+    let fishes: [Animal]
+    let shellFishes: [Animal]
+    
+    init() {
+        if !SettingsViewModel.exists(key: SettingsViewModel.animalsKey) {
+            settingsVM.animals = JSONContent.JSONFishesContent()
+        }
+        
+        self.fishes = settingsVM.animals![0]
+        self.shellFishes = settingsVM.animals![1]
+    }
     
     var body: some View {
         NavigationView {

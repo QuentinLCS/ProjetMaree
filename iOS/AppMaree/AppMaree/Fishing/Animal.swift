@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Animal: Identifiable, Decodable, Hashable {
+struct Animal: Identifiable, Codable, Hashable {
     let id = UUID()
     let name: String
     let imageName: String
@@ -19,8 +19,6 @@ struct Animal: Identifiable, Decodable, Hashable {
     let taggingObligation: Bool?
     let description: String?
     let helpImage: String?
-    
-    static var allAnimals: [[Animal]] = [[]]
     
     init(name: String, imageName: String = "logo", allowedSize: Double?, allowedDate: [String]?, allowedPerPerson: Int?, allowedPerShip: Int?, taggingObligation: Bool?, description: String?, helpImage: String?) {
     
@@ -72,20 +70,5 @@ struct Animal: Identifiable, Decodable, Hashable {
         
         return description
     }
-    
-    static func getFishes() -> [Animal] {
-        if allAnimals[0].isEmpty {
-            allAnimals = JSONContent.JSONFishesContent()
-        }
-        return allAnimals[0]
-    }
-    
-    static func getShellFishes() -> [Animal] {
-        if allAnimals[0].isEmpty {
-            allAnimals = JSONContent.JSONFishesContent()
-        }
-        return allAnimals[1]
-    }
-
 }
 
