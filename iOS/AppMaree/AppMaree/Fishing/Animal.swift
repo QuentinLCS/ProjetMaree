@@ -51,11 +51,11 @@ struct Animal: Identifiable, Decodable, Hashable {
         }
         
         if self.allowedPerShip != nil {
-            description += "Limité à \(self.allowedPerShip!) par navire. "
+            description += "Limité à \(self.allowedPerShip!) par navire.\n\n"
         }
         
         if self.description != nil {
-            description += "\n\n\(self.description!) "
+            description += "\(self.description!) "
         }
         
         if self.taggingObligation != nil {
