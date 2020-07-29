@@ -15,8 +15,7 @@ struct SettingsColorEditorView: View {
     let colorToEdit: Int
 
     var body: some View {
-        Text("cc")
-        /*VStack {
+        VStack {
             Circle()
                 .foregroundColor(Color(red: $settings.settings.colors[colorToEdit].red.wrappedValue, green: $settings.settings.colors[colorToEdit].green.wrappedValue, blue: $settings.settings.colors[colorToEdit].blue.wrappedValue))
             
@@ -30,6 +29,6 @@ struct SettingsColorEditorView: View {
             Slider(value: $settings.settings.colors[self.colorToEdit].blue, in: 0...1, step: 1/255)
             
             ButtonWindowView(isBack: true, presentation: presentationMode)
-        }*/
+        }
     }
 }

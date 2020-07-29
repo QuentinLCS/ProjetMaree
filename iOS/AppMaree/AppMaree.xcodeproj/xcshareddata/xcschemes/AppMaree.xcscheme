@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DF02A78624A360C3009582BC"
-               BuildableName = "AppMaree.app"
+               BuildableName = "Port Die&#x301;lette.app"
                BlueprintName = "AppMaree"
                ReferencedContainer = "container:AppMaree.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DF02A78624A360C3009582BC"
-            BuildableName = "AppMaree.app"
+            BuildableName = "Port Die&#x301;lette.app"
             BlueprintName = "AppMaree"
             ReferencedContainer = "container:AppMaree.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DF02A78624A360C3009582BC"
-            BuildableName = "AppMaree.app"
+            BuildableName = "Port Die&#x301;lette.app"
             BlueprintName = "AppMaree"
             ReferencedContainer = "container:AppMaree.xcodeproj">
          </BuildableReference>

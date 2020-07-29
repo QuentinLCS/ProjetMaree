@@ -45,7 +45,6 @@
 		DFBF4F8B24ABB89700E2DA4B /* ButtonWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4F8A24ABB89700E2DA4B /* ButtonWindowView.swift */; };
 		DFBF4F9B24AE371600E2DA4B /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4F9A24AE371600E2DA4B /* XMLParser.swift */; };
 		DFBF4FA124AEA3BC00E2DA4B /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FA024AEA3BC00E2DA4B /* DraggableView.swift */; };
-		DFBF4FA724B23B5300E2DA4B /* BundleHandlerswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FA624B23B5300E2DA4B /* BundleHandlerswift.swift */; };
 		DFBF4FA924B2835200E2DA4B /* MainDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FA824B2835200E2DA4B /* MainDataRow.swift */; };
 		DFBF4FAB24B4C17000E2DA4B /* ads.json in Resources */ = {isa = PBXBuildFile; fileRef = DFBF4FAA24B4C17000E2DA4B /* ads.json */; };
 		DFBF4FAD24B4CEE800E2DA4B /* JSONContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FAC24B4CEE800E2DA4B /* JSONContent.swift */; };
@@ -95,7 +94,6 @@
 		DFBF4F8A24ABB89700E2DA4B /* ButtonWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWindowView.swift; sourceTree = "<group>"; };
 		DFBF4F9A24AE371600E2DA4B /* XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 		DFBF4FA024AEA3BC00E2DA4B /* DraggableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
-		DFBF4FA624B23B5300E2DA4B /* BundleHandlerswift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleHandlerswift.swift; sourceTree = "<group>"; };
 		DFBF4FA824B2835200E2DA4B /* MainDataRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataRow.swift; sourceTree = "<group>"; };
 		DFBF4FAA24B4C17000E2DA4B /* ads.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ads.json; sourceTree = "<group>"; };
 		DFBF4FAC24B4CEE800E2DA4B /* JSONContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONContent.swift; sourceTree = "<group>"; };
@@ -219,7 +217,6 @@
 			isa = PBXGroup;
 			children = (
 				DFBF4FB024B7618A00E2DA4B /* AdsManager.swift */,
-				DFBF4FA624B23B5300E2DA4B /* BundleHandlerswift.swift */,
 				DF45A1ED24A64FDE00C4C050 /* TitleView.swift */,
 				DF44C0F724A8FB66001D6BDD /* DiagonalBackgroundView.swift */,
 				DFBF4F8624AB658300E2DA4B /* StyledText.swift */,
@@ -364,7 +361,6 @@
 				DF02A78D24A360C3009582BC /* SceneDelegate.swift in Sources */,
 				DF43C49524CE5BEF00921B4D /* DatePickerView.swift in Sources */,
 				DFBF4FA924B2835200E2DA4B /* MainDataRow.swift in Sources */,
-				DFBF4FA724B23B5300E2DA4B /* BundleHandlerswift.swift in Sources */,
 				DF43C48724CE2EC000921B4D /* LocationManager.swift in Sources */,
 				DF44C0F824A8FB67001D6BDD /* DiagonalBackgroundView.swift in Sources */,
 				DF02A78F24A360C3009582BC /* MenuView.swift in Sources */,
@@ -530,7 +526,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = QuentinL.AppMaree;
+				PRODUCT_BUNDLE_IDENTIFIER = UniCaen.AppMaree;
 				PRODUCT_NAME = "Port Diélette";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -551,7 +547,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = QuentinL.AppMaree;
+				PRODUCT_BUNDLE_IDENTIFIER = UniCaen.AppMaree;
 				PRODUCT_NAME = "Port Diélette";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

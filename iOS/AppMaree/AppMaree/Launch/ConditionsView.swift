@@ -16,8 +16,7 @@ struct ConditionsView: View {
     @Binding var secondsLeft: Int
 
     var body: some View {
-        Text("cc")
-        /*VStack {
+        VStack {
             TitleView()
                 .padding(.bottom, 20)
             
@@ -74,6 +73,6 @@ struct ConditionsView: View {
         }
         .edgesIgnoringSafeArea(.bottom)
         .onAppear(perform: {self.secondsLeft = -1})
-        .onDisappear(perform: {self.secondsLeft = 3})*/
+        .onDisappear(perform: {self.secondsLeft = 3})
     }
 }
