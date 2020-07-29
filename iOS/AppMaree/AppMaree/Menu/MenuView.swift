@@ -17,49 +17,54 @@ struct MenuView: View {
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 0) {
-                TitleView()
-                Spacer()
-                ZStack {
-                    LinearGradient(gradient: Gradient(colors: [Color("Primaire 1"),Color("Primaire 2"), Color("Primaire 3")]), startPoint: /*@START_MENU_TOKEN@*/.top/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.bottom/*@END_MENU_TOKEN@*/)
-                    VStack(alignment: .center, spacing: 80, content: {
+            ZStack {
+                LinearGradient(gradient: Gradient(colors: [Color("Primaire 1"),Color("Primaire 2"), Color("Primaire 3")]), startPoint: /*@START_MENU_TOKEN@*/.top/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.bottom/*@END_MENU_TOKEN@*/)
+                VStack(alignment: .center) {
+                    // -------------------------- AFFICHAGE DES BOUTONS --------------------------
+                    // C'est ici que sont affichés les boutons. Pour afficher le votre, utilisez la fonction
+                    // comme utilisé ci-dessous et insérez-y votre nouvelle page. Concernant leur position,
+                    // à vous de jouer avec leur ordre et les "Spacer()" ! Bon courage !
+                    // ----------------------------------------------------------------------------
+                    Spacer()
+                    Spacer()
+                    HStack {
                         Spacer()
-                        // -------------------------- AFFICHAGE DES BOUTONS --------------------------
-                        // C'est ici que sont affichés les boutons. Pour afficher le votre, utilisez la fonction
-                        // comme utilisé ci-dessous et insérez-y votre nouvelle page. Concernant leur position, 
-                        // à vous de jouer avec leur ordre et les "Spacer()" ! Bon courage !
-                        // ----------------------------------------------------------------------------
-                        HStack {
-                            Spacer()
-                            ButtonMenuView(destination: .date)
-                            Spacer()
-                            ButtonMenuView(destination: .fishing)
-                            Spacer()
-                            // ButtonMenuView(destination: .nouvellePage)
-                        }
-                        HStack {
-                            Spacer()
-                            ButtonMenuView(destination: .documentation)
-                            Spacer()
-                            ButtonMenuView(destination: .settings)
-                            Spacer()
-                        }
-                        HStack {
-                            Spacer()
-                            ButtonMenuView(destination: .partner)
-                            Spacer()
-                            ButtonMenuView(destination: .info)
-                            Spacer()
-                        }
+                        ButtonMenuView(destination: .date)
                         Spacer()
+                        ButtonMenuView(destination: .fishing)
                         Spacer()
-                    })
-                    HomeButtonView(colored: false, isBack: true, presentation: presentationMode)
+                        // ButtonMenuView(destination: .nouvellePage)
+                    }
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        ButtonMenuView(destination: .documentation)
+                        Spacer()
+                        ButtonMenuView(destination: .settings)
+                        Spacer()
+                    }
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        ButtonMenuView(destination: .partner)
+                        Spacer()
+                        ButtonMenuView(destination: .info)
+                        Spacer()
+                    }
+                    Spacer()
+                    Spacer()
+                    Spacer()
                 }
+                VStack {
+                    TitleView()
+                    Spacer()
+                }
+                HomeButtonView(colored: false, isBack: true, presentation: presentationMode)
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .navigationBarHidden(true)
-        .navigationBarTitle("titre")
+        .navigationBarTitle("")
         .edgesIgnoringSafeArea(.top)
     }
 }

@@ -22,59 +22,64 @@ struct LaunchView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                VStack(spacing: 30) {
-                    TitleView()
-                    // ---------------------------------- TEXTE 1 ----------------------------------
-                    // Explication de la provenance des données ainsi que leur véracité.
-                    // -----------------------------------------------------------------------------
-                    Image("logo")
-                        .resizable()
-                        .scaledToFit()
-                    NavigationLink(destination: ConditionsView(secondsLeft: self.$secondsLeft)) {
-                        Text("Lire les conditions d'utilisation")
-                        .underline()
-                        .foregroundColor(Color("Primaire 1"))
-                    }
-                    
-                    // Bouton principal permettant de fermer cette page.
-                    if $settings.settings.agreement.wrappedValue {
-                        NavigationLink(destination: MainView().environmentObject(settingsVM), isActive: $autoSwitch) {
-                            EmptyView()
+                ScrollView() {
+                    VStack {
+                        TitleView()
+                            .padding(.bottom, 20)
+                        // ---------------------------------- TEXTE 1 ----------------------------------
+                        // Explication de la provenance des données ainsi que leur véracité.
+                        // -----------------------------------------------------------------------------
+                        Image("logo")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(.bottom, 20)
+                        NavigationLink(destination: ConditionsView(secondsLeft: self.$secondsLeft)) {
+                            Text("Lire les conditions d'utilisation")
+                            .underline()
+                            .foregroundColor(Color("Primaire 1"))
+                            .padding(.bottom, 20)
                         }
                         
-                        StyledText("""
-                        Conditions d'utilisation déjà acceptées !
+                        // Bouton principal permettant de fermer cette page.
+                        if $settings.settings.agreement.wrappedValue {
+                            NavigationLink(destination: MainView().environmentObject(settingsVM), isActive: $autoSwitch) {
+                                EmptyView()
+                            }
+                            
+                            StyledText("""
+                            Conditions d'utilisation déjà acceptées !
 
-                        Vous pouvez poursuivre en cliquant sur le bouton ci-dessous ou attendre \(self.$secondsLeft.wrappedValue) secondes.
+                            Vous pouvez poursuivre en cliquant sur le bouton ci-dessous ou attendre \(self.$secondsLeft.wrappedValue) secondes.
 
-                        Bon voyage !
-                        """)
-                        .style(.highlight(), ranges: { [$0.range(of: "Conditions d'utilisation déjà acceptées !")!]})
-                        .style(.bold(), ranges: { [$0.range(of: "Conditions d'utilisation déjà acceptées !")!, $0.range(of: "cliquant sur le bouton ci-dessous")!,  $0.range(of: "\(self.$secondsLeft.wrappedValue) secondes")!, $0.range(of: "Bon voyage !")! ]})
-                            .padding([.leading, .bottom, .trailing], 20.0)
-                            .multilineTextAlignment(.center)
-                            .onAppear(perform: delay)
-                        
-                        Button(action: {
-                            self.$autoSwitch.wrappedValue = true
-                        }) {
-                            ButtonMainView(colored: true)
+                            Bon voyage !
+                            """)
+                            .style(.highlight(), ranges: { [$0.range(of: "Conditions d'utilisation déjà acceptées !")!]})
+                            .style(.bold(), ranges: { [$0.range(of: "Conditions d'utilisation déjà acceptées !")!, $0.range(of: "cliquant sur le bouton ci-dessous")!,  $0.range(of: "\(self.$secondsLeft.wrappedValue) secondes")!, $0.range(of: "Bon voyage !")! ]})
+                                .padding([.leading, .bottom, .trailing], 20.0)
+                                .multilineTextAlignment(.center)
+                                .onAppear(perform: delay)
+                            
+                            Button(action: {
+                                self.$autoSwitch.wrappedValue = true
+                            }) {
+                                ButtonMainView(colored: true)
+                            }
+                            .padding(.bottom, 20.0)
+                        } else {
+                            
+                            Text("Vous devez accepter les conditions d'utilisation de l'application pour l'utiliser !")
+                                .foregroundColor(Color.red)
+                                .multilineTextAlignment(.center)
+                                .padding(.top)
+                            Spacer()
                         }
-                        .padding(.bottom, 20.0)
-                    } else {
-                        
-                        Text("Vous devez accepter les conditions d'utilisation de l'application pour l'utiliser !")
-                            .foregroundColor(Color.red)
-                            .multilineTextAlignment(.center)
-                            .padding(.top)
-                        Spacer()
-                    }
+                    }.padding(.horizontal, 20)
                 }
-                .padding(.horizontal, 20.0)
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .navigationBarHidden(true)
-        .navigationBarTitle("titre")
+        .navigationBarTitle("")
         .edgesIgnoringSafeArea(.top)
     }
     

@@ -30,60 +30,64 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                VStack(alignment: .leading) {
-                    TitleView(title: "PARAMÈTRES")
-                    
-                    Text("Quel est votre tirant d'eau ?")
-                       .fontWeight(.bold)
-                       .padding(.top)
-                    TextField("Votre tirant d'eau : (à partir de \(doShort(value: HAUTEUR_PORTE+0.1, decimals: 2)))", text: $settings.settings.water)
-                        .padding(.bottom, 20.0)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .foregroundColor(Color("Primaire 1"))
-                        .keyboardType(.numberPad)
-                    
-                    MainDataRow()
-                    
-                    Text("Taille du texte: ")
-                        .fontWeight(.bold)
-                        .padding(.top, 20)
-                    Slider(value: $settings.settings.fontSize, in: 1...3, step: 1)
-                    
-                    Text("Modifier les couleurs ?")
-                        .fontWeight(.bold)
-                        .padding(.top, 20)
-                    
+                ScrollView {
                     VStack {
-                        HStack {
-                            ForEach(0..<4) { number in
-                                NavigationLink(destination: SettingsColorEditorView(colorToEdit: number)) {
-                                    Circle()
-                                        .foregroundColor(Color(red: self.$settings.settings.colors[number].red.wrappedValue, green: self.$settings.settings.colors[number].green.wrappedValue, blue: self.$settings.settings.colors[number].blue.wrappedValue))
-                                }
-                            }
-                        }.frame(maxHeight: 100)
+                        TitleView(title: "PARAMÈTRES")
                         
-                        Button(action: {
-                           SettingsViewModel.resetAll()
-                        }) {
-                           Text("Réinitialiser l'application")
-                               .fontWeight(.semibold)
-                               .foregroundColor(Color.white)
-                               .padding()
-                               .background(Color.black)
-                               .cornerRadius(30)
-                               .shadow(radius: 10)
+                        Text("Quel est votre tirant d'eau ?")
+                           .fontWeight(.bold)
+                           .padding(.top)
+                        TextField("Votre tirant d'eau : (à partir de \(doShort(value: HAUTEUR_PORTE+0.1, decimals: 2)))", text: $settings.settings.water)
+                            .padding(.bottom, 20.0)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .foregroundColor(Color("Primaire 1"))
+                            .keyboardType(.numberPad)
+                        
+                        MainDataRow()
+                        
+                        Text("Taille du texte: ")
+                            .fontWeight(.bold)
+                            .padding(.top, 20)
+                        Slider(value: $settings.settings.fontSize, in: 1...3, step: 1)
+                        
+                        Text("Modifier les couleurs ?")
+                            .fontWeight(.bold)
+                            .padding(.top, 20)
+                        
+                        VStack {
+                            HStack {
+                                ForEach(0..<4) { number in
+                                    NavigationLink(destination: SettingsColorEditorView(colorToEdit: number)) {
+                                        Circle()
+                                            .foregroundColor(Color(red: self.$settings.settings.colors[number].red.wrappedValue, green: self.$settings.settings.colors[number].green.wrappedValue, blue: self.$settings.settings.colors[number].blue.wrappedValue))
+                                    }
+                                }
+                            }.frame(height: 100)
+                            
+                            Button(action: {
+                               SettingsViewModel.resetAll()
+                            }) {
+                               Text("Réinitialiser l'application")
+                                   .fontWeight(.semibold)
+                                   .foregroundColor(Color.white)
+                                   .padding()
+                                   .background(Color.black)
+                                   .cornerRadius(30)
+                                   .shadow(radius: 10)
+                            }
+                            .padding(.top, 20.0)
                         }
-                        .padding(.top, 20.0)
+                        .padding(.bottom, 200)
                     }
-                    Spacer()
-                }.padding(.horizontal, 20)
+                    .padding(.horizontal, 20)
+                }
                 
                 ButtonWindowView(isBack: true, presentation: presentationMode)
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .navigationBarHidden(true)
-        .navigationBarTitle("titre")
+        .navigationBarTitle("")
         .edgesIgnoringSafeArea(.top)
         .environmentObject(settingsVM)
     }

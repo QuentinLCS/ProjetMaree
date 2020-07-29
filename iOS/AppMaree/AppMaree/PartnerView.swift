@@ -23,49 +23,55 @@ struct PartnerView: View {
     }
     
     var body: some View {
-        ZStack {
-            if showAd {
-                VStack {
-                    Image(adFile)
-                        .resizable().scaledToFit()
-                        .modifier(DraggableModifier(direction: .horizontal, showAd: $showAd))
-                    Spacer()
-                }
-            }
-            
-            ScrollView {
-                TitleView(title: "PARTENAIRES")
-                
-                Text("L'association des plaisanciers de Port Dielette vous présente la liste de ses partenaires pour l'édition de l'annuaire des marées.")
-                    .fontWeight(.semibold)
-                    .multilineTextAlignment(.center)
-                    .padding([.leading, .bottom, .trailing], 20.0)
-                
-                ForEach(0..<sortedCategory.count) { category in // create number of rows
-                    VStack {
-                        Text(self.sortedCategory[category])
-                            .font(.title)
-                        
-                            Spacer()
-                                .frame(height: 10)
-                        ForEach(0..<self.sortedAds[self.sortedCategory[category]]!.count) { value in
-                           
-                            Button(action: {
-                                self.showAd = true
-                                self.adFile = self.sortedAds[self.sortedCategory[category]]![value].file
-                            }) { Text(self.sortedAds[self.sortedCategory[category]]![value].name)
+        NavigationView {
+            ZStack {
+                ScrollView {
+                    TitleView(title: "PARTENAIRES")
+                    
+                    Text("L'association des plaisanciers de Port Dielette vous présente la liste de ses partenaires pour l'édition de l'annuaire des marées.")
+                        .fontWeight(.semibold)
+                        .multilineTextAlignment(.center)
+                        .padding([.leading, .bottom, .trailing], 20.0)
+                    
+                    ForEach(0..<sortedCategory.count) { category in // create number of rows
+                        VStack {
+                            Text(self.sortedCategory[category])
+                                .font(.title)
+                            
+                                Spacer()
+                                    .frame(height: 10)
+                            ForEach(0..<self.sortedAds[self.sortedCategory[category]]!.count) { value in
+                               
+                                Button(action: {
+                                    self.showAd = true
+                                    self.adFile = self.sortedAds[self.sortedCategory[category]]![value].file
+                                }) { Text(self.sortedAds[self.sortedCategory[category]]![value].name)
+                                }
                             }
                         }
+                        .padding(.bottom)
                     }
-                    .padding(.bottom)
+                    
+                    Text("Merci à eux !")
+                        .fontWeight(.bold)
+                        .padding(.bottom, 200.0)
                 }
                 
-                Text("Merci à eux !")
-                    .fontWeight(.bold)
-                    .padding(.bottom, 200.0)
+                if showAd {
+                    VStack {
+                        Image(adFile)
+                            .resizable().scaledToFit()
+                            .modifier(DraggableModifier(direction: .horizontal, showAd: $showAd))
+                        Spacer()
+                    }
+                }
+                
+                ButtonWindowView(presentation: presentationMode)
             }
-            
-            ButtonWindowView(presentation: presentationMode)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .navigationBarHidden(true)
+        .navigationBarTitle("")
+        .edgesIgnoringSafeArea(.top)
     }
 }

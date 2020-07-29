@@ -101,8 +101,9 @@ struct FishingView: View {
                 
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .navigationBarHidden(true)
-        .navigationBarTitle("Titre")
+        .navigationBarTitle("")
         .edgesIgnoringSafeArea(.top)
         
     }

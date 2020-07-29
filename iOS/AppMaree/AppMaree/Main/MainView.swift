@@ -74,10 +74,11 @@ struct MainView: View {
             }
             
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: delay)
         .navigationBarHidden(true)
-        .navigationBarTitle("titre")
-        .edgesIgnoringSafeArea(.top)
+        .navigationBarTitle("")
+        .edgesIgnoringSafeArea(.vertical)
         .environmentObject(settings)
         
     }

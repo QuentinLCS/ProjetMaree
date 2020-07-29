@@ -21,38 +21,40 @@ struct EmergencyMessageView: View {
                 .font(.largeTitle)
                 .foregroundColor(Color.red)
             
-            if !$showMore.wrappedValue {
-                HStack(spacing: 0) {
-                    VStack {
-                        Text("Cas MAYDAY: ")
-                            .fontWeight(.bold)
-                            .padding(.bottom)
-                        
-                        Text("Un Homme à la mer ? Incendie / Explosion ? Voie d'eau ? Navire désamparé ? Abordé ? Échoué ? Chaviré ? Abandonné ?")
-                        
-                        Spacer()
-                    }
-                    
-                    Spacer()
-                    
-                    VStack {
-                        Text("Cas PAN-PAN: ")
-                            .fontWeight(.bold)
-                            .padding(.bottom)
-                        
-                        Text("Une avarie de propulsion ? Avarie de barre ? Hélice ou safran engagé ? Démâtage ? Demande d'avis médical ?")
+            ScrollView {
+                if !$showMore.wrappedValue {
+                    HStack(spacing: 0) {
+                        VStack {
+                            Text("Cas MAYDAY: ")
+                                .fontWeight(.bold)
+                                .padding(.bottom)
+                            
+                            Text("Un Homme à la mer ? Incendie / Explosion ? Voie d'eau ? Navire désamparé ? Abordé ? Échoué ? Chaviré ? Abandonné ?")
+                            
+                            Spacer()
+                        }
                         
                         Spacer()
+                        
+                        VStack {
+                            Text("Cas PAN-PAN: ")
+                                .fontWeight(.bold)
+                                .padding(.bottom)
+                            
+                            Text("Une avarie de propulsion ? Avarie de barre ? Hélice ou safran engagé ? Démâtage ? Demande d'avis médical ?")
+                            
+                            Spacer()
+                        }
                     }
+                } else {
+                    Text("Mayday/Pan pan ! (x3) Ici le bateau [TYPE ET NOM D'EMBARCATION] qui signale [NATURE DU SINISTRE] à la position [POSITION GPS ou AZIMUT/DISTANCE D'UN POINT REMARQUABLE]. [NOMBRE INDIVIDUS] à bord. Ici le bateau [TYPE ET NOM D'EMBARCATION]. Terminé.")
+                    .font(.callout)
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color.white)
+                    .padding()
+                    .background(Color.red.opacity(0.5))
+                    .cornerRadius(30)
                 }
-            } else {
-                Text("Mayday/Pan pan ! (x3) Ici le bateau [TYPE ET NOM D'EMBARCATION] qui signale [NATURE DU SINISTRE] à la position [POSITION GPS ou AZIMUT/DISTANCE D'UN POINT REMARQUABLE]. [NOMBRE INDIVIDUS] à bord. Ici le bateau [TYPE ET NOM D'EMBARCATION]. Terminé.")
-                .font(.callout)
-                .fontWeight(.semibold)
-                .foregroundColor(Color.white)
-                .padding()
-                .background(Color.red.opacity(0.5))
-                .cornerRadius(30)
             }
             
             Button(action: {

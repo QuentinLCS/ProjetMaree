@@ -57,12 +57,12 @@ struct MainFontSizeView: View {
             }
         }
     }
-    
-    func contrastedTextColor(color: CustomColor?) -> Color {
-        if color != nil && (color!.red+color!.green+color!.blue) <= 1.5 {
-            return Color.white
-        }
-        
-        return Color.black
+}
+
+func contrastedTextColor(color: CustomColor?) -> Color {
+    if color != nil && (color!.red+color!.green+color!.blue) <= 1.5 {
+        return Color.white
     }
+    
+    return Color.black
 }
