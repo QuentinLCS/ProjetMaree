@@ -55,7 +55,7 @@ struct Animal: Identifiable, Decodable, Hashable {
         }
         
         if self.description != nil {
-            description += "\n\n\(String(describing: self.description))"
+            description += "\n\n\(self.description!)"
         }
         
         if self.taggingObligation != nil {

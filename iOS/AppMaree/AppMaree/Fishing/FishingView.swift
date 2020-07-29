@@ -96,7 +96,7 @@ struct FishingView: View {
                                 .foregroundColor(Color.white)
                             Spacer()
                         }
-                        .padding(.bottom, 300.0)
+                        .padding(.bottom, 200.0)
                         .frame(minWidth: 0, maxWidth: .infinity)
                         .background(DiagonalBackgroundView(de: .secondaryColor, a: .white))
                         

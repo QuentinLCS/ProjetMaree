@@ -46,7 +46,7 @@ struct AnimalDetailsView: View {
                             Spacer()
                         }
                         .padding(.top, 20.0)
-                        .padding(.bottom, 250)
+                        .padding(.bottom, 350)
                     }
                 }
                 ButtonWindowView(isBack: true, presentation: presentationMode)
