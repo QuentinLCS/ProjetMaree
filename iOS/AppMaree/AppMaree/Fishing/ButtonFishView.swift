@@ -47,6 +47,8 @@ struct ButtonFishView: View {
                     Text(name)
                         .font(.system(size: 15))
                         .foregroundColor(self.backgroundColor == .secondaryColor ? Color.white : Color.black)
+                        .fontWeight(.bold)
+                        .fixedSize(horizontal: false, vertical: true)
     
                     if (size != nil) {
                         Text("\(doShortDouble(value: size!, decimals: 1)) cm")

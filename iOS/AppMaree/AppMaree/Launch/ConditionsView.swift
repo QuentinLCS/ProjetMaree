@@ -31,6 +31,7 @@ struct ConditionsView: View {
                         .style(.bold(), ranges: { [$0.range(of: "GUIDE IMPRIMÉ")!, $0.range(of: "HEURE LÉGALE")!, $0.range(of: "Elles ne sont qu'indicatives.")! ]})
                         .padding(.horizontal, 20)
                         .padding(.bottom, 20)
+                        .fixedSize(horizontal: false, vertical: true)
                     
                     ZStack {
                         DiagonalBackgroundView(a: .primaryColor)
