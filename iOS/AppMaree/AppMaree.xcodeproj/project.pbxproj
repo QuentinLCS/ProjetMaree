@@ -51,6 +51,12 @@
 		DFBF4FAF24B611E000E2DA4B /* fishes.json in Resources */ = {isa = PBXBuildFile; fileRef = DFBF4FAE24B611E000E2DA4B /* fishes.json */; };
 		DFBF4FB124B7618A00E2DA4B /* AdsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FB024B7618A00E2DA4B /* AdsManager.swift */; };
 		DFBF4FB324BEC0D500E2DA4B /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FB224BEC0D500E2DA4B /* InformationView.swift */; };
+		DFDB1F5724D2E76000CAC40D /* WeeklyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB1F5624D2E76000CAC40D /* WeeklyWeather.swift */; };
+		DFDB1F5A24D2E88600CAC40D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB1F5924D2E88600CAC40D /* API.swift */; };
+		DFDB1F5E24D2EFD200CAC40D /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB1F5D24D2EFD200CAC40D /* DayView.swift */; };
+		DFDB1F6024D2F84200CAC40D /* AdsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB1F5F24D2F84200CAC40D /* AdsView.swift */; };
+		DFDB1F6224D305DF00CAC40D /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB1F6124D305DF00CAC40D /* WeatherView.swift */; };
+		DFDB1F6424D30E5000CAC40D /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB1F6324D30E5000CAC40D /* WeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +106,12 @@
 		DFBF4FAE24B611E000E2DA4B /* fishes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = fishes.json; sourceTree = "<group>"; };
 		DFBF4FB024B7618A00E2DA4B /* AdsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsManager.swift; sourceTree = "<group>"; };
 		DFBF4FB224BEC0D500E2DA4B /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
+		DFDB1F5624D2E76000CAC40D /* WeeklyWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeather.swift; sourceTree = "<group>"; };
+		DFDB1F5924D2E88600CAC40D /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		DFDB1F5D24D2EFD200CAC40D /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		DFDB1F5F24D2F84200CAC40D /* AdsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsView.swift; sourceTree = "<group>"; };
+		DFDB1F6124D305DF00CAC40D /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		DFDB1F6324D30E5000CAC40D /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,8 +277,22 @@
 				DF45A1C724A60A5100C4C050 /* MainView.swift */,
 				DFBF4FA824B2835200E2DA4B /* MainDataRow.swift */,
 				DF43C47124CDD0DB00921B4D /* MainFontSizeView.swift */,
+				DFDB1F5F24D2F84200CAC40D /* AdsView.swift */,
+				DFDB1F5824D2E76400CAC40D /* Day */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		DFDB1F5824D2E76400CAC40D /* Day */ = {
+			isa = PBXGroup;
+			children = (
+				DFDB1F5D24D2EFD200CAC40D /* DayView.swift */,
+				DFDB1F6124D305DF00CAC40D /* WeatherView.swift */,
+				DFDB1F5624D2E76000CAC40D /* WeeklyWeather.swift */,
+				DFDB1F5924D2E88600CAC40D /* API.swift */,
+				DFDB1F6324D30E5000CAC40D /* WeatherViewModel.swift */,
+			);
+			path = Day;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,9 +372,12 @@
 				DF440D0B24CEF20C00C9C8A9 /* EmergencyMessageView.swift in Sources */,
 				DFBF4FB124B7618A00E2DA4B /* AdsManager.swift in Sources */,
 				DFBF4FA124AEA3BC00E2DA4B /* DraggableView.swift in Sources */,
+				DFDB1F6424D30E5000CAC40D /* WeatherViewModel.swift in Sources */,
 				DFBF4F8B24ABB89700E2DA4B /* ButtonWindowView.swift in Sources */,
+				DFDB1F6224D305DF00CAC40D /* WeatherView.swift in Sources */,
 				DF45A1E324A64E2E00C4C050 /* FishingView.swift in Sources */,
 				DFBF4F8724AB658300E2DA4B /* StyledText.swift in Sources */,
+				DFDB1F5E24D2EFD200CAC40D /* DayView.swift in Sources */,
 				DF44C0F524A8E1F2001D6BDD /* PartnerView.swift in Sources */,
 				DF440D0D24CEF85000C9C8A9 /* AnimalDetailsView.swift in Sources */,
 				DF43C47B24CDE49800921B4D /* LaunchView.swift in Sources */,
@@ -357,10 +386,12 @@
 				DF43C48424CE2D9C00921B4D /* EmergencyView.swift in Sources */,
 				DF43C48924CE324B00921B4D /* MapView.swift in Sources */,
 				DF02A78B24A360C3009582BC /* AppDelegate.swift in Sources */,
+				DFDB1F5A24D2E88600CAC40D /* API.swift in Sources */,
 				DF45A1C824A60A5100C4C050 /* MainView.swift in Sources */,
 				DF02A78D24A360C3009582BC /* SceneDelegate.swift in Sources */,
 				DF43C49524CE5BEF00921B4D /* DatePickerView.swift in Sources */,
 				DFBF4FA924B2835200E2DA4B /* MainDataRow.swift in Sources */,
+				DFDB1F6024D2F84200CAC40D /* AdsView.swift in Sources */,
 				DF43C48724CE2EC000921B4D /* LocationManager.swift in Sources */,
 				DF44C0F824A8FB67001D6BDD /* DiagonalBackgroundView.swift in Sources */,
 				DF02A78F24A360C3009582BC /* MenuView.swift in Sources */,
@@ -377,6 +408,7 @@
 				DF45A1E724A64EB500C4C050 /* DocumentationView.swift in Sources */,
 				DFBF4FB324BEC0D500E2DA4B /* InformationView.swift in Sources */,
 				DF45A1EE24A64FDE00C4C050 /* TitleView.swift in Sources */,
+				DFDB1F5724D2E76000CAC40D /* WeeklyWeather.swift in Sources */,
 				DF43C48024CDE62D00921B4D /* ConditionsView.swift in Sources */,
 				DF579A2D24C50DE4005AF947 /* WaterSettings.swift in Sources */,
 				DF02223A24A919E4009A7747 /* Animal.swift in Sources */,

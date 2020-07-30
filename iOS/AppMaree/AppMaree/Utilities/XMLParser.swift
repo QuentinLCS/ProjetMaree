@@ -14,6 +14,7 @@ struct Day: Codable, Identifiable {
     var date: String = ""
     var portes: [Porte] = []
     var marees: [Maree] = []
+    var dateShortString: String = ""
     var dateString: String = ""
 }
 
@@ -112,6 +113,7 @@ extension MareeParser: XMLParserDelegate {
         } else if elementName == "date" {
 
             currentDay.date = currentValue!
+            currentDay.dateShortString = dateString(date: currentDay.date, isShort: true)
             currentDay.dateString = dateString(date: currentDay.date)
             currentValue = nil
 
@@ -131,12 +133,19 @@ extension MareeParser: XMLParserDelegate {
     }
 }
 
-func dateString(date: String) -> String {
-    let months: [String] = ["JAN", "FEV", "MAR", "AVR", "MAI", "JUN", "JUI", "AOU", "SEP", "OCT", "NOV", "DEC"]
+func dateString(date: String, isShort: Bool = false) -> String {
+    let months: [String]
+    
+    if isShort {
+        months = ["JAN", "FEV", "MAR", "AVR", "MAI", "JUN", "JUI", "AOU", "SEP", "OCT", "NOV", "DEC"]
+    } else {
+        months = ["JANVIER", "FÉVRIER", "MARS", "AVRIL", "MAI", "JUIN", "JUILLET", "AOÛT", "SEPTEMBRE", "OCTOBRE", "NOVEMBRE", "DÉCEMBRE"]
+    }
+    
     let dateSplit: [String.SubSequence] = date.split(separator: "/")
     let day: String = String(dateSplit[0])
     let month: String = months[(Int(dateSplit[1]) ?? 0) - 1]
-    return day + "\n" + month
+    return day + (isShort ? "\n" : " ") + month
 }
 
 func sortMaree(marees: [Maree]) -> [Maree] {

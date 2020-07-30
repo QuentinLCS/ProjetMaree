@@ -9,10 +9,11 @@
 import SwiftUI
 
 class JSONContent {
+    static let decoder = JSONDecoder()
+    
     static func JSONAdsContent() -> [AdsManager] {
         let url = Bundle.main.url(forResource: "ads", withExtension: "json")!
         let data = try! Data(contentsOf: url)
-        let decoder = JSONDecoder()
         let contents = try! decoder.decode([AdsManager].self, from: data)
         return contents
     }
@@ -20,8 +21,13 @@ class JSONContent {
     static func JSONFishesContent() -> [[Animal]] {
         let url = Bundle.main.url(forResource: "fishes", withExtension: "json")!
         let data = try! Data(contentsOf: url)
-        let decoder = JSONDecoder()
         let contents = try! decoder.decode([[Animal]].self, from: data)
+        return contents
+    }
+    
+    static func JSONWeatherContent(data: Data?) -> WeeklyWeather {
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        let contents = try! decoder.decode(WeeklyWeather.self, from: data!)
         return contents
     }
 }

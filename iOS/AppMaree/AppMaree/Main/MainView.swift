@@ -23,7 +23,7 @@ struct MainView: View {
     
     let ads = getAdsWithWeight()
     var days: [Day] = []
-    let opacities:[Double] = [1.0, 0.6]
+    let opacities:[Color] = [Color.white.opacity(1.0), Color.white.opacity(0.6)]
 
     init() {
 
@@ -43,32 +43,30 @@ struct MainView: View {
     }
     
     var body: some View {
-        NavigationView {
+        let startListNumber: Int = $settings.dayNumber.wrappedValue < 1 ? $settings.dayNumber.wrappedValue : $settings.dayNumber.wrappedValue - 1
+        
+        return NavigationView {
             ZStack {
                 LinearGradient(gradient: Gradient(colors: [Color("Primaire 1"),Color("Primaire 2"), Color("Primaire 3")]), startPoint: /*@START_MENU_TOKEN@*/.top/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.bottom/*@END_MENU_TOKEN@*/)
                 
                 // LISTE DES JOURS
                 List {
-                    ForEach(($settings.dayNumber.wrappedValue < 1 ? $settings.dayNumber.wrappedValue : $settings.dayNumber.wrappedValue - 1) ..< self.days.count) { number in
-                    
-                        MainDataRow(day: self.days[number])
-                            .background(Color.white.opacity(self.opacities[number % 2]))
+                    ForEach(startListNumber ..< self.days.count) { number in
+                        ZStack {
+                            MainDataRow(day: self.days[number])
+                                .background(self.opacities[number % 2])
+                            
+                            NavigationLink(destination: DayView(day: self.days[number], weatherNumber: number - startListNumber)) { EmptyView() }
+                            .buttonStyle(PlainButtonStyle())
+                        }
+                        
                     }.listRowInsets(EdgeInsets())
+                    
                     TitleView(title: "...", titleColor: .black ,backgroundColor: .clear)
                         .padding(.bottom, 200.0)
                 }
                 
-                // AFFICHAGE DE LA PUBLICITE test
-                if showAd {
-                    VStack {
-                        Image($imageAd.wrappedValue)
-                            .resizable().scaledToFit()
-                            .modifier(DraggableModifier(direction: .horizontal, showAd: $showAd))
-                        Spacer()
-                    }
-                    .transition(AnyTransition.slide)
-                    .animation(.default)
-                }
+                AdsView(showAd: $showAd, imageAd: $imageAd)
                 
                 ButtonWindowView(isBack: false, home: true)
             }

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct PartnerView: View {
     @State private var showAd = false
-    @State private var adFile = ""
+    @State private var imageAd = ""
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
@@ -44,7 +44,7 @@ struct PartnerView: View {
                                
                                 Button(action: {
                                     self.showAd = true
-                                    self.adFile = self.sortedAds[self.sortedCategory[category]]![value].file
+                                    self.imageAd = self.sortedAds[self.sortedCategory[category]]![value].file
                                 }) { Text(self.sortedAds[self.sortedCategory[category]]![value].name)
                                 }
                             }
@@ -57,14 +57,7 @@ struct PartnerView: View {
                         .padding(.bottom, 200.0)
                 }
                 
-                if showAd {
-                    VStack {
-                        Image(adFile)
-                            .resizable().scaledToFit()
-                            .modifier(DraggableModifier(direction: .horizontal, showAd: $showAd))
-                        Spacer()
-                    }
-                }
+                AdsView(showAd: $showAd, imageAd: $imageAd)
                 
                 ButtonWindowView(presentation: presentationMode)
             }
