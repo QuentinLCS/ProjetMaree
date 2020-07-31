@@ -24,8 +24,15 @@ struct DayView: View {
         let dayNum: Int = Int(day.date.split(separator: "/")[0])!
         let monthNum: Int = Int(day.date.split(separator: "/")[1])!
         let numberDays: Int = daysBetweenDates(date1: Date(), date2: dateCreator(day: dayNum, month: monthNum))
-        let display: Bool = numberDays >= 0 && numberDays < 5 && weather.weekly != nil
+        let display: Bool = numberDays >= 0 && numberDays < 6 && weather.weekly != nil
+        var midDay: Int = 0
+        var weatherDataDayCount: Int = 0
         let weatherDataDay = display ? self.weather.gatherWeatherData()[self.weatherNumber] : nil
+        
+        if weatherDataDay != nil {
+            weatherDataDayCount = weatherDataDay!.count
+            midDay = weatherDataDayCount < 5 ? 0 : weatherDataDayCount / 2
+        }
         
         return NavigationView {
             ZStack {
@@ -33,7 +40,7 @@ struct DayView: View {
                 if display {
                     VStack(spacing: 0) {
                         GeometryReader { gr in
-                            WeatherView(height: self.selected == 0 ? gr.size.height : gr.size.height * 0.70,weather: weatherDataDay![0], city: self.weather.weekly!.city, dateString: self.day.dateString)
+                            WeatherView(height: self.selected == 0 ? gr.size.height : gr.size.height * 0.80,weather: weatherDataDay![midDay], city: self.weather.weekly!.city, dateString: self.day.dateString)
                                 .animation(.easeInOut(duration: 0.5))
                                 .shadow(radius: 30)
                                 .animation(.easeInOut(duration: 0.5))

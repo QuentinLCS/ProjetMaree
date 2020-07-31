@@ -18,35 +18,38 @@ struct WeatherView: View {
     
     var body: some View {
         VStack(spacing: 20) {
+            
             Text("\(dateString)\nà \(city.name)")
                 .font(.title)
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: true, vertical: true)
             
-            VStack {
+            HStack(spacing: 10) {
                 Text("\(Int(weather.main.temp))°C")
-                    .font(.system(size: 65))
+                    .font(.system(size: 70))
                     .fontWeight(.heavy)
-                    .fixedSize(horizontal: true, vertical: true)
+                    .lineLimit(1)
                 
-                Text("min: \(Int(weather.main.tempMin))°C / max: \(Int(weather.main.tempMax))°C")
-                    .fixedSize(horizontal: true, vertical: true)
+                Image(weather.weather.last?.icon ?? "01d")
+                    .resizable()
+                    .frame(width: 100, height: 100)
             }
-            
+
             Text((weather.weather.last?.description)!)
-                    .fixedSize(horizontal: true, vertical: true)
+                .lineLimit(1)
+            
             VStack {
                 Text("Soleil:")
                     .fontWeight(.semibold)
-                    .fixedSize(horizontal: true, vertical: true)
+                    .lineLimit(1)
                 
                 Text("\(getSunHour(data: city.sunrise))h - \(getSunHour(data: city.sunset))h")
-                    .fixedSize(horizontal: true, vertical: true)
+                    .lineLimit(1)
             }
         }
         .foregroundColor(.white)
-        .frame(width: height, height: height)
+        .frame(width: height * 0.8, height: height)
         .background(LinearGradient(gradient: Gradient(colors: [Color("Primaire 1"), Color("Primaire 2"), Color("Primaire 3")]), startPoint: .topLeading, endPoint: .bottomTrailing))
         .cornerRadius(45)
     }

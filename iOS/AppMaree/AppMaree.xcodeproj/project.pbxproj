@@ -214,8 +214,8 @@
 				DF43C48324CE2D9C00921B4D /* EmergencyView.swift */,
 				DF440D0A24CEF20C00C9C8A9 /* EmergencyMessageView.swift */,
 				DF43C48624CE2EC000921B4D /* LocationManager.swift */,
-				DF43C48824CE324B00921B4D /* MapView.swift */,
 				DF43C48A24CE330C00921B4D /* Coordinator.swift */,
+				DF43C48824CE324B00921B4D /* MapView.swift */,
 			);
 			path = Emergency;
 			sourceTree = "<group>";

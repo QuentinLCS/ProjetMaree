@@ -38,13 +38,13 @@ extension WeatherViewModel {
                 date = String(element.dtTxt.split(separator: " ")[0])
             }
             
-            if element.dtTxt.contains(date) {
-                result[i].append(element)
-            } else {
+            result[i].append(element)
+            
+            if !element.dtTxt.contains(date) {
                 i += 1
             }
         }
-        print(result.count)
+
         return result
     }
 }

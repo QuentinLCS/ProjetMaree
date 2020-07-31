@@ -56,7 +56,7 @@ struct MainView: View {
                             MainDataRow(day: self.days[number])
                                 .background(self.opacities[number % 2])
                             
-                            NavigationLink(destination: DayView(day: self.days[number], weatherNumber: number - startListNumber)) { EmptyView() }
+                            NavigationLink(destination: DayView(day: self.days[number], weatherNumber: number - startListNumber - 1)) { EmptyView() }
                             .buttonStyle(PlainButtonStyle())
                         }
                         

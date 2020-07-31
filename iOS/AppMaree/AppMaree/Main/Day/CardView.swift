@@ -19,27 +19,29 @@ struct CardView: View {
             Text(weatherHourString(dateHourString: data.dtTxt))
                 .font(.headline)
                 .fontWeight(.semibold)
-                .fixedSize(horizontal: true, vertical: true)
+                .lineLimit(1)
             HStack {
-                Text("\(Int(data.main.tempMin))")
-                    .foregroundColor(.black)
-                    .fixedSize(horizontal: true, vertical: true)
                 Text("\(Int(data.main.temp))°C")
                     .fontWeight(.bold)
                     .font(.title)
-                    .fixedSize(horizontal: true, vertical: true)
+                    .lineLimit(1)
+                Image(data.weather.last?.icon ?? "01d")
+                Text("\(Int(data.main.tempMin))°C")
+                    .font(.title)
+                    .fontWeight(.light)
+                    .lineLimit(1)
             }
             Text(data.weather.last?.description ?? "")
-                .fixedSize(horizontal: true, vertical: true)
+                .lineLimit(1)
             
             if $showMore.wrappedValue {
                 VStack {
                     Text("humidité: \(data.main.humidity)%")
-                        .fixedSize(horizontal: true, vertical: true)
+                        .lineLimit(1)
                     Text("vent: \(doShortDouble(value: data.wind.speed, decimals: 2))km/h (\(data.wind.deg)°)")
-                        .fixedSize(horizontal: true, vertical: true)
+                        .lineLimit(1)
                     Text("pression: \(data.main.pressure)")
-                        .fixedSize(horizontal: true, vertical: true)
+                        .lineLimit(1)
                 }.animation(.easeInOut(duration: 0.5))
             }
             
@@ -57,10 +59,10 @@ struct CardView: View {
             
         }.foregroundColor(.white)
     }
-    
-    func weatherHourString(dateHourString: String) -> String {
-        return "\(dateHourString.split(separator: " ")[1].split(separator: ":")[0])H00"
-    }
+}
+
+func weatherHourString(dateHourString: String) -> String {
+    return "\(dateHourString.split(separator: " ")[1].split(separator: ":")[0])H00"
 }
 
 struct CardViewModifier: ViewModifier {
