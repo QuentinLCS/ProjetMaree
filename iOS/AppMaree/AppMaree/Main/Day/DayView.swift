@@ -70,7 +70,8 @@ struct DayView: View {
                         .foregroundColor(.white)
                 }
                 
-                HomeButtonView(colored: false, isBack: true, presentation: presentationMode)
+                HomeButtonView(colored: selected != 0, isBack: true, presentation: presentationMode)
+        
             }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         }
         .navigationViewStyle(StackNavigationViewStyle())

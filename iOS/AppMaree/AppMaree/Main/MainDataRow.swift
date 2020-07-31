@@ -44,9 +44,10 @@ struct MainDataRow: View {
                         
                     }
                     
-                    if self.day.portes[number].estimatedHour != nil {
-                        MainFontSizeView(data: self.day.portes[number].estimatedHour!)
+                    if self.day.portes[number > 1 ? number-2 : 0].estimatedHour != nil {
+                        MainFontSizeView(data: self.day.portes[number].estimatedHour ?? "--")
                     }
+                    
                     MainFontSizeView(data: self.day.marees[number].hauteur)
                    
                 }
