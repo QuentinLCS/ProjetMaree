@@ -20,7 +20,7 @@ struct WeatherDetailsView: View {
             HStack {
                 ForEach(listData) { data in
                     CardView(data: data)
-                        .frame(width: self.width, height: self.value == 0 ? 0 : self.height * 0.50)
+                        .frame(width: self.width, height: self.value == 0 ? 0 : self.height * 0.60)
                         .animation(.easeInOut(duration: 0.5))
                         .modifier(CardViewModifier())
                 }

@@ -32,6 +32,7 @@ struct LaunchView: View {
                         Image("logo")
                             .resizable()
                             .scaledToFit()
+                            .frame(maxHeight: UIScreen.main.bounds.height / 3)
                             .padding(.bottom, 20)
                         NavigationLink(destination: ConditionsView(secondsLeft: self.$secondsLeft)) {
                             Text("Lire les conditions d'utilisation")
@@ -50,11 +51,9 @@ struct LaunchView: View {
                             Conditions d'utilisation déjà acceptées !
 
                             Vous pouvez poursuivre en cliquant sur le bouton ci-dessous ou attendre \(self.$secondsLeft.wrappedValue) secondes.
-
-                            Bon voyage !
                             """)
                             .style(.highlight(), ranges: { [$0.range(of: "Conditions d'utilisation déjà acceptées !")!]})
-                            .style(.bold(), ranges: { [$0.range(of: "Conditions d'utilisation déjà acceptées !")!, $0.range(of: "cliquant sur le bouton ci-dessous")!,  $0.range(of: "\(self.$secondsLeft.wrappedValue) secondes")!, $0.range(of: "Bon voyage !")! ]})
+                            .style(.bold(), ranges: { [$0.range(of: "Conditions d'utilisation déjà acceptées !")!, $0.range(of: "cliquant sur le bouton ci-dessous")!,  $0.range(of: "\(self.$secondsLeft.wrappedValue) secondes")!]})
                                 .padding([.leading, .bottom, .trailing], 20.0)
                                 .multilineTextAlignment(.center)
                                 .onAppear(perform: delay)

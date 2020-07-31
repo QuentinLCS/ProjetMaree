@@ -49,7 +49,7 @@ struct WeatherView: View {
             }
         }
         .foregroundColor(.white)
-        .frame(width: height * 0.8, height: height)
+        .frame(width: height * 0.9, height: height)
         .background(LinearGradient(gradient: Gradient(colors: [Color("Primaire 1"), Color("Primaire 2"), Color("Primaire 3")]), startPoint: .topLeading, endPoint: .bottomTrailing))
         .cornerRadius(45)
     }
