@@ -23,9 +23,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>This app requires your location.</string>
+	<string>Nécessaire en cas d&apos;appel d&apos;urgence.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This app requires your location.</string>
+	<string>Nécessaire en cas d&apos;appel d&apos;urgence.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

@@ -68,7 +68,7 @@ func weatherHourString(dateHourString: String) -> String {
 struct CardViewModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .background(LinearGradient(gradient: Gradient(colors: [Color("Primaire 1"), Color("Primaire 2")]), startPoint: .topLeading, endPoint: .bottomTrailing))
+            .background(LinearGradient(gradient: Gradient(colors: [Color("Primaire 2"), Color("Primaire 3")]), startPoint: .topLeading, endPoint: .bottomTrailing))
             .cornerRadius(20)
     }
 }
