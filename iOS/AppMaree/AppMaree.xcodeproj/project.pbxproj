@@ -57,6 +57,8 @@
 		DFDB1F6024D2F84200CAC40D /* AdsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB1F5F24D2F84200CAC40D /* AdsView.swift */; };
 		DFDB1F6224D305DF00CAC40D /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB1F6124D305DF00CAC40D /* WeatherView.swift */; };
 		DFDB1F6424D30E5000CAC40D /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB1F6324D30E5000CAC40D /* WeatherViewModel.swift */; };
+		DFDB1F6624D339D000CAC40D /* WeatherDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB1F6524D339D000CAC40D /* WeatherDetailsView.swift */; };
+		DFDB1F6824D33A6A00CAC40D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB1F6724D33A6A00CAC40D /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +114,8 @@
 		DFDB1F5F24D2F84200CAC40D /* AdsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsView.swift; sourceTree = "<group>"; };
 		DFDB1F6124D305DF00CAC40D /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		DFDB1F6324D30E5000CAC40D /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		DFDB1F6524D339D000CAC40D /* WeatherDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsView.swift; sourceTree = "<group>"; };
+		DFDB1F6724D33A6A00CAC40D /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +292,8 @@
 			children = (
 				DFDB1F5D24D2EFD200CAC40D /* DayView.swift */,
 				DFDB1F6124D305DF00CAC40D /* WeatherView.swift */,
+				DFDB1F6524D339D000CAC40D /* WeatherDetailsView.swift */,
+				DFDB1F6724D33A6A00CAC40D /* CardView.swift */,
 				DFDB1F5624D2E76000CAC40D /* WeeklyWeather.swift */,
 				DFDB1F5924D2E88600CAC40D /* API.swift */,
 				DFDB1F6324D30E5000CAC40D /* WeatherViewModel.swift */,
@@ -387,6 +393,7 @@
 				DF43C48924CE324B00921B4D /* MapView.swift in Sources */,
 				DF02A78B24A360C3009582BC /* AppDelegate.swift in Sources */,
 				DFDB1F5A24D2E88600CAC40D /* API.swift in Sources */,
+				DFDB1F6824D33A6A00CAC40D /* CardView.swift in Sources */,
 				DF45A1C824A60A5100C4C050 /* MainView.swift in Sources */,
 				DF02A78D24A360C3009582BC /* SceneDelegate.swift in Sources */,
 				DF43C49524CE5BEF00921B4D /* DatePickerView.swift in Sources */,
@@ -413,6 +420,7 @@
 				DF579A2D24C50DE4005AF947 /* WaterSettings.swift in Sources */,
 				DF02223A24A919E4009A7747 /* Animal.swift in Sources */,
 				DF579A2524C4AEC8005AF947 /* SettingsViewModel.swift in Sources */,
+				DFDB1F6624D339D000CAC40D /* WeatherDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

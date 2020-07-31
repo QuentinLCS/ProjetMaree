@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+import SystemConfiguration
+
 
 private let appid = "f4e691bf3877c853caf6df37da1d56bc"
 private let baseUrlForWeeklyWeather = URL(string: "https://api.openweathermap.org/data/2.5/forecast")!
@@ -14,7 +16,7 @@ private let baseUrlForWeeklyWeather = URL(string: "https://api.openweathermap.or
 
 
 class API {
-    class func fetchCurrentWeather(by city: String, onSuccess: @escaping (WeeklyWeather) -> Void ) {
+    class func fetchWeather(by city: String, onSuccess: @escaping (WeeklyWeather) -> Void ) {
         let query = ["q": "\(city)", "appid": appid, "units": "Metric", "lang": "fr"]
 
         guard let url = baseUrlForWeeklyWeather.withQueries(query) else {
@@ -22,14 +24,12 @@ class API {
         }
 
         URLSession.shared.dataTask(with: url) { (data, res, err) in
-            guard let _ = data, err == nil else {
-                fatalError(err!.localizedDescription)
-            }
 
             do {
-                let weather = JSONContent.JSONWeatherContent(data: data)
-                DispatchQueue.main.async {
-                    onSuccess(weather)
+                if let weather = JSONContent.JSONWeatherContent(data: data) {
+                    DispatchQueue.main.async {
+                        onSuccess(weather)
+                    }
                 }
             }
 

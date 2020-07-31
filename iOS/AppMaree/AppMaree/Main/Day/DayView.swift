@@ -15,23 +15,35 @@ struct DayView: View {
     
     @State private var selected = 0
     
+    var height = UIScreen.main.bounds.height
     let day: Day
     let weatherNumber: Int
+    
     
     var body: some View {
         let dayNum: Int = Int(day.date.split(separator: "/")[0])!
         let monthNum: Int = Int(day.date.split(separator: "/")[1])!
         let numberDays: Int = daysBetweenDates(date1: Date(), date2: dateCreator(day: dayNum, month: monthNum))
-        let display: Bool = numberDays >= 0 && numberDays < 16
+        let display: Bool = numberDays >= 0 && numberDays < 5 && weather.weekly != nil
+        let weatherDataDay = display ? self.weather.gatherWeatherData()[self.weatherNumber] : nil
         
         return NavigationView {
             ZStack {
                 
                 if display {
-                    GeometryReader { gr in
-                        WeatherView(height: self.selected == 0 ? gr.size.height : gr.size.height * 0.50,weather: self.weather.weekly?.list[self.weatherNumber], city: self.weather.weekly!.city, dateString: self.day.dateString)
-                            .animation(.easeInOut(duration: 0.5))
+                    VStack(spacing: 0) {
+                        GeometryReader { gr in
+                            WeatherView(height: self.selected == 0 ? gr.size.height : gr.size.height * 0.70,weather: weatherDataDay![0], city: self.weather.weekly!.city, dateString: self.day.dateString)
+                                .animation(.easeInOut(duration: 0.5))
+                                .shadow(radius: 30)
+                                .animation(.easeInOut(duration: 0.5))
+                        }
+                        
+                        WeatherDetailsView(listData: weatherDataDay!, value: selected, height: (self.height * 0.5))
                     }
+                    
+                    
+                    
                     VStack {
                         Picker("", selection: $selected) {
                             Text("Simplifié").tag(0)
@@ -39,12 +51,13 @@ struct DayView: View {
                         }
                         .pickerStyle(SegmentedPickerStyle())
                         .padding()
+                        
                         Spacer()
                     }
                 } else {
                     LinearGradient(gradient: Gradient(colors: [Color("Primaire 1"), Color("Primaire 2"), Color("Primaire 3")]), startPoint: .topLeading, endPoint: .bottomTrailing)
                     
-                    Text("Aucune estimation disponible pour ce jour.")
+                    Text("Aucune donnée. \n\nVérifiez votre connexion internet ou sélectionnez un jour antérieur plus proche.")
                         .font(.title)
                         .multilineTextAlignment(.center)
                         .foregroundColor(.white)

@@ -10,6 +10,7 @@ import SwiftUI
 
 class JSONContent {
     static let decoder = JSONDecoder()
+    static var dataDownloaded: Bool = true
     
     static func JSONAdsContent() -> [AdsManager] {
         let url = Bundle.main.url(forResource: "ads", withExtension: "json")!
@@ -25,9 +26,12 @@ class JSONContent {
         return contents
     }
     
-    static func JSONWeatherContent(data: Data?) -> WeeklyWeather {
+    static func JSONWeatherContent(data: Data?) -> WeeklyWeather? {
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        let contents = try! decoder.decode(WeeklyWeather.self, from: data!)
+        var contents: WeeklyWeather? = nil
+        if data != nil {
+            contents = try! decoder.decode(WeeklyWeather.self, from: data!)
+        }
         return contents
     }
 }

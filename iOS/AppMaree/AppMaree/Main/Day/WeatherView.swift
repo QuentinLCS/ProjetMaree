@@ -12,7 +12,7 @@ struct WeatherView: View {
     
     var height: CGFloat = 0
     
-    var weather: ListData?
+    var weather: ListData
     var city: CityObject
     var dateString: String
     
@@ -21,16 +21,41 @@ struct WeatherView: View {
             Text("\(dateString)\nà \(city.name)")
                 .font(.title)
                 .fontWeight(.bold)
-            Text("\(Int(weather?.main.temp ?? 0))°C")
-                .font(.system(size: 65))
-                .fontWeight(.heavy)
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: true, vertical: true)
+            
             VStack {
-                Text("\(weather?.weather.last?.description ?? "Inconnu")")
-                Text("min: \(Int(weather?.main.tempMin ?? 0))°C / max: \(Int(weather?.main.tempMax ?? 0))")
+                Text("\(Int(weather.main.temp))°C")
+                    .font(.system(size: 65))
+                    .fontWeight(.heavy)
+                    .fixedSize(horizontal: true, vertical: true)
+                
+                Text("min: \(Int(weather.main.tempMin))°C / max: \(Int(weather.main.tempMax))°C")
+                    .fixedSize(horizontal: true, vertical: true)
+            }
+            
+            Text((weather.weather.last?.description)!)
+                    .fixedSize(horizontal: true, vertical: true)
+            VStack {
+                Text("Soleil:")
+                    .fontWeight(.semibold)
+                    .fixedSize(horizontal: true, vertical: true)
+                
+                Text("\(getSunHour(data: city.sunrise))h - \(getSunHour(data: city.sunset))h")
+                    .fixedSize(horizontal: true, vertical: true)
             }
         }
         .foregroundColor(.white)
         .frame(width: height, height: height)
         .background(LinearGradient(gradient: Gradient(colors: [Color("Primaire 1"), Color("Primaire 2"), Color("Primaire 3")]), startPoint: .topLeading, endPoint: .bottomTrailing))
+        .cornerRadius(45)
+    }
+    
+    func getSunHour(data: Int) -> String {
+        let date = Date(timeIntervalSince1970: TimeInterval(data))
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        dateFormatter.timeZone = .current
+        return dateFormatter.string(from: date)
     }
 }
