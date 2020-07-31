@@ -24,6 +24,7 @@ struct EmergencyView: View {
                         TitleView(title: "SIGNALER UN PROBLÈME", titleColor: Color.red)
 
                         EmergencyMessageView()
+                            .padding(.bottom, 30)
                     
                         ZStack {
                             MapView()

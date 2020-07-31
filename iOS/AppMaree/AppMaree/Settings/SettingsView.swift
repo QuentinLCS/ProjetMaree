@@ -57,7 +57,7 @@ struct SettingsView: View {
                         VStack {
                             HStack {
                                 ForEach(0..<4) { number in
-                                    NavigationLink(destination: SettingsColorEditorView(colorToEdit: number)) {
+                                    NavigationLink(destination: SettingsColorEditorView(colorToEdit: number).environmentObject(settingsVM)) {
                                         Circle()
                                             .foregroundColor(Color(red: self.$settings.settings.colors[number].red.wrappedValue, green: self.$settings.settings.colors[number].green.wrappedValue, blue: self.$settings.settings.colors[number].blue.wrappedValue))
                                     }

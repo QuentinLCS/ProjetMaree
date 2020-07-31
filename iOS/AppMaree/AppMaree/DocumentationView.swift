@@ -20,9 +20,11 @@ struct DocumentationView: View {
                 ScrollView {
                     TitleView(title: "DOCUMENTATION")
                     
-                    Text("Vous pouvez cliquer sur une journée afin d'avoir davantage d'informations sur cette dernière. Vous aurez ainsi la météo, le vent, l'humidité et bien d'autres informations qui pourront vous être utile dans le cadre de vos activités !")
+                    Text("Vous pouvez cliquer sur une journée afin d'avoir davantage d'informations sur cette dernière. Vous aurez ainsi la météo, le vent, l'humidité et bien d'autres informations qui pourront vous être utiles dans le cadre de vos activités !")
+                        .fontWeight(.semibold)
                         .padding(.horizontal, 20.0)
                         .padding(.vertical, 10)
+                        .fixedSize(horizontal: false, vertical: true)
                     
                     MainDataRow()
                     
