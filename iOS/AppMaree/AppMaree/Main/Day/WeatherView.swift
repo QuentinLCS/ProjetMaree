@@ -25,19 +25,22 @@ struct WeatherView: View {
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: true, vertical: true)
             
-            HStack(spacing: 10) {
-                Text("\(Int(weather.main.temp))°C")
-                    .font(.system(size: 70))
-                    .fontWeight(.heavy)
-                    .lineLimit(1)
+            VStack(spacing: 0) {
+                HStack(spacing: 10) {
+                    Text("\(Int(weather.main.temp))°C")
+                        .font(.system(size: 70))
+                        .fontWeight(.heavy)
+                        .lineLimit(1)
+                        .fixedSize()
+                    
+                    Image(weather.weather.last?.icon ?? "01d")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                }
                 
-                Image(weather.weather.last?.icon ?? "01d")
-                    .resizable()
-                    .frame(width: 100, height: 100)
+                Text((weather.weather.last?.description)!)
+                    .lineLimit(1)
             }
-
-            Text((weather.weather.last?.description)!)
-                .lineLimit(1)
             
             VStack {
                 Text("Soleil:")
@@ -49,9 +52,8 @@ struct WeatherView: View {
             }
         }
         .foregroundColor(.white)
-        .frame(width: height * 0.9, height: height)
+        .frame(width: UIScreen.main.bounds.width, height: height)
         .background(LinearGradient(gradient: Gradient(colors: [Color("Primaire 1"), Color("Primaire 2"), Color("Primaire 3")]), startPoint: .topLeading, endPoint: .bottomTrailing))
-        .cornerRadius(45)
     }
     
     func getSunHour(data: Int) -> String {

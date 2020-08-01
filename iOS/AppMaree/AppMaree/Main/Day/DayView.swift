@@ -16,6 +16,7 @@ struct DayView: View {
     @State private var selected = 0
     
     var height = UIScreen.main.bounds.height
+    var width = UIScreen.main.bounds.width
     let day: Day
     let weatherNumber: Int
     
@@ -40,10 +41,10 @@ struct DayView: View {
                 if display {
                     VStack(spacing: 0) {
                         GeometryReader { gr in
-                            WeatherView(height: self.selected == 0 ? gr.size.height : gr.size.height * 0.80,weather: weatherDataDay![midDay], city: self.weather.weekly!.city, dateString: self.day.dateString)
-                                .animation(.easeInOut(duration: 0.5))
+                            WeatherView(height: self.selected == 0 ? gr.size.height : gr.size.height * 0.85, weather: weatherDataDay![midDay], city: self.weather.weekly!.city, dateString: self.day.dateString)
                                 .shadow(radius: 30)
                                 .animation(.easeInOut(duration: 0.5))
+                            Spacer()
                         }
                         
                         WeatherDetailsView(listData: weatherDataDay!, value: selected, height: (self.height * 0.5))

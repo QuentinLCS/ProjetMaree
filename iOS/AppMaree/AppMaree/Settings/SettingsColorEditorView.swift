@@ -32,22 +32,22 @@ struct SettingsColorEditorView: View {
                     Color(red: self.$red.wrappedValue, green: self.$green.wrappedValue, blue: self.$blue.wrappedValue)
                     
                     VStack(spacing: 40) {
-                        
-                        VStack {
+                        Spacer()
+                        VStack(spacing: 0) {
                             Text("ROUGE")
                                 .fontWeight(.bold)
                                 .foregroundColor(contrastedTextColor(color: color))
                             Slider(value: $red, in: 0...1, step: 1/255)
                         }
                         
-                        VStack {
+                        VStack(spacing: 0) {
                             Text("VERT")
                                 .fontWeight(.bold)
                                 .foregroundColor(contrastedTextColor(color: color))
                             Slider(value: $green, in: 0...1, step: 1/255)
                         }
                         
-                        VStack {
+                        VStack(spacing: 0) {
                             Text("BLEU")
                                 .fontWeight(.bold)
                                 .foregroundColor(contrastedTextColor(color: color))
@@ -67,6 +67,8 @@ struct SettingsColorEditorView: View {
                                 .cornerRadius(30)
                                 .shadow(radius: 10)
                         }
+                        Spacer()
+                        Spacer()
                     }
                     .padding(.horizontal, 20.0)
                     

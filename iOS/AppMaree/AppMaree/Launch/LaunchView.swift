@@ -32,7 +32,7 @@ struct LaunchView: View {
                         Image("logo")
                             .resizable()
                             .scaledToFit()
-                            .frame(maxHeight: UIScreen.main.bounds.height / 3)
+                            .frame(maxHeight: UIScreen.main.bounds.height / 3.5)
                             .padding(.bottom, 20)
                         NavigationLink(destination: ConditionsView(secondsLeft: self.$secondsLeft)) {
                             Text("Lire les conditions d'utilisation")
