@@ -30,7 +30,7 @@ struct FishingView: View {
                 ScrollView {
                     VStack {
                         VStack(alignment: .leading, spacing: 20) {
-                            TitleView(title: "PÊCHE EN BATEAU : LIMITES")
+                            TitleView(title: "PÊCHE EN BATEAU")
                                 
                             Group {
                                 Text("La pêche en bateau dispose de règles. Seules certaines tailles par espèces sont autorisées.\n\nPour obtenir davantage d'informations sur une espèce, cliquez dessus ! ")
