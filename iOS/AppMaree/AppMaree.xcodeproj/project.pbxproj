@@ -39,13 +39,14 @@
 		DF45A1E524A64E7F00C4C050 /* data.xml in Resources */ = {isa = PBXBuildFile; fileRef = DF45A1E424A64E7F00C4C050 /* data.xml */; };
 		DF45A1E724A64EB500C4C050 /* DocumentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1E624A64EB500C4C050 /* DocumentationView.swift */; };
 		DF45A1EE24A64FDE00C4C050 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45A1ED24A64FDE00C4C050 /* TitleView.swift */; };
+		DF4D214224D5DF0300F2ABC0 /* MainDataRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4D214124D5DF0300F2ABC0 /* MainDataRowView.swift */; };
 		DF579A2524C4AEC8005AF947 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF579A2424C4AEC8005AF947 /* SettingsViewModel.swift */; };
 		DF579A2D24C50DE4005AF947 /* WaterSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF579A2C24C50DE4005AF947 /* WaterSettings.swift */; };
 		DFBF4F8724AB658300E2DA4B /* StyledText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4F8624AB658300E2DA4B /* StyledText.swift */; };
 		DFBF4F8B24ABB89700E2DA4B /* ButtonWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4F8A24ABB89700E2DA4B /* ButtonWindowView.swift */; };
 		DFBF4F9B24AE371600E2DA4B /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4F9A24AE371600E2DA4B /* XMLParser.swift */; };
 		DFBF4FA124AEA3BC00E2DA4B /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FA024AEA3BC00E2DA4B /* DraggableView.swift */; };
-		DFBF4FA924B2835200E2DA4B /* MainDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FA824B2835200E2DA4B /* MainDataRow.swift */; };
+		DFBF4FA924B2835200E2DA4B /* MainRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FA824B2835200E2DA4B /* MainRowView.swift */; };
 		DFBF4FAB24B4C17000E2DA4B /* ads.json in Resources */ = {isa = PBXBuildFile; fileRef = DFBF4FAA24B4C17000E2DA4B /* ads.json */; };
 		DFBF4FAD24B4CEE800E2DA4B /* JSONContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF4FAC24B4CEE800E2DA4B /* JSONContent.swift */; };
 		DFBF4FAF24B611E000E2DA4B /* fishes.json in Resources */ = {isa = PBXBuildFile; fileRef = DFBF4FAE24B611E000E2DA4B /* fishes.json */; };
@@ -96,13 +97,14 @@
 		DF45A1E424A64E7F00C4C050 /* data.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = data.xml; sourceTree = "<group>"; };
 		DF45A1E624A64EB500C4C050 /* DocumentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentationView.swift; sourceTree = "<group>"; };
 		DF45A1ED24A64FDE00C4C050 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		DF4D214124D5DF0300F2ABC0 /* MainDataRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataRowView.swift; sourceTree = "<group>"; };
 		DF579A2424C4AEC8005AF947 /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		DF579A2C24C50DE4005AF947 /* WaterSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterSettings.swift; sourceTree = "<group>"; };
 		DFBF4F8624AB658300E2DA4B /* StyledText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledText.swift; sourceTree = "<group>"; };
 		DFBF4F8A24ABB89700E2DA4B /* ButtonWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWindowView.swift; sourceTree = "<group>"; };
 		DFBF4F9A24AE371600E2DA4B /* XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 		DFBF4FA024AEA3BC00E2DA4B /* DraggableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
-		DFBF4FA824B2835200E2DA4B /* MainDataRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataRow.swift; sourceTree = "<group>"; };
+		DFBF4FA824B2835200E2DA4B /* MainRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRowView.swift; sourceTree = "<group>"; };
 		DFBF4FAA24B4C17000E2DA4B /* ads.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ads.json; sourceTree = "<group>"; };
 		DFBF4FAC24B4CEE800E2DA4B /* JSONContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONContent.swift; sourceTree = "<group>"; };
 		DFBF4FAE24B611E000E2DA4B /* fishes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = fishes.json; sourceTree = "<group>"; };
@@ -279,7 +281,8 @@
 			isa = PBXGroup;
 			children = (
 				DF45A1C724A60A5100C4C050 /* MainView.swift */,
-				DFBF4FA824B2835200E2DA4B /* MainDataRow.swift */,
+				DFBF4FA824B2835200E2DA4B /* MainRowView.swift */,
+				DF4D214124D5DF0300F2ABC0 /* MainDataRowView.swift */,
 				DF43C47124CDD0DB00921B4D /* MainFontSizeView.swift */,
 				DFDB1F5F24D2F84200CAC40D /* AdsView.swift */,
 				DFDB1F5824D2E76400CAC40D /* Day */,
@@ -383,6 +386,7 @@
 				DFDB1F6224D305DF00CAC40D /* WeatherView.swift in Sources */,
 				DF45A1E324A64E2E00C4C050 /* FishingView.swift in Sources */,
 				DFBF4F8724AB658300E2DA4B /* StyledText.swift in Sources */,
+				DF4D214224D5DF0300F2ABC0 /* MainDataRowView.swift in Sources */,
 				DFDB1F5E24D2EFD200CAC40D /* DayView.swift in Sources */,
 				DF44C0F524A8E1F2001D6BDD /* PartnerView.swift in Sources */,
 				DF440D0D24CEF85000C9C8A9 /* AnimalDetailsView.swift in Sources */,
@@ -397,7 +401,7 @@
 				DF45A1C824A60A5100C4C050 /* MainView.swift in Sources */,
 				DF02A78D24A360C3009582BC /* SceneDelegate.swift in Sources */,
 				DF43C49524CE5BEF00921B4D /* DatePickerView.swift in Sources */,
-				DFBF4FA924B2835200E2DA4B /* MainDataRow.swift in Sources */,
+				DFBF4FA924B2835200E2DA4B /* MainRowView.swift in Sources */,
 				DFDB1F6024D2F84200CAC40D /* AdsView.swift in Sources */,
 				DF43C48724CE2EC000921B4D /* LocationManager.swift in Sources */,
 				DF44C0F824A8FB67001D6BDD /* DiagonalBackgroundView.swift in Sources */,

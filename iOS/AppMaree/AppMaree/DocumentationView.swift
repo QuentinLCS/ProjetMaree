@@ -26,7 +26,7 @@ struct DocumentationView: View {
                         .padding(.vertical, 10)
                         .fixedSize(horizontal: false, vertical: true)
                     
-                    MainDataRow()
+                    MainRowView()
                     
                     StyledText("""
                     PREMIÈRE LIGNE :
@@ -53,14 +53,17 @@ struct DocumentationView: View {
                         .fixedSize(horizontal: false, vertical: true)
                         .padding(.horizontal, 20.0)
                     
-                    MainDataRow(day: Day(portes: [Porte(etat: "ouverture", heure: "06h53", estimatedHour: "7h12"),Porte(etat: "fermeture", heure: "13h40", estimatedHour: "13h08"),Porte(etat: "ouverture", heure: "19h23", estimatedHour: "20h07"),Porte(etat: "fermeture", heure: "02h00", estimatedHour: "1h58")], marees: [Maree(etat: "PM", heure: "04h22", hauteur: "2,1"),Maree(etat: "BM", heure: "10h03", hauteur: "9,25", coef: "79"),Maree(etat: "PM", heure: "16h46", hauteur: "1,95"),Maree(etat: "BM", heure: "22h27", hauteur: "8,95", coef: "77")], dateShortString: "01 JAN"))
+                    MainRowView(day: Day(portes: [Porte(etat: "ouverture", heure: "06h53", estimatedHour: "7h12"),Porte(etat: "fermeture", heure: "13h40", estimatedHour: "13h08"),Porte(etat: "ouverture", heure: "19h23", estimatedHour: "20h07"),Porte(etat: "fermeture", heure: "02h00", estimatedHour: "1h58")], marees: [Maree(etat: "PM", heure: "04h22", hauteur: "2,1"),Maree(etat: "BM", heure: "10h03", hauteur: "9,25", coef: "79"),Maree(etat: "PM", heure: "16h46", hauteur: "1,95"),Maree(etat: "BM", heure: "22h27", hauteur: "8,95", coef: "77")], dateShortString: "01 JAN"))
                     
                     StyledText("""
-                    NOUVELLE QUATRIÈME LIGNE :
+                    NOUVELLE TROISIÈME LIGNE :
                     Indique l'heure à partir de laquelle la hauteur d'eau est égale ou supérieure à 2 mètres (premier et troisième colonne) et inférieur à 2 mètres (deuxième et dernière colonne). Ces horaires sont approximées et ne sont pas en provenance du SHOM.
+
+                    NOUVELLE QUATRIÈME LIGNE :
+                    Indique l'heure donnée par le SHOM à partir de laquelle la porte ouvre ou ferme.
                     """)
-                            .style(.highlight(), ranges: { [$0.range(of: "NOUVELLE QUATRIÈME LIGNE :")!]})
-                            .style(.bold(), ranges: { [$0.range(of: "NOUVELLE QUATRIÈME LIGNE :")!, $0.range(of: "premier et troisième colonne")!, $0.range(of: "deuxième et dernière colonne")!, $0.range(of: "approximées")!, $0.range(of: "ne sont pas en provenance du SHOM")!]})
+                            .style(.highlight(), ranges: { [$0.range(of: "NOUVELLE TROISIÈME LIGNE :")!, $0.range(of: "NOUVELLE QUATRIÈME LIGNE :")!]})
+                            .style(.bold(), ranges: { [$0.range(of: "NOUVELLE TROISIÈME LIGNE :")!, $0.range(of: "NOUVELLE QUATRIÈME LIGNE :")!, $0.range(of: "premier et troisième colonne")!, $0.range(of: "deuxième et dernière colonne")!, $0.range(of: "approximées")!, $0.range(of: "ne sont pas en provenance du SHOM")!, $0.range(of: "heure donnée par le SHOM")!]})
                             .padding(.bottom, 200.0)
                             .padding(.horizontal, 20.0)
                             .fixedSize(horizontal: false, vertical: true)

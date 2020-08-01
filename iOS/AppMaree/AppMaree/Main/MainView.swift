@@ -53,7 +53,7 @@ struct MainView: View {
                 List {
                     ForEach(startListNumber ..< self.days.count) { number in
                         ZStack {
-                            MainDataRow(day: self.days[number])
+                            MainRowView(day: self.days[number])
                                 .background(self.opacities[number % 2])
                             
                             NavigationLink(destination: DayView(day: self.days[number], weatherNumber: number - startListNumber - 1)) { EmptyView() }

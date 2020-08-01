@@ -28,6 +28,7 @@ struct SettingsView: View {
     @EnvironmentObject var settings : SettingsViewModel
     
     var body: some View {
+        
         NavigationView {
             ZStack {
                 ScrollView {
@@ -42,7 +43,7 @@ struct SettingsView: View {
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .foregroundColor(Color("Primaire 1"))
                         
-                        MainDataRow()
+                        MainRowView()
                         
                         Text("Taille du texte: ")
                             .fontWeight(.bold)
@@ -59,6 +60,7 @@ struct SettingsView: View {
                                     NavigationLink(destination: SettingsColorEditorView(colorToEdit: number).environmentObject(settingsVM)) {
                                         Circle()
                                             .foregroundColor(Color(red: self.$settings.settings.colors[number].red.wrappedValue, green: self.$settings.settings.colors[number].green.wrappedValue, blue: self.$settings.settings.colors[number].blue.wrappedValue))
+                                        .shadow(radius: 10)
                                     }
                                 }
                             }.frame(height: 100)
