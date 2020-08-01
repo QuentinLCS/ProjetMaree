@@ -41,7 +41,6 @@ struct SettingsView: View {
                             .padding(.bottom, 20.0)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .foregroundColor(Color("Primaire 1"))
-                            .keyboardType(.numberPad)
                         
                         MainDataRow()
                         
