@@ -17,13 +17,15 @@ struct EmergencyMessageView: View {
             Text("Vous recontrez un problème en mer ?")
                 .fontWeight(.bold)
             
-            Text("196 - TÉLÉPHONE")
-                .font(.largeTitle)
-                .foregroundColor(Color.red)
-            
-            Text("CANAL 16 - VHF")
-                .font(.largeTitle)
-                .foregroundColor(Color.red)
+            VStack {
+                Text("196 - TÉLÉPHONE")
+                    .font(.largeTitle)
+                    .foregroundColor(Color.red)
+                
+                Text("CANAL 16 - VHF")
+                    .font(.largeTitle)
+                    .foregroundColor(Color.red)
+            }
             
             ScrollView {
                 if !$showMore.wrappedValue {
@@ -72,7 +74,7 @@ struct EmergencyMessageView: View {
                         .background(Color.red)
                         .cornerRadius(30)
                 } else {
-                    Text("Montrer l'aide téléphonique")
+                    Text("Montrer l'aide")
                         .fontWeight(.bold)
                         .foregroundColor(Color.white)
                         .padding()
