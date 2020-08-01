@@ -17,7 +17,11 @@ struct EmergencyMessageView: View {
             Text("Vous recontrez un problème en mer ?")
                 .fontWeight(.bold)
             
-            Text("196 - SECOURS")
+            Text("196 - TÉLÉPHONE")
+                .font(.largeTitle)
+                .foregroundColor(Color.red)
+            
+            Text("CANAL 16 - VHF")
                 .font(.largeTitle)
                 .foregroundColor(Color.red)
             

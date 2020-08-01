@@ -21,7 +21,7 @@ struct EmergencyView: View {
         return NavigationView { 
             ZStack {
                 ScrollView {
-                        TitleView(title: "SIGNALER UN PROBLÈME", titleColor: Color.red)
+                        TitleView(title: "APPEL AU SECOURS", titleColor: Color.red)
 
                         EmergencyMessageView()
                             .padding(.bottom, 30)
@@ -30,7 +30,7 @@ struct EmergencyView: View {
                             MapView()
                                 .padding(.top, 25)
                             VStack(spacing: 0) {
-                                Text("lat: \(coordinate.latitude), long: \(coordinate.longitude)")
+                                Text("lat: \(coordinateConverter(coord: coordinate.latitude, isLat: true)), long: \(coordinateConverter(coord: coordinate.longitude, isLat: false))")
                                     .fontWeight(.semibold)
                                     .foregroundColor(Color.white)
                                     .padding()
@@ -48,5 +48,25 @@ struct EmergencyView: View {
             .navigationBarHidden(true)
             .navigationBarTitle("")
             .edgesIgnoringSafeArea(.vertical)
+    }
+    
+    func coordinateConverter(coord: Double, isLat: Bool) -> String {
+        var result = ""
+        
+        if isLat {
+            if coord < 0 {
+                result += "\(abs(coord))S"
+            } else {
+                result += "\(abs(coord))N"
+            }
+        } else {
+            if coord < 0 {
+                result += "\(abs(coord))W"
+            } else {
+                result += "\(abs(coord))E"
+            }
+        }
+        
+        return result
     }
 }
