@@ -12,6 +12,7 @@
             "description": "Réglementation applicable au nord du 48e parallèle d'Audienne à la frontière Belge.",
             "allowedPerPerson": 2,
             "taggingObligation": true,
+            "helpImage": "marquageBar"
         },
         {
             "name": "BARBUE",

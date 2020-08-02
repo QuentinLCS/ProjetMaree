@@ -28,31 +28,53 @@ struct AnimalDetailsView: View {
                     }
                         
                     Text(animal.describe()).padding(.horizontal, 20.0)
+                        .frame(maxWidth: UIScreen.main.bounds.width)
                     
                     ZStack {
                         DiagonalBackgroundView(a: .primaryColor)
+                            .frame(minWidth: 1200)
                         
                         VStack (spacing: 0) {
-                            Text("Qu'est-ce qu'un marquage ?")
-                                .font(.system(size: 22))
-                                .fontWeight(.bold)
-                                .foregroundColor(Color.white)
-                            
-                            if animal.helpImage != nil {
-                               Image(animal.helpImage!)
-                                   .resizable()
-                                   .scaledToFit()
-                                   .padding()
+                            if animal.taggingObligation != nil {
+                                Text("Qu'est-ce qu'un marquage ?")
+                                    .font(.system(size: 22))
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.white)
+                                
+                                if animal.helpImage != nil {
+                                   Image(animal.helpImage!)
+                                       .resizable()
+                                       .scaledToFit()
+                                       .padding()
+                                } else {
+                                   Image("marquagePoisson")
+                                       .resizable()
+                                       .scaledToFit()
+                                       .padding()
+                                }
+                                Spacer()
                             } else {
-                               Image("marquage-poisson")
-                                   .resizable()
-                                   .scaledToFit()
-                                   .padding()
+                                if animal.helpImage != nil {
+                                    Text("Besoin d'aide ?")
+                                        .font(.system(size: 22))
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color.white)
+                                    
+                                    Image(animal.helpImage!)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .padding()
+                                } else {
+                                    Text("Aucune aide disponible ...")
+                                        .font(.system(size: 22))
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color.white)
+                                }
                             }
-                            Spacer()
                         }
+                        .frame(maxWidth: UIScreen.main.bounds.width)
                         .padding(.top, 20.0)
-                        .padding(.bottom, 350)
+                        .padding(.bottom, 600)
                     }
                 }
                 ButtonWindowView(isBack: true, presentation: presentationMode)
