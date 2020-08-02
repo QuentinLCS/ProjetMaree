@@ -55,12 +55,12 @@ struct SettingsView: View {
                         
                         MainRowView()
                         
-                        Text("Taille du texte: ")
+                        Text("Taille du texte:")
                             .fontWeight(.bold)
                             .padding(.top, 20)
                         Slider(value: $settings.settings.fontSize, in: 1...3, step: 1)
                         
-                        Text("Modifier les couleurs ?")
+                        Text("Modifier les couleurs:")
                             .fontWeight(.bold)
                             .padding(.top, 20)
                         
