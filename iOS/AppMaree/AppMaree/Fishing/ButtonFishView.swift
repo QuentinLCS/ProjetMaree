@@ -36,8 +36,8 @@ struct ButtonFishView: View {
                     Group {
                         if (image != "") {
                             Image(image)
-                            .resizable()
-                            .scaledToFit()
+                                .resizable()
+                                .scaledToFit()
                         }
                         else {
                             Image(systemName: "ellipsis")

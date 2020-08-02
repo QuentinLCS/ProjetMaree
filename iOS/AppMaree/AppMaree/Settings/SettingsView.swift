@@ -28,7 +28,6 @@ struct SettingsView: View {
     @EnvironmentObject var settings : SettingsViewModel
     
     var body: some View {
-        
         NavigationView {
             ZStack {
                 ScrollView {
@@ -38,10 +37,21 @@ struct SettingsView: View {
                         Text("Quel est votre tirant d'eau ?")
                            .fontWeight(.bold)
                            .padding(.top)
-                        TextField("Votre tirant d'eau : (à partir de \(doShortDouble(value: HAUTEUR_PORTE+0.1, decimals: 2)))", text: $settings.settings.water)
-                            .padding(.bottom, 20.0)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .foregroundColor(Color("Primaire 1"))
+                        
+                        VStack(spacing: 0) {
+                            TextField("Votre tirant d'eau : (à partir de \(doShortDouble(value: HAUTEUR_PORTE+0.1, decimals: 2)))", text: $settings.settings.water)
+                                .padding(.bottom, 20.0)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .foregroundColor(Color("Primaire 1"))
+                            
+                            if $settings.settings.water.wrappedValue != "" {
+                                if Double($settings.settings.water.wrappedValue)! < (HAUTEUR_PORTE + 0.1) {
+                                    Text("Tirant d'eau inférieur à \(doShortDouble(value: HAUTEUR_PORTE + 0.1, decimals: 2)).")
+                                        .foregroundColor(Color.red)
+                                        .multilineTextAlignment(.center)
+                                }
+                            }
+                        }
                         
                         MainRowView()
                         

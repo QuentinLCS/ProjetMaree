@@ -23,8 +23,6 @@ class SettingsViewModel: ObservableObject {
                 if let newWater = Double((self.settings?.water)!) {
                     if newWater >= HAUTEUR_PORTE + 0.1 {
                         calculHeureSelonTiranDEau(tirantDEau: newWater)
-                    } else {
-                        self.settings?.water = oldValue!.water
                     }
                 }
             }

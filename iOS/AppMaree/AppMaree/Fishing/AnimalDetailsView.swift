@@ -18,9 +18,15 @@ struct AnimalDetailsView: View {
         NavigationView {
             ZStack {
                 ScrollView {
-                    TitleView(title: "PÈCHE EN BATEAU : LIMITES", subTitle: "\(animal.name)")
-                        .padding(.bottom, 30.0)
+                    TitleView(title: "PÈCHE EN BATEAU", subTitle: "\(animal.name)")
                     
+                    if (animal.imageName != "") {
+                        Image(animal.imageName)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(maxWidth: 200)
+                    }
+                        
                     Text(animal.describe()).padding(.horizontal, 20.0)
                     
                     ZStack {
