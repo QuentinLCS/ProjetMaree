@@ -20,14 +20,14 @@ class SettingsViewModel: ObservableObject {
     @Published var settings: SavedSettings = SettingsViewModel.exists(key: SettingsViewModel.settingsKey) ? try? PropertyListDecoder().decode(SavedSettings.self, from: UserDefaults.standard.value(forKey: SettingsViewModel.settingsKey) as! Data) : defaultSettings {
         didSet {
             if oldValue?.water != self.settings?.water {
-                if let newWater = Double((self.settings?.water)!) {
+                if let newWater: Double = Double((self.settings?.water)!) {
                     if newWater >= HAUTEUR_PORTE + 0.1 {
                         calculHeureSelonTiranDEau(tirantDEau: newWater)
+                        let encodedData = try? PropertyListEncoder().encode(self.settings)
+                        defaults.set(encodedData, forKey: SettingsViewModel.settingsKey)
                     }
                 }
             }
-            let encodedData = try? PropertyListEncoder().encode(self.settings)
-            defaults.set(encodedData, forKey: SettingsViewModel.settingsKey)
         }
     }
     

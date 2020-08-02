@@ -45,8 +45,14 @@ struct SettingsView: View {
                                 .foregroundColor(Color("Primaire 1"))
                             
                             if $settings.settings.water.wrappedValue != "" {
-                                if Double($settings.settings.water.wrappedValue)! < (HAUTEUR_PORTE + 0.1) {
-                                    Text("Tirant d'eau inférieur à \(doShortDouble(value: HAUTEUR_PORTE + 0.1, decimals: 2)).")
+                                if Double($settings.settings.water.wrappedValue) != nil {
+                                    if Double($settings.settings.water.wrappedValue)! < (HAUTEUR_PORTE + 0.1) {
+                                            Text("Tirant d'eau inférieur à \(doShortDouble(value: HAUTEUR_PORTE + 0.1, decimals: 2)).")
+                                                .foregroundColor(Color.red)
+                                                .multilineTextAlignment(.center)
+                                    }
+                                } else {
+                                    Text("Valeur numérique invalide.")
                                         .foregroundColor(Color.red)
                                         .multilineTextAlignment(.center)
                                 }
